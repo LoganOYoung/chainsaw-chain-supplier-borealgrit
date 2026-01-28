@@ -562,9 +562,10 @@ export default function FitmentFinderPage() {
                       <div className="flex flex-col gap-2">
                         <Link
                           href={buildQuoteUrl(item)}
-                          className="inline-block text-xs px-3 py-1.5 bg-safety-orange text-white font-semibold hover:bg-safety-orange/90 transition rounded-none text-center"
+                          className="inline-flex items-center justify-center gap-1.5 text-xs px-4 py-2 bg-safety-orange text-white font-semibold hover:bg-safety-orange/90 transition rounded-none shadow-sm hover:shadow-md"
                         >
-                          Request Quote
+                          <ArrowRight className="w-3.5 h-3.5" />
+                          Request Quote Now
                         </Link>
                         {getAlternativeProducts(item.series, item.seriesType).length > 0 && (
                           <div className="text-xs text-text-body">

@@ -56,6 +56,13 @@ export default function Home() {
                 Find Compatible Chain
                 <Search className="w-5 h-5" />
               </Link>
+              <Link
+                href="/resources#catalogs"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-forest-brand/10 backdrop-blur-sm border border-forest-brand/30 text-forest-brand font-semibold text-lg hover:bg-forest-brand/20 transition shadow-xl rounded-none"
+              >
+                Download Catalog
+                <Download className="w-5 h-5" />
+              </Link>
             </div>
           </div>
         </section>

@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Search, Filter, Download, ArrowRight, ChevronDown } from 'lucide-react'
+import { Search, Filter, Download, ArrowRight, ChevronDown, ShoppingCart, X } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -94,6 +94,49 @@ export default function ProductsPage() {
   const [showFilters, setShowFilters] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [itemsPerPage, setItemsPerPage] = useState(20)
+  const [rfqCart, setRfqCart] = useState<Array<typeof PRODUCT_CATALOG[0] & { quantity?: number }>>([])
+  const [showCart, setShowCart] = useState(false)
+
+  // Add product to RFQ cart
+  const addToCart = (product: typeof PRODUCT_CATALOG[0]) => {
+    const existingIndex = rfqCart.findIndex(item => item.id === product.id)
+    if (existingIndex >= 0) {
+      // Update quantity if already in cart
+      const updatedCart = [...rfqCart]
+      updatedCart[existingIndex] = { ...updatedCart[existingIndex], quantity: (updatedCart[existingIndex].quantity || 1) + 1 }
+      setRfqCart(updatedCart)
+    } else {
+      // Add new product
+      setRfqCart([...rfqCart, { ...product, quantity: 1 }])
+    }
+    setShowCart(true)
+  }
+
+  // Remove product from cart
+  const removeFromCart = (productId: string) => {
+    setRfqCart(rfqCart.filter(item => item.id !== productId))
+  }
+
+  // Build bulk RFQ URL
+  const buildBulkRFQUrl = () => {
+    const params = new URLSearchParams()
+    rfqCart.forEach((item, index) => {
+      params.append(`product_${index}`, item.id)
+      params.append(`pitch_${index}`, item.pitch)
+      params.append(`gauge_${index}`, item.gauge)
+      params.append(`driveLinks_${index}`, item.driveLinks)
+      if (item.quantity) {
+        params.append(`quantity_${index}`, item.quantity.toString())
+      }
+    })
+    return `/request-quote?${params.toString()}&bulk=true`
+  }
+
+  // Clear cart
+  const clearCart = () => {
+    setRfqCart([])
+    setShowCart(false)
+  }
 
   // Get unique values for filter options
   const uniquePitches = useMemo(() => [...new Set(PRODUCT_CATALOG.map(p => p.pitch))].sort(), [])
@@ -547,14 +590,84 @@ export default function ProductsPage() {
                 )}
               </p>
             </div>
-            <Link
-              href="/request-quote"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-safety-orange text-white text-sm font-semibold hover:bg-safety-orange/90 transition rounded"
-            >
-              Request Bulk Quote
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex items-center gap-3">
+              {rfqCart.length > 0 && (
+                <button
+                  onClick={() => setShowCart(!showCart)}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-forest-brand text-white text-sm font-semibold hover:bg-forest-brand/90 transition rounded-none relative"
+                >
+                  <ShoppingCart className="w-4 h-4" />
+                  RFQ Cart ({rfqCart.length})
+                  {rfqCart.length > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-safety-orange text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                      {rfqCart.length}
+                    </span>
+                  )}
+                </button>
+              )}
+              <Link
+                href={rfqCart.length > 0 ? buildBulkRFQUrl() : "/request-quote"}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-safety-orange text-white text-sm font-semibold hover:bg-safety-orange/90 transition rounded-none"
+              >
+                {rfqCart.length > 0 ? `Request Quote (${rfqCart.length} items)` : 'Request Bulk Quote'}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
+
+          {/* RFQ Cart Panel */}
+          {showCart && rfqCart.length > 0 && (
+            <div className="mb-4 bg-white border-2 border-forest-brand rounded-none p-4 shadow-lg">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-lg font-bold text-text-main flex items-center gap-2">
+                  <ShoppingCart className="w-5 h-5" />
+                  RFQ Cart ({rfqCart.length} {rfqCart.length === 1 ? 'item' : 'items'})
+                </h3>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={clearCart}
+                    className="text-xs text-text-body hover:text-text-main underline"
+                  >
+                    Clear All
+                  </button>
+                  <button
+                    onClick={() => setShowCart(false)}
+                    className="text-text-body hover:text-text-main"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+              <div className="max-h-60 overflow-y-auto mb-3">
+                <div className="space-y-2">
+                  {rfqCart.map((item) => (
+                    <div key={item.id} className="flex items-center justify-between p-2 bg-gray-50 border border-gray-200 rounded-none">
+                      <div className="flex-1">
+                        <div className="font-semibold text-sm text-text-main">{item.id}</div>
+                        <div className="text-xs text-text-body">
+                          {item.pitch} / {item.gauge} / {item.driveLinks} - {item.chainType} {item.cutterType}
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => removeFromCart(item.id)}
+                        className="text-red-600 hover:text-red-800 p-1"
+                        aria-label={`Remove ${item.id} from cart`}
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Link
+                href={buildBulkRFQUrl()}
+                className="block w-full text-center px-4 py-2 bg-safety-orange text-white font-semibold hover:bg-safety-orange/90 transition rounded-none"
+              >
+                Request Quote for {rfqCart.length} {rfqCart.length === 1 ? 'Item' : 'Items'}
+                <ArrowRight className="w-4 h-4 inline-block ml-2" />
+              </Link>
+            </div>
+          )}
         </section>
 
         {/* Product Table */}
@@ -604,13 +717,22 @@ export default function ProductsPage() {
                       </td>
                       <td className="px-4 py-3 text-text-body text-xs">{product.description}</td>
                       <td className="px-4 py-3">
-                        <Link
-                          href={`/request-quote?product=${product.id}&pitch=${encodeURIComponent(product.pitch)}&gauge=${encodeURIComponent(product.gauge)}&driveLinks=${encodeURIComponent(product.driveLinks)}`}
-                          className="text-forest-brand text-xs font-medium hover:underline"
-                          aria-label={`Request quote for ${product.id}`}
-                        >
-                          Quote
-                        </Link>
+                        <div className="flex flex-col gap-1.5">
+                          <button
+                            onClick={() => addToCart(product)}
+                            className="text-xs px-3 py-1.5 bg-forest-brand text-white font-semibold hover:bg-forest-brand/90 transition rounded-none text-center"
+                            aria-label={`Add ${product.id} to RFQ cart`}
+                          >
+                            Add to RFQ
+                          </button>
+                          <Link
+                            href={`/request-quote?product=${product.id}&pitch=${encodeURIComponent(product.pitch)}&gauge=${encodeURIComponent(product.gauge)}&driveLinks=${encodeURIComponent(product.driveLinks)}`}
+                            className="text-forest-brand text-xs font-medium hover:underline text-center"
+                            aria-label={`Request quote for ${product.id}`}
+                          >
+                            Quick Quote
+                          </Link>
+                        </div>
                       </td>
                     </tr>
                   ))
