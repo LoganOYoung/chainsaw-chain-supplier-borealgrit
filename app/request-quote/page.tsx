@@ -468,16 +468,16 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
 
             {/* Uploaded File Info - Enhanced */}
             {uploadedFile && (
-              <div className="mb-6 bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-400 rounded-none p-5 shadow-sm">
+              <div className="mb-6 bg-gradient-to-r from-forest-light to-blue-50 border-2 border-forest-brand rounded-none p-5 shadow-sm">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-500 rounded-none flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-forest-brand rounded-none flex items-center justify-center">
                     <CheckCircle className="w-7 h-7 text-white" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-text-main mb-2 text-lg">RFQ File Successfully Uploaded</h3>
-                    <div className="bg-white border border-green-300 rounded-none p-3 mb-3">
+                    <div className="bg-white border border-forest-brand/50 rounded-none p-3 mb-3">
                       <div className="flex items-center gap-2 mb-1">
-                        <FileText className="w-4 h-4 text-green-600" />
+                        <FileText className="w-4 h-4 text-forest-brand" />
                         <span className="font-semibold text-text-main text-sm">{uploadedFile.name}</span>
                       </div>
                       <p className="text-xs text-text-body">
@@ -725,7 +725,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
 
               {/* Step 4: Submit Section */}
               <div className="mt-8 pt-6 border-t-2 border-forest-brand/30">
-                <div className="bg-gradient-to-r from-forest-brand/5 to-green-50 border-2 border-forest-brand/30 rounded-none p-6 mb-6">
+                <div className="bg-gradient-to-r from-forest-brand/5 to-forest-light border-2 border-forest-brand/30 rounded-none p-6 mb-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-full bg-forest-brand text-white flex items-center justify-center font-bold text-lg shadow-lg">
                       4
@@ -742,7 +742,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-safety-orange text-white font-bold text-lg hover:bg-safety-orange/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-none shadow-lg hover:shadow-xl transform hover:scale-105 disabled:hover:scale-100"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-forest-brand text-white font-bold text-lg hover:bg-forest-brand/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-none shadow-lg hover:shadow-xl transform hover:scale-105 disabled:hover:scale-100"
                   >
                     {isSubmitting ? (
                       <>
@@ -758,11 +758,11 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                   </button>
 
                   {submitStatus === 'success' && (
-                    <div className="flex items-center gap-3 bg-green-50 border-2 border-green-400 rounded-none px-6 py-4 flex-1">
-                      <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0" />
+                    <div className="flex items-center gap-3 bg-forest-light border-2 border-forest-brand rounded-none px-6 py-4 flex-1">
+                      <CheckCircle2 className="w-6 h-6 text-forest-brand flex-shrink-0" />
                       <div>
-                        <p className="text-sm font-bold text-green-800 mb-1">Request Submitted Successfully!</p>
-                        <p className="text-xs text-green-700">We'll contact you within 24 hours during business days.</p>
+                        <p className="text-sm font-bold text-forest-brand mb-1">Request Submitted Successfully!</p>
+                        <p className="text-xs text-forest-brand/80">We'll contact you within 24 hours during business days.</p>
                       </div>
                     </div>
                   )}
@@ -862,7 +862,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
             <div 
               className={`mb-6 p-6 border-2 rounded-none transition-all duration-300 ${
                 currentStep >= 2 
-                  ? 'bg-green-50 border-green-400 shadow-md' 
+                  ? 'bg-forest-light border-forest-brand shadow-md' 
                   : 'bg-gray-50 border-dashed border-forest-brand/40 hover:border-forest-brand/60'
               }`}
               onDragOver={(e) => {
@@ -1007,11 +1007,11 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
 
                 {/* Uploaded File Card */}
                 {uploadedFile && (
-                  <div className="w-full bg-white border-2 border-green-400 rounded-none p-4 shadow-md">
+                  <div className="w-full bg-white border-2 border-forest-brand rounded-none p-4 shadow-md">
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-start gap-3 flex-1">
-                        <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-none flex items-center justify-center">
-                          <FileText className="w-6 h-6 text-green-600" />
+                        <div className="flex-shrink-0 w-10 h-10 bg-forest-brand/10 rounded-none flex items-center justify-center">
+                          <FileText className="w-6 h-6 text-forest-brand" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4 className="font-semibold text-text-main text-sm mb-1 truncate">{uploadedFile.name}</h4>
@@ -1019,7 +1019,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                             {Math.round(uploadedFile.size / 1024)} KB • {uploadedFile.type || 'File'}
                           </p>
                           {cartProducts.length > 0 && (
-                            <p className="text-xs text-green-600 font-medium mt-1">
+                            <p className="text-xs text-forest-brand font-medium mt-1">
                               ✓ Found {cartProducts.length} product{cartProducts.length !== 1 ? 's' : ''}
                             </p>
                           )}

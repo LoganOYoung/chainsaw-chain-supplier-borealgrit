@@ -68,7 +68,7 @@ export default function FullChisel325Page() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-green-800/70 text-white p-3">
+              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
                 <p className="text-sm font-semibold">Square-Corner Cutter</p>
                 <p className="text-xs text-gray-200">Razor-sharp geometry</p>
               </div>
@@ -81,7 +81,7 @@ export default function FullChisel325Page() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-green-800/70 text-white p-3">
+              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
                 <p className="text-sm font-semibold">Chain Assembly</p>
                 <p className="text-xs text-gray-200">.325 inch pitch configuration</p>
               </div>
@@ -94,7 +94,7 @@ export default function FullChisel325Page() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-green-800/70 text-white p-3">
+              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
                 <p className="text-sm font-semibold">Application</p>
                 <p className="text-xs text-gray-200">Clean wood cutting</p>
               </div>

@@ -64,7 +64,7 @@ export default function ResourcesPage() {
                   <td className="px-4 py-3">Complete product line: full, semi, low profile. All pitches, gauges, drive link counts. Specifications, packaging, pricing (on request).</td>
                   <td className="px-4 py-3">
                     <div className="flex flex-col gap-2">
-                      <button onClick={downloadCatalogCSV} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                      <button onClick={downloadCatalogCSV} className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline text-left">
                         <Download className="w-4 h-4" />
                         Download CSV
                       </button>
@@ -95,7 +95,7 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">One-page product matrix: chain types, pitches, typical applications, part numbers.</td>
                   <td className="px-4 py-3">
-                    <button onClick={generateQuickReferenceGuide} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                    <button onClick={generateQuickReferenceGuide} className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
                     </button>
@@ -139,7 +139,7 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">Full chisel .325&quot;. Technical specifications, compatibility, performance features, packaging, quality compliance.</td>
                   <td className="px-4 py-3">
-                    <button onClick={generateFC325Datasheet} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                    <button onClick={generateFC325Datasheet} className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
                     </button>
@@ -165,7 +165,7 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">Semi-chisel 3/8&quot;. Technical specifications, compatibility, performance features, packaging, quality compliance.</td>
                   <td className="px-4 py-3">
-                    <button onClick={generateSC38Datasheet} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                    <button onClick={generateSC38Datasheet} className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
                     </button>
@@ -191,7 +191,7 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">Low profile .325&quot;. Technical specifications, compatibility, performance features, packaging, quality compliance.</td>
                   <td className="px-4 py-3">
-                    <button onClick={generateLP325Datasheet} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                    <button onClick={generateLP325Datasheet} className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
                     </button>
@@ -235,7 +235,7 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">Common saw models and compatible chains. Pitch, gauge, drive link count by saw brand/model. Always verify bar specs.</td>
                   <td className="px-4 py-3">
-                    <button onClick={generateFitmentGuide} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                    <button onClick={generateFitmentGuide} className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
                     </button>
@@ -245,7 +245,7 @@ export default function ResourcesPage() {
                   <td className="px-4 py-3 font-medium">Pitch & Gauge Guide</td>
                   <td className="px-4 py-3">How to identify pitch and gauge. Bar groove measurement. Drive link count calculation.</td>
                   <td className="px-4 py-3">
-                    <button onClick={generatePitchGaugeGuide} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                    <button onClick={generatePitchGaugeGuide} className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
                     </button>
@@ -451,7 +451,7 @@ export default function ResourcesPage() {
                   <td className="px-4 py-3 font-medium">Buyer&apos;s Guide</td>
                   <td className="px-4 py-3">How to specify chainsaw chains. Pitch, gauge, drive links explained. Common mistakes to avoid.</td>
                   <td className="px-4 py-3">
-                    <button onClick={generateBuyersGuide} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                    <button onClick={generateBuyersGuide} className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
                     </button>
@@ -461,7 +461,7 @@ export default function ResourcesPage() {
                   <td className="px-4 py-3 font-medium">FAQ Document</td>
                   <td className="px-4 py-3">Frequently asked questions: MOQ, lead times, OEM customization, quality, shipping, returns.</td>
                   <td className="px-4 py-3">
-                    <button onClick={generateFAQDocument} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                    <button onClick={generateFAQDocument} className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
                     </button>

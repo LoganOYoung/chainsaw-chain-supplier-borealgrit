@@ -20,7 +20,7 @@ export default function Home() {
               priority
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-green-800/60"></div>
+            <div className="absolute inset-0 bg-forest-brand/60"></div>
           </div>
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
             <h1 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-cream-white mb-4 tracking-tight uppercase">
@@ -72,7 +72,7 @@ export default function Home() {
         </section>
 
         {/* 1.5. First-Time Visitor Welcome */}
-        <section className="bg-gradient-to-b from-green-50 to-white border-b border-forest-brand/30 py-8">
+        <section className="bg-gradient-to-b from-forest-light to-white border-b border-forest-brand/30 py-8">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white border-2 border-forest-brand/30 rounded-none p-6 shadow-sm">
               <div className="flex items-start gap-4">
@@ -192,7 +192,7 @@ export default function Home() {
               {/* Step 4 */}
               <div>
                 <div className="bg-gray-50 border-2 border-forest-brand rounded-none p-6 h-full hover:border-forest-brand/80 hover:shadow-md transition">
-                  <div className="flex items-center justify-center w-16 h-16 bg-green-500 text-white rounded-full mx-auto mb-4">
+                  <div className="flex items-center justify-center w-16 h-16 bg-forest-brand text-white rounded-full mx-auto mb-4">
                     <CheckCircle className="w-8 h-8" />
                   </div>
                   <div className="text-center mb-4">
@@ -203,7 +203,7 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="text-center">
-                    <span className="text-xs text-green-600 font-semibold">
+                    <span className="text-xs text-forest-brand font-semibold">
                       ✓ 24-Hour Response
                     </span>
                   </div>
@@ -292,7 +292,7 @@ export default function Home() {
                   className="object-cover"
                   sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-green-800/70 group-hover:bg-green-800/60 transition"></div>
+                <div className="absolute inset-0 bg-forest-brand/70 group-hover:bg-forest-brand/60 transition"></div>
                 <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
                   <h3 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 tracking-tight uppercase">
                     SERIES E: EFFICIENCY REDEFINED FOR THE ELECTRIC ERA
@@ -301,9 +301,9 @@ export default function Home() {
                     .043&quot; Narrow Kerf chains optimized for battery-powered saws. Reduced drag and heat for maximum efficiency.
                   </p>
                   <div className="flex flex-wrap gap-4 mb-4 text-xs md:text-sm text-white/85">
-                    <span className="bg-green-800/50 px-3 py-1 rounded-none font-mono text-xs">Pitch: .325&quot; - 3/8&quot; LP</span>
-                    <span className="bg-green-800/50 px-3 py-1 rounded-none font-mono text-xs">Gauge: .043&quot;</span>
-                    <span className="bg-green-800/50 px-3 py-1 rounded-none font-mono text-xs">Drive Links: 50DL - 72DL</span>
+                    <span className="bg-forest-brand/50 px-3 py-1 rounded-none font-mono text-xs">Pitch: .325&quot; - 3/8&quot; LP</span>
+                    <span className="bg-forest-brand/50 px-3 py-1 rounded-none font-mono text-xs">Gauge: .043&quot;</span>
+                    <span className="bg-forest-brand/50 px-3 py-1 rounded-none font-mono text-xs">Drive Links: 50DL - 72DL</span>
                   </div>
                   <div className="flex items-center text-white text-base font-semibold">
                     View Series E <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -322,7 +322,7 @@ export default function Home() {
                   className="object-cover"
                   sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-green-800/70 group-hover:bg-green-800/60 transition"></div>
+                <div className="absolute inset-0 bg-forest-brand/70 group-hover:bg-forest-brand/60 transition"></div>
                 <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
                   <h3 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 tracking-tight uppercase">
                     SERIES W: ENGINEERED FOR THE ARCTIC EDGE
@@ -331,10 +331,10 @@ export default function Home() {
                     CrNiMo Alloy Steel with specialized nitriding for sub-zero conditions. Mastery over frozen timber at -40°C.
                   </p>
                   <div className="flex flex-wrap gap-4 mb-4 text-xs md:text-sm text-white/85">
-                    <span className="bg-green-800/50 px-3 py-1 rounded-none font-mono text-xs">Pitch: 3/8&quot;</span>
-                    <span className="bg-green-800/50 px-3 py-1 rounded-none font-mono text-xs">Gauge: .050&quot; - .058&quot;</span>
-                    <span className="bg-green-800/50 px-3 py-1 rounded-none font-mono text-xs">Drive Links: 56DL - 72DL</span>
-                    <span className="bg-green-800/50 px-3 py-1 rounded-none font-mono text-xs">Temp Range: -40°C</span>
+                    <span className="bg-forest-brand/50 px-3 py-1 rounded-none font-mono text-xs">Pitch: 3/8&quot;</span>
+                    <span className="bg-forest-brand/50 px-3 py-1 rounded-none font-mono text-xs">Gauge: .050&quot; - .058&quot;</span>
+                    <span className="bg-forest-brand/50 px-3 py-1 rounded-none font-mono text-xs">Drive Links: 56DL - 72DL</span>
+                    <span className="bg-forest-brand/50 px-3 py-1 rounded-none font-mono text-xs">Temp Range: -40°C</span>
                   </div>
                   <div className="flex items-center text-white text-base font-semibold">
                     View Series W <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -353,7 +353,7 @@ export default function Home() {
                   className="object-cover"
                   sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-green-800/70 group-hover:bg-green-800/60 transition"></div>
+                <div className="absolute inset-0 bg-forest-brand/70 group-hover:bg-forest-brand/60 transition"></div>
                 <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
                   <h3 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 tracking-tight uppercase">
                     SERIES P: MAXIMUM OUTPUT FOR PROFESSIONAL FORESTERS
@@ -362,10 +362,10 @@ export default function Home() {
                     Full-Chisel design with industrial chrome coating. The choice of professional loggers for highest chip clearance speed.
                   </p>
                   <div className="flex flex-wrap gap-4 mb-4 text-xs md:text-sm text-white/85">
-                    <span className="bg-green-800/50 px-3 py-1 rounded-none font-mono text-xs">Pitch: 3/8&quot; - .404&quot;</span>
-                    <span className="bg-green-800/50 px-3 py-1 rounded-none font-mono text-xs">Gauge: .050&quot; - .063&quot;</span>
-                    <span className="bg-green-800/50 px-3 py-1 rounded-none font-mono text-xs">Drive Links: 56DL - 84DL</span>
-                    <span className="bg-green-800/50 px-3 py-1 rounded-none font-mono text-xs">Chrome Coated</span>
+                    <span className="bg-forest-brand/50 px-3 py-1 rounded-none font-mono text-xs">Pitch: 3/8&quot; - .404&quot;</span>
+                    <span className="bg-forest-brand/50 px-3 py-1 rounded-none font-mono text-xs">Gauge: .050&quot; - .063&quot;</span>
+                    <span className="bg-forest-brand/50 px-3 py-1 rounded-none font-mono text-xs">Drive Links: 56DL - 84DL</span>
+                    <span className="bg-forest-brand/50 px-3 py-1 rounded-none font-mono text-xs">Chrome Coated</span>
                   </div>
                   <div className="flex items-center text-white text-base font-semibold">
                     View Series P <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -408,7 +408,7 @@ export default function Home() {
         </section>
 
         {/* 4. Why Professional Importers Choose Us - Unified Value Proposition */}
-        <section className="bg-green-800 py-12 md:py-16">
+        <section className="bg-forest-brand py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="space-y-6">
               {/* Cost Advantage */}

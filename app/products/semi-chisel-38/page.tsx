@@ -68,7 +68,7 @@ export default function SemiChisel38Page() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-green-800/70 text-white p-3">
+              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
                 <p className="text-sm font-semibold">Rounded-Corner Cutter</p>
                 <p className="text-xs text-gray-200">Superior edge retention</p>
               </div>
@@ -81,7 +81,7 @@ export default function SemiChisel38Page() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-green-800/70 text-white p-3">
+              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
                 <p className="text-sm font-semibold">Chain Configuration</p>
                 <p className="text-xs text-gray-200">3/8 inch pitch standard</p>
               </div>
@@ -94,7 +94,7 @@ export default function SemiChisel38Page() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-green-800/70 text-white p-3">
+              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
                 <p className="text-sm font-semibold">Dirty/Frozen Wood</p>
                 <p className="text-xs text-gray-200">Extended sharpening intervals</p>
               </div>
