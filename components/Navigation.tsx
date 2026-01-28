@@ -42,7 +42,7 @@ export default function Navigation() {
   }, [productsMenuOpen, resourcesMenuOpen, aboutContactMenuOpen])
 
   return (
-    <header className="border-b border-forest-dark/50 bg-[#1A3922] sticky top-0 z-50">
+    <header className="border-b border-forest-dark/50 bg-[#426B3D] sticky top-0 z-50">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           <Link href="/" className="font-heading font-bold text-white text-base md:text-lg tracking-tight uppercase">
