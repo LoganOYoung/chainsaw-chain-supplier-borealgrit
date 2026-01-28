@@ -1,25 +1,26 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
-import { Metadata } from 'next'
-import { Download } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Resources & Downloads | Chainsaw Chain | Borealgrit',
-  description: 'Download chainsaw chain catalogs, technical datasheets, fitment guides, packaging standards, quality certifications, ordering info. B2B resources for distributors, importers, and OEM partners.',
-  keywords: 'chainsaw chain catalog, chainsaw chain datasheet, fitment guide, packaging standards, quality certifications, chainsaw chain resources, B2B downloads, technical documentation',
-  openGraph: {
-    title: 'Resources & Downloads | Chainsaw Chain',
-    description: 'Technical and commercial resources for distributors, importers, and OEM partners.',
-    type: 'website',
-  },
-  alternates: {
-    canonical: '/resources',
-  },
-}
+import { Download, Mail } from 'lucide-react'
+import { generateFC325Datasheet } from '@/lib/pdfGenerators/fc325Datasheet'
+import { generateSC38Datasheet } from '@/lib/pdfGenerators/sc38Datasheet'
+import { generateLP325Datasheet } from '@/lib/pdfGenerators/lp325Datasheet'
+import { generateFitmentGuide } from '@/lib/pdfGenerators/fitmentGuide'
+import { generatePitchGaugeGuide } from '@/lib/pdfGenerators/pitchGaugeGuide'
+import { generateBuyersGuide } from '@/lib/pdfGenerators/buyersGuide'
+import { generateFAQDocument } from '@/lib/pdfGenerators/faqDocument'
+import { generateQuickReferenceGuide } from '@/lib/pdfGenerators/quickReference'
+import { downloadCatalogCSV } from '@/lib/clientDownloadUtils'
+import { useEffect } from 'react'
 
 export default function ResourcesPage() {
+  useEffect(() => {
+    document.title = 'Resources & Downloads | Chainsaw Chain | Borealgrit'
+  }, [])
+
   return (
     <>
       <Navigation />
@@ -62,10 +63,16 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">Complete product line: full, semi, low profile. All pitches, gauges, drive link counts. Specifications, packaging, pricing (on request).</td>
                   <td className="px-4 py-3">
-                    <a href="/api/download-catalog" download className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline">
-                      <Download className="w-4 h-4" />
-                      Download CSV
-                    </a>
+                    <div className="flex flex-col gap-2">
+                      <button onClick={downloadCatalogCSV} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                        <Download className="w-4 h-4" />
+                        Download CSV
+                      </button>
+                      <Link href="/request-quote?resource=product-catalog-pdf&type=catalog" className="inline-flex items-center gap-1 text-blue-600 font-medium hover:underline text-xs">
+                        <Mail className="w-3 h-3" />
+                        Request PDF (includes pricing)
+                      </Link>
+                    </div>
                   </td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
@@ -88,10 +95,10 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">One-page product matrix: chain types, pitches, typical applications, part numbers.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline">
+                    <button onClick={generateQuickReferenceGuide} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
-                      Request download
-                    </Link>
+                      Download PDF
+                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -132,10 +139,10 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">Full chisel .325&quot;. Technical specifications, compatibility, performance features, packaging, quality compliance.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline">
+                    <button onClick={generateFC325Datasheet} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
-                    </Link>
+                    </button>
                   </td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
@@ -158,10 +165,10 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">Semi-chisel 3/8&quot;. Technical specifications, compatibility, performance features, packaging, quality compliance.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline">
+                    <button onClick={generateSC38Datasheet} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
-                    </Link>
+                    </button>
                   </td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
@@ -184,10 +191,10 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">Low profile .325&quot;. Technical specifications, compatibility, performance features, packaging, quality compliance.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline">
+                    <button onClick={generateLP325Datasheet} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
-                    </Link>
+                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -228,19 +235,20 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">Common saw models and compatible chains. Pitch, gauge, drive link count by saw brand/model. Always verify bar specs.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline">
+                    <button onClick={generateFitmentGuide} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
                       <Download className="w-4 h-4" />
                       Download PDF
-                    </Link>
+                    </button>
                   </td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
                   <td className="px-4 py-3 font-medium">Pitch & Gauge Guide</td>
                   <td className="px-4 py-3">How to identify pitch and gauge. Bar groove measurement. Drive link count calculation.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <button onClick={generatePitchGaugeGuide} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                      <Download className="w-4 h-4" />
                       Download PDF
-                    </Link>
+                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -265,18 +273,22 @@ export default function ResourcesPage() {
                   <td className="px-4 py-3 font-medium">Packaging Specifications</td>
                   <td className="px-4 py-3">Retail box dimensions, bulk carton specs, pallet configuration. Standard and custom options.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <Link href="/request-quote?resource=packaging-specs&type=packaging" className="inline-flex items-center gap-1 text-blue-600 font-medium hover:underline">
+                      <Mail className="w-4 h-4" />
                       Request document
                     </Link>
+                    <span className="text-xs text-text-body block mt-1">(24h response)</span>
                   </td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
                   <td className="px-4 py-3 font-medium">Labeling Standards</td>
                   <td className="px-4 py-3">Required label elements: part number, pitch/gauge/DL, fitment text, barcode format. OEM customization options.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <Link href="/request-quote?resource=labeling-standards&type=packaging" className="inline-flex items-center gap-1 text-blue-600 font-medium hover:underline">
+                      <Mail className="w-4 h-4" />
                       Request document
                     </Link>
+                    <span className="text-xs text-text-body block mt-1">(OEM partners)</span>
                   </td>
                 </tr>
               </tbody>
@@ -301,7 +313,8 @@ export default function ResourcesPage() {
                   <td className="px-4 py-3 font-medium">ISO Certificate</td>
                   <td className="px-4 py-3">ISO 9001 quality management system certificate. Manufacturing process compliance.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <Link href="/request-quote?resource=iso-certificate&type=certification" className="inline-flex items-center gap-1 text-blue-600 font-medium hover:underline">
+                      <Mail className="w-4 h-4" />
                       Request copy
                     </Link>
                   </td>
@@ -310,7 +323,8 @@ export default function ResourcesPage() {
                   <td className="px-4 py-3 font-medium">ANSI Compliance Statement</td>
                   <td className="px-4 py-3">ANSI B175.1 compliance. Safety and performance standards for chainsaw chains.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <Link href="/request-quote?resource=ansi-compliance&type=certification" className="inline-flex items-center gap-1 text-blue-600 font-medium hover:underline">
+                      <Mail className="w-4 h-4" />
                       Request copy
                     </Link>
                   </td>
@@ -319,7 +333,8 @@ export default function ResourcesPage() {
                   <td className="px-4 py-3 font-medium">Quality Control Process</td>
                   <td className="px-4 py-3">QC procedures, inspection standards, material traceability, batch testing protocols.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <Link href="/request-quote?resource=qc-process&type=certification" className="inline-flex items-center gap-1 text-blue-600 font-medium hover:underline">
+                      <Mail className="w-4 h-4" />
                       Request document
                     </Link>
                   </td>
@@ -346,25 +361,30 @@ export default function ResourcesPage() {
                   <td className="px-4 py-3 font-medium">Ordering Guide</td>
                   <td className="px-4 py-3">MOQ by product, lead times, payment terms, shipping options, Incoterms. Standard and OEM orders.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <Link href="/request-quote?resource=ordering-guide&type=ordering" className="inline-flex items-center gap-1 text-blue-600 font-medium hover:underline">
+                      <Mail className="w-4 h-4" />
                       Request document
                     </Link>
+                    <span className="text-xs text-text-body block mt-1">(includes MOQ & pricing)</span>
                   </td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
                   <td className="px-4 py-3 font-medium">Shipping & Logistics</td>
                   <td className="px-4 py-3">Ports, transit times, container options, documentation requirements. North American import procedures.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <Link href="/request-quote?resource=shipping-logistics&type=ordering" className="inline-flex items-center gap-1 text-blue-600 font-medium hover:underline">
+                      <Mail className="w-4 h-4" />
                       Request document
                     </Link>
+                    <span className="text-xs text-text-body block mt-1">(24h response)</span>
                   </td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
                   <td className="px-4 py-3 font-medium">Part Number Reference</td>
                   <td className="px-4 py-3">Complete part number system. How to read part numbers: chain type, pitch, gauge, drive links.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <Link href="/request-quote?resource=part-number-reference&type=ordering" className="inline-flex items-center gap-1 text-blue-600 font-medium hover:underline">
+                      <Mail className="w-4 h-4" />
                       Request document
                     </Link>
                   </td>
@@ -391,18 +411,22 @@ export default function ResourcesPage() {
                   <td className="px-4 py-3 font-medium">Product Images</td>
                   <td className="px-4 py-3">High-resolution product photos. Retail box, chain detail, packaging. For distributor catalogs and websites.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <Link href="/request-quote?resource=product-images&type=media" className="inline-flex items-center gap-1 text-blue-600 font-medium hover:underline">
+                      <Mail className="w-4 h-4" />
                       Request access
                     </Link>
+                    <span className="text-xs text-text-body block mt-1">(requires authorization)</span>
                   </td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
                   <td className="px-4 py-3 font-medium">Logo & Brand Assets</td>
                   <td className="px-4 py-3">Company logo, brand guidelines (OEM partners). Vector and raster formats.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <Link href="/request-quote?resource=brand-assets&type=media" className="inline-flex items-center gap-1 text-blue-600 font-medium hover:underline">
+                      <Mail className="w-4 h-4" />
                       Request access
                     </Link>
+                    <span className="text-xs text-text-body block mt-1">(OEM partners only)</span>
                   </td>
                 </tr>
               </tbody>
@@ -427,18 +451,20 @@ export default function ResourcesPage() {
                   <td className="px-4 py-3 font-medium">Buyer&apos;s Guide</td>
                   <td className="px-4 py-3">How to specify chainsaw chains. Pitch, gauge, drive links explained. Common mistakes to avoid.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <button onClick={generateBuyersGuide} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                      <Download className="w-4 h-4" />
                       Download PDF
-                    </Link>
+                    </button>
                   </td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
                   <td className="px-4 py-3 font-medium">FAQ Document</td>
                   <td className="px-4 py-3">Frequently asked questions: MOQ, lead times, OEM customization, quality, shipping, returns.</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="text-forest-brand font-medium hover:underline">
+                    <button onClick={generateFAQDocument} className="inline-flex items-center gap-1 text-green-600 font-medium hover:underline text-left">
+                      <Download className="w-4 h-4" />
                       Download PDF
-                    </Link>
+                    </button>
                   </td>
                 </tr>
               </tbody>

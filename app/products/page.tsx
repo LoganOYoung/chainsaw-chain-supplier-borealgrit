@@ -190,6 +190,31 @@ export default function ProductsPage() {
           </p>
         </header>
 
+        {/* Product Catalog Notice */}
+        <section className="mb-10 bg-accent/5 border-2 border-forest-brand rounded-none p-6">
+          <div className="flex items-start gap-3">
+            <div className="flex-shrink-0 mt-1">
+              <svg className="w-6 h-6 text-forest-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div className="flex-1">
+              <h2 className="text-lg font-bold text-text-main mb-3">About This Catalog</h2>
+              <div className="space-y-2 text-sm text-text-body">
+                <p>
+                  <strong className="text-text-main">Standard Products (36 models):</strong> The products listed below represent our standard catalog - these are the most commonly ordered specifications and are available for immediate order. They cover approximately 80-90% of typical market demand across four key segments: battery-powered saws, cold-weather applications, professional logging, and standard duty.
+                </p>
+                <p>
+                  <strong className="text-text-main">Custom Specifications Available:</strong> While chainsaw chains have hundreds of possible specification combinations, we can manufacture any ANSI B175.1 compliant specification to meet your specific requirements. If you need a specification not listed here, please use our <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">RFQ form</Link> to request a quote for custom configurations.
+                </p>
+                <p>
+                  <strong className="text-text-main">OEM & Private Label:</strong> All products are available in OEM and private label configurations. Custom packaging, labeling, and part numbers available. Minimum order quantities (MOQ) and lead times vary by specification - contact us for details.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Product Range Summary */}
         <section className="mb-10 bg-white border border-forest-brand/30 rounded-none p-6">
           <h2 className="text-lg font-bold text-text-main mb-4">Complete Product Range</h2>
@@ -885,14 +910,17 @@ export default function ProductsPage() {
             </div>
           </div>
           <div className="mt-6 pt-6 border-t border-forest-brand/30 flex flex-wrap items-center gap-4">
-            <a
-              href="/api/download-catalog"
-              download
+            <button
+              onClick={() => {
+                import('@/lib/clientDownloadUtils').then(({ downloadCatalogCSV }) => {
+                  downloadCatalogCSV()
+                })
+              }}
               className="inline-flex items-center gap-2 text-sm text-forest-brand font-semibold hover:underline"
             >
               <Download className="w-4 h-4" />
               Download Complete Product Catalog (CSV)
-            </a>
+            </button>
             <Link
               href="/fitment-finder"
               className="inline-flex items-center gap-2 text-sm text-forest-brand font-semibold hover:underline"

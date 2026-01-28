@@ -37,6 +37,25 @@ function RequestQuoteForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   
+  // Resource request from URL
+  const resourceRequest = searchParams.get('resource')
+  const resourceType = searchParams.get('type')
+  
+  // Map resource codes to friendly names
+  const resourceNames: Record<string, string> = {
+    'product-catalog-pdf': 'Product Catalog PDF (with pricing)',
+    'packaging-specs': 'Packaging Specifications',
+    'labeling-standards': 'Labeling Standards',
+    'ordering-guide': 'Ordering Guide',
+    'shipping-logistics': 'Shipping & Logistics Information',
+    'part-number-reference': 'Part Number Reference Guide',
+    'iso-certificate': 'ISO Certificate',
+    'ansi-compliance': 'ANSI Compliance Statement',
+    'qc-process': 'Quality Control Process Document',
+    'product-images': 'Product Images',
+    'brand-assets': 'Logo & Brand Assets',
+  }
+  
   // Form data
   const [formData, setFormData] = useState({
     companyName: '',
@@ -45,7 +64,7 @@ function RequestQuoteForm() {
     phone: '',
     country: '',
     city: '',
-    message: '',
+    message: resourceRequest ? `I would like to request: ${resourceNames[resourceRequest] || resourceRequest}` : '',
     expectedQuantity: '',
     annualVolume: '',
     targetMarket: 'USA / Canada',
@@ -77,8 +96,11 @@ function RequestQuoteForm() {
         setCartProducts(products)
         setShowForm(true)
       }
+    } else if (resourceRequest) {
+      // If resource request, show form immediately
+      setShowForm(true)
     }
-  }, [searchParams])
+  }, [searchParams, resourceRequest])
 
   // Initialize EmailJS
   useEffect(() => {
@@ -253,21 +275,52 @@ ${formData.message}
       <Navigation />
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-text-main mb-2">Request for Quote</h1>
+          <h1 className="text-3xl font-bold text-text-main mb-2">
+            {resourceRequest ? 'Resource Request' : 'Request for Quote'}
+          </h1>
           <p className="text-text-body text-sm">
-            {showForm && cartProducts.length > 0 
-              ? 'Please fill in your contact information to receive a quote for the selected products.'
-              : 'Download our RFQ template, fill in your requirements, and send it to us for a quick quote.'}
+            {resourceRequest 
+              ? `Please fill in your contact information to receive: ${resourceNames[resourceRequest] || resourceRequest}. We'll send it within 24 hours.`
+              : showForm && cartProducts.length > 0 
+                ? 'Please fill in your contact information to receive a quote for the selected products.'
+                : 'Download our RFQ template, fill in your requirements, and send it to us for a quick quote.'}
           </p>
         </div>
 
+        {/* Resource Request Notice */}
+        {resourceRequest && (
+          <section className="mb-6 bg-blue-50 border-2 border-blue-200 rounded-none p-4">
+            <div className="flex items-start gap-3">
+              <Mail className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <h3 className="font-semibold text-text-main mb-1">Resource Request</h3>
+                <p className="text-sm text-text-body">
+                  You're requesting: <strong>{resourceNames[resourceRequest] || resourceRequest}</strong>
+                </p>
+                <p className="text-xs text-text-body mt-2">
+                  We'll send this resource to your email within 24 hours during business days.
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Bulk Quote Form */}
-        {showForm && cartProducts.length > 0 && (
+        {showForm && (cartProducts.length > 0 || resourceRequest) && (
           <section className="mb-8 bg-white rounded-none border-2 border-forest-brand shadow-lg p-6">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-text-main flex items-center gap-2">
-                <ShoppingCart className="w-6 h-6" />
-                Bulk Quote Request ({cartProducts.length} {cartProducts.length === 1 ? 'Product' : 'Products'})
+                {resourceRequest ? (
+                  <>
+                    <Mail className="w-6 h-6" />
+                    Resource Request Form
+                  </>
+                ) : (
+                  <>
+                    <ShoppingCart className="w-6 h-6" />
+                    Bulk Quote Request ({cartProducts.length} {cartProducts.length === 1 ? 'Product' : 'Products'})
+                  </>
+                )}
               </h2>
               <button
                 onClick={() => {
@@ -281,7 +334,8 @@ ${formData.message}
               </button>
             </div>
 
-            {/* Products Summary */}
+            {/* Products Summary - Only show if cart has products */}
+            {cartProducts.length > 0 && (
             <div className="mb-6 bg-gray-50 border border-forest-brand/30 rounded-none p-4">
               <h3 className="text-sm font-semibold text-text-main mb-3">Selected Products:</h3>
               <div className="space-y-3 max-h-64 overflow-y-auto">
@@ -308,6 +362,7 @@ ${formData.message}
                 ))}
               </div>
             </div>
+            )}
 
             {/* Contact Form */}
             <form onSubmit={handleSubmit} className="space-y-4">

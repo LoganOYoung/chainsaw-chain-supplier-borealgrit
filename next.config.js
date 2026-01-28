@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export', // Enable static export - pure frontend, no server needed
+  images: {
+    unoptimized: true, // Required for static export
+  },
   // Webpack configuration for better file watching in development
   webpack: (config, { dev }) => {
     if (dev) {
