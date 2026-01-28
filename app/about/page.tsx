@@ -61,7 +61,7 @@ export default function AboutPage() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-green-800/70 text-white p-3">
+              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
                 <p className="text-sm font-semibold">Production Line</p>
                 <p className="text-xs text-gray-200">ISO 9001 certified manufacturing facility</p>
               </div>
@@ -74,7 +74,7 @@ export default function AboutPage() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-green-800/70 text-white p-3">
+              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
                 <p className="text-sm font-semibold">Manufacturing Equipment</p>
                 <p className="text-xs text-gray-200">Precision machinery for quality production</p>
               </div>
