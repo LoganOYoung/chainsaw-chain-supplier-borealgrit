@@ -395,29 +395,23 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
 
   const currentStep = getCurrentStep()
 
-  // Step indicator component - Enhanced version with unified colors
+  // Step indicator component - Enhanced version (all steps unified in green theme)
   const StepIndicator = ({ step, label, isActive, isCompleted }: { step: number; label: string; isActive: boolean; isCompleted: boolean }) => (
     <div className="flex items-center flex-1 md:flex-row flex-col">
       <div className="flex flex-col items-center flex-1">
-        <div className={`relative w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-base md:text-lg border-2 transition-all duration-300 ${
+        <div className={`relative w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-base md:text-lg border-3 transition-all duration-300 ${
           isCompleted 
-            ? 'bg-green-600 text-white border-green-700 shadow-lg shadow-green-600/40 scale-110' 
+            ? 'bg-green-500 text-white border-green-600 shadow-lg shadow-green-500/50 scale-110' 
             : isActive 
-              ? 'bg-forest-brand text-white border-forest-brand shadow-lg shadow-forest-brand/40 scale-110 ring-4 ring-forest-brand/20' 
-              : 'bg-white text-gray-600 border-gray-400 shadow-sm'
+              ? 'bg-forest-brand text-white border-forest-brand shadow-lg shadow-forest-brand/50 scale-110 ring-4 ring-forest-brand/20' 
+              : 'bg-green-100 text-green-600 border-green-300'
         }`}>
           {isCompleted ? <CheckCircle className="w-7 h-7 md:w-8 md:h-8" /> : step}
           {isActive && !isCompleted && (
             <div className="absolute inset-0 rounded-full border-2 border-forest-brand animate-ping opacity-75"></div>
           )}
         </div>
-        <span className={`text-xs md:text-sm mt-3 font-semibold text-center max-w-[100px] md:max-w-[80px] transition-colors ${
-          isActive 
-            ? 'text-forest-brand' 
-            : isCompleted 
-              ? 'text-green-700' 
-              : 'text-gray-600'
-        }`}>
+        <span className={`text-xs md:text-sm mt-3 font-semibold text-center max-w-[100px] md:max-w-[80px] ${isActive ? 'text-forest-brand' : isCompleted ? 'text-green-600' : 'text-green-600'}`}>
           {label}
         </span>
       </div>
@@ -426,18 +420,18 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
           {/* Desktop: Horizontal connector */}
           <div className={`hidden md:block flex-1 h-1 mx-2 md:mx-4 transition-all duration-300 ${
             isCompleted 
-              ? 'bg-gradient-to-r from-green-600 via-green-500 to-green-400' 
+              ? 'bg-gradient-to-r from-green-500 to-green-400' 
               : isActive 
-                ? 'bg-gradient-to-r from-forest-brand via-forest-brand/60 to-gray-400' 
-                : 'bg-gray-400'
+                ? 'bg-gradient-to-r from-forest-brand to-green-300' 
+                : 'bg-green-300'
           }`} />
           {/* Mobile: Vertical connector */}
           <div className={`md:hidden w-1 h-8 my-2 transition-all duration-300 ${
             isCompleted 
-              ? 'bg-gradient-to-b from-green-600 via-green-500 to-green-400' 
+              ? 'bg-gradient-to-b from-green-500 to-green-400' 
               : isActive 
-                ? 'bg-gradient-to-b from-forest-brand via-forest-brand/60 to-gray-400' 
-                : 'bg-gray-400'
+                ? 'bg-gradient-to-b from-forest-brand to-green-300' 
+                : 'bg-green-300'
           }`} />
         </>
       )}
@@ -461,9 +455,9 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
 
         {/* Step Indicator - Only show for RFQ flow, not resource requests */}
         {!resourceRequest && (
-          <div className="mb-10 bg-white border-2 border-gray-200 rounded-none p-4 md:p-8 shadow-sm">
+          <div className="mb-10 bg-gradient-to-br from-gray-50 to-white border-2 border-forest-brand/30 rounded-none p-4 md:p-8 shadow-sm">
             <div className="mb-4 text-center">
-              <p className="text-sm text-gray-700 font-medium">
+              <p className="text-sm text-text-body font-medium">
                 Progress: <span className="text-forest-brand font-bold">{Math.round((currentStep / 4) * 100)}%</span> Complete
               </p>
             </div>
