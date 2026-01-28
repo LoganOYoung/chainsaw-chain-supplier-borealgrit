@@ -691,77 +691,79 @@ export default function ProductsPage() {
                         </button>
                       </div>
 
-                      {/* Quantity Editor */}
-                      <div className="mb-3">
-                        <label className="block text-xs font-semibold text-text-main mb-1">
-                          Quantity <span className="text-red-500">*</span>
-                        </label>
-                        <div className="flex items-center gap-2">
-                          <button
-                            onClick={() => updateQuantity(item.id, (item.quantity || 1) - 1)}
-                            className="p-1.5 border border-gray-300 bg-white hover:bg-gray-50 rounded-none"
-                            aria-label="Decrease quantity"
-                          >
-                            <Minus className="w-3 h-3" />
-                          </button>
-                          <input
-                            type="number"
-                            min="1"
-                            value={item.quantity || 1}
-                            onChange={(e) => {
-                              const value = e.target.value === '' ? 1 : parseInt(e.target.value)
-                              if (!isNaN(value) && value >= 1) {
-                                updateQuantity(item.id, value)
-                              }
-                            }}
-                            onBlur={(e) => {
-                              const value = parseInt(e.target.value)
-                              if (isNaN(value) || value < 1) {
-                                updateQuantity(item.id, 1)
-                              }
-                            }}
-                            className="w-20 px-2 py-1.5 text-sm border border-gray-300 rounded-none text-center focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none"
-                          />
-                          <button
-                            onClick={() => updateQuantity(item.id, (item.quantity || 1) + 1)}
-                            className="p-1.5 border border-gray-300 bg-white hover:bg-gray-50 rounded-none"
-                            aria-label="Increase quantity"
-                          >
-                            <Plus className="w-3 h-3" />
-                          </button>
+                      {/* Quantity, Packaging, Notes - Compact Layout */}
+                      <div className="space-y-2">
+                        {/* Quantity and Packaging in one row */}
+                        <div className="grid grid-cols-2 gap-3">
+                          <div className="flex items-center gap-2">
+                            <label className="text-xs font-semibold text-text-main whitespace-nowrap">
+                              Qty <span className="text-red-500">*</span>:
+                            </label>
+                            <div className="flex items-center gap-1">
+                              <button
+                                onClick={() => updateQuantity(item.id, (item.quantity || 1) - 1)}
+                                className="p-1 border border-gray-300 bg-white hover:bg-gray-50 rounded-none"
+                                aria-label="Decrease quantity"
+                              >
+                                <Minus className="w-3 h-3" />
+                              </button>
+                              <input
+                                type="number"
+                                min="1"
+                                value={item.quantity || 1}
+                                onChange={(e) => {
+                                  const value = e.target.value === '' ? 1 : parseInt(e.target.value)
+                                  if (!isNaN(value) && value >= 1) {
+                                    updateQuantity(item.id, value)
+                                  }
+                                }}
+                                onBlur={(e) => {
+                                  const value = parseInt(e.target.value)
+                                  if (isNaN(value) || value < 1) {
+                                    updateQuantity(item.id, 1)
+                                  }
+                                }}
+                                className="w-16 px-1.5 py-1 text-xs border border-gray-300 rounded-none text-center focus:ring-1 focus:ring-forest-brand focus:border-forest-brand outline-none"
+                              />
+                              <button
+                                onClick={() => updateQuantity(item.id, (item.quantity || 1) + 1)}
+                                className="p-1 border border-gray-300 bg-white hover:bg-gray-50 rounded-none"
+                                aria-label="Increase quantity"
+                              >
+                                <Plus className="w-3 h-3" />
+                              </button>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <label className="text-xs font-semibold text-text-main whitespace-nowrap">
+                              Packaging:
+                            </label>
+                            <select
+                              value={item.packaging || 'Standard'}
+                              onChange={(e) => updatePackaging(item.id, e.target.value)}
+                              className="flex-1 px-1.5 py-1 text-xs border border-gray-300 rounded-none focus:ring-1 focus:ring-forest-brand focus:border-forest-brand outline-none bg-white"
+                            >
+                              <option value="Standard">Standard</option>
+                              <option value="OEM">OEM</option>
+                              <option value="Private Label">Private Label</option>
+                              <option value="Bulk">Bulk</option>
+                              <option value="Custom">Custom</option>
+                            </select>
+                          </div>
                         </div>
-                      </div>
-
-                      {/* Packaging Selection */}
-                      <div className="mb-3">
-                        <label className="block text-xs font-semibold text-text-main mb-1">
-                          Packaging
-                        </label>
-                        <select
-                          value={item.packaging || 'Standard'}
-                          onChange={(e) => updatePackaging(item.id, e.target.value)}
-                          className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none bg-white"
-                        >
-                          <option value="Standard">Standard Packaging</option>
-                          <option value="OEM">OEM Packaging</option>
-                          <option value="Private Label">Private Label Packaging</option>
-                          <option value="Bulk">Bulk Packaging</option>
-                          <option value="Custom">Custom Packaging</option>
-                        </select>
-                      </div>
-
-                      {/* Notes */}
-                      <div>
-                        <label className="block text-xs font-semibold text-text-main mb-1">
-                          Notes (Optional)
-                        </label>
-                        <textarea
-                          value={item.notes || ''}
-                          onChange={(e) => updateNotes(item.id, e.target.value)}
-                          placeholder="Special requirements, customization needs..."
-                          rows={2}
-                          className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none resize-none"
-                        />
+                        {/* Notes in one row */}
+                        <div className="flex items-start gap-2">
+                          <label className="text-xs font-semibold text-text-main whitespace-nowrap pt-1">
+                            Notes:
+                          </label>
+                          <textarea
+                            value={item.notes || ''}
+                            onChange={(e) => updateNotes(item.id, e.target.value)}
+                            placeholder="Special requirements..."
+                            rows={1}
+                            className="flex-1 px-1.5 py-1 text-xs border border-gray-300 rounded-none focus:ring-1 focus:ring-forest-brand focus:border-forest-brand outline-none resize-none"
+                          />
+                        </div>
                       </div>
                     </div>
                   ))}
