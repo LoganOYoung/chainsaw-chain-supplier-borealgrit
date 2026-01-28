@@ -33,3 +33,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# temporary files
+temp_packages/
+*.py
+*.csv
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!tailwind.config.ts
+!postcss.config.js
