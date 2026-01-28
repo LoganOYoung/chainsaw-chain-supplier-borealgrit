@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 import { Download } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Resources & Downloads | Chainsaw Chain | ChainPro',
+  title: 'Resources & Downloads | Chainsaw Chain | Borealgrit',
   description: 'Download chainsaw chain catalogs, technical datasheets, fitment guides, packaging standards, quality certifications, ordering info. B2B resources for distributors, importers, and OEM partners.',
   keywords: 'chainsaw chain catalog, chainsaw chain datasheet, fitment guide, packaging standards, quality certifications, chainsaw chain resources, B2B downloads, technical documentation',
   openGraph: {

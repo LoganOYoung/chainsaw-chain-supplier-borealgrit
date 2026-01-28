@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Series E: Narrow Kerf Chains for Battery-Powered Saws | ChainPro',
+  title: 'Series E: Narrow Kerf Chains for Battery-Powered Saws | Borealgrit',
   description: '.043" Narrow Kerf chains for battery-powered saws. Compatible with Milwaukee, Makita, EGO, DeWalt cordless saws. Technical specifications and compatibility data.',
   keywords: 'Series E chainsaw chain, narrow kerf chain, battery chainsaw chain, cordless saw chain, .043 gauge chain, Milwaukee chainsaw chain, Makita chainsaw chain, EGO chainsaw chain, DeWalt chainsaw chain, electric chainsaw chain',
   openGraph: {
@@ -562,7 +562,7 @@ export default function SeriesEPage() {
             "description": ".043\" Narrow Kerf chains optimized for battery-powered saws. Reduces power consumption by 15-25% compared to standard chains.",
             "brand": {
               "@type": "Brand",
-              "name": "ChainPro"
+              "name": "Borealgrit"
             },
             "category": "Chainsaw Chain",
             "offers": {
@@ -593,19 +593,19 @@ export default function SeriesEPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://chainpro.com/"
+                "item": "https://borealgrit.com/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Products",
-                "item": "https://chainpro.com/products"
+                "item": "https://borealgrit.com/products"
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Series E",
-                "item": "https://chainpro.com/products/series-e"
+                "item": "https://borealgrit.com/products/series-e"
               }
             ]
           })

@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Chainsaw Chains for Cold Climate | ChainPro',
+  title: 'Chainsaw Chains for Cold Climate | Borealgrit',
   description: 'Cold-weather chainsaw chains with CrNiMo alloy steel. Impact toughness maintained at -40°C. Designed for frozen timber and Canadian winter conditions.',
   keywords: 'cold weather chainsaw chain, frozen wood chain, winter chainsaw chain, Canadian chainsaw chain, sub-zero chainsaw chain, -40°C chainsaw chain, CrNiMo alloy chain',
   openGraph: {

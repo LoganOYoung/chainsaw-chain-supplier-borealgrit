@@ -764,7 +764,7 @@ export default function ProductsPage() {
               "description": "Complete chainsaw chain product catalog with technical specifications. ANSI B175.1 and CSA Z62.3 compliant.",
               "brand": {
                 "@type": "Brand",
-                "name": "ChainPro"
+                "name": "Borealgrit"
               },
               "category": "Industrial Equipment",
               "offers": {

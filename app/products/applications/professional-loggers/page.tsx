@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Chainsaw Chains for Professional Loggers | ChainPro',
+  title: 'Chainsaw Chains for Professional Loggers | Borealgrit',
   description: 'High-performance chainsaw chains for professional logging operations. Full-chisel design with extended sharpening intervals. Series P and Full Chisel .325" options.',
   keywords: 'professional logging chainsaw chain, professional forester chain, high-speed logging chain, full chisel chain, chrome coated chain, professional chainsaw chain',
   openGraph: {

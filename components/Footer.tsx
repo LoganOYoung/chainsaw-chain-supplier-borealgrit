@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="md:max-w-xs">
-            <span className="font-heading font-bold text-white text-lg uppercase tracking-tight block mb-2">CHAINPRO</span>
+            <span className="font-heading font-bold text-white text-lg uppercase tracking-tight block mb-2">BOREALGRIT</span>
             <p className="text-sm text-white/80 leading-relaxed">Chainsaw chain manufacturer. B2B only. North American distributors and OEM.</p>
           </div>
           <div className="flex flex-wrap gap-8 md:gap-10">
@@ -51,7 +51,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <p className="text-xs text-white/60 mt-10 pt-6 border-t border-white/10">© ChainPro. All rights reserved.</p>
+        <p className="text-xs text-white/60 mt-10 pt-6 border-t border-white/10">© Borealgrit. All rights reserved.</p>
       </div>
     </footer>
   )

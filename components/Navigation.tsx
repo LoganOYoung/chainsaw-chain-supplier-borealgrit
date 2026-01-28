@@ -46,7 +46,7 @@ export default function Navigation() {
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           <Link href="/" className="font-heading font-bold text-white text-base md:text-lg tracking-tight uppercase">
-            CHAINPRO
+            BOREALGRIT
           </Link>
           <ul className="hidden md:flex items-center gap-6 text-sm font-semibold text-white">
             <li>

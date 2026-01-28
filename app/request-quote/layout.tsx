@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Request for Quote | Professional RFQ Template | ChainPro',
+  title: 'Request for Quote | Professional RFQ Template | Borealgrit',
   description: 'Download professional RFQ template for chainsaw chains. Designed for North American forestry standards (ANSI/CSA). Streamline your procurement process. We respond as soon as possible.',
   keywords: 'chainsaw chain RFQ, request for quote chainsaw chain, RFQ template chainsaw chain, chainsaw chain quote, B2B chainsaw chain RFQ, procurement template chainsaw chain',
   openGraph: {

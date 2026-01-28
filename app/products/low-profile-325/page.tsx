@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'LP-325 Low Profile .325" Chainsaw Chain | ChainPro',
+  title: 'LP-325 Low Profile .325" Chainsaw Chain | Borealgrit',
   description: 'Low profile chainsaw chain, .325" pitch. Low-kickback design for consumer and homeowner saws. ANSI compliant. Request quote or download datasheet.',
   keywords: 'low profile chainsaw chain, .325 pitch chain, LP-325 chain, low kickback chain, consumer chainsaw chain, homeowner chainsaw chain, safety chain, ANSI compliant chain',
   openGraph: {

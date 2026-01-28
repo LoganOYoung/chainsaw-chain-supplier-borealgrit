@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Series P: Professional High-Speed Logging Chains | ChainPro',
+  title: 'Series P: Professional High-Speed Logging Chains | Borealgrit',
   description: 'Full-chisel chainsaw chains with industrial chrome coating. 3/8" and .404" pitch for professional logging. Compatible with Stihl MS 362/661, Husqvarna 460/572.',
   keywords: 'Series P chainsaw chain, professional logging chain, full chisel chain, chrome coated chain, Stihl MS 362 chain, Stihl MS 661 chain, Husqvarna 460 chain, Husqvarna 572 chain, .404 pitch chain, professional chainsaw chain',
   openGraph: {
@@ -534,7 +534,7 @@ export default function SeriesPPage() {
             "description": "Full-chisel chainsaw chains with industrial chrome coating. 3/8\" and .404\" pitch for professional logging.",
             "brand": {
               "@type": "Brand",
-              "name": "ChainPro"
+              "name": "Borealgrit"
             },
             "category": "Chainsaw Chain",
             "offers": {
@@ -561,19 +561,19 @@ export default function SeriesPPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://chainpro.com/"
+                "item": "https://borealgrit.com/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Products",
-                "item": "https://chainpro.com/products"
+                "item": "https://borealgrit.com/products"
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Series P",
-                "item": "https://chainpro.com/products/series-p"
+                "item": "https://borealgrit.com/products/series-p"
               }
             ]
           })

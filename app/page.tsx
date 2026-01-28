@@ -439,10 +439,10 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "ChainPro",
+            "name": "Borealgrit",
             "description": "Professional chainsaw chain manufacturer for North American B2B markets",
-            "url": "https://chainpro.com",
-            "logo": "https://chainpro.com/logo.png",
+            "url": "https://borealgrit.com",
+            "logo": "https://borealgrit.com/logo.png",
             "contactPoint": {
               "@type": "ContactPoint",
               "contactType": "Sales",
@@ -468,7 +468,7 @@ export default function Home() {
             "description": "Professional chainsaw chains for North American B2B markets. ANSI B175.1 and CSA Z62.3 compliant.",
             "brand": {
               "@type": "Brand",
-              "name": "ChainPro"
+              "name": "Borealgrit"
             },
             "category": "Industrial Equipment",
             "offers": {
@@ -494,13 +494,13 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "ChainPro - Professional Chainsaw Chain Manufacturer",
-            "url": "https://chainpro.com",
+            "name": "Borealgrit - Professional Chainsaw Chain Manufacturer",
+            "url": "https://borealgrit.com",
             "potentialAction": {
               "@type": "SearchAction",
               "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://chainpro.com/products?q={search_term_string}"
+                "urlTemplate": "https://borealgrit.com/products?q={search_term_string}"
               },
               "query-input": "required name=search_term_string"
             }

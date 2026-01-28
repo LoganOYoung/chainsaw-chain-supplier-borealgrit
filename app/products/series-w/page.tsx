@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Series W: Cold-Weather Chainsaw Chains | ChainPro',
+  title: 'Series W: Cold-Weather Chainsaw Chains | Borealgrit',
   description: 'CrNiMo alloy steel chainsaw chains for cold weather. Impact toughness maintained at -40°C. Semi-chisel design for frozen and dirty wood. Canadian fitment guide.',
   keywords: 'Series W chainsaw chain, cold weather chainsaw chain, CrNiMo alloy chain, winter chainsaw chain, frozen wood chain, Canadian chainsaw chain, Husqvarna 455 chain, Stihl MS 250 chain, sub-zero chainsaw chain, -40°C chainsaw chain',
   openGraph: {
@@ -524,7 +524,7 @@ export default function SeriesWPage() {
             "description": "CrNiMo alloy steel chainsaw chains for cold weather. Impact toughness maintained at -40°C. Semi-chisel design for frozen and dirty wood.",
             "brand": {
               "@type": "Brand",
-              "name": "ChainPro"
+              "name": "Borealgrit"
             },
             "category": "Chainsaw Chain",
             "offers": {
@@ -551,19 +551,19 @@ export default function SeriesWPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://chainpro.com/"
+                "item": "https://borealgrit.com/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Products",
-                "item": "https://chainpro.com/products"
+                "item": "https://borealgrit.com/products"
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Series W",
-                "item": "https://chainpro.com/products/series-w"
+                "item": "https://borealgrit.com/products/series-w"
               }
             ]
           })

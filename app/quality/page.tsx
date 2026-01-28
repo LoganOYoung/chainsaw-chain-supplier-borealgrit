@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 import { ShieldCheck, Award, CheckCircle2, FileText, Microscope, BarChart3, Factory, ArrowRight, Download } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Quality & Certifications | ISO 9001, ANSI B175.1, CSA Z62.3 | ChainPro',
+  title: 'Quality & Certifications | ISO 9001, ANSI B175.1, CSA Z62.3 | Borealgrit',
   description: 'Chainsaw chain quality control and certifications. ISO 9001:2015 certified quality management system. ANSI B175.1 and CSA Z62.3 compliant. Material traceability, batch testing, pre-shipment inspection. B2B quality assurance for distributors and importers.',
   keywords: 'chainsaw chain quality control, ISO 9001 chainsaw chain, ANSI B175.1 compliant, CSA Z62.3 certified, chainsaw chain quality assurance, material traceability, batch testing, pre-shipment inspection, chainsaw chain certifications, quality management system',
   openGraph: {
@@ -490,7 +490,7 @@ export default function QualityPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "ChainPro",
+            "name": "Borealgrit",
             "description": "ISO 9001:2015 certified chainsaw chain manufacturer",
             "certification": [
               {

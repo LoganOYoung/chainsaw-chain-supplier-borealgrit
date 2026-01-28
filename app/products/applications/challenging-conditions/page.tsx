@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Chainsaw Chains for Challenging Conditions | ChainPro',
+  title: 'Chainsaw Chains for Challenging Conditions | Borealgrit',
   description: 'Durable chainsaw chains for dirty wood, frozen timber, and challenging cutting conditions. Semi-chisel design and cold-weather optimized options.',
   keywords: 'challenging conditions chainsaw chain, dirty wood chain, frozen wood chain, semi chisel chain, cold weather chain, tough conditions chain',
   openGraph: {
