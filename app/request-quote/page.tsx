@@ -819,13 +819,13 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
               </div>
             )}
 
-            {/* Download Button - Prominent */}
+            {/* Download Button */}
             <div className="mb-6">
               <button
                 onClick={downloadRFQTemplate}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-safety-orange text-white font-bold text-lg hover:bg-safety-orange/90 transition shadow-lg hover:shadow-xl rounded-none"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition shadow-md hover:shadow-lg rounded-none"
               >
-                <Download className="w-6 h-6" />
+                <Download className="w-4 h-4" />
                 Download Professional RFQ Template
               </button>
             </div>
