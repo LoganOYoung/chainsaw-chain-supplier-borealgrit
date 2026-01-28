@@ -843,138 +843,139 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
             </div>
           </div>
 
-          {/* Step 2: Upload Section - Enhanced with Drag & Drop */}
-          <div 
-            className={`mb-6 p-8 border-2 rounded-none transition-all duration-300 ${
-              currentStep >= 2 
-                ? 'bg-green-50 border-green-400 shadow-md' 
-                : 'bg-gray-50 border-dashed border-forest-brand/40 hover:border-forest-brand/60'
-            }`}
-            onDragOver={(e) => {
-              e.preventDefault()
-              e.stopPropagation()
-            }}
-            onDragLeave={(e) => {
-              e.preventDefault()
-              e.stopPropagation()
-            }}
-            onDrop={async (e) => {
-              e.preventDefault()
-              e.stopPropagation()
-              const files = e.dataTransfer.files
-              if (files.length > 0) {
-                const file = files[0]
-                const validTypes = [
-                  'text/csv',
-                  'application/vnd.ms-excel',
-                  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                  'application/vnd.ms-excel.sheet.macroEnabled.12'
-                ]
-                
-                if (!validTypes.includes(file.type) && !file.name.endsWith('.csv') && !file.name.endsWith('.xlsx') && !file.name.endsWith('.xls')) {
-                  alert('Please upload a CSV or Excel file (.csv, .xlsx, .xls)')
-                  return
-                }
+          {/* Step 2: Upload Section */}
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm ${
+                currentStep >= 2 ? 'bg-forest-brand text-white' : 'bg-gray-200 text-gray-400'
+              }`}>
+                {currentStep > 2 ? <CheckCircle className="w-5 h-5" /> : '2'}
+              </div>
+              <h2 className="text-2xl font-bold text-text-main">Upload Your Filled RFQ Template</h2>
+            </div>
+            
+            <p className="text-text-body text-sm mb-4 leading-relaxed">
+              Upload your completed RFQ template (CSV or Excel format). We'll parse the file and prepare a quote request form for you.
+            </p>
 
-                setIsUploading(true)
-                setUploadedFile(file)
-
-                try {
-                  const text = await file.text()
-                  setUploadedFileContent(text)
+            {/* Upload Area - Drag & Drop */}
+            <div 
+              className={`mb-6 p-6 border-2 rounded-none transition-all duration-300 ${
+                currentStep >= 2 
+                  ? 'bg-green-50 border-green-400 shadow-md' 
+                  : 'bg-gray-50 border-dashed border-forest-brand/40 hover:border-forest-brand/60'
+              }`}
+              onDragOver={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+              }}
+              onDragLeave={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+              }}
+              onDrop={async (e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                const files = e.dataTransfer.files
+                if (files.length > 0) {
+                  const file = files[0]
+                  const validTypes = [
+                    'text/csv',
+                    'application/vnd.ms-excel',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                    'application/vnd.ms-excel.sheet.macroEnabled.12'
+                  ]
                   
-                  if (file.name.endsWith('.csv') || file.type === 'text/csv') {
-                    const lines = text.split('\n').filter(line => line.trim())
-                    const products: CartProduct[] = []
+                  if (!validTypes.includes(file.type) && !file.name.endsWith('.csv') && !file.name.endsWith('.xlsx') && !file.name.endsWith('.xls')) {
+                    alert('Please upload a CSV or Excel file (.csv, .xlsx, .xls)')
+                    return
+                  }
+
+                  setIsUploading(true)
+                  setUploadedFile(file)
+
+                  try {
+                    const text = await file.text()
+                    setUploadedFileContent(text)
                     
-                    let inLineItemsSection = false
-                    let headerFound = false
-                    
-                    for (let i = 0; i < lines.length; i++) {
-                      const line = lines[i].trim()
+                    if (file.name.endsWith('.csv') || file.type === 'text/csv') {
+                      const lines = text.split('\n').filter(line => line.trim())
+                      const products: CartProduct[] = []
                       
-                      if (line.includes('SECTION 2: LINE ITEMS')) {
-                        inLineItemsSection = true
-                        continue
-                      }
+                      let inLineItemsSection = false
+                      let headerFound = false
                       
-                      if (inLineItemsSection && line.includes('No.,MDM No.')) {
-                        headerFound = true
-                        continue
-                      }
-                      
-                      if (inLineItemsSection && headerFound && line && !line.includes('SECTION')) {
-                        const columns = line.split(',').map(col => col.trim().replace(/^"|"$/g, ''))
-                        if (columns.length >= 5 && columns[0] && !isNaN(parseInt(columns[0]))) {
-                          const mdmNo = columns[1] || ''
-                          const pitch = columns[2] || ''
-                          const gauge = columns[3] || ''
-                          const driveLinks = columns[4] || ''
-                          
-                          if (mdmNo || pitch || gauge || driveLinks) {
-                            products.push({
-                              id: mdmNo,
-                              pitch: pitch,
-                              gauge: gauge,
-                              driveLinks: driveLinks,
-                              quantity: columns[14] ? parseInt(columns[14]) || 1 : 1,
-                              packaging: columns[13] || undefined,
-                              notes: columns[19] || undefined,
-                            })
+                      for (let i = 0; i < lines.length; i++) {
+                        const line = lines[i].trim()
+                        
+                        if (line.includes('SECTION 2: LINE ITEMS')) {
+                          inLineItemsSection = true
+                          continue
+                        }
+                        
+                        if (inLineItemsSection && line.includes('No.,MDM No.')) {
+                          headerFound = true
+                          continue
+                        }
+                        
+                        if (inLineItemsSection && headerFound && line && !line.includes('SECTION')) {
+                          const columns = line.split(',').map(col => col.trim().replace(/^"|"$/g, ''))
+                          if (columns.length >= 5 && columns[0] && !isNaN(parseInt(columns[0]))) {
+                            const mdmNo = columns[1] || ''
+                            const pitch = columns[2] || ''
+                            const gauge = columns[3] || ''
+                            const driveLinks = columns[4] || ''
+                            
+                            if (mdmNo || pitch || gauge || driveLinks) {
+                              products.push({
+                                id: mdmNo,
+                                pitch: pitch,
+                                gauge: gauge,
+                                driveLinks: driveLinks,
+                                quantity: columns[14] ? parseInt(columns[14]) || 1 : 1,
+                                packaging: columns[13] || undefined,
+                                notes: columns[19] || undefined,
+                              })
+                            }
                           }
+                        }
+                        
+                        if (inLineItemsSection && line.includes('SECTION 3')) {
+                          break
                         }
                       }
                       
-                      if (inLineItemsSection && line.includes('SECTION 3')) {
-                        break
+                      if (products.length > 0) {
+                        setCartProducts(products)
                       }
                     }
                     
-                    if (products.length > 0) {
-                      setCartProducts(products)
-                    }
+                    setShowForm(true)
+                    setFormData(prev => ({
+                      ...prev,
+                      message: prev.message || `I have uploaded an RFQ file: ${file.name}. Please review and provide pricing.`
+                    }))
+                    
+                  } catch (error) {
+                    console.error('Error reading file:', error)
+                    alert('Error reading file. Please try again.')
+                    setUploadedFile(null)
+                    setUploadedFileContent('')
+                  } finally {
+                    setIsUploading(false)
                   }
-                  
-                  setShowForm(true)
-                  setFormData(prev => ({
-                    ...prev,
-                    message: prev.message || `I have uploaded an RFQ file: ${file.name}. Please review and provide pricing.`
-                  }))
-                  
-                } catch (error) {
-                  console.error('Error reading file:', error)
-                  alert('Error reading file. Please try again.')
-                  setUploadedFile(null)
-                  setUploadedFileContent('')
-                } finally {
-                  setIsUploading(false)
                 }
-              }
-            }}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-base transition-all ${
-                currentStep >= 2 ? 'bg-green-500 text-white shadow-lg' : 'bg-gray-200 text-gray-400'
-              }`}>
-                {currentStep > 2 ? <CheckCircle className="w-6 h-6" /> : '2'}
-              </div>
-              <h3 className="text-xl font-bold text-text-main">Upload Your Filled RFQ Template</h3>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-5">
-              <p className="text-sm text-text-body text-center max-w-lg">
-                Upload your completed RFQ template (CSV or Excel format). We'll parse the file and prepare a quote request form for you.
-              </p>
-              
-              {/* Drag & Drop Area */}
-              <div className="w-full max-w-md">
-                <div className="border-2 border-dashed border-forest-brand/40 rounded-none p-8 text-center bg-white hover:bg-gray-50 transition cursor-pointer"
+              }}
+            >
+              <div className="flex flex-col items-center justify-center gap-4">
+                <div className="border-2 border-dashed border-forest-brand/40 rounded-none p-6 text-center bg-white hover:bg-gray-50 transition cursor-pointer w-full"
                   onClick={() => fileInputRef.current?.click()}
                 >
-                  <Upload className="w-12 h-12 text-forest-brand mx-auto mb-3" />
+                  <Upload className="w-10 h-10 text-forest-brand mx-auto mb-3" />
                   <p className="text-sm font-semibold text-text-main mb-1">
                     Drag & drop your file here
                   </p>
-                  <p className="text-xs text-text-body mb-4">or</p>
+                  <p className="text-xs text-text-body mb-3">or</p>
                   <input
                     ref={fileInputRef}
                     type="file"
@@ -985,16 +986,16 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                   />
                   <label
                     htmlFor="rfq-file-upload"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition cursor-pointer rounded-none shadow-md hover:shadow-lg"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition cursor-pointer rounded-none shadow-md hover:shadow-lg"
                   >
                     {isUploading ? (
                       <>
-                        <Loader2 className="w-5 h-5 animate-spin" />
+                        <Loader2 className="w-4 h-4 animate-spin" />
                         Processing...
                       </>
                     ) : (
                       <>
-                        <Upload className="w-5 h-5" />
+                        <Upload className="w-4 h-4" />
                         Choose File to Upload
                       </>
                     )}
@@ -1003,45 +1004,45 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                     Supported formats: CSV, XLS, XLSX
                   </p>
                 </div>
-              </div>
 
-              {/* Uploaded File Card */}
-              {uploadedFile && (
-                <div className="w-full max-w-md bg-white border-2 border-green-400 rounded-none p-4 shadow-md">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex items-start gap-3 flex-1">
-                      <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-none flex items-center justify-center">
-                        <FileText className="w-6 h-6 text-green-600" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-semibold text-text-main text-sm mb-1 truncate">{uploadedFile.name}</h4>
-                        <p className="text-xs text-text-body">
-                          {Math.round(uploadedFile.size / 1024)} KB • {uploadedFile.type || 'File'}
-                        </p>
-                        {cartProducts.length > 0 && (
-                          <p className="text-xs text-green-600 font-medium mt-1">
-                            ✓ Found {cartProducts.length} product{cartProducts.length !== 1 ? 's' : ''}
+                {/* Uploaded File Card */}
+                {uploadedFile && (
+                  <div className="w-full bg-white border-2 border-green-400 rounded-none p-4 shadow-md">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-start gap-3 flex-1">
+                        <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-none flex items-center justify-center">
+                          <FileText className="w-6 h-6 text-green-600" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-semibold text-text-main text-sm mb-1 truncate">{uploadedFile.name}</h4>
+                          <p className="text-xs text-text-body">
+                            {Math.round(uploadedFile.size / 1024)} KB • {uploadedFile.type || 'File'}
                           </p>
-                        )}
+                          {cartProducts.length > 0 && (
+                            <p className="text-xs text-green-600 font-medium mt-1">
+                              ✓ Found {cartProducts.length} product{cartProducts.length !== 1 ? 's' : ''}
+                            </p>
+                          )}
+                        </div>
                       </div>
+                      <button
+                        onClick={() => {
+                          setUploadedFile(null)
+                          setUploadedFileContent('')
+                          setCartProducts([])
+                          if (fileInputRef.current) {
+                            fileInputRef.current.value = ''
+                          }
+                        }}
+                        className="flex-shrink-0 text-red-600 hover:text-red-700 hover:bg-red-50 p-1 rounded-none transition"
+                        aria-label="Remove file"
+                      >
+                        <X className="w-5 h-5" />
+                      </button>
                     </div>
-                    <button
-                      onClick={() => {
-                        setUploadedFile(null)
-                        setUploadedFileContent('')
-                        setCartProducts([])
-                        if (fileInputRef.current) {
-                          fileInputRef.current.value = ''
-                        }
-                      }}
-                      className="flex-shrink-0 text-red-600 hover:text-red-700 hover:bg-red-50 p-1 rounded-none transition"
-                      aria-label="Remove file"
-                    >
-                      <X className="w-5 h-5" />
-                    </button>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </div>
           
