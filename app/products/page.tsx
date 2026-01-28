@@ -717,22 +717,13 @@ export default function ProductsPage() {
                       </td>
                       <td className="px-4 py-3 text-text-body text-xs">{product.description}</td>
                       <td className="px-4 py-3">
-                        <div className="flex flex-col gap-1.5">
-                          <button
-                            onClick={() => addToCart(product)}
-                            className="text-xs px-3 py-1.5 bg-forest-brand text-white font-semibold hover:bg-forest-brand/90 transition rounded-none text-center"
-                            aria-label={`Add ${product.id} to RFQ cart`}
-                          >
-                            Add to RFQ
-                          </button>
-                          <Link
-                            href={`/request-quote?product=${product.id}&pitch=${encodeURIComponent(product.pitch)}&gauge=${encodeURIComponent(product.gauge)}&driveLinks=${encodeURIComponent(product.driveLinks)}`}
-                            className="text-forest-brand text-xs font-medium hover:underline text-center"
-                            aria-label={`Request quote for ${product.id}`}
-                          >
-                            Quick Quote
-                          </Link>
-                        </div>
+                        <button
+                          onClick={() => addToCart(product)}
+                          className="text-xs px-3 py-1.5 bg-forest-brand text-white font-semibold hover:bg-forest-brand/90 transition rounded-none text-center"
+                          aria-label={`Add ${product.id} to RFQ cart`}
+                        >
+                          Add to RFQ
+                        </button>
                       </td>
                     </tr>
                   ))
