@@ -62,10 +62,10 @@ export default function ResourcesPage() {
                   </td>
                   <td className="px-4 py-3">Complete product line: full, semi, low profile. All pitches, gauges, drive link counts. Specifications, packaging, pricing (on request).</td>
                   <td className="px-4 py-3">
-                    <Link href="/contact" className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline">
+                    <a href="/api/download-catalog" download className="inline-flex items-center gap-1 text-forest-brand font-medium hover:underline">
                       <Download className="w-4 h-4" />
-                      Request download
-                    </Link>
+                      Download CSV
+                    </a>
                   </td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
