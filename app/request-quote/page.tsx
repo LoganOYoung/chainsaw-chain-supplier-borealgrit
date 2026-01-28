@@ -1026,6 +1026,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
             </ul>
           </div>
         </section>
+        )}
 
         {/* Contact Information Grid */}
         <section className="mb-8">
