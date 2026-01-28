@@ -37,8 +37,8 @@ const config: Config = {
         'forest-light': '#F0F5F2',     // Light gray-green for backgrounds
         'safety-orange': '#F28C28',     // Safety orange for CTA buttons
         'cream-white': '#F8F9F5',      // Cream white for text on dark green (updated)
-        accent: '#2D5A27',             // Brand green as default accent
-        forest: '#2D5A27',
+        accent: '#426B3D',             // Brand green as default accent (updated to match forest-brand)
+        forest: '#426B3D',             // Updated to match forest-brand
         // Text Colors
         'text-main': '#222222',        // Deep charcoal for headings
         'text-body': '#555555',        // Medium gray for body text
