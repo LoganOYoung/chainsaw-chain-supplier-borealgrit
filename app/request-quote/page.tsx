@@ -765,40 +765,66 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
         {/* Step 1 & 2: RFQ Template Download & Upload */}
         {!showForm && !resourceRequest && (
         <section className="mb-8 bg-white rounded-none border border-forest-brand/30 shadow-sm p-6">
-          <div className="flex items-center gap-3 mb-4">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm ${
-              currentStep >= 1 ? 'bg-forest-brand text-white' : 'bg-gray-200 text-gray-400'
-            }`}>
-              {currentStep > 1 ? <CheckCircle className="w-5 h-5" /> : '1'}
+          {/* Step 1: Download Template */}
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm ${
+                currentStep >= 1 ? 'bg-forest-brand text-white' : 'bg-gray-200 text-gray-400'
+              }`}>
+                {currentStep > 1 ? <CheckCircle className="w-5 h-5" /> : '1'}
+              </div>
+              <h2 className="text-2xl font-bold text-text-main">Download RFQ Template</h2>
             </div>
-            <h2 className="text-2xl font-bold text-text-main">Download RFQ Template</h2>
-          </div>
-          
-          <p className="text-text-body text-sm mb-6 leading-relaxed">
-            Download our Professional RFQ Template to streamline your procurement process. This template is designed specifically for North American forestry standards (ANSI/CSA). Fill it out with your product requirements, then upload it in the next step.
-          </p>
+            
+            <p className="text-text-body text-sm mb-4 leading-relaxed">
+              Download our Professional RFQ Template to streamline your procurement process. This template is designed specifically for North American forestry standards (ANSI/CSA). Fill it out with your product requirements, then upload it in the next step.
+            </p>
 
-          {/* Quick Start Tip */}
-          {currentStep === 1 && (
-            <div className="mb-6 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-none">
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 mt-0.5">
-                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-text-main text-sm mb-1">Quick Start Guide</h3>
-                  <p className="text-xs text-text-body">
-                    <strong>Step 1:</strong> Download the template below → <strong>Step 2:</strong> Fill in your requirements in Excel → <strong>Step 3:</strong> Upload the completed file → <strong>Step 4:</strong> Fill in your contact information and submit.
-                  </p>
+            {/* Quick Start Tip */}
+            {currentStep === 1 && (
+              <div className="mb-6 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-none">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-text-main text-sm mb-1">Quick Start Guide</h3>
+                    <p className="text-xs text-text-body">
+                      <strong>Step 1:</strong> Download the template below → <strong>Step 2:</strong> Fill in your requirements in Excel → <strong>Step 3:</strong> Upload the completed file → <strong>Step 4:</strong> Fill in your contact information and submit.
+                    </p>
+                  </div>
                 </div>
               </div>
+            )}
+
+            {/* Download Button - Prominent */}
+            <div className="mb-6">
+              <button
+                onClick={downloadRFQTemplate}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-safety-orange text-white font-bold text-lg hover:bg-safety-orange/90 transition shadow-lg hover:shadow-xl rounded-none"
+              >
+                <Download className="w-6 h-6" />
+                Download Professional RFQ Template
+              </button>
             </div>
-          )}
-          
-          {/* Upload Section - Step 2 */}
-          <div className={`mb-6 p-4 border-2 rounded-none transition ${
+
+            {/* Template Features */}
+            <div className="mb-6 pt-4 border-t border-forest-brand/30">
+              <p className="text-xs text-text-body mb-3 font-semibold">Template Features:</p>
+              <ul className="text-xs text-text-body space-y-1">
+                <li>• Granular specification fields (Pitch, Gauge, Drive Links, Cutter Profile)</li>
+                <li>• Steel grade selection (68CrNiMo premium alloy / 65Mn standard)</li>
+                <li>• Sample request tracking per line item</li>
+                <li>• ANSI/CSA compliance fields</li>
+                <li>• Excel-compatible CSV format</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Step 2: Upload Section */}
+          <div className={`mb-6 p-6 border-2 rounded-none transition ${
             currentStep >= 2 
               ? 'bg-green-50 border-green-300' 
               : 'bg-gray-50 border-dashed border-forest-brand/30'
@@ -869,8 +895,12 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
             </div>
           </div>
           
-          {/* RFQ Template Preview */}
-          <div className="mb-6 bg-gray-50 border-2 border-forest-brand/30 rounded-none p-4 overflow-x-auto">
+          {/* RFQ Template Preview - Collapsible/Secondary */}
+          <details className="mb-6 bg-gray-50 border-2 border-forest-brand/30 rounded-none overflow-hidden">
+            <summary className="px-4 py-3 bg-gray-100 cursor-pointer text-sm font-semibold text-text-main hover:bg-gray-200 transition">
+              View Template Structure Preview
+            </summary>
+            <div className="p-4 overflow-x-auto">
             <div className="bg-white border border-gray-300 rounded-none overflow-hidden">
               {/* Section 1: RFQ Header */}
               <div className="border-b border-gray-300">
@@ -1006,25 +1036,8 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
               </div>
             </div>
             <p className="text-xs text-text-body mt-3 text-center">RFQ Template Structure Preview - Download CSV for Excel editing</p>
-          </div>
-          
-          <button
-            onClick={downloadRFQTemplate}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-safety-orange text-white font-semibold text-sm hover:bg-safety-orange/90 transition shadow-sm hover:shadow-md"
-          >
-            <Download className="w-5 h-5" />
-            Download Professional RFQ Template
-          </button>
-          <div className="mt-6 pt-6 border-t border-forest-brand/30">
-            <p className="text-xs text-text-body mb-3 font-semibold">Template Features:</p>
-            <ul className="text-xs text-text-body space-y-1">
-              <li>• Granular specification fields (Pitch, Gauge, Drive Links, Cutter Profile)</li>
-              <li>• Steel grade selection (68CrNiMo premium alloy / 65Mn standard)</li>
-              <li>• Sample request tracking per line item</li>
-              <li>• ANSI/CSA compliance fields</li>
-              <li>• Excel-compatible CSV format</li>
-            </ul>
-          </div>
+            </div>
+          </details>
         </section>
         )}
 
