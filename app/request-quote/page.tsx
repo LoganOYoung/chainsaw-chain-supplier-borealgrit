@@ -297,11 +297,9 @@ ${formData.message}
                       </div>
                       <span className="text-text-body text-sm font-medium">Qty: {product.quantity || 1}</span>
                     </div>
-                    {product.packaging && (
-                      <div className="text-xs text-text-body mb-1">
-                        <span className="font-semibold">Packaging:</span> {product.packaging}
-                      </div>
-                    )}
+                    <div className="text-xs text-text-body mb-1">
+                      <span className="font-semibold">Packaging:</span> {product.packaging || 'Standard'}
+                    </div>
                     {product.notes && (
                       <div className="text-xs text-text-body mt-2 pt-2 border-t border-gray-200">
                         <span className="font-semibold">Notes:</span> {product.notes}

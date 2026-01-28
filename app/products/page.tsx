@@ -708,7 +708,18 @@ export default function ProductsPage() {
                             type="number"
                             min="1"
                             value={item.quantity || 1}
-                            onChange={(e) => updateQuantity(item.id, parseInt(e.target.value) || 1)}
+                            onChange={(e) => {
+                              const value = e.target.value === '' ? 1 : parseInt(e.target.value)
+                              if (!isNaN(value) && value >= 1) {
+                                updateQuantity(item.id, value)
+                              }
+                            }}
+                            onBlur={(e) => {
+                              const value = parseInt(e.target.value)
+                              if (isNaN(value) || value < 1) {
+                                updateQuantity(item.id, 1)
+                              }
+                            }}
                             className="w-20 px-2 py-1.5 text-sm border border-gray-300 rounded-none text-center focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none"
                           />
                           <button
