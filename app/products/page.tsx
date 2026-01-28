@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Search, Filter, Download, ArrowRight, ChevronDown, ShoppingCart, X } from 'lucide-react'
+import { Search, Filter, Download, ArrowRight, ChevronDown, ShoppingCart, X, Plus, Minus } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -94,7 +94,11 @@ export default function ProductsPage() {
   const [showFilters, setShowFilters] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [itemsPerPage, setItemsPerPage] = useState(20)
-  const [rfqCart, setRfqCart] = useState<Array<typeof PRODUCT_CATALOG[0] & { quantity?: number }>>([])
+  const [rfqCart, setRfqCart] = useState<Array<typeof PRODUCT_CATALOG[0] & { 
+    quantity?: number
+    packaging?: string
+    notes?: string
+  }>>([])
   const [showCart, setShowCart] = useState(false)
 
   // Add product to RFQ cart
@@ -107,7 +111,7 @@ export default function ProductsPage() {
       setRfqCart(updatedCart)
     } else {
       // Add new product
-      setRfqCart([...rfqCart, { ...product, quantity: 1 }])
+      setRfqCart([...rfqCart, { ...product, quantity: 1, packaging: 'Standard', notes: '' }])
     }
     setShowCart(true)
   }
@@ -115,6 +119,28 @@ export default function ProductsPage() {
   // Remove product from cart
   const removeFromCart = (productId: string) => {
     setRfqCart(rfqCart.filter(item => item.id !== productId))
+  }
+
+  // Update product quantity in cart
+  const updateQuantity = (productId: string, newQuantity: number) => {
+    if (newQuantity < 1) return
+    setRfqCart(rfqCart.map(item => 
+      item.id === productId ? { ...item, quantity: newQuantity } : item
+    ))
+  }
+
+  // Update product packaging in cart
+  const updatePackaging = (productId: string, packaging: string) => {
+    setRfqCart(rfqCart.map(item => 
+      item.id === productId ? { ...item, packaging } : item
+    ))
+  }
+
+  // Update product notes in cart
+  const updateNotes = (productId: string, notes: string) => {
+    setRfqCart(rfqCart.map(item => 
+      item.id === productId ? { ...item, notes } : item
+    ))
   }
 
   // Build bulk RFQ URL
@@ -127,6 +153,12 @@ export default function ProductsPage() {
       params.append(`driveLinks_${index}`, item.driveLinks)
       if (item.quantity) {
         params.append(`quantity_${index}`, item.quantity.toString())
+      }
+      if (item.packaging) {
+        params.append(`packaging_${index}`, item.packaging)
+      }
+      if (item.notes) {
+        params.append(`notes_${index}`, item.notes)
       }
     })
     return `/request-quote?${params.toString()}&bulk=true`
@@ -638,23 +670,88 @@ export default function ProductsPage() {
                   </button>
                 </div>
               </div>
-              <div className="max-h-60 overflow-y-auto mb-3">
-                <div className="space-y-2">
+              <div className="max-h-96 overflow-y-auto mb-3">
+                <div className="space-y-4">
                   {rfqCart.map((item) => (
-                    <div key={item.id} className="flex items-center justify-between p-2 bg-gray-50 border border-gray-200 rounded-none">
-                      <div className="flex-1">
-                        <div className="font-semibold text-sm text-text-main">{item.id}</div>
-                        <div className="text-xs text-text-body">
-                          {item.pitch} / {item.gauge} / {item.driveLinks} - {item.chainType} {item.cutterType}
+                    <div key={item.id} className="p-3 bg-gray-50 border border-gray-200 rounded-none">
+                      {/* Product Info */}
+                      <div className="flex items-start justify-between mb-3">
+                        <div className="flex-1">
+                          <div className="font-semibold text-sm text-text-main">{item.id}</div>
+                          <div className="text-xs text-text-body">
+                            {item.pitch} / {item.gauge} / {item.driveLinks} - {item.chainType} {item.cutterType}
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => removeFromCart(item.id)}
+                          className="text-red-600 hover:text-red-800 p-1 ml-2"
+                          aria-label={`Remove ${item.id} from cart`}
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+
+                      {/* Quantity Editor */}
+                      <div className="mb-3">
+                        <label className="block text-xs font-semibold text-text-main mb-1">
+                          Quantity <span className="text-red-500">*</span>
+                        </label>
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() => updateQuantity(item.id, (item.quantity || 1) - 1)}
+                            className="p-1.5 border border-gray-300 bg-white hover:bg-gray-50 rounded-none"
+                            aria-label="Decrease quantity"
+                          >
+                            <Minus className="w-3 h-3" />
+                          </button>
+                          <input
+                            type="number"
+                            min="1"
+                            value={item.quantity || 1}
+                            onChange={(e) => updateQuantity(item.id, parseInt(e.target.value) || 1)}
+                            className="w-20 px-2 py-1.5 text-sm border border-gray-300 rounded-none text-center focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none"
+                          />
+                          <button
+                            onClick={() => updateQuantity(item.id, (item.quantity || 1) + 1)}
+                            className="p-1.5 border border-gray-300 bg-white hover:bg-gray-50 rounded-none"
+                            aria-label="Increase quantity"
+                          >
+                            <Plus className="w-3 h-3" />
+                          </button>
                         </div>
                       </div>
-                      <button
-                        onClick={() => removeFromCart(item.id)}
-                        className="text-red-600 hover:text-red-800 p-1"
-                        aria-label={`Remove ${item.id} from cart`}
-                      >
-                        <X className="w-4 h-4" />
-                      </button>
+
+                      {/* Packaging Selection */}
+                      <div className="mb-3">
+                        <label className="block text-xs font-semibold text-text-main mb-1">
+                          Packaging
+                        </label>
+                        <select
+                          value={item.packaging || 'Standard'}
+                          onChange={(e) => updatePackaging(item.id, e.target.value)}
+                          className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none bg-white"
+                        >
+                          <option value="Standard">Standard Packaging</option>
+                          <option value="OEM">OEM Packaging</option>
+                          <option value="Private Label">Private Label Packaging</option>
+                          <option value="Bulk">Bulk Packaging</option>
+                          <option value="Custom">Custom Packaging</option>
+                        </select>
+                      </div>
+
+                      {/* Notes */}
+                      <div>
+                        <label className="block text-xs font-semibold text-text-main mb-1">
+                          Notes (Optional)
+                        </label>
+                        <textarea
+                          value={item.notes || ''}
+                          onChange={(e) => updateNotes(item.id, e.target.value)}
+                          placeholder="Special requirements, customization needs..."
+                          rows={2}
+                          className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none resize-none"
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>

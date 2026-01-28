@@ -27,6 +27,8 @@ interface CartProduct {
   gauge: string
   driveLinks: string
   quantity?: number
+  packaging?: string
+  notes?: string
 }
 
 function RequestQuoteForm() {
@@ -66,6 +68,8 @@ function RequestQuoteForm() {
           gauge: searchParams.get(`gauge_${index}`) || '',
           driveLinks: searchParams.get(`driveLinks_${index}`) || '',
           quantity: parseInt(searchParams.get(`quantity_${index}`) || '1'),
+          packaging: searchParams.get(`packaging_${index}`) || undefined,
+          notes: searchParams.get(`notes_${index}`) || undefined,
         })
         index++
       }
@@ -107,7 +111,12 @@ Country: ${formData.country}
 City: ${formData.city}
 
 Products Requested:
-${cartProducts.map((p, i) => `${i + 1}. ${p.id} - ${p.pitch} / ${p.gauge} / ${p.driveLinks} (Qty: ${p.quantity || 1})`).join('\n')}
+${cartProducts.map((p, i) => {
+  let productInfo = `${i + 1}. ${p.id} - ${p.pitch} / ${p.gauge} / ${p.driveLinks} (Qty: ${p.quantity || 1})`
+  if (p.packaging) productInfo += `\n   Packaging: ${p.packaging}`
+  if (p.notes) productInfo += `\n   Notes: ${p.notes}`
+  return productInfo
+}).join('\n\n')}
 
 Expected Quantity: ${formData.expectedQuantity}
 Annual Volume: ${formData.annualVolume}
@@ -139,9 +148,12 @@ ${formData.message}
         target_market: formData.targetMarket,
         incoterms: formData.incoterms,
         currency: formData.currency,
-        products: cartProducts.map((p, i) => 
-          `${i + 1}. ${p.id} - ${p.pitch} / ${p.gauge} / ${p.driveLinks} (Qty: ${p.quantity || 1})`
-        ).join('\n'),
+        products: cartProducts.map((p, i) => {
+          let productInfo = `${i + 1}. ${p.id} - ${p.pitch} / ${p.gauge} / ${p.driveLinks} (Qty: ${p.quantity || 1})`
+          if (p.packaging) productInfo += `\n   Packaging: ${p.packaging}`
+          if (p.notes) productInfo += `\n   Notes: ${p.notes}`
+          return productInfo
+        }).join('\n\n'),
         product_count: cartProducts.length.toString(),
         submission_date: new Date().toLocaleString(),
       }
@@ -273,16 +285,28 @@ ${formData.message}
             {/* Products Summary */}
             <div className="mb-6 bg-gray-50 border border-forest-brand/30 rounded-none p-4">
               <h3 className="text-sm font-semibold text-text-main mb-3">Selected Products:</h3>
-              <div className="space-y-2 max-h-48 overflow-y-auto">
+              <div className="space-y-3 max-h-64 overflow-y-auto">
                 {cartProducts.map((product, index) => (
-                  <div key={index} className="flex items-center justify-between text-sm bg-white p-2 rounded-none border border-gray-200">
-                    <div>
-                      <span className="font-mono font-semibold text-text-main">{product.id}</span>
-                      <span className="text-text-body ml-2">
-                        {product.pitch} / {product.gauge} / {product.driveLinks}
-                      </span>
+                  <div key={index} className="bg-white p-3 rounded-none border border-gray-200">
+                    <div className="flex items-start justify-between mb-2">
+                      <div className="flex-1">
+                        <span className="font-mono font-semibold text-text-main text-sm">{product.id}</span>
+                        <span className="text-text-body text-xs ml-2">
+                          {product.pitch} / {product.gauge} / {product.driveLinks}
+                        </span>
+                      </div>
+                      <span className="text-text-body text-sm font-medium">Qty: {product.quantity || 1}</span>
                     </div>
-                    <span className="text-text-body">Qty: {product.quantity || 1}</span>
+                    {product.packaging && (
+                      <div className="text-xs text-text-body mb-1">
+                        <span className="font-semibold">Packaging:</span> {product.packaging}
+                      </div>
+                    )}
+                    {product.notes && (
+                      <div className="text-xs text-text-body mt-2 pt-2 border-t border-gray-200">
+                        <span className="font-semibold">Notes:</span> {product.notes}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
