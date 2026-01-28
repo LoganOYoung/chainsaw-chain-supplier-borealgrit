@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Search, Filter, Download, ArrowRight, ChevronDown, ShoppingCart, X, Plus, Minus } from 'lucide-react'
+import { Search, Filter, Download, ArrowRight, ChevronDown } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { PRODUCT_CATALOG } from '@/lib/productCatalog'
@@ -20,81 +20,6 @@ export default function ProductsPage() {
   const [showFilters, setShowFilters] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [itemsPerPage, setItemsPerPage] = useState(20)
-  const [rfqCart, setRfqCart] = useState<Array<typeof PRODUCT_CATALOG[number] & { 
-    quantity?: number
-    packaging?: string
-    notes?: string
-  }>>([])
-  const [showCart, setShowCart] = useState(false)
-
-  // Add product to RFQ cart
-  const addToCart = (product: typeof PRODUCT_CATALOG[number]) => {
-    const existingIndex = rfqCart.findIndex(item => item.id === product.id)
-    if (existingIndex >= 0) {
-      // Update quantity if already in cart
-      const updatedCart = [...rfqCart]
-      updatedCart[existingIndex] = { ...updatedCart[existingIndex], quantity: (updatedCart[existingIndex].quantity || 1) + 1 }
-      setRfqCart(updatedCart)
-    } else {
-      // Add new product
-      setRfqCart([...rfqCart, { ...product, quantity: 1, packaging: 'Standard', notes: '' }])
-    }
-    setShowCart(true)
-  }
-
-  // Remove product from cart
-  const removeFromCart = (productId: string) => {
-    setRfqCart(rfqCart.filter(item => item.id !== productId))
-  }
-
-  // Update product quantity in cart
-  const updateQuantity = (productId: string, newQuantity: number) => {
-    if (newQuantity < 1) return
-    setRfqCart(rfqCart.map(item => 
-      item.id === productId ? { ...item, quantity: newQuantity } : item
-    ))
-  }
-
-  // Update product packaging in cart
-  const updatePackaging = (productId: string, packaging: string) => {
-    setRfqCart(rfqCart.map(item => 
-      item.id === productId ? { ...item, packaging } : item
-    ))
-  }
-
-  // Update product notes in cart
-  const updateNotes = (productId: string, notes: string) => {
-    setRfqCart(rfqCart.map(item => 
-      item.id === productId ? { ...item, notes } : item
-    ))
-  }
-
-  // Build bulk RFQ URL
-  const buildBulkRFQUrl = () => {
-    const params = new URLSearchParams()
-    rfqCart.forEach((item, index) => {
-      params.append(`product_${index}`, item.id)
-      params.append(`pitch_${index}`, item.pitch)
-      params.append(`gauge_${index}`, item.gauge)
-      params.append(`driveLinks_${index}`, item.driveLinks)
-      if (item.quantity) {
-        params.append(`quantity_${index}`, item.quantity.toString())
-      }
-      if (item.packaging) {
-        params.append(`packaging_${index}`, item.packaging)
-      }
-      if (item.notes) {
-        params.append(`notes_${index}`, item.notes)
-      }
-    })
-    return `/request-quote?${params.toString()}&bulk=true`
-  }
-
-  // Clear cart
-  const clearCart = () => {
-    setRfqCart([])
-    setShowCart(false)
-  }
 
   // Get unique values for filter options
   const uniquePitches = useMemo(() => [...new Set(PRODUCT_CATALOG.map(p => p.pitch))].sort(), [])
@@ -205,10 +130,13 @@ export default function ProductsPage() {
                   <strong className="text-text-main">Standard Products (36 models):</strong> The products listed below represent our standard catalog - these are the most commonly ordered specifications and are available for immediate order. They cover approximately 80-90% of typical market demand across four key segments: battery-powered saws, cold-weather applications, professional logging, and standard duty.
                 </p>
                 <p>
-                  <strong className="text-text-main">Custom Specifications Available:</strong> While chainsaw chains have hundreds of possible specification combinations, we can manufacture any ANSI B175.1 compliant specification to meet your specific requirements. If you need a specification not listed here, please use our <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">RFQ form</Link> to request a quote for custom configurations.
+                  <strong className="text-text-main">Custom Specifications Available:</strong> While chainsaw chains have hundreds of possible specification combinations, we can manufacture any ANSI B175.1 compliant specification to meet your specific requirements. If you need a specification not listed here, please download our <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">RFQ template</Link> or use our <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">RFQ form</Link> to request a quote for custom configurations.
                 </p>
                 <p>
                   <strong className="text-text-main">OEM & Private Label:</strong> All products are available in OEM and private label configurations. Custom packaging, labeling, and part numbers available. Minimum order quantities (MOQ) and lead times vary by specification - contact us for details.
+                </p>
+                <p className="mt-3 pt-3 border-t border-forest-brand/20">
+                  <strong className="text-text-main">Request a Quote:</strong> For bulk orders or custom specifications, download our professional RFQ template from the <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">Request Quote page</Link>. Fill it out with your requirements and upload it for a comprehensive pricing analysis.
                 </p>
               </div>
             </div>
@@ -574,161 +502,16 @@ export default function ProductsPage() {
               </p>
             </div>
             <div className="flex items-center gap-3">
-              {rfqCart.length > 0 && (
-                <button
-                  onClick={() => setShowCart(!showCart)}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-forest-brand text-white text-sm font-semibold hover:bg-forest-brand/90 transition rounded-none relative"
-                >
-                  <ShoppingCart className="w-4 h-4" />
-                  RFQ Cart ({rfqCart.length})
-                  {rfqCart.length > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-safety-orange text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                      {rfqCart.length}
-                    </span>
-                  )}
-                </button>
-              )}
               <Link
-                href={rfqCart.length > 0 ? buildBulkRFQUrl() : "/request-quote"}
+                href="/request-quote"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-safety-orange text-white text-sm font-semibold hover:bg-safety-orange/90 transition rounded-none"
               >
-                {rfqCart.length > 0 ? `Request Quote (${rfqCart.length} items)` : 'Request Bulk Quote'}
+                Request Quote
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
 
-          {/* RFQ Cart Panel */}
-          {showCart && rfqCart.length > 0 && (
-            <div className="mb-4 bg-white border-2 border-forest-brand rounded-none p-4 shadow-lg">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-lg font-bold text-text-main flex items-center gap-2">
-                  <ShoppingCart className="w-5 h-5" />
-                  RFQ Cart ({rfqCart.length} {rfqCart.length === 1 ? 'item' : 'items'})
-                </h3>
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={clearCart}
-                    className="text-xs text-text-body hover:text-text-main underline"
-                  >
-                    Clear All
-                  </button>
-                  <button
-                    onClick={() => setShowCart(false)}
-                    className="text-text-body hover:text-text-main"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-              <div className="max-h-96 overflow-y-auto mb-3">
-                <div className="space-y-4">
-                  {rfqCart.map((item) => (
-                    <div key={item.id} className="p-3 bg-gray-50 border border-gray-200 rounded-none">
-                      {/* Product Info */}
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="flex-1">
-                          <div className="font-semibold text-sm text-text-main">{item.id}</div>
-                          <div className="text-xs text-text-body">
-                            {item.pitch} / {item.gauge} / {item.driveLinks} - {item.chainType} {item.cutterType}
-                          </div>
-                        </div>
-                        <button
-                          onClick={() => removeFromCart(item.id)}
-                          className="text-red-600 hover:text-red-800 p-1 ml-2"
-                          aria-label={`Remove ${item.id} from cart`}
-                        >
-                          <X className="w-4 h-4" />
-                        </button>
-                      </div>
-
-                      {/* Quantity, Packaging, Notes - Compact Layout */}
-                      <div className="space-y-2">
-                        {/* Quantity and Packaging in one row */}
-                        <div className="grid grid-cols-2 gap-3">
-                          <div className="flex items-center gap-2">
-                            <label className="text-xs font-semibold text-text-main whitespace-nowrap">
-                              Qty <span className="text-red-500">*</span>:
-                            </label>
-                            <div className="flex items-center gap-1">
-                              <button
-                                onClick={() => updateQuantity(item.id, (item.quantity || 1) - 1)}
-                                className="p-1 border border-gray-300 bg-white hover:bg-gray-50 rounded-none"
-                                aria-label="Decrease quantity"
-                              >
-                                <Minus className="w-3 h-3" />
-                              </button>
-                              <input
-                                type="number"
-                                min="1"
-                                value={item.quantity || 1}
-                                onChange={(e) => {
-                                  const value = e.target.value === '' ? 1 : parseInt(e.target.value)
-                                  if (!isNaN(value) && value >= 1) {
-                                    updateQuantity(item.id, value)
-                                  }
-                                }}
-                                onBlur={(e) => {
-                                  const value = parseInt(e.target.value)
-                                  if (isNaN(value) || value < 1) {
-                                    updateQuantity(item.id, 1)
-                                  }
-                                }}
-                                className="w-16 px-1.5 py-1 text-xs border border-gray-300 rounded-none text-center focus:ring-1 focus:ring-forest-brand focus:border-forest-brand outline-none"
-                              />
-                              <button
-                                onClick={() => updateQuantity(item.id, (item.quantity || 1) + 1)}
-                                className="p-1 border border-gray-300 bg-white hover:bg-gray-50 rounded-none"
-                                aria-label="Increase quantity"
-                              >
-                                <Plus className="w-3 h-3" />
-                              </button>
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <label className="text-xs font-semibold text-text-main whitespace-nowrap">
-                              Packaging:
-                            </label>
-                            <select
-                              value={item.packaging || 'Standard'}
-                              onChange={(e) => updatePackaging(item.id, e.target.value)}
-                              className="flex-1 px-1.5 py-1 text-xs border border-gray-300 rounded-none focus:ring-1 focus:ring-forest-brand focus:border-forest-brand outline-none bg-white"
-                            >
-                              <option value="Standard">Standard</option>
-                              <option value="OEM">OEM</option>
-                              <option value="Private Label">Private Label</option>
-                              <option value="Bulk">Bulk</option>
-                              <option value="Custom">Custom</option>
-                            </select>
-                          </div>
-                        </div>
-                        {/* Notes in one row */}
-                        <div className="flex items-start gap-2">
-                          <label className="text-xs font-semibold text-text-main whitespace-nowrap pt-1">
-                            Notes:
-                          </label>
-                          <textarea
-                            value={item.notes || ''}
-                            onChange={(e) => updateNotes(item.id, e.target.value)}
-                            placeholder="Special requirements..."
-                            rows={1}
-                            className="flex-1 px-1.5 py-1 text-xs border border-gray-300 rounded-none focus:ring-1 focus:ring-forest-brand focus:border-forest-brand outline-none resize-none"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <Link
-                href={buildBulkRFQUrl()}
-                className="block w-full text-center px-4 py-2 bg-safety-orange text-white font-semibold hover:bg-safety-orange/90 transition rounded-none"
-              >
-                Request Quote for {rfqCart.length} {rfqCart.length === 1 ? 'Item' : 'Items'}
-                <ArrowRight className="w-4 h-4 inline-block ml-2" />
-              </Link>
-            </div>
-          )}
         </section>
 
         {/* Product Table */}
@@ -752,7 +535,6 @@ export default function ProductsPage() {
                   <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Cutter Type</th>
                   <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Steel Grade</th>
                   <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Description</th>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -777,20 +559,11 @@ export default function ProductsPage() {
                         <span className={product.steelGrade === '68CrNiMo' ? 'font-medium text-text-main' : ''}>{product.steelGrade}</span>
                       </td>
                       <td className="px-4 py-3 text-text-body text-xs">{product.description}</td>
-                      <td className="px-4 py-3">
-                        <button
-                          onClick={() => addToCart(product)}
-                          className="text-xs px-3 py-1.5 bg-forest-brand text-white font-semibold hover:bg-forest-brand/90 transition rounded-none text-center"
-                          aria-label={`Add ${product.id} to RFQ cart`}
-                        >
-                          Add to RFQ
-                        </button>
-                      </td>
                     </tr>
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={10} className="px-4 py-8 text-center text-industrial">
+                    <td colSpan={9} className="px-4 py-8 text-center text-industrial">
                       <p>No products found matching your criteria.</p>
                       <p className="text-sm text-text-body mt-2">
                         Try adjusting your filters or search query, or <Link href="/contact" className="text-forest-brand hover:underline">contact us</Link> for custom specifications.

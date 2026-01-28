@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, Suspense, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
 import emailjs from '@emailjs/browser'
-import { Mail, Phone, MapPin, Clock, Download, CheckCircle2, Loader2, X, ShoppingCart, ArrowRight } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Download, CheckCircle2, Loader2, X, ShoppingCart, ArrowRight, Upload, FileText, CheckCircle } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -32,10 +32,14 @@ interface CartProduct {
 
 function RequestQuoteForm() {
   const searchParams = useSearchParams()
+  const fileInputRef = useRef<HTMLInputElement>(null)
   const [cartProducts, setCartProducts] = useState<CartProduct[]>([])
   const [showForm, setShowForm] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null)
+  const [uploadedFileContent, setUploadedFileContent] = useState<string>('')
+  const [isUploading, setIsUploading] = useState(false)
   
   // Resource request from URL
   const resourceRequest = searchParams.get('resource')
@@ -114,6 +118,107 @@ function RequestQuoteForm() {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
+  // Handle file upload
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    // Validate file type
+    const validTypes = [
+      'text/csv',
+      'application/vnd.ms-excel',
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      'application/vnd.ms-excel.sheet.macroEnabled.12'
+    ]
+    
+    if (!validTypes.includes(file.type) && !file.name.endsWith('.csv') && !file.name.endsWith('.xlsx') && !file.name.endsWith('.xls')) {
+      alert('Please upload a CSV or Excel file (.csv, .xlsx, .xls)')
+      return
+    }
+
+    setIsUploading(true)
+    setUploadedFile(file)
+
+    try {
+      // Read file content
+      const text = await file.text()
+      setUploadedFileContent(text)
+      
+      // Parse CSV if it's a CSV file
+      if (file.name.endsWith('.csv') || file.type === 'text/csv') {
+        // Parse CSV and extract product information
+        const lines = text.split('\n').filter(line => line.trim())
+        const products: CartProduct[] = []
+        
+        // Find line items section (Section 2)
+        let inLineItemsSection = false
+        let headerFound = false
+        
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i].trim()
+          
+          if (line.includes('SECTION 2: LINE ITEMS')) {
+            inLineItemsSection = true
+            continue
+          }
+          
+          if (inLineItemsSection && line.includes('No.,MDM No.')) {
+            headerFound = true
+            continue
+          }
+          
+          if (inLineItemsSection && headerFound && line && !line.includes('SECTION')) {
+            // Parse CSV row
+            const columns = line.split(',').map(col => col.trim().replace(/^"|"$/g, ''))
+            if (columns.length >= 5 && columns[0] && !isNaN(parseInt(columns[0]))) {
+              const mdmNo = columns[1] || ''
+              const pitch = columns[2] || ''
+              const gauge = columns[3] || ''
+              const driveLinks = columns[4] || ''
+              
+              if (mdmNo || pitch || gauge || driveLinks) {
+                products.push({
+                  id: mdmNo,
+                  pitch: pitch,
+                  gauge: gauge,
+                  driveLinks: driveLinks,
+                  quantity: columns[14] ? parseInt(columns[14]) || 1 : 1,
+                  packaging: columns[13] || undefined,
+                  notes: columns[19] || undefined,
+                })
+              }
+            }
+          }
+          
+          if (inLineItemsSection && line.includes('SECTION 3')) {
+            break
+          }
+        }
+        
+        if (products.length > 0) {
+          setCartProducts(products)
+        }
+      }
+      
+      // Show form after file upload
+      setShowForm(true)
+      
+      // Pre-fill message with file info
+      setFormData(prev => ({
+        ...prev,
+        message: prev.message || `I have uploaded an RFQ file: ${file.name}. Please review and provide pricing.`
+      }))
+      
+    } catch (error) {
+      console.error('Error reading file:', error)
+      alert('Error reading file. Please try again.')
+      setUploadedFile(null)
+      setUploadedFileContent('')
+    } finally {
+      setIsUploading(false)
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -147,6 +252,8 @@ Currency: ${formData.currency}
 
 Message:
 ${formData.message}
+
+${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedFileContent.substring(0, 3000)}${uploadedFileContent.length > 3000 ? '\n... (file content truncated, please attach original file)' : ''}` : ''}
       `)
       window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
       setIsSubmitting(false)
@@ -177,6 +284,8 @@ ${formData.message}
         }).join('\n\n'),
         product_count: cartProducts.length.toString(),
         submission_date: new Date().toLocaleString(),
+        uploaded_file_name: uploadedFile?.name || '',
+        uploaded_file_content: uploadedFileContent ? `\n\n--- Uploaded RFQ File Content (${uploadedFile?.name}) ---\n${uploadedFileContent.substring(0, 5000)}${uploadedFileContent.length > 5000 ? '\n... (truncated)' : ''}` : '',
       }
 
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
@@ -200,6 +309,11 @@ ${formData.message}
         })
         setCartProducts([])
         setShowForm(false)
+        setUploadedFile(null)
+        setUploadedFileContent('')
+        if (fileInputRef.current) {
+          fileInputRef.current.value = ''
+        }
       }, 3000)
     } catch (error) {
       console.error('EmailJS error:', error)
@@ -270,6 +384,40 @@ ${formData.message}
     URL.revokeObjectURL(url)
   }
 
+  // Determine current step
+  const getCurrentStep = () => {
+    if (resourceRequest) return 3 // Resource request goes directly to form
+    if (showForm && (cartProducts.length > 0 || uploadedFile)) return 4 // Form is showing
+    if (uploadedFile && uploadedFileContent) return 3 // File uploaded and parsed, ready for form
+    if (uploadedFile) return 2 // File uploaded but not parsed yet
+    return 1 // Step 1: Download template
+  }
+
+  const currentStep = getCurrentStep()
+
+  // Step indicator component
+  const StepIndicator = ({ step, label, isActive, isCompleted }: { step: number; label: string; isActive: boolean; isCompleted: boolean }) => (
+    <div className="flex items-center">
+      <div className="flex flex-col items-center">
+        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm border-2 transition ${
+          isCompleted 
+            ? 'bg-green-500 text-white border-green-500' 
+            : isActive 
+              ? 'bg-forest-brand text-white border-forest-brand' 
+              : 'bg-gray-100 text-gray-400 border-gray-300'
+        }`}>
+          {isCompleted ? <CheckCircle className="w-6 h-6" /> : step}
+        </div>
+        <span className={`text-xs mt-2 font-medium ${isActive ? 'text-forest-brand' : isCompleted ? 'text-green-600' : 'text-gray-400'}`}>
+          {label}
+        </span>
+      </div>
+      {step < 4 && (
+        <div className={`w-16 md:w-24 h-0.5 mx-2 ${isCompleted ? 'bg-green-500' : 'bg-gray-300'}`} />
+      )}
+    </div>
+  )
+
   return (
     <>
       <Navigation />
@@ -281,11 +429,41 @@ ${formData.message}
           <p className="text-text-body text-sm">
             {resourceRequest 
               ? `Please fill in your contact information to receive: ${resourceNames[resourceRequest] || resourceRequest}. We'll send it within 24 hours.`
-              : showForm && cartProducts.length > 0 
-                ? 'Please fill in your contact information to receive a quote for the selected products.'
-                : 'Download our RFQ template, fill in your requirements, and send it to us for a quick quote.'}
+              : 'Follow the steps below to request a quote for your chainsaw chain requirements.'}
           </p>
         </div>
+
+        {/* Step Indicator - Only show for RFQ flow, not resource requests */}
+        {!resourceRequest && (
+          <div className="mb-10 bg-white border border-forest-brand/30 rounded-none p-6">
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <StepIndicator 
+                step={1} 
+                label="Download Template" 
+                isActive={currentStep === 1} 
+                isCompleted={currentStep > 1} 
+              />
+              <StepIndicator 
+                step={2} 
+                label="Fill & Upload" 
+                isActive={currentStep === 2} 
+                isCompleted={currentStep > 2} 
+              />
+              <StepIndicator 
+                step={3} 
+                label="Review Products" 
+                isActive={currentStep === 3} 
+                isCompleted={currentStep > 3} 
+              />
+              <StepIndicator 
+                step={4} 
+                label="Submit Request" 
+                isActive={currentStep === 4} 
+                isCompleted={false} 
+              />
+            </div>
+          </div>
+        )}
 
         {/* Resource Request Notice */}
         {resourceRequest && (
@@ -305,23 +483,30 @@ ${formData.message}
           </section>
         )}
 
-        {/* Bulk Quote Form */}
-        {showForm && (cartProducts.length > 0 || resourceRequest) && (
+          {/* Step 3 & 4: Review Products & Submit Form */}
+        {showForm && (cartProducts.length > 0 || resourceRequest || uploadedFile) && (
           <section className="mb-8 bg-white rounded-none border-2 border-forest-brand shadow-lg p-6">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-text-main flex items-center gap-2">
-                {resourceRequest ? (
-                  <>
-                    <Mail className="w-6 h-6" />
-                    Resource Request Form
-                  </>
-                ) : (
-                  <>
-                    <ShoppingCart className="w-6 h-6" />
-                    Bulk Quote Request ({cartProducts.length} {cartProducts.length === 1 ? 'Product' : 'Products'})
-                  </>
-                )}
-              </h2>
+              <div className="flex items-center gap-3">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm ${
+                  currentStep >= 3 ? 'bg-forest-brand text-white' : 'bg-gray-200 text-gray-400'
+                }`}>
+                  {currentStep > 3 ? <CheckCircle className="w-5 h-5" /> : '3'}
+                </div>
+                <h2 className="text-2xl font-bold text-text-main flex items-center gap-2">
+                  {resourceRequest ? (
+                    <>
+                      <Mail className="w-6 h-6" />
+                      Resource Request Form
+                    </>
+                  ) : (
+                    <>
+                      <ShoppingCart className="w-6 h-6" />
+                      Review & Submit ({cartProducts.length > 0 ? `${cartProducts.length} ${cartProducts.length === 1 ? 'Product' : 'Products'}` : 'RFQ File'})
+                    </>
+                  )}
+                </h2>
+              </div>
               <button
                 onClick={() => {
                   setShowForm(false)
@@ -333,6 +518,24 @@ ${formData.message}
                 <X className="w-5 h-5" />
               </button>
             </div>
+
+            {/* Uploaded File Info */}
+            {uploadedFile && (
+              <div className="mb-6 bg-blue-50 border-2 border-blue-200 rounded-none p-4">
+                <div className="flex items-start gap-3">
+                  <FileText className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-text-main mb-1">RFQ File Uploaded</h3>
+                    <p className="text-sm text-text-body">
+                      File: <strong>{uploadedFile.name}</strong> ({Math.round(uploadedFile.size / 1024)} KB)
+                    </p>
+                    <p className="text-xs text-text-body mt-2">
+                      The file content will be included in your quote request. Please review the products below and complete your contact information.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Products Summary - Only show if cart has products */}
             {cartProducts.length > 0 && (
@@ -511,8 +714,18 @@ ${formData.message}
                 />
               </div>
 
+              {/* Step 4 Indicator */}
+              <div className="mb-4 pt-4 border-t border-gray-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 rounded-full bg-forest-brand text-white flex items-center justify-center font-semibold text-sm">
+                    4
+                  </div>
+                  <h3 className="text-lg font-semibold text-text-main">Submit Your Request</h3>
+                </div>
+              </div>
+
               {/* Submit Button */}
-              <div className="flex items-center gap-4 pt-4">
+              <div className="flex items-center gap-4 pt-2">
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -549,12 +762,112 @@ ${formData.message}
           </section>
         )}
 
-        {/* RFQ Template Download */}
+        {/* Step 1 & 2: RFQ Template Download & Upload */}
+        {!showForm && !resourceRequest && (
         <section className="mb-8 bg-white rounded-none border border-forest-brand/30 shadow-sm p-6">
-          <h2 className="text-2xl font-bold text-text-main mb-4">Ready for a Batch Quote?</h2>
+          <div className="flex items-center gap-3 mb-4">
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm ${
+              currentStep >= 1 ? 'bg-forest-brand text-white' : 'bg-gray-200 text-gray-400'
+            }`}>
+              {currentStep > 1 ? <CheckCircle className="w-5 h-5" /> : '1'}
+            </div>
+            <h2 className="text-2xl font-bold text-text-main">Download RFQ Template</h2>
+          </div>
+          
           <p className="text-text-body text-sm mb-6 leading-relaxed">
-            Download our Professional RFQ Template to streamline your procurement process. This template is designed specifically for North American forestry standards (ANSI/CSA). Once filled, upload it via our contact form, and our lead engineer will provide a comprehensive pricing analysis as soon as possible.
+            Download our Professional RFQ Template to streamline your procurement process. This template is designed specifically for North American forestry standards (ANSI/CSA). Fill it out with your product requirements, then upload it in the next step.
           </p>
+
+          {/* Quick Start Tip */}
+          {currentStep === 1 && (
+            <div className="mb-6 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-none">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 mt-0.5">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-text-main text-sm mb-1">Quick Start Guide</h3>
+                  <p className="text-xs text-text-body">
+                    <strong>Step 1:</strong> Download the template below → <strong>Step 2:</strong> Fill in your requirements in Excel → <strong>Step 3:</strong> Upload the completed file → <strong>Step 4:</strong> Fill in your contact information and submit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+          
+          {/* Upload Section - Step 2 */}
+          <div className={`mb-6 p-4 border-2 rounded-none transition ${
+            currentStep >= 2 
+              ? 'bg-green-50 border-green-300' 
+              : 'bg-gray-50 border-dashed border-forest-brand/30'
+          }`}>
+            <div className="flex items-center gap-3 mb-4">
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm ${
+                currentStep >= 2 ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-400'
+              }`}>
+                {currentStep > 2 ? <CheckCircle className="w-5 h-5" /> : '2'}
+              </div>
+              <h3 className="text-lg font-semibold text-text-main">Upload Your Filled RFQ Template</h3>
+            </div>
+            <div className="flex flex-col items-center justify-center gap-4">
+              <p className="text-sm text-text-body text-center max-w-md">
+                Upload your completed RFQ template (CSV or Excel format). We'll parse the file and prepare a quote request form for you.
+              </p>
+              <div className="flex items-center gap-4">
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".csv,.xlsx,.xls,text/csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                  onChange={handleFileUpload}
+                  className="hidden"
+                  id="rfq-file-upload"
+                />
+                <label
+                  htmlFor="rfq-file-upload"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition cursor-pointer rounded-none"
+                >
+                  {isUploading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Processing...
+                    </>
+                  ) : (
+                    <>
+                      <Upload className="w-5 h-5" />
+                      Choose File to Upload
+                    </>
+                  )}
+                </label>
+                {uploadedFile && (
+                  <div className="flex items-center gap-2 text-sm text-text-body">
+                    <FileText className="w-4 h-4 text-green-600" />
+                    <span className="font-medium">{uploadedFile.name}</span>
+                    <button
+                      onClick={() => {
+                        setUploadedFile(null)
+                        setUploadedFileContent('')
+                        setCartProducts([])
+                        if (fileInputRef.current) {
+                          fileInputRef.current.value = ''
+                        }
+                      }}
+                      className="text-red-600 hover:text-red-700"
+                      aria-label="Remove file"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                )}
+              </div>
+              {uploadedFile && cartProducts.length > 0 && (
+                <div className="mt-2 text-xs text-green-600 font-medium">
+                  ✓ Found {cartProducts.length} product{cartProducts.length !== 1 ? 's' : ''} in your RFQ file
+                </div>
+              )}
+            </div>
+          </div>
           
           {/* RFQ Template Preview */}
           <div className="mb-6 bg-gray-50 border-2 border-forest-brand/30 rounded-none p-4 overflow-x-auto">
