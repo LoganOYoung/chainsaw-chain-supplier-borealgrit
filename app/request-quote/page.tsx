@@ -2,7 +2,6 @@
 
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
-import Image from 'next/image'
 import emailjs from '@emailjs/browser'
 import { Mail, Phone, MapPin, Clock, Download, CheckCircle2, Loader2, X, ShoppingCart, ArrowRight } from 'lucide-react'
 import Navigation from '@/components/Navigation'
@@ -504,17 +503,141 @@ ${formData.message}
           
           {/* RFQ Template Preview */}
           <div className="mb-6 bg-gray-50 border-2 border-forest-brand/30 rounded-none p-4 overflow-x-auto">
-            <div className="relative w-full min-w-[600px] bg-white border border-gray-300 rounded-none overflow-hidden">
-              <Image
-                src="/images/contact/rfq-template-preview.jpg"
-                alt="RFQ Template preview showing table structure with Pitch, Gauge, Drive Links, Cutter Profile columns"
-                width={800}
-                height={400}
-                className="w-full h-auto"
-                sizes="(max-width: 768px) 100vw, 800px"
-              />
+            <div className="bg-white border border-gray-300 rounded-none overflow-hidden">
+              {/* Section 1: RFQ Header */}
+              <div className="border-b border-gray-300">
+                <div className="bg-gray-100 px-4 py-2 border-b border-gray-300">
+                  <h3 className="text-sm font-bold text-text-main">SECTION 1: RFQ HEADER</h3>
+                </div>
+                <div className="p-4">
+                  <table className="w-full text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-gray-50">
+                        <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-text-main w-1/3">Field</th>
+                        <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-text-main">Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">RFQ No.</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50"></td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">Destination Market</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50">USA / Canada</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">Incoterms</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50">FOB China</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">Currency</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50">USD</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">OEM / Private Label</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50">Yes / No</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">Expected First Order Quantity</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50"></td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">Estimated Annual Volume</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50"></td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">Target Lead Time</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Section 2: Line Items */}
+              <div className="border-b border-gray-300">
+                <div className="bg-gray-100 px-4 py-2 border-b border-gray-300">
+                  <h3 className="text-sm font-bold text-text-main">SECTION 2: LINE ITEMS</h3>
+                </div>
+                <div className="p-4 overflow-x-auto">
+                  <table className="w-full text-xs border-collapse min-w-[1000px]">
+                    <thead>
+                      <tr className="bg-gray-50">
+                        <th className="border border-gray-300 px-2 py-2 text-left font-semibold text-text-main">No.</th>
+                        <th className="border border-gray-300 px-2 py-2 text-left font-semibold text-text-main">MDM No.</th>
+                        <th className="border border-gray-300 px-2 py-2 text-left font-semibold text-text-main">Pitch</th>
+                        <th className="border border-gray-300 px-2 py-2 text-left font-semibold text-text-main">Gauge</th>
+                        <th className="border border-gray-300 px-2 py-2 text-left font-semibold text-text-main">Drive Links</th>
+                        <th className="border border-gray-300 px-2 py-2 text-left font-semibold text-text-main">Cutter Profile</th>
+                        <th className="border border-gray-300 px-2 py-2 text-left font-semibold text-text-main">Chain Type</th>
+                        <th className="border border-gray-300 px-2 py-2 text-left font-semibold text-text-main">Steel Grade</th>
+                        <th className="border border-gray-300 px-2 py-2 text-left font-semibold text-text-main">Quantity</th>
+                        <th className="border border-gray-300 px-2 py-2 text-left font-semibold text-text-main">Packaging</th>
+                        <th className="border border-gray-300 px-2 py-2 text-left font-semibold text-text-main">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[1, 2, 3, 4, 5].map((row) => (
+                        <tr key={row}>
+                          <td className="border border-gray-300 px-2 py-2 text-text-body bg-gray-50">{row}</td>
+                          <td className="border border-gray-300 px-2 py-2 text-text-body"></td>
+                          <td className="border border-gray-300 px-2 py-2 text-text-body bg-gray-50"></td>
+                          <td className="border border-gray-300 px-2 py-2 text-text-body"></td>
+                          <td className="border border-gray-300 px-2 py-2 text-text-body bg-gray-50"></td>
+                          <td className="border border-gray-300 px-2 py-2 text-text-body"></td>
+                          <td className="border border-gray-300 px-2 py-2 text-text-body bg-gray-50"></td>
+                          <td className="border border-gray-300 px-2 py-2 text-text-body"></td>
+                          <td className="border border-gray-300 px-2 py-2 text-text-body bg-gray-50"></td>
+                          <td className="border border-gray-300 px-2 py-2 text-text-body"></td>
+                          <td className="border border-gray-300 px-2 py-2 text-text-body bg-gray-50"></td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Section 3: Footer */}
+              <div>
+                <div className="bg-gray-100 px-4 py-2 border-b border-gray-300">
+                  <h3 className="text-sm font-bold text-text-main">SECTION 3: FOOTER</h3>
+                </div>
+                <div className="p-4">
+                  <table className="w-full text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-gray-50">
+                        <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-text-main w-1/3">Field</th>
+                        <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-text-main">Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">Validity of Quotation</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50"></td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">Remarks from Supplier</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50"></td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">Supplier Company Name</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50"></td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">Contact Person</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50"></td>
+                      </tr>
+                      <tr>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body">Date</td>
+                        <td className="border border-gray-300 px-3 py-2 text-text-body bg-gray-50"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
-            <p className="text-xs text-text-body mt-2 text-center">RFQ Template Structure Preview</p>
+            <p className="text-xs text-text-body mt-3 text-center">RFQ Template Structure Preview - Download CSV for Excel editing</p>
           </div>
           
           <button
