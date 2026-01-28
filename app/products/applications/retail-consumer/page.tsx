@@ -124,7 +124,7 @@ export default function RetailConsumerPage() {
               </div>
               <Link
                 href="/products/low-profile-325"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-safety-orange text-white text-sm font-semibold rounded-none hover:bg-safety-orange/90 transition"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-forest-brand/90 transition"
               >
                 View Low Profile .325" Details
                 <ArrowRight className="w-4 h-4" />

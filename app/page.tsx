@@ -45,7 +45,7 @@ export default function Home() {
               {/* Primary CTA - Request Quote */}
               <Link
                 href="/request-quote"
-                className="inline-flex items-center gap-2 px-10 py-5 bg-safety-orange text-white font-bold text-xl hover:bg-safety-orange/90 transition shadow-2xl rounded-none transform hover:scale-105"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-forest-brand text-white font-bold text-xl hover:bg-forest-brand/90 transition shadow-2xl rounded-none transform hover:scale-105"
               >
                 Request a Quote
                 <ArrowRight className="w-6 h-6" />
@@ -556,7 +556,7 @@ export default function Home() {
             <div className="text-center mt-8">
               <Link
                 href="/quality"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-safety-orange text-white font-semibold text-sm hover:bg-safety-orange/90 transition rounded-none shadow-sm"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition rounded-none shadow-sm"
               >
                 View Full Quality Documentation
                 <ArrowRight className="w-4 h-4" />

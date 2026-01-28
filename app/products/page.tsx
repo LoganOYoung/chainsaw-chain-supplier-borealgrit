@@ -504,7 +504,7 @@ export default function ProductsPage() {
             <div className="flex items-center gap-3">
               <Link
                 href="/request-quote"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-safety-orange text-white text-sm font-semibold hover:bg-safety-orange/90 transition rounded-none"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-forest-brand text-white text-sm font-semibold hover:bg-forest-brand/90 transition rounded-none"
               >
                 Request Quote
                 <ArrowRight className="w-4 h-4" />

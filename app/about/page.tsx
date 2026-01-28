@@ -128,7 +128,7 @@ export default function AboutPage() {
         <section className="pt-4 border-t border-forest-brand/30">
           <Link
             href="/request-quote"
-            className="inline-flex items-center px-5 py-2.5 bg-safety-orange text-white font-semibold text-sm hover:bg-safety-orange/90 transition"
+            className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition"
           >
             Request a Quote
           </Link>

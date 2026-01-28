@@ -479,7 +479,7 @@ export default function OEMPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/request-quote"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-safety-orange text-white font-semibold text-sm hover:bg-safety-orange/90 transition rounded"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition rounded"
             >
               Download RFQ Template
               <ArrowRight className="w-4 h-4" />

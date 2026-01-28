@@ -505,7 +505,7 @@ export default function SeriesWPage() {
         <section className="pt-6 border-t border-forest-brand/30">
           <Link
             href="/request-quote?series=Series%20W"
-            className="inline-flex items-center px-6 py-3 bg-safety-orange text-white font-semibold text-sm hover:bg-safety-orange/90 transition"
+            className="inline-flex items-center px-6 py-3 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition"
           >
             Request Winter Season Pre-order Quote
           </Link>

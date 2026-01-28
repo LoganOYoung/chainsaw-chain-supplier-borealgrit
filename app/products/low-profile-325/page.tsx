@@ -278,7 +278,7 @@ export default function LowProfile325Page() {
         </section>
 
         <section className="flex flex-wrap gap-4 pt-4 border-t border-forest-brand/30">
-          <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-safety-orange text-white font-semibold text-sm hover:bg-safety-orange/90 transition">
+          <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition">
             Request Quote
           </Link>
           <Link href="/resources#datasheets" className="inline-flex items-center px-5 py-2.5 border-2 border-industrial text-text-bodyfont-semibold text-sm hover:bg-gray-50 transition">

@@ -126,7 +126,7 @@ export default function BatterySawsPage() {
               </div>
               <Link
                 href="/products/series-e"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-safety-orange text-white text-sm font-semibold rounded-none hover:bg-safety-orange/90 transition"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-forest-brand/90 transition"
               >
                 View Series E Details
                 <ArrowRight className="w-4 h-4" />
