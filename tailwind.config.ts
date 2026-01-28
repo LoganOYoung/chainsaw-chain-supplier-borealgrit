@@ -32,7 +32,7 @@ const config: Config = {
           light: '#6b7280',
         },
         // Forest Green Theme Colors
-        'forest-dark': '#1A3922',      // Deep green for Menu & Footer
+        'forest-dark': '#426A3D',      // Deep green for Menu & Footer (90% opacity version of #2D5A27)
         'forest-brand': '#2D5A27',     // Brand green for links, icons, borders
         'forest-light': '#F0F5F2',     // Light gray-green for backgrounds
         'safety-orange': '#F28C28',     // Safety orange for CTA buttons
