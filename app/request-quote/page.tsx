@@ -395,48 +395,6 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
 
   const currentStep = getCurrentStep()
 
-  // Step indicator component - Enhanced version (all steps unified in green theme)
-  const StepIndicator = ({ step, label, isActive, isCompleted }: { step: number; label: string; isActive: boolean; isCompleted: boolean }) => (
-    <div className="flex items-center flex-1 md:flex-row flex-col">
-      <div className="flex flex-col items-center flex-1">
-        <div className={`relative w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center font-bold text-base md:text-lg border-3 transition-all duration-300 ${
-          isCompleted 
-            ? 'bg-green-500 text-white border-green-600 shadow-lg shadow-green-500/50 scale-110' 
-            : isActive 
-              ? 'bg-forest-brand text-white border-forest-brand shadow-lg shadow-forest-brand/50 scale-110 ring-4 ring-forest-brand/20' 
-              : 'bg-green-100 text-green-600 border-green-300'
-        }`}>
-          {isCompleted ? <CheckCircle className="w-7 h-7 md:w-8 md:h-8" /> : step}
-          {isActive && !isCompleted && (
-            <div className="absolute inset-0 rounded-full border-2 border-forest-brand animate-ping opacity-75"></div>
-          )}
-        </div>
-        <span className={`text-xs md:text-sm mt-3 font-semibold text-center max-w-[100px] md:max-w-[80px] ${isActive ? 'text-forest-brand' : isCompleted ? 'text-green-600' : 'text-green-600'}`}>
-          {label}
-        </span>
-      </div>
-      {step < 4 && (
-        <>
-          {/* Desktop: Horizontal connector */}
-          <div className={`hidden md:block flex-1 h-1 mx-2 md:mx-4 transition-all duration-300 ${
-            isCompleted 
-              ? 'bg-gradient-to-r from-green-500 to-green-400' 
-              : isActive 
-                ? 'bg-gradient-to-r from-forest-brand to-green-300' 
-                : 'bg-green-300'
-          }`} />
-          {/* Mobile: Vertical connector */}
-          <div className={`md:hidden w-1 h-8 my-2 transition-all duration-300 ${
-            isCompleted 
-              ? 'bg-gradient-to-b from-green-500 to-green-400' 
-              : isActive 
-                ? 'bg-gradient-to-b from-forest-brand to-green-300' 
-                : 'bg-green-300'
-          }`} />
-        </>
-      )}
-    </div>
-  )
 
   return (
     <>
@@ -453,70 +411,6 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
           </p>
         </div>
 
-        {/* Step Indicator - Only show for RFQ flow, not resource requests */}
-        {!resourceRequest && (
-          <div className="mb-10 bg-gradient-to-br from-gray-50 to-white border-2 border-forest-brand/30 rounded-none p-4 md:p-8 shadow-sm">
-            <div className="mb-4 text-center">
-              <p className="text-sm text-text-body font-medium">
-                Progress: <span className="text-forest-brand font-bold">{Math.round((currentStep / 4) * 100)}%</span> Complete
-              </p>
-            </div>
-            {/* Desktop: Horizontal Layout */}
-            <div className="hidden md:flex items-center justify-between gap-2 md:gap-4">
-              <StepIndicator 
-                step={1} 
-                label="Download Template" 
-                isActive={currentStep === 1} 
-                isCompleted={currentStep > 1} 
-              />
-              <StepIndicator 
-                step={2} 
-                label="Fill & Upload" 
-                isActive={currentStep === 2} 
-                isCompleted={currentStep > 2} 
-              />
-              <StepIndicator 
-                step={3} 
-                label="Review Products" 
-                isActive={currentStep === 3} 
-                isCompleted={currentStep > 3} 
-              />
-              <StepIndicator 
-                step={4} 
-                label="Submit Request" 
-                isActive={currentStep === 4} 
-                isCompleted={false} 
-              />
-            </div>
-            {/* Mobile: Vertical Layout */}
-            <div className="md:hidden space-y-4">
-              <StepIndicator 
-                step={1} 
-                label="Download Template" 
-                isActive={currentStep === 1} 
-                isCompleted={currentStep > 1} 
-              />
-              <StepIndicator 
-                step={2} 
-                label="Fill & Upload" 
-                isActive={currentStep === 2} 
-                isCompleted={currentStep > 2} 
-              />
-              <StepIndicator 
-                step={3} 
-                label="Review Products" 
-                isActive={currentStep === 3} 
-                isCompleted={currentStep > 3} 
-              />
-              <StepIndicator 
-                step={4} 
-                label="Submit Request" 
-                isActive={currentStep === 4} 
-                isCompleted={false} 
-              />
-            </div>
-          </div>
-        )}
 
         {/* Resource Request Notice */}
         {resourceRequest && (
