@@ -50,9 +50,9 @@ export default function Navigation() {
             <Image 
               src="/logo-borealgrit-champagne.svg" 
               alt="Borealgrit Logo" 
-              width={240} 
-              height={75}
-              className="h-12 md:h-14 w-auto"
+              width={260} 
+              height={85}
+              className="h-14 md:h-16 w-auto"
               priority
             />
           </Link>
