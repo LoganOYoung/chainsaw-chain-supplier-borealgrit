@@ -181,7 +181,7 @@ export default function Navigation() {
             <li>
               <Link
                 href="/fitment-finder"
-                className={isActive('/fitment-finder') ? 'text-forest-brand border-b-2 border-forest-brand pb-0.5' : 'hover:text-forest-brand/80'}
+                className={isActive('/fitment-finder') ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}
               >
                 Fitment Finder
               </Link>
@@ -189,7 +189,7 @@ export default function Navigation() {
             <li>
               <Link
                 href="/oem-private-label"
-                className={isActive('/oem-private-label') ? 'text-forest-brand border-b-2 border-forest-brand pb-0.5' : 'hover:text-forest-brand/80'}
+                className={isActive('/oem-private-label') ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}
               >
                 OEM & Private Label
               </Link>
@@ -202,7 +202,7 @@ export default function Navigation() {
                   setProductsMenuOpen(false)
                   setAboutContactMenuOpen(false)
                 }}
-                className={`flex items-center gap-1 ${isResourcesActive ? 'text-forest-brand border-b-2 border-forest-brand pb-0.5' : 'hover:text-forest-brand/80'}`}
+                className={`flex items-center gap-1 text-white ${isResourcesActive ? 'border-b-2 border-white pb-0.5' : 'hover:text-white/80'}`}
               >
                 Resources
                 <svg
@@ -255,7 +255,7 @@ export default function Navigation() {
                   setProductsMenuOpen(false)
                   setResourcesMenuOpen(false)
                 }}
-                className={`flex items-center gap-1 ${isAboutContactActive ? 'text-forest-brand border-b-2 border-forest-brand pb-0.5' : 'hover:text-forest-brand/80'}`}
+                className={`flex items-center gap-1 text-white ${isAboutContactActive ? 'border-b-2 border-white pb-0.5' : 'hover:text-white/80'}`}
               >
                 About & Contact
                 <svg
@@ -405,7 +405,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/low-profile-325"
-                      className={`block py-2 text-sm pl-4 ${isActive('/products/low-profile-325') ? 'text-forest-brand font-medium' : ''}`}
+                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/low-profile-325') ? 'text-white font-medium' : 'hover:text-white'}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -480,7 +480,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/applications/challenging-conditions"
-                      className={`block py-2 text-sm pl-4 ${isActive('/products/applications/challenging-conditions') ? 'text-forest-brand font-medium' : ''}`}
+                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/applications/challenging-conditions') ? 'text-white font-medium' : 'hover:text-white'}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -506,7 +506,7 @@ export default function Navigation() {
               <button
                 type="button"
                 onClick={() => setResourcesMenuOpen(!resourcesMenuOpen)}
-                className={`flex items-center justify-between w-full py-2 ${isResourcesActive ? 'text-forest-brand font-medium' : ''}`}
+                className={`flex items-center justify-between w-full py-2 text-white/90 ${isResourcesActive ? 'text-white font-medium' : 'hover:text-white'}`}
               >
                 Resources
                 <svg
@@ -575,7 +575,7 @@ export default function Navigation() {
               <button
                 type="button"
                 onClick={() => setAboutContactMenuOpen(!aboutContactMenuOpen)}
-                className={`flex items-center justify-between w-full py-2 ${isAboutContactActive ? 'text-forest-brand font-medium' : ''}`}
+                className={`flex items-center justify-between w-full py-2 text-white/90 ${isAboutContactActive ? 'text-white font-medium' : 'hover:text-white'}`}
               >
                 About & Contact
                 <svg
