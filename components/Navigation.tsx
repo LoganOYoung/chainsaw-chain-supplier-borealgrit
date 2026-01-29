@@ -78,101 +78,110 @@ export default function Navigation() {
                 </svg>
               </button>
               {productsMenuOpen && (
-                <div className="absolute top-full left-0 mt-1 w-[780px] bg-white border border-forest-brand/30 rounded-none shadow-lg py-2 z-50">
+                <div className="absolute top-full left-0 mt-2 w-[780px] bg-white border border-forest-brand/30 rounded-none shadow-xl py-3 z-50 opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
                   <Link
                     href="/products"
-                    className={`block px-4 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition ${isActive('/products') && !pathname?.includes('/series-') && !pathname?.includes('/full-chisel') && !pathname?.includes('/low-profile') && !pathname?.includes('/semi-chisel') ? 'text-forest-brand font-medium' : ''}`}
+                    className={`flex items-center gap-2 px-4 py-2.5 mx-2 mb-2 text-sm font-semibold text-text-main hover:bg-forest-light hover:text-forest-brand rounded-none transition ${isActive('/products') && !pathname?.includes('/series-') && !pathname?.includes('/full-chisel') && !pathname?.includes('/low-profile') && !pathname?.includes('/semi-chisel') ? 'text-forest-brand bg-forest-light' : ''}`}
                     onClick={() => setProductsMenuOpen(false)}
                   >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
                     All Products
                   </Link>
-                  <div className="border-t border-forest-brand/20 my-2"></div>
-                  <div className="grid grid-cols-3 gap-4 px-2">
+                  <div className="border-t border-forest-brand/20 my-3"></div>
+                  <div className="grid grid-cols-3 gap-6 px-4 pb-2">
                     <div>
-                      <div className="px-2 py-1 text-xs font-semibold uppercase tracking-wide text-text-body">By Series</div>
-                      <Link
-                        href="/products/series-e"
-                        className={`block px-2 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition rounded-none ${isActive('/products/series-e') ? 'text-forest-brand font-medium' : ''}`}
-                        onClick={() => setProductsMenuOpen(false)}
-                      >
-                        Series E
-                      </Link>
-                      <Link
-                        href="/products/series-w"
-                        className={`block px-2 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition rounded-none ${isActive('/products/series-w') ? 'text-forest-brand font-medium' : ''}`}
-                        onClick={() => setProductsMenuOpen(false)}
-                      >
-                        Series W
-                      </Link>
-                      <Link
-                        href="/products/series-p"
-                        className={`block px-2 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition rounded-none ${isActive('/products/series-p') ? 'text-forest-brand font-medium' : ''}`}
-                        onClick={() => setProductsMenuOpen(false)}
-                      >
-                        Series P
-                      </Link>
+                      <div className="px-2 py-2 mb-2 text-xs font-bold uppercase tracking-wide text-forest-brand border-b border-forest-brand/30">By Series</div>
+                      <div className="space-y-1">
+                        <Link
+                          href="/products/series-e"
+                          className={`block px-3 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-4 transition-all rounded-none ${isActive('/products/series-e') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                          onClick={() => setProductsMenuOpen(false)}
+                        >
+                          Series E
+                        </Link>
+                        <Link
+                          href="/products/series-w"
+                          className={`block px-3 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-4 transition-all rounded-none ${isActive('/products/series-w') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                          onClick={() => setProductsMenuOpen(false)}
+                        >
+                          Series W
+                        </Link>
+                        <Link
+                          href="/products/series-p"
+                          className={`block px-3 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-4 transition-all rounded-none ${isActive('/products/series-p') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                          onClick={() => setProductsMenuOpen(false)}
+                        >
+                          Series P
+                        </Link>
+                      </div>
                     </div>
                     <div>
-                      <div className="px-2 py-1 text-xs font-semibold uppercase tracking-wide text-text-body">By Chain Type</div>
-                      <Link
-                        href="/products/full-chisel-325"
-                        className={`block px-2 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition rounded-none ${isActive('/products/full-chisel-325') ? 'text-forest-brand font-medium' : ''}`}
-                        onClick={() => setProductsMenuOpen(false)}
-                      >
-                        Full Chisel .325&quot;
-                      </Link>
-                      <Link
-                        href="/products/low-profile-325"
-                        className={`block px-2 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition rounded-none ${isActive('/products/low-profile-325') ? 'text-forest-brand font-medium' : ''}`}
-                        onClick={() => setProductsMenuOpen(false)}
-                      >
-                        Low Profile .325&quot;
-                      </Link>
-                      <Link
-                        href="/products/semi-chisel-38"
-                        className={`block px-2 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition rounded-none ${isActive('/products/semi-chisel-38') ? 'text-forest-brand font-medium' : ''}`}
-                        onClick={() => setProductsMenuOpen(false)}
-                      >
-                        Semi Chisel 3/8&quot;
-                      </Link>
+                      <div className="px-2 py-2 mb-2 text-xs font-bold uppercase tracking-wide text-forest-brand border-b border-forest-brand/30">By Chain Type</div>
+                      <div className="space-y-1">
+                        <Link
+                          href="/products/full-chisel-325"
+                          className={`block px-3 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-4 transition-all rounded-none ${isActive('/products/full-chisel-325') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                          onClick={() => setProductsMenuOpen(false)}
+                        >
+                          Full Chisel .325&quot;
+                        </Link>
+                        <Link
+                          href="/products/low-profile-325"
+                          className={`block px-3 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-4 transition-all rounded-none ${isActive('/products/low-profile-325') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                          onClick={() => setProductsMenuOpen(false)}
+                        >
+                          Low Profile .325&quot;
+                        </Link>
+                        <Link
+                          href="/products/semi-chisel-38"
+                          className={`block px-3 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-4 transition-all rounded-none ${isActive('/products/semi-chisel-38') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                          onClick={() => setProductsMenuOpen(false)}
+                        >
+                          Semi Chisel 3/8&quot;
+                        </Link>
+                      </div>
                     </div>
                     <div>
-                      <div className="px-2 py-1 text-xs font-semibold uppercase tracking-wide text-text-body">By Solution</div>
-                      <Link
-                        href="/products/applications/battery-saws"
-                        className={`block px-2 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition rounded-none ${isActive('/products/applications/battery-saws') ? 'text-forest-brand font-medium' : ''}`}
-                        onClick={() => setProductsMenuOpen(false)}
-                      >
-                        For Battery Saws
-                      </Link>
-                      <Link
-                        href="/products/applications/cold-climate"
-                        className={`block px-2 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition rounded-none ${isActive('/products/applications/cold-climate') ? 'text-forest-brand font-medium' : ''}`}
-                        onClick={() => setProductsMenuOpen(false)}
-                      >
-                        For Cold Climate
-                      </Link>
-                      <Link
-                        href="/products/applications/professional-loggers"
-                        className={`block px-2 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition rounded-none ${isActive('/products/applications/professional-loggers') ? 'text-forest-brand font-medium' : ''}`}
-                        onClick={() => setProductsMenuOpen(false)}
-                      >
-                        For Professional Loggers
-                      </Link>
-                      <Link
-                        href="/products/applications/retail-consumer"
-                        className={`block px-2 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition rounded-none ${isActive('/products/applications/retail-consumer') ? 'text-forest-brand font-medium' : ''}`}
-                        onClick={() => setProductsMenuOpen(false)}
-                      >
-                        For Retail/Consumer
-                      </Link>
-                      <Link
-                        href="/products/applications/challenging-conditions"
-                        className={`block px-2 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition rounded-none ${isActive('/products/applications/challenging-conditions') ? 'text-forest-brand font-medium' : ''}`}
-                        onClick={() => setProductsMenuOpen(false)}
-                      >
-                        For Challenging Conditions
-                      </Link>
+                      <div className="px-2 py-2 mb-2 text-xs font-bold uppercase tracking-wide text-forest-brand border-b border-forest-brand/30">By Solution</div>
+                      <div className="space-y-1">
+                        <Link
+                          href="/products/applications/battery-saws"
+                          className={`block px-3 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-4 transition-all rounded-none ${isActive('/products/applications/battery-saws') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                          onClick={() => setProductsMenuOpen(false)}
+                        >
+                          For Battery Saws
+                        </Link>
+                        <Link
+                          href="/products/applications/cold-climate"
+                          className={`block px-3 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-4 transition-all rounded-none ${isActive('/products/applications/cold-climate') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                          onClick={() => setProductsMenuOpen(false)}
+                        >
+                          For Cold Climate
+                        </Link>
+                        <Link
+                          href="/products/applications/professional-loggers"
+                          className={`block px-3 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-4 transition-all rounded-none ${isActive('/products/applications/professional-loggers') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                          onClick={() => setProductsMenuOpen(false)}
+                        >
+                          For Professional Loggers
+                        </Link>
+                        <Link
+                          href="/products/applications/retail-consumer"
+                          className={`block px-3 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-4 transition-all rounded-none ${isActive('/products/applications/retail-consumer') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                          onClick={() => setProductsMenuOpen(false)}
+                        >
+                          For Retail/Consumer
+                        </Link>
+                        <Link
+                          href="/products/applications/challenging-conditions"
+                          className={`block px-3 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-4 transition-all rounded-none ${isActive('/products/applications/challenging-conditions') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                          onClick={() => setProductsMenuOpen(false)}
+                        >
+                          For Challenging Conditions
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -215,33 +224,45 @@ export default function Navigation() {
                 </svg>
               </button>
               {resourcesMenuOpen && (
-                <div className="absolute top-full left-0 mt-1 w-56 bg-white border border-forest-brand/30 rounded-none shadow-lg py-2 z-50">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-forest-brand/30 rounded-none shadow-xl py-2 z-50 opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
                   <Link
                     href="/resources#catalogs"
-                    className={`block px-4 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition ${isActive('/resources') ? 'text-forest-brand font-medium' : ''}`}
+                    className={`flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-5 transition-all ${isActive('/resources') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setResourcesMenuOpen(false)}
                   >
+                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
                     Catalogs & Datasheets
                   </Link>
                   <Link
                     href="/resources#fitment-guides"
-                    className="block px-4 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition"
+                    className="flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-5 transition-all"
                     onClick={() => setResourcesMenuOpen(false)}
                   >
+                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                    </svg>
                     Fitment Guides
                   </Link>
                   <Link
                     href="/quality"
-                    className={`block px-4 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition ${isActive('/quality') ? 'text-forest-brand font-medium' : ''}`}
+                    className={`flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-5 transition-all ${isActive('/quality') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setResourcesMenuOpen(false)}
                   >
+                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                     Quality & Certifications
                   </Link>
                   <Link
                     href="/resources#packaging"
-                    className="block px-4 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition"
+                    className="flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-5 transition-all"
                     onClick={() => setResourcesMenuOpen(false)}
                   >
+                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
                     Packaging Standards
                   </Link>
                 </div>
@@ -268,27 +289,36 @@ export default function Navigation() {
                 </svg>
               </button>
               {aboutContactMenuOpen && (
-                <div className="absolute top-full left-0 mt-1 w-56 bg-white border border-forest-brand/30 rounded-none shadow-lg py-2 z-50">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-forest-brand/30 rounded-none shadow-xl py-2 z-50 opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
                   <Link
                     href="/about"
-                    className={`block px-4 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition ${isActive('/about') ? 'text-forest-brand font-medium' : ''}`}
+                    className={`flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-5 transition-all ${isActive('/about') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setAboutContactMenuOpen(false)}
                   >
+                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                     About Us
                   </Link>
                   <Link
                     href="/contact"
-                    className={`block px-4 py-2 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand transition ${isActive('/contact') ? 'text-forest-brand font-medium' : ''}`}
+                    className={`flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:pl-5 transition-all ${isActive('/contact') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setAboutContactMenuOpen(false)}
                   >
+                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
                     Contact Information
                   </Link>
-                  <div className="border-t border-forest-brand/20 my-1"></div>
+                  <div className="border-t border-forest-brand/20 my-2"></div>
                   <Link
                     href="/request-quote"
-                    className={`block px-4 py-2 text-sm hover:bg-forest-light bg-safety-orange/10 ${isActive('/request-quote') ? 'text-safety-orange font-medium' : 'text-safety-orange'}`}
+                    className={`flex items-center gap-2 px-4 py-2.5 text-sm font-semibold hover:bg-safety-orange/20 bg-safety-orange/10 hover:pl-5 transition-all ${isActive('/request-quote') ? 'text-safety-orange bg-safety-orange/15' : 'text-safety-orange'}`}
                     onClick={() => setAboutContactMenuOpen(false)}
                   >
+                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
                     Request for Quote
                   </Link>
                 </div>
