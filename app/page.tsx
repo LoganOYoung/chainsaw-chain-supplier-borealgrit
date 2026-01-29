@@ -147,7 +147,7 @@ export default function Home() {
                     .043&quot; Narrow Kerf chains optimized for battery-powered saws. Reduced drag and heat for maximum efficiency.
                   </p>
                   <div className="flex items-center text-white text-sm sm:text-base font-semibold">
-                    View Series E <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    View Series E <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                   </div>
                 </div>
               </div>
@@ -172,7 +172,7 @@ export default function Home() {
                     CrNiMo Alloy Steel with specialized nitriding for sub-zero conditions. Mastery over frozen timber at -40°C.
                   </p>
                   <div className="flex items-center text-white text-sm sm:text-base font-semibold">
-                    View Series W <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    View Series W <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                   </div>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function Home() {
                     Full-Chisel design with industrial chrome coating. The choice of professional loggers for highest chip clearance speed.
                   </p>
                   <div className="flex items-center text-white text-sm sm:text-base font-semibold">
-                    View Series P <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    View Series P <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                   </div>
                 </div>
               </div>
