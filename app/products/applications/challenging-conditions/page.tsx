@@ -117,7 +117,7 @@ export default function ChallengingConditionsPage() {
               </div>
               <Link
                 href="/products/series-w"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-forest-brand/90 transition"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition"
               >
                 View Series W Details
                 <ArrowRight className="w-4 h-4" />
@@ -305,7 +305,7 @@ export default function ChallengingConditionsPage() {
 
         {/* CTA Section */}
         <section className="flex flex-wrap gap-4 pt-4 border-t border-forest-brand/30">
-          <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition">
+          <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition">
             Request Quote for Challenging Conditions
           </Link>
           <Link href="/products" className="inline-flex items-center px-5 py-2.5 border-2 border-industrial text-text-bodyfont-semibold text-sm hover:bg-gray-50 transition">

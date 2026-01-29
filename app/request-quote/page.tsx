@@ -459,7 +459,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                   setShowForm(false)
                   setCartProducts([])
                 }}
-                className="text-text-body hover:text-text-main"
+                className="text-text-body hover:text-forest-brand hover:bg-forest-brand hover:text-white hover:border-2 hover:border-forest-brand hover:px-1 hover:py-1 hover:-mx-1 hover:-my-1 transition"
                 aria-label="Close form"
               >
                 <X className="w-5 h-5" />
@@ -743,7 +743,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-3 sm:px-10 sm:py-4 bg-forest-brand text-white font-bold text-sm sm:text-lg hover:bg-forest-brand/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-none shadow-lg hover:shadow-xl transform hover:scale-105 disabled:hover:scale-100"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-3 sm:px-10 sm:py-4 bg-forest-brand text-white font-bold text-sm sm:text-lg hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-none shadow-lg hover:shadow-xl transform hover:scale-105 disabled:hover:scale-100"
                   >
                     {isSubmitting ? (
                       <>
@@ -825,7 +825,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
             <div className="mb-4 md:mb-6">
               <button
                 onClick={downloadRFQTemplate}
-                className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 bg-forest-brand text-white font-semibold text-xs sm:text-sm hover:bg-forest-brand/90 transition shadow-md hover:shadow-lg rounded-none w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 bg-forest-brand text-white font-semibold text-xs sm:text-sm hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition shadow-md hover:shadow-lg rounded-none w-full sm:w-auto justify-center"
               >
                 <Download className="w-4 h-4" />
                 Download Professional RFQ Template
@@ -994,7 +994,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                   />
                   <label
                     htmlFor="rfq-file-upload"
-                    className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 bg-forest-brand text-white font-semibold text-xs sm:text-sm hover:bg-forest-brand/90 transition cursor-pointer rounded-none shadow-md hover:shadow-lg"
+                    className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 bg-forest-brand text-white font-semibold text-xs sm:text-sm hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition cursor-pointer rounded-none shadow-md hover:shadow-lg"
                   >
                     {isUploading ? (
                       <>
@@ -1056,7 +1056,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
           
           {/* RFQ Template Preview - Collapsible/Secondary */}
           <details className="mb-6 bg-gray-50 border-2 border-forest-brand/30 rounded-none overflow-hidden">
-            <summary className="px-4 py-3 bg-gray-100 cursor-pointer text-sm font-semibold text-text-main hover:bg-gray-200 transition">
+            <summary className="px-4 py-3 bg-gray-100 cursor-pointer text-sm font-semibold text-text-main hover:bg-forest-brand hover:text-white hover:border-2 hover:border-forest-brand transition">
               View Template Structure Preview
             </summary>
             <div className="p-4 overflow-x-auto">

@@ -220,7 +220,7 @@ export default function LowProfile325Page() {
             Designed for .325&quot; low-profile bars. Fits many consumer saws (e.g. Husqvarna Mark II–style, some Stihl, Echo, Poulan). Gauge and drive link count must match bar. Always verify bar and chain specifications before ordering.
           </p>
           <div className="flex flex-wrap gap-3 mb-3">
-            <Link href="/fitment-finder" className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-text-main text-sm font-semibold hover:bg-gray-200 transition rounded">
+            <Link href="/fitment-finder" className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-text-main text-sm font-semibold hover:bg-forest-brand hover:text-white hover:border-2 hover:border-forest-brand transition rounded">
               View Compatible Models
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -278,7 +278,7 @@ export default function LowProfile325Page() {
         </section>
 
         <section className="flex flex-wrap gap-4 pt-4 border-t border-forest-brand/30">
-          <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition">
+          <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition">
             Request Quote
           </Link>
           <Link href="/resources#datasheets" className="inline-flex items-center px-5 py-2.5 border-2 border-industrial text-text-bodyfont-semibold text-sm hover:bg-gray-50 transition">

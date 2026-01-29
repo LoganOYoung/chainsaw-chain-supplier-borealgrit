@@ -35,7 +35,7 @@ const config: Config = {
         'forest-dark': '#547950',      // Updated: Lighter green for Menu & Footer (equivalent to #426B3D at 90% opacity on white)
         'forest-brand': '#547950',     // Brand green for links, icons, borders (equivalent to #426B3D at 90% opacity on white background)
         'forest-light': '#F0F5F2',     // Light gray-green for backgrounds
-        'safety-orange': '#F28C28',     // Safety orange for CTA buttons
+        'safety-orange': '#547950',     // Changed to green (was orange)
         'cream-white': '#F8F9F5',      // Cream white for text on dark green (updated)
         accent: '#547950',             // Brand green as default accent (updated to match forest-brand)
         forest: '#547950',             // Updated to match forest-brand

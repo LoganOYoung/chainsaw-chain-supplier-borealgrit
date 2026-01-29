@@ -466,7 +466,7 @@ export default function QualityPage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition rounded"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition rounded"
             >
               Request Documentation
               <FileText className="w-4 h-4" />

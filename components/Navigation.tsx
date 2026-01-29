@@ -321,7 +321,7 @@ export default function Navigation() {
                   <div className="border-t border-forest-brand/20 my-2"></div>
                   <Link
                     href="/request-quote"
-                    className={`flex items-center gap-2 px-4 py-2.5 text-sm font-semibold hover:bg-safety-orange/20 bg-safety-orange/10 hover:underline transition ${isActive('/request-quote') ? 'text-safety-orange bg-safety-orange/15' : 'text-safety-orange'}`}
+                    className={`flex items-center gap-2 px-4 py-2.5 text-sm font-semibold hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand bg-forest-brand/10 text-forest-brand transition ${isActive('/request-quote') ? 'bg-forest-brand/15' : ''}`}
                     onClick={() => setAboutContactMenuOpen(false)}
                   >
                     <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -334,7 +334,7 @@ export default function Navigation() {
             </li>
           </ul>
           <div className="md:hidden flex items-center gap-2">
-            <Link href="/request-quote" className="px-3 py-1.5 bg-safety-orange text-[#547950] text-sm font-semibold rounded-none hover:bg-safety-orange/90 transition">
+            <Link href="/request-quote" className="px-3 py-1.5 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition">
               RFQ
             </Link>
             <button
@@ -654,7 +654,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/request-quote"
-                      className={`block py-2 text-sm font-semibold text-safety-orange ${isActive('/request-quote') ? 'font-bold' : ''}`}
+                      className={`block py-2 text-sm font-semibold text-forest-brand hover:text-white hover:bg-forest-brand hover:px-2 hover:py-2 hover:-mx-2 hover:-my-2 transition ${isActive('/request-quote') ? 'font-bold' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setAboutContactMenuOpen(false)

@@ -328,7 +328,7 @@ export default function InteractiveRFQTable() {
         </div>
         <button
           onClick={exportToExcel}
-          className="inline-flex items-center gap-2 px-6 py-2 bg-accent hover:bg-green-700 text-white font-semibold text-sm transition rounded-none"
+          className="inline-flex items-center gap-2 px-6 py-2 bg-accent hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand text-white font-semibold text-sm transition rounded-none"
         >
           <Download className="w-4 h-4" />
           Export My RFQ to Excel
