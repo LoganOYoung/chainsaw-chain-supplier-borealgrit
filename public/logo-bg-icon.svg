@@ -1,40 +1,43 @@
-<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-  <!-- BGWÍÄþ - ÅþH, -->
-  <g transform="translate(8, 8)">
-    <!-- BWÍ - þaÞ¥¾¡ -->
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- BG?????? - ????????? -->
+  <g transform="translate(8, 12)">
+    <!-- B?? -->
     <g>
-      <!-- B„æ§Ö¿ -->
-      <rect x="0" y="0" width="5" height="44" rx="2.5" fill="#547950"/>
-      <!-- B„
-J -->
-      <path d="M 5 0 Q 15 0 15 11 Q 15 22 5 22" stroke="#547950" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-      <!-- B„J -->
-      <path d="M 5 22 Q 15 22 15 33 Q 15 44 5 44" stroke="#547950" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-      <!-- B„…èÞ¥¿ -->
-      <line x1="5" y1="22" x2="15" y2="22" stroke="#547950" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="0" y="0" width="6" height="40" rx="3" fill="#547950"/>
+      <path d="M 6 2 Q 17 2 17 10 Q 17 18 6 18" 
+            stroke="#547950" 
+            stroke-width="5" 
+            fill="none" 
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <path d="M 6 20 Q 17 20 17 28 Q 17 36 6 36" 
+            stroke="#547950" 
+            stroke-width="5" 
+            fill="none" 
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <line x1="6" y1="20" x2="17" y2="20" stroke="#547950" stroke-width="3.5" stroke-linecap="round"/>
     </g>
     
-    <!-- þaÞ¥¯ -->
-    <g transform="translate(20, 18)">
-      <path d="M 0 3 Q 0 0 3 0 L 6 0 Q 9 0 9 3 L 9 6 Q 9 9 6 9 L 3 9 Q 0 9 0 6 Z" 
+    <!-- ????? -->
+    <g transform="translate(22, 16)">
+      <path d="M 0 3 Q 0 0 3 0 L 5 0 Q 8 0 8 3 L 8 6 Q 8 9 5 9 L 3 9 Q 0 9 0 6 Z" 
             fill="#547950" 
             stroke="#547950" 
             stroke-width="1.2"
             stroke-linejoin="round"/>
     </g>
     
-    <!-- GWÍ - þaÎ< -->
-    <g transform="translate(30, 0)">
-      <!-- G„ -->
-      <path d="M 0 22 Q 0 0 20 0 L 26 0 Q 38 0 38 22 Q 38 44 20 44 Q 0 44 0 22" 
+    <!-- G?? -->
+    <g transform="translate(34, 0)">
+      <path d="M 0 20 Q 0 0 18 0 L 24 0 Q 36 0 36 20 Q 36 40 18 40 Q 0 40 0 20" 
             stroke="#547950" 
-            stroke-width="4.5" 
+            stroke-width="5" 
             fill="none" 
-            stroke-linecap="round"/>
-      <!-- G„*¿ -->
-      <line x1="20" y1="22" x2="26" y2="22" stroke="#547950" stroke-width="4.5" stroke-linecap="round"/>
-      <!-- G„Ö¿ -->
-      <line x1="26" y1="22" x2="26" y2="30" stroke="#547950" stroke-width="4.5" stroke-linecap="round"/>
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <line x1="18" y1="20" x2="24" y2="20" stroke="#547950" stroke-width="5" stroke-linecap="round"/>
+      <line x1="24" y1="20" x2="24" y2="28" stroke="#547950" stroke-width="5" stroke-linecap="round"/>
     </g>
   </g>
 </svg>
