@@ -1,9 +1,11 @@
-<svg width="260" height="85" viewBox="0 0 260 85" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background Rectangle -->
-  <rect x="0" y="0" width="260" height="85" rx="4" ry="4" fill="#547950"/>
-  
-  <!-- BOREALGRIT Text -->
-  <text x="130" y="55" font-family="'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="800" fill="#FFFFFF" letter-spacing="2.5px" text-anchor="middle">
-    BOREALGRIT
-  </text>
+<svg width="280" height="90" viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(10, 0)">
+    <!-- Background Rectangle with Skew -->
+    <rect x="0" y="0" width="260" height="85" rx="4" ry="4" fill="#547950" transform="skewX(-8)"/>
+    
+    <!-- BOREALGRIT Text with Skew -->
+    <text x="130" y="55" font-family="'Montserrat', 'Poppins', 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="900" fill="#FFFFFF" letter-spacing="2.5px" text-anchor="middle" transform="skewX(-8)">
+      BOREALGRIT
+    </text>
+  </g>
 </svg>
