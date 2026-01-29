@@ -13,7 +13,7 @@ export default function Footer() {
                 alt="Borealgrit Logo" 
                 width={280} 
                 height={90}
-                className="h-12 md:h-14 w-auto"
+                className="h-14 md:h-16 w-auto"
               />
             </Link>
             <p className="text-sm text-white/80 leading-relaxed">Chainsaw chain manufacturer. B2B only. North American distributors and OEM.</p>
