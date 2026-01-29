@@ -104,28 +104,28 @@ export default function ProductsPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10 lg:py-14">
         {/* Page Header */}
-        <header className="mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-text-main mb-4">
+        <header className="mb-6 md:mb-10">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-main mb-3 md:mb-4">
             Chainsaw Chain Product Catalog
           </h1>
-          <p className="text-text-body text-base leading-relaxed max-w-4xl">
+          <p className="text-text-body text-sm sm:text-base leading-relaxed max-w-4xl">
             Complete technical specifications for all chainsaw chain products. Filter by pitch, gauge, drive links, chain type, cutter profile, and steel grade. All products meet <strong>ANSI B175.1</strong> standards. Selected models certified for <strong>CSA Z62.3</strong> (Canadian market). OEM and private label configurations available.
           </p>
         </header>
 
         {/* Product Catalog Notice */}
-        <section className="mb-10 bg-accent/5 border-2 border-forest-brand rounded-none p-6">
-          <div className="flex items-start gap-3">
+        <section className="mb-6 md:mb-10 bg-accent/5 border-2 border-forest-brand rounded-none p-4 sm:p-6">
+          <div className="flex items-start gap-2 sm:gap-3">
             <div className="flex-shrink-0 mt-1">
-              <svg className="w-6 h-6 text-forest-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-forest-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <div className="flex-1">
-              <h2 className="text-lg font-bold text-text-main mb-3">About This Catalog</h2>
-              <div className="space-y-2 text-sm text-text-body">
+            <div className="flex-1 min-w-0">
+              <h2 className="text-base sm:text-lg font-bold text-text-main mb-2 sm:mb-3">About This Catalog</h2>
+              <div className="space-y-2 text-xs sm:text-sm text-text-body">
                 <p>
                   <strong className="text-text-main">Standard Products (36 models):</strong> The products listed below represent our standard catalog - these are the most commonly ordered specifications and are available for immediate order. They cover approximately 80-90% of typical market demand across four key segments: battery-powered saws, cold-weather applications, professional logging, and standard duty.
                 </p>
@@ -144,42 +144,42 @@ export default function ProductsPage() {
         </section>
 
         {/* Product Range Summary */}
-        <section className="mb-10 bg-white border border-forest-brand/30 rounded-none p-6">
-          <h2 className="text-lg font-bold text-text-main mb-4">Complete Product Range</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
+        <section className="mb-8 md:mb-10 bg-white border border-forest-brand/30 rounded-none p-4 md:p-6">
+          <h2 className="text-base sm:text-lg font-bold text-text-main mb-3 md:mb-4">Complete Product Range</h2>
+          <div className="overflow-x-auto -mx-4 sm:mx-0">
+            <table className="w-full text-xs sm:text-sm border-collapse min-w-[500px]">
               <thead>
                 <tr className="border-b border-forest-brand/30">
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main bg-gray-50">Parameter</th>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main bg-gray-50">Available Options</th>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main bg-gray-50">Specifications</th>
+                  <th scope="col" className="text-left px-3 sm:px-4 py-2 sm:py-3 font-semibold text-text-main bg-gray-50">Parameter</th>
+                  <th scope="col" className="text-left px-3 sm:px-4 py-2 sm:py-3 font-semibold text-text-main bg-gray-50">Available Options</th>
+                  <th scope="col" className="text-left px-3 sm:px-4 py-2 sm:py-3 font-semibold text-text-main bg-gray-50">Specifications</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b border-gray-100">
-                  <td className="px-4 py-3 font-semibold text-text-main">Pitch</td>
-                  <td className="px-4 py-3 text-industrial">.325&quot;, 3/8&quot; LP, 3/8&quot;, .404&quot;</td>
-                  <td className="px-4 py-3 text-text-body">.325&quot; (8.25mm), 3/8&quot; LP (9.3mm), 3/8&quot; (9.5mm), .404&quot; (10.3mm)</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 font-semibold text-text-main">Pitch</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 text-industrial">.325&quot;, 3/8&quot; LP, 3/8&quot;, .404&quot;</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 text-text-body">.325&quot; (8.25mm), 3/8&quot; LP (9.3mm), 3/8&quot; (9.5mm), .404&quot; (10.3mm)</td>
                 </tr>
                 <tr className="border-b border-gray-100">
-                  <td className="px-4 py-3 font-semibold text-text-main">Gauge</td>
-                  <td className="px-4 py-3 text-industrial">.043&quot;, .050&quot;, .058&quot;, .063&quot;</td>
-                  <td className="px-4 py-3 text-text-body">.043&quot; (1.1mm), .050&quot; (1.3mm), .058&quot; (1.5mm), .063&quot; (1.6mm)</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 font-semibold text-text-main">Gauge</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 text-industrial">.043&quot;, .050&quot;, .058&quot;, .063&quot;</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 text-text-body">.043&quot; (1.1mm), .050&quot; (1.3mm), .058&quot; (1.5mm), .063&quot; (1.6mm)</td>
                 </tr>
                 <tr className="border-b border-gray-100">
-                  <td className="px-4 py-3 font-semibold text-text-main">Drive Links</td>
-                  <td className="px-4 py-3 text-industrial">48DL - 84DL</td>
-                  <td className="px-4 py-3 text-text-body">Standard range: 48DL - 84DL. Custom configurations available for OEM orders.</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 font-semibold text-text-main">Drive Links</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 text-industrial">48DL - 84DL</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 text-text-body">Standard range: 48DL - 84DL. Custom configurations available for OEM orders.</td>
                 </tr>
                 <tr className="border-b border-gray-100">
-                  <td className="px-4 py-3 font-semibold text-text-main">Chain Type</td>
-                  <td className="px-4 py-3 text-industrial">Full Chain, Semi Chain, Low Profile</td>
-                  <td className="px-4 py-3 text-text-body">Full Chain, Semi Chain, Low Profile. Full-Chisel and Semi-Chisel cutter profiles.</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 font-semibold text-text-main">Chain Type</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 text-industrial">Full Chain, Semi Chain, Low Profile</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 text-text-body">Full Chain, Semi Chain, Low Profile. Full-Chisel and Semi-Chisel cutter profiles.</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 font-semibold text-text-main">Cutter Profile</td>
-                  <td className="px-4 py-3 text-industrial">Full-Chisel, Semi-Chisel</td>
-                  <td className="px-4 py-3 text-text-body">Full-Chisel (square-corner) for maximum cutting speed. Semi-Chisel (round-corner) for durability in dirty conditions.</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 font-semibold text-text-main">Cutter Profile</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 text-industrial">Full-Chisel, Semi-Chisel</td>
+                  <td className="px-3 sm:px-4 py-2 sm:py-3 text-text-body">Full-Chisel (square-corner) for maximum cutting speed. Semi-Chisel (round-corner) for durability in dirty conditions.</td>
                 </tr>
               </tbody>
             </table>
@@ -516,56 +516,56 @@ export default function ProductsPage() {
 
         {/* Product Table */}
         <section className="bg-white rounded-none border border-forest-brand/30 overflow-hidden" aria-label="Product specifications table">
-          <div className="px-4 sm:px-6 py-4 border-b border-forest-brand/30 bg-gray-50">
-            <h2 className="text-lg font-bold text-text-main">Product Specifications</h2>
+          <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-forest-brand/30 bg-gray-50">
+            <h2 className="text-base sm:text-lg font-bold text-text-main">Product Specifications</h2>
             <p className="text-xs text-text-body mt-1">
               Complete technical specifications for all available chainsaw chain products. Click on Series links for detailed information.
             </p>
           </div>
           <div className="overflow-x-auto -mx-4 sm:mx-0">
-            <table className="w-full text-sm min-w-[1000px]" role="table" aria-label="Chainsaw chain product catalog">
+            <table className="w-full text-xs sm:text-sm min-w-[900px] md:min-w-[1000px]" role="table" aria-label="Chainsaw chain product catalog">
               <thead className="bg-gray-50 border-b border-forest-brand/30">
                 <tr>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">MDM No.</th>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Series</th>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Pitch</th>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Gauge</th>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Drive Links</th>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Chain Type</th>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Cutter Type</th>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Steel Grade</th>
-                  <th scope="col" className="text-left px-4 py-3 font-semibold text-text-main">Description</th>
+                  <th scope="col" className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-text-main text-xs sm:text-sm">MDM No.</th>
+                  <th scope="col" className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-text-main text-xs sm:text-sm">Series</th>
+                  <th scope="col" className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-text-main text-xs sm:text-sm">Pitch</th>
+                  <th scope="col" className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-text-main text-xs sm:text-sm">Gauge</th>
+                  <th scope="col" className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-text-main text-xs sm:text-sm">Drive Links</th>
+                  <th scope="col" className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-text-main text-xs sm:text-sm">Chain Type</th>
+                  <th scope="col" className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-text-main text-xs sm:text-sm">Cutter Type</th>
+                  <th scope="col" className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-text-main text-xs sm:text-sm">Steel Grade</th>
+                  <th scope="col" className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-text-main text-xs sm:text-sm">Description</th>
                 </tr>
               </thead>
               <tbody>
                 {displayedProducts.length > 0 ? (
                   displayedProducts.map((product) => (
                     <tr key={product.id} className="border-b border-gray-100 hover:bg-gray-50 transition">
-                      <td className="px-4 py-3 font-medium text-text-main">
+                      <td className="px-2 sm:px-4 py-2 sm:py-3 font-medium text-text-main">
                         <span className="font-mono text-xs font-semibold">{product.id}</span>
                       </td>
-                      <td className="px-4 py-3 text-industrial">
+                      <td className="px-2 sm:px-4 py-2 sm:py-3 text-industrial text-xs sm:text-sm">
                         {product.series === 'Series E' && <Link href="/products/series-e" className="text-forest-brand hover:underline font-medium">{product.series}</Link>}
                         {product.series === 'Series W' && <Link href="/products/series-w" className="text-forest-brand hover:underline font-medium">{product.series}</Link>}
                         {product.series === 'Series P' && <Link href="/products/series-p" className="text-forest-brand hover:underline font-medium">{product.series}</Link>}
                         {!['Series E', 'Series W', 'Series P'].includes(product.series) && <span className="text-industrial">{product.series}</span>}
                       </td>
-                      <td className="px-4 py-3 text-text-bodyfont-medium">{product.pitch}</td>
-                      <td className="px-4 py-3 text-text-bodyfont-medium">{product.gauge}</td>
-                      <td className="px-4 py-3 text-industrial">{product.driveLinks}</td>
-                      <td className="px-4 py-3 text-industrial">{product.chainType}</td>
-                      <td className="px-4 py-3 text-industrial">{product.cutterType}</td>
-                      <td className="px-4 py-3 text-industrial">
+                      <td className="px-2 sm:px-4 py-2 sm:py-3 text-text-body font-medium text-xs sm:text-sm">{product.pitch}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-3 text-text-body font-medium text-xs sm:text-sm">{product.gauge}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-3 text-industrial text-xs sm:text-sm">{product.driveLinks}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-3 text-industrial text-xs sm:text-sm">{product.chainType}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-3 text-industrial text-xs sm:text-sm">{product.cutterType}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-3 text-industrial text-xs sm:text-sm">
                         <span className={product.steelGrade === '68CrNiMo' ? 'font-medium text-text-main' : ''}>{product.steelGrade}</span>
                       </td>
-                      <td className="px-4 py-3 text-text-body text-xs">{product.description}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-3 text-text-body text-xs">{product.description}</td>
                     </tr>
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={9} className="px-4 py-8 text-center text-industrial">
-                      <p>No products found matching your criteria.</p>
-                      <p className="text-sm text-text-body mt-2">
+                    <td colSpan={9} className="px-4 py-6 sm:py-8 text-center text-industrial">
+                      <p className="text-sm sm:text-base">No products found matching your criteria.</p>
+                      <p className="text-xs sm:text-sm text-text-body mt-2">
                         Try adjusting your filters or search query, or <Link href="/contact" className="text-forest-brand hover:underline">contact us</Link> for custom specifications.
                       </p>
                     </td>
@@ -577,13 +577,13 @@ export default function ProductsPage() {
           
           {/* Load More Button */}
           {hasMore && (
-            <div className="px-4 sm:px-6 py-4 border-t border-forest-brand/30 bg-gray-50 text-center">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 border-t border-forest-brand/30 bg-gray-50 text-center">
               <button
                 onClick={() => setItemsPerPage(prev => prev + 20)}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-white border border-gray-300 text-text-body text-sm font-semibold hover:bg-gray-50 hover:border-forest-brand transition rounded"
+                className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 bg-white border border-gray-300 text-text-body text-xs sm:text-sm font-semibold hover:bg-gray-50 hover:border-forest-brand transition rounded w-full sm:w-auto justify-center"
               >
                 Load More Products
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4" />
               </button>
               <p className="text-xs text-text-body mt-2">
                 Showing {displayedProducts.length} of {filteredProducts.length} products

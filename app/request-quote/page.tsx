@@ -468,23 +468,23 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
 
             {/* Uploaded File Info - Enhanced */}
             {uploadedFile && (
-              <div className="mb-6 bg-gradient-to-r from-forest-light to-blue-50 border-2 border-forest-brand rounded-none p-5 shadow-sm">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-forest-brand rounded-none flex items-center justify-center">
-                    <CheckCircle className="w-7 h-7 text-white" />
+              <div className="mb-4 md:mb-6 bg-gradient-to-r from-forest-light to-blue-50 border-2 border-forest-brand rounded-none p-4 sm:p-5 shadow-sm">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-forest-brand rounded-none flex items-center justify-center">
+                    <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-text-main mb-2 text-lg">RFQ File Successfully Uploaded</h3>
-                    <div className="bg-white border border-forest-brand/50 rounded-none p-3 mb-3">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-text-main mb-2 text-base sm:text-lg">RFQ File Successfully Uploaded</h3>
+                    <div className="bg-white border border-forest-brand/50 rounded-none p-2 sm:p-3 mb-2 sm:mb-3">
                       <div className="flex items-center gap-2 mb-1">
-                        <FileText className="w-4 h-4 text-forest-brand" />
-                        <span className="font-semibold text-text-main text-sm">{uploadedFile.name}</span>
+                        <FileText className="w-3 h-3 sm:w-4 sm:h-4 text-forest-brand flex-shrink-0" />
+                        <span className="font-semibold text-text-main text-xs sm:text-sm truncate">{uploadedFile.name}</span>
                       </div>
                       <p className="text-xs text-text-body">
                         Size: {Math.round(uploadedFile.size / 1024)} KB • Type: {uploadedFile.type || 'CSV/Excel'}
                       </p>
                     </div>
-                    <p className="text-sm text-text-body">
+                    <p className="text-xs sm:text-sm text-text-body">
                       The file content will be included in your quote request. Please review the products below and complete your contact information.
                     </p>
                   </div>
@@ -494,25 +494,25 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
 
             {/* Products Summary - Enhanced Card Design */}
             {cartProducts.length > 0 && (
-            <div className="mb-6 bg-gradient-to-br from-gray-50 to-white border-2 border-forest-brand/30 rounded-none p-5 shadow-sm">
-              <div className="flex items-center gap-2 mb-4">
-                <ShoppingCart className="w-5 h-5 text-forest-brand" />
-                <h3 className="text-lg font-bold text-text-main">
+            <div className="mb-4 md:mb-6 bg-gradient-to-br from-gray-50 to-white border-2 border-forest-brand/30 rounded-none p-4 sm:p-5 shadow-sm">
+              <div className="flex items-center gap-2 mb-3 md:mb-4">
+                <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 text-forest-brand" />
+                <h3 className="text-base sm:text-lg font-bold text-text-main">
                   Products from RFQ File ({cartProducts.length} {cartProducts.length === 1 ? 'Product' : 'Products'})
                 </h3>
               </div>
-              <div className="space-y-3 max-h-80 overflow-y-auto pr-2">
+              <div className="space-y-2 sm:space-y-3 max-h-80 overflow-y-auto pr-1 sm:pr-2">
                 {cartProducts.map((product, index) => (
-                  <div key={index} className="bg-white p-4 rounded-none border-2 border-gray-200 hover:border-forest-brand/50 transition shadow-sm">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex-1">
+                  <div key={index} className="bg-white p-3 sm:p-4 rounded-none border-2 border-gray-200 hover:border-forest-brand/50 transition shadow-sm">
+                    <div className="flex items-start justify-between mb-2 sm:mb-3">
+                      <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="inline-flex items-center justify-center w-6 h-6 bg-forest-brand/10 text-forest-brand font-bold text-xs rounded-none">
+                          <span className="inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 bg-forest-brand/10 text-forest-brand font-bold text-xs rounded-none flex-shrink-0">
                             {index + 1}
                           </span>
-                          <span className="font-mono font-bold text-text-main text-sm">{product.id}</span>
+                          <span className="font-mono font-bold text-text-main text-xs sm:text-sm truncate">{product.id}</span>
                         </div>
-                        <div className="text-text-body text-xs ml-8 space-y-1">
+                        <div className="text-text-body text-xs ml-7 sm:ml-8 space-y-0.5 sm:space-y-1">
                           <div>
                             <span className="font-semibold">Specs:</span> {product.pitch} / {product.gauge} / {product.driveLinks}
                           </div>
@@ -526,7 +526,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                       </div>
                     </div>
                     {product.notes && (
-                      <div className="text-xs text-text-body mt-3 pt-3 border-t border-gray-200 ml-8">
+                      <div className="text-xs text-text-body mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-gray-200 ml-7 sm:ml-8">
                         <span className="font-semibold">Notes:</span> {product.notes}
                       </div>
                     )}
@@ -539,15 +539,15 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
             {/* Contact Form */}
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Group 1: Contact Information */}
-              <div className="bg-gray-50 border border-forest-brand/20 rounded-none p-5">
-                <div className="flex items-center gap-2 mb-4">
-                  <Mail className="w-5 h-5 text-forest-brand" />
-                  <h3 className="text-lg font-bold text-text-main">Contact Information</h3>
+              <div className="bg-gray-50 border border-forest-brand/20 rounded-none p-4 md:p-5">
+                <div className="flex items-center gap-2 mb-3 md:mb-4">
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-forest-brand" />
+                  <h3 className="text-base sm:text-lg font-bold text-text-main">Contact Information</h3>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                   {/* Company Name */}
                   <div>
-                    <label htmlFor="companyName" className="block text-sm font-semibold text-text-main mb-1.5">
+                    <label htmlFor="companyName" className="block text-xs sm:text-sm font-semibold text-text-main mb-1.5">
                       Company Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -558,13 +558,13 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                       value={formData.companyName}
                       onChange={handleInputChange}
                       placeholder="Enter your company name"
-                      className="w-full px-4 py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition text-sm"
                     />
                   </div>
 
                   {/* Contact Name */}
                   <div>
-                    <label htmlFor="contactName" className="block text-sm font-semibold text-text-main mb-1.5">
+                    <label htmlFor="contactName" className="block text-xs sm:text-sm font-semibold text-text-main mb-1.5">
                       Contact Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -575,13 +575,13 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                       value={formData.contactName}
                       onChange={handleInputChange}
                       placeholder="Your full name"
-                      className="w-full px-4 py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition text-sm"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-text-main mb-1.5">
+                    <label htmlFor="email" className="block text-xs sm:text-sm font-semibold text-text-main mb-1.5">
                       Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -592,13 +592,13 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="your.email@company.com"
-                      className="w-full px-4 py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition text-sm"
                     />
                   </div>
 
                   {/* Phone */}
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-text-main mb-1.5">
+                    <label htmlFor="phone" className="block text-xs sm:text-sm font-semibold text-text-main mb-1.5">
                       Phone Number <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -609,22 +609,22 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="+1 (555) 123-4567"
-                      className="w-full px-4 py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition text-sm"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Group 2: Location Information */}
-              <div className="bg-gray-50 border border-forest-brand/20 rounded-none p-5">
-                <div className="flex items-center gap-2 mb-4">
-                  <MapPin className="w-5 h-5 text-forest-brand" />
-                  <h3 className="text-lg font-bold text-text-main">Location Information</h3>
+              <div className="bg-gray-50 border border-forest-brand/20 rounded-none p-4 md:p-5">
+                <div className="flex items-center gap-2 mb-3 md:mb-4">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-forest-brand" />
+                  <h3 className="text-base sm:text-lg font-bold text-text-main">Location Information</h3>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                   {/* Country */}
                   <div>
-                    <label htmlFor="country" className="block text-sm font-semibold text-text-main mb-1.5">
+                    <label htmlFor="country" className="block text-xs sm:text-sm font-semibold text-text-main mb-1.5">
                       Country <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -635,13 +635,13 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                       value={formData.country}
                       onChange={handleInputChange}
                       placeholder="e.g., United States"
-                      className="w-full px-4 py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition text-sm"
                     />
                   </div>
 
                   {/* City */}
                   <div>
-                    <label htmlFor="city" className="block text-sm font-semibold text-text-main mb-1.5">
+                    <label htmlFor="city" className="block text-xs sm:text-sm font-semibold text-text-main mb-1.5">
                       City <span className="text-xs text-gray-500 font-normal">(Optional)</span>
                     </label>
                     <input
@@ -651,22 +651,22 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                       value={formData.city}
                       onChange={handleInputChange}
                       placeholder="e.g., New York"
-                      className="w-full px-4 py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition text-sm"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Group 3: Business Information */}
-              <div className="bg-gray-50 border border-forest-brand/20 rounded-none p-5">
-                <div className="flex items-center gap-2 mb-4">
-                  <DollarSign className="w-5 h-5 text-forest-brand" />
-                  <h3 className="text-lg font-bold text-text-main">Business Information</h3>
+              <div className="bg-gray-50 border border-forest-brand/20 rounded-none p-4 md:p-5">
+                <div className="flex items-center gap-2 mb-3 md:mb-4">
+                  <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-forest-brand" />
+                  <h3 className="text-base sm:text-lg font-bold text-text-main">Business Information</h3>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                   {/* Expected Quantity */}
                   <div>
-                    <label htmlFor="expectedQuantity" className="block text-sm font-semibold text-text-main mb-1.5">
+                    <label htmlFor="expectedQuantity" className="block text-xs sm:text-sm font-semibold text-text-main mb-1.5">
                       Expected First Order Quantity
                     </label>
                     <input
@@ -676,14 +676,14 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                       placeholder="e.g., 1000 units"
                       value={formData.expectedQuantity}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition text-sm"
                     />
                     <p className="text-xs text-text-body mt-1">Help us prepare accurate pricing</p>
                   </div>
 
                   {/* Annual Volume */}
                   <div>
-                    <label htmlFor="annualVolume" className="block text-sm font-semibold text-text-main mb-1.5">
+                    <label htmlFor="annualVolume" className="block text-xs sm:text-sm font-semibold text-text-main mb-1.5">
                       Estimated Annual Volume
                     </label>
                     <input
@@ -693,7 +693,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                       placeholder="e.g., 10000 units/year"
                       value={formData.annualVolume}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition"
+                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition text-sm"
                     />
                     <p className="text-xs text-text-body mt-1">For volume discount consideration</p>
                   </div>
@@ -701,22 +701,22 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
               </div>
 
               {/* Group 4: Additional Information */}
-              <div className="bg-gray-50 border border-forest-brand/20 rounded-none p-5">
-                <div className="flex items-center gap-2 mb-4">
-                  <FileText className="w-5 h-5 text-forest-brand" />
-                  <h3 className="text-lg font-bold text-text-main">Additional Information</h3>
+              <div className="bg-gray-50 border border-forest-brand/20 rounded-none p-4 md:p-5">
+                <div className="flex items-center gap-2 mb-3 md:mb-4">
+                  <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-forest-brand" />
+                  <h3 className="text-base sm:text-lg font-bold text-text-main">Additional Information</h3>
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-text-main mb-1.5">
+                  <label htmlFor="message" className="block text-xs sm:text-sm font-semibold text-text-main mb-1.5">
                     Additional Message or Requirements
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    rows={5}
+                    rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition resize-y"
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 border-2 border-gray-300 rounded-none focus:ring-2 focus:ring-forest-brand focus:border-forest-brand outline-none transition resize-y text-sm"
                     placeholder="Any specific requirements, packaging preferences, custom specifications, or questions..."
                   />
                   <p className="text-xs text-text-body mt-1">Please provide any additional details that will help us prepare your quote</p>
@@ -724,15 +724,15 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
               </div>
 
               {/* Step 4: Submit Section */}
-              <div className="mt-8 pt-6 border-t-2 border-forest-brand/30">
-                <div className="bg-gradient-to-r from-forest-brand/5 to-forest-light border-2 border-forest-brand/30 rounded-none p-6 mb-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-forest-brand text-white flex items-center justify-center font-bold text-lg shadow-lg">
+              <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t-2 border-forest-brand/30">
+                <div className="bg-gradient-to-r from-forest-brand/5 to-forest-light border-2 border-forest-brand/30 rounded-none p-4 sm:p-6 mb-4 md:mb-6">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-forest-brand text-white flex items-center justify-center font-bold text-base sm:text-lg shadow-lg">
                       4
                     </div>
-                    <h3 className="text-xl font-bold text-text-main">Submit Your Request</h3>
+                    <h3 className="text-base sm:text-xl font-bold text-text-main">Submit Your Request</h3>
                   </div>
-                  <p className="text-sm text-text-body ml-13">
+                  <p className="text-xs sm:text-sm text-text-body ml-0 sm:ml-13">
                     Review your information above and click submit. We'll respond within 24 hours during business days.
                   </p>
                 </div>
@@ -742,36 +742,36 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-forest-brand text-white font-bold text-lg hover:bg-forest-brand/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-none shadow-lg hover:shadow-xl transform hover:scale-105 disabled:hover:scale-100"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-3 sm:px-10 sm:py-4 bg-forest-brand text-white font-bold text-sm sm:text-lg hover:bg-forest-brand/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-none shadow-lg hover:shadow-xl transform hover:scale-105 disabled:hover:scale-100"
                   >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="w-6 h-6 animate-spin" />
+                        <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" />
                         Submitting Request...
                       </>
                     ) : (
                       <>
                         Submit RFQ Request
-                        <ArrowRight className="w-6 h-6" />
+                        <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
                       </>
                     )}
                   </button>
 
                   {submitStatus === 'success' && (
-                    <div className="flex items-center gap-3 bg-forest-light border-2 border-forest-brand rounded-none px-6 py-4 flex-1">
-                      <CheckCircle2 className="w-6 h-6 text-forest-brand flex-shrink-0" />
+                    <div className="flex items-start sm:items-center gap-2 sm:gap-3 bg-forest-light border-2 border-forest-brand rounded-none px-4 py-3 sm:px-6 sm:py-4 flex-1">
+                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-forest-brand flex-shrink-0 mt-0.5 sm:mt-0" />
                       <div>
-                        <p className="text-sm font-bold text-forest-brand mb-1">Request Submitted Successfully!</p>
+                        <p className="text-xs sm:text-sm font-bold text-forest-brand mb-1">Request Submitted Successfully!</p>
                         <p className="text-xs text-forest-brand/80">We'll contact you within 24 hours during business days.</p>
                       </div>
                     </div>
                   )}
 
                   {submitStatus === 'error' && (
-                    <div className="flex items-center gap-3 bg-red-50 border-2 border-red-400 rounded-none px-6 py-4 flex-1">
-                      <X className="w-6 h-6 text-red-600 flex-shrink-0" />
+                    <div className="flex items-start sm:items-center gap-2 sm:gap-3 bg-red-50 border-2 border-red-400 rounded-none px-4 py-3 sm:px-6 sm:py-4 flex-1">
+                      <X className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 flex-shrink-0 mt-0.5 sm:mt-0" />
                       <div>
-                        <p className="text-sm font-bold text-red-800 mb-1">Submission Failed</p>
+                        <p className="text-xs sm:text-sm font-bold text-red-800 mb-1">Submission Failed</p>
                         <p className="text-xs text-red-700">Please try again or contact us directly at {CONTACT_EMAIL}</p>
                       </div>
                     </div>
@@ -787,13 +787,13 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
         <section className="mb-8 bg-white rounded-none border border-forest-brand/30 shadow-sm p-6">
           {/* Step 1: Download Template */}
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm ${
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 md:mb-4">
+              <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm ${
                 currentStep >= 1 ? 'bg-forest-brand text-white' : 'bg-gray-200 text-gray-400'
               }`}>
-                {currentStep > 1 ? <CheckCircle className="w-5 h-5" /> : '1'}
+                {currentStep > 1 ? <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" /> : '1'}
               </div>
-              <h2 className="text-2xl font-bold text-text-main">Download RFQ Template</h2>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-text-main">Download RFQ Template</h2>
             </div>
             
             <p className="text-text-body text-sm mb-4 leading-relaxed">
@@ -820,10 +820,10 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
             )}
 
             {/* Download Button */}
-            <div className="mb-6">
+            <div className="mb-4 md:mb-6">
               <button
                 onClick={downloadRFQTemplate}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition shadow-md hover:shadow-lg rounded-none"
+                className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 bg-forest-brand text-white font-semibold text-xs sm:text-sm hover:bg-forest-brand/90 transition shadow-md hover:shadow-lg rounded-none w-full sm:w-auto justify-center"
               >
                 <Download className="w-4 h-4" />
                 Download Professional RFQ Template
@@ -845,22 +845,22 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
 
           {/* Step 2: Upload Section */}
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm ${
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 md:mb-4">
+              <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm ${
                 currentStep >= 2 ? 'bg-forest-brand text-white' : 'bg-gray-200 text-gray-400'
               }`}>
-                {currentStep > 2 ? <CheckCircle className="w-5 h-5" /> : '2'}
+                {currentStep > 2 ? <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" /> : '2'}
               </div>
-              <h2 className="text-2xl font-bold text-text-main">Upload Your Filled RFQ Template</h2>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-text-main">Upload Your Filled RFQ Template</h2>
             </div>
             
-            <p className="text-text-body text-sm mb-4 leading-relaxed">
+            <p className="text-text-body text-xs sm:text-sm mb-3 md:mb-4 leading-relaxed">
               Upload your completed RFQ template (CSV or Excel format). We'll parse the file and prepare a quote request form for you.
             </p>
 
             {/* Upload Area - Drag & Drop */}
             <div 
-              className={`mb-6 p-6 border-2 rounded-none transition-all duration-300 ${
+              className={`mb-4 md:mb-6 p-4 sm:p-6 border-2 rounded-none transition-all duration-300 ${
                 currentStep >= 2 
                   ? 'bg-forest-light border-forest-brand shadow-md' 
                   : 'bg-gray-50 border-dashed border-forest-brand/40 hover:border-forest-brand/60'
@@ -967,15 +967,15 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                 }
               }}
             >
-              <div className="flex flex-col items-center justify-center gap-4">
-                <div className="border-2 border-dashed border-forest-brand/40 rounded-none p-6 text-center bg-white hover:bg-gray-50 transition cursor-pointer w-full"
+              <div className="flex flex-col items-center justify-center gap-3 md:gap-4">
+                <div className="border-2 border-dashed border-forest-brand/40 rounded-none p-4 sm:p-6 text-center bg-white hover:bg-gray-50 transition cursor-pointer w-full"
                   onClick={() => fileInputRef.current?.click()}
                 >
-                  <Upload className="w-10 h-10 text-forest-brand mx-auto mb-3" />
-                  <p className="text-sm font-semibold text-text-main mb-1">
+                  <Upload className="w-8 h-8 sm:w-10 sm:h-10 text-forest-brand mx-auto mb-2 sm:mb-3" />
+                  <p className="text-xs sm:text-sm font-semibold text-text-main mb-1">
                     Drag & drop your file here
                   </p>
-                  <p className="text-xs text-text-body mb-3">or</p>
+                  <p className="text-xs text-text-body mb-2 sm:mb-3">or</p>
                   <input
                     ref={fileInputRef}
                     type="file"
@@ -986,35 +986,35 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                   />
                   <label
                     htmlFor="rfq-file-upload"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-forest-brand/90 transition cursor-pointer rounded-none shadow-md hover:shadow-lg"
+                    className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 bg-forest-brand text-white font-semibold text-xs sm:text-sm hover:bg-forest-brand/90 transition cursor-pointer rounded-none shadow-md hover:shadow-lg"
                   >
                     {isUploading ? (
                       <>
-                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <Loader2 className="w-3 h-3 sm:w-4 sm:h-4 animate-spin" />
                         Processing...
                       </>
                     ) : (
                       <>
-                        <Upload className="w-4 h-4" />
+                        <Upload className="w-3 h-3 sm:w-4 sm:h-4" />
                         Choose File to Upload
                       </>
                     )}
                   </label>
-                  <p className="text-xs text-text-body mt-3">
+                  <p className="text-xs text-text-body mt-2 sm:mt-3">
                     Supported formats: CSV, XLS, XLSX
                   </p>
                 </div>
 
                 {/* Uploaded File Card */}
                 {uploadedFile && (
-                  <div className="w-full bg-white border-2 border-forest-brand rounded-none p-4 shadow-md">
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="flex items-start gap-3 flex-1">
-                        <div className="flex-shrink-0 w-10 h-10 bg-forest-brand/10 rounded-none flex items-center justify-center">
-                          <FileText className="w-6 h-6 text-forest-brand" />
+                  <div className="w-full bg-white border-2 border-forest-brand rounded-none p-3 sm:p-4 shadow-md">
+                    <div className="flex items-start justify-between gap-2 sm:gap-3">
+                      <div className="flex items-start gap-2 sm:gap-3 flex-1 min-w-0">
+                        <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-forest-brand/10 rounded-none flex items-center justify-center">
+                          <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-forest-brand" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-semibold text-text-main text-sm mb-1 truncate">{uploadedFile.name}</h4>
+                          <h4 className="font-semibold text-text-main text-xs sm:text-sm mb-1 truncate">{uploadedFile.name}</h4>
                           <p className="text-xs text-text-body">
                             {Math.round(uploadedFile.size / 1024)} KB • {uploadedFile.type || 'File'}
                           </p>
@@ -1037,7 +1037,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                         className="flex-shrink-0 text-red-600 hover:text-red-700 hover:bg-red-50 p-1 rounded-none transition"
                         aria-label="Remove file"
                       >
-                        <X className="w-5 h-5" />
+                        <X className="w-4 h-4 sm:w-5 sm:h-5" />
                       </button>
                     </div>
                   </div>
