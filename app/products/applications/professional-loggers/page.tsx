@@ -116,7 +116,7 @@ export default function ProfessionalLoggersPage() {
               </div>
               <Link
                 href="/products/series-p"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition"
               >
                 View Series P Details
                 <ArrowRight className="w-4 h-4" />
@@ -302,7 +302,7 @@ export default function ProfessionalLoggersPage() {
 
         {/* CTA Section */}
         <section className="flex flex-wrap gap-4 pt-4 border-t border-forest-brand/30">
-          <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition">
+          <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition">
             Request Quote for Professional Loggers
           </Link>
           <Link href="/products" className="inline-flex items-center px-5 py-2.5 border-2 border-industrial text-text-bodyfont-semibold text-sm hover:bg-gray-50 transition">

@@ -339,7 +339,7 @@ export default function SeriesEPage() {
             </table>
           </div>
           <div className="flex flex-wrap gap-3 mt-4">
-            <Link href="/fitment-finder" className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-text-main text-sm font-semibold hover:bg-forest-brand hover:text-white hover:border-2 hover:border-forest-brand transition rounded">
+            <Link href="/fitment-finder" className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-text-main text-sm font-semibold hover:bg-forest-brand hover:text-white border-2 border-transparent hover:border-forest-brand transition rounded">
               View Compatible Models
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -543,7 +543,7 @@ export default function SeriesEPage() {
         <section className="pt-6 border-t border-forest-brand/30">
           <Link
             href="/request-quote?series=Series%20E"
-            className="inline-flex items-center px-6 py-3 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition"
+            className="inline-flex items-center px-6 py-3 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition"
           >
             Request Bulk Quote for Series E
           </Link>

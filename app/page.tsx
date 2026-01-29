@@ -39,7 +39,7 @@ export default function Home() {
             </div>
             <Link
               href="/request-quote"
-              className="inline-flex items-center gap-2 px-6 py-3 md:px-10 md:py-5 bg-forest-brand text-white font-bold text-base md:text-xl hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition rounded-none w-fit"
+              className="inline-flex items-center gap-2 px-6 py-3 md:px-10 md:py-5 bg-forest-brand text-white font-bold text-base md:text-xl border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition rounded-none w-fit"
             >
               Request a Quote
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -300,7 +300,7 @@ export default function Home() {
             <div className="text-center mt-6 md:mt-8">
               <Link
                 href="/quality"
-                className="inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 bg-forest-brand text-white font-semibold text-xs sm:text-sm hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition rounded-none"
+                className="inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 bg-forest-brand text-white font-semibold text-xs sm:text-sm border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition rounded-none"
               >
                 View Full Quality Documentation
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />

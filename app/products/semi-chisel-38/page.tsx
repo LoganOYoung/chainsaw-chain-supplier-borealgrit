@@ -204,7 +204,7 @@ export default function SemiChisel38Page() {
             Designed for 3/8&quot; pitch bars. Fits many Husqvarna, Stihl, Echo, Poulan, and other saws with 3/8&quot; or 3/8&quot; low-profile drive sprockets. Gauge must match bar groove. Drive link count must match bar length. Always verify bar and chain specifications before ordering.
           </p>
           <div className="flex flex-wrap gap-3 mb-3">
-            <Link href="/fitment-finder" className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-text-main text-sm font-semibold hover:bg-forest-brand hover:text-white hover:border-2 hover:border-forest-brand transition rounded">
+            <Link href="/fitment-finder" className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-text-main text-sm font-semibold hover:bg-forest-brand hover:text-white border-2 border-transparent hover:border-forest-brand transition rounded">
               View Compatible Models
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -262,7 +262,7 @@ export default function SemiChisel38Page() {
         </section>
 
         <section className="flex flex-wrap gap-4 pt-4 border-t border-forest-brand/30">
-          <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition">
+          <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition">
             Request Quote
           </Link>
           <Link href="/resources#datasheets" className="inline-flex items-center px-5 py-2.5 border-2 border-industrial text-text-bodyfont-semibold text-sm hover:bg-gray-50 transition">

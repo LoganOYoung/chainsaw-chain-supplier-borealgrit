@@ -204,7 +204,7 @@ export default function ProductsPage() {
           <div className="grid md:grid-cols-3 gap-4">
             <Link
               href="/products/series-e"
-              className="block p-4 bg-white border border-forest-brand/30 rounded-none hover:border-forest-brand transition"
+              className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition"
             >
               <h3 className="font-semibold text-text-main mb-1">Series E</h3>
               <p className="text-xs text-text-body mb-2">Electric Era - Narrow Kerf</p>
@@ -212,7 +212,7 @@ export default function ProductsPage() {
             </Link>
             <Link
               href="/products/series-w"
-              className="block p-4 bg-white border border-forest-brand/30 rounded-none hover:border-forest-brand transition"
+              className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition"
             >
               <h3 className="font-semibold text-text-main mb-1">Series W</h3>
               <p className="text-xs text-text-body mb-2">Arctic Edge - Cold Weather</p>
@@ -220,7 +220,7 @@ export default function ProductsPage() {
             </Link>
             <Link
               href="/products/series-p"
-              className="block p-4 bg-white border border-forest-brand/30 rounded-none hover:border-forest-brand transition"
+              className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition"
             >
               <h3 className="font-semibold text-text-main mb-1">Series P</h3>
               <p className="text-xs text-text-body mb-2">Professional Logging</p>
@@ -242,7 +242,7 @@ export default function ProductsPage() {
                 setShowFilters(true)
                 setSelectedCategory('all')
               }}
-              className="text-left p-3 bg-gray-50 border border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
+              className="text-left p-3 bg-gray-50 border-2 border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
             >
               <div className="font-semibold text-text-main text-sm mb-1">.325" / .050"</div>
               <div className="text-xs text-text-body">Mid-size professional</div>
@@ -253,7 +253,7 @@ export default function ProductsPage() {
                 setShowFilters(true)
                 setSelectedCategory('all')
               }}
-              className="text-left p-3 bg-gray-50 border border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
+              className="text-left p-3 bg-gray-50 border-2 border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
             >
               <div className="font-semibold text-text-main text-sm mb-1">3/8" / .050"</div>
               <div className="text-xs text-text-body">Professional logging</div>
@@ -264,7 +264,7 @@ export default function ProductsPage() {
                 setShowFilters(true)
                 setSelectedCategory('all')
               }}
-              className="text-left p-3 bg-gray-50 border border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
+              className="text-left p-3 bg-gray-50 border-2 border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
             >
               <div className="font-semibold text-text-main text-sm mb-1">.325" LP / .043"</div>
               <div className="text-xs text-text-body">Battery saws</div>
@@ -275,7 +275,7 @@ export default function ProductsPage() {
                 setShowFilters(true)
                 setSelectedCategory('all')
               }}
-              className="text-left p-3 bg-gray-50 border border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
+              className="text-left p-3 bg-gray-50 border-2 border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
             >
               <div className="font-semibold text-text-main text-sm mb-1">3/8" / .050"</div>
               <div className="text-xs text-text-body">General purpose</div>
@@ -286,7 +286,7 @@ export default function ProductsPage() {
                 setShowFilters(true)
                 setSelectedCategory('all')
               }}
-              className="text-left p-3 bg-gray-50 border border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
+              className="text-left p-3 bg-gray-50 border-2 border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
             >
               <div className="font-semibold text-text-main text-sm mb-1">.404" / .063"</div>
               <div className="text-xs text-text-body">Large professional</div>
@@ -297,7 +297,7 @@ export default function ProductsPage() {
                 setShowFilters(true)
                 setSelectedCategory('all')
               }}
-              className="text-left p-3 bg-gray-50 border border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
+              className="text-left p-3 bg-gray-50 border-2 border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
             >
               <div className="font-semibold text-text-main text-sm mb-1">.325" / .058"</div>
               <div className="text-xs text-text-body">Stihl compatible</div>
@@ -308,7 +308,7 @@ export default function ProductsPage() {
                 setShowFilters(true)
                 setSelectedCategory('all')
               }}
-              className="text-left p-3 bg-gray-50 border border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
+              className="text-left p-3 bg-gray-50 border-2 border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
             >
               <div className="font-semibold text-text-main text-sm mb-1">3/8" LP / .043"</div>
               <div className="text-xs text-text-body">Consumer saws</div>
@@ -319,7 +319,7 @@ export default function ProductsPage() {
                 setShowFilters(true)
                 setSelectedCategory('all')
               }}
-              className="text-left p-3 bg-gray-50 border border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
+              className="text-left p-3 bg-gray-50 border-2 border-forest-brand/30 rounded-none hover:bg-forest-brand hover:text-white hover:border-forest-brand transition"
             >
               <div className="font-semibold text-text-main text-sm mb-1">3/8" / .063"</div>
               <div className="text-xs text-text-body">Heavy-duty pro</div>
@@ -349,7 +349,7 @@ export default function ProductsPage() {
               {/* Filter Toggle */}
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className="inline-flex items-center gap-2 px-4 py-2.5 border border-gray-300 bg-white text-text-body text-sm font-semibold hover:bg-forest-brand hover:text-white hover:border-forest-brand transition rounded"
+                className="inline-flex items-center gap-2 px-4 py-2.5 border-2 border-gray-300 bg-white text-text-body text-sm font-semibold hover:bg-forest-brand hover:text-white hover:border-forest-brand transition rounded"
                 aria-expanded={showFilters}
                 aria-controls="filter-panel"
               >
@@ -376,8 +376,8 @@ export default function ProductsPage() {
                     }}
                     className={`px-4 py-2 text-sm font-semibold rounded-none transition ${
                       selectedCategory === category.id
-                        ? 'bg-forest-brand text-white hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand'
-                        : 'bg-gray-50 border border-gray-300 text-text-body hover:bg-forest-brand hover:text-white hover:border-forest-brand'
+                        ? 'bg-forest-brand text-white hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand'
+                        : 'bg-gray-50 border-2 border-gray-300 text-text-body hover:bg-forest-brand hover:text-white hover:border-forest-brand'
                     }`}
                   >
                     {category.label} ({category.count})
@@ -485,7 +485,7 @@ export default function ProductsPage() {
               {activeFilterCount > 0 && (
                 <button
                   onClick={clearFilters}
-                  className="mt-4 text-sm text-forest-brand font-medium hover:bg-forest-brand hover:text-white hover:px-2 hover:py-1 hover:-mx-2 hover:-my-1 hover:border-2 hover:border-forest-brand transition"
+                  className="mt-4 text-sm text-forest-brand font-medium hover:bg-forest-brand hover:text-white hover:px-2 hover:py-1 hover:-mx-2 hover:-my-1 border-2 border-transparent hover:border-forest-brand transition"
                 >
                   Clear all filters
                 </button>
@@ -513,7 +513,7 @@ export default function ProductsPage() {
             <div className="flex items-center gap-3">
               <Link
                 href="/request-quote"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-forest-brand text-white text-sm font-semibold hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition rounded-none"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-forest-brand text-white text-sm font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none"
               >
                 Request Quote
                 <ArrowRight className="w-4 h-4" />
@@ -589,7 +589,7 @@ export default function ProductsPage() {
             <div className="px-4 sm:px-6 py-3 sm:py-4 border-t border-forest-brand/30 bg-gray-50 text-center">
               <button
                 onClick={() => setItemsPerPage(prev => prev + 20)}
-                className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 bg-white border border-gray-300 text-text-body text-xs sm:text-sm font-semibold hover:bg-forest-brand hover:text-white hover:border-forest-brand transition rounded w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-2.5 bg-white border-2 border-gray-300 text-text-body text-xs sm:text-sm font-semibold hover:bg-forest-brand hover:text-white hover:border-forest-brand transition rounded w-full sm:w-auto justify-center"
               >
                 Load More Products
                 <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -698,7 +698,7 @@ export default function ProductsPage() {
                   downloadCatalogCSV()
                 })
               }}
-              className="inline-flex items-center gap-2 text-sm text-forest-brand font-semibold hover:bg-forest-brand hover:text-white hover:px-2 hover:py-1 hover:-mx-2 hover:-my-1 hover:border-2 hover:border-forest-brand transition"
+              className="inline-flex items-center gap-2 text-sm text-forest-brand font-semibold hover:bg-forest-brand hover:text-white hover:px-2 hover:py-1 hover:-mx-2 hover:-my-1 border-2 border-transparent hover:border-forest-brand transition"
             >
               <Download className="w-4 h-4" />
               Download Complete Product Catalog (CSV)

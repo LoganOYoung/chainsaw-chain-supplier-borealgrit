@@ -321,7 +321,7 @@ export default function Navigation() {
                   <div className="border-t border-forest-brand/20 my-2"></div>
                   <Link
                     href="/request-quote"
-                    className={`flex items-center gap-2 px-4 py-2.5 text-sm font-semibold hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand bg-forest-brand/10 text-forest-brand transition ${isActive('/request-quote') ? 'bg-forest-brand/15' : ''}`}
+                    className={`flex items-center gap-2 px-4 py-2.5 text-sm font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand bg-forest-brand/10 text-forest-brand transition ${isActive('/request-quote') ? 'bg-forest-brand/15' : ''}`}
                     onClick={() => setAboutContactMenuOpen(false)}
                   >
                     <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -334,7 +334,7 @@ export default function Navigation() {
             </li>
           </ul>
           <div className="md:hidden flex items-center gap-2">
-            <Link href="/request-quote" className="px-3 py-1.5 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition">
+            <Link href="/request-quote" className="px-3 py-1.5 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition">
               RFQ
             </Link>
             <button

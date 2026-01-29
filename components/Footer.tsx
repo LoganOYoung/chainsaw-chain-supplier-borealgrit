@@ -54,7 +54,7 @@ export default function Footer() {
               <Link href="/contact" className="text-white/90 hover:text-white text-sm transition">
                 Contact
               </Link>
-              <Link href="/request-quote" className="text-white/90 hover:text-white hover:bg-white hover:text-forest-brand hover:px-2 hover:py-1 hover:-mx-2 hover:-my-1 hover:border-2 hover:border-forest-brand text-sm font-semibold text-forest-brand transition">
+              <Link href="/request-quote" className="text-white/90 hover:text-white hover:bg-white hover:text-forest-brand hover:px-2 hover:py-1 hover:-mx-2 hover:-my-1 border-2 border-transparent hover:border-forest-brand text-sm font-semibold text-forest-brand transition">
                 Request Quote
               </Link>
             </div>
