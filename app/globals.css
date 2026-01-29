@@ -39,6 +39,31 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Mobile input optimization - prevent zoom on iOS */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevents iOS auto-zoom */
+  }
+}
+
+/* Ensure touch targets are at least 44x44px */
+@media (pointer: coarse) {
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"],
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
 /* Dropdown menu animation */
 @keyframes fadeIn {
   from {
