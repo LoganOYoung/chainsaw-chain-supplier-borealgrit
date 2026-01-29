@@ -60,7 +60,7 @@ export default function SeriesWPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
               <Image
-                src="/images/series-w-detail-cutter.jpg"
+                src="/images/products/series-w-detail-cutter.jpg"
                 alt="Series W semi-chisel cutter close-up showing rounded-none corner design for frozen wood cutting"
                 fill
                 className="object-cover"
@@ -69,7 +69,7 @@ export default function SeriesWPage() {
             </div>
             <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
               <Image
-                src="/images/series-w-detail-material.jpg"
+                src="/images/products/series-w-detail-material.jpg"
                 alt="Series W CrNiMo alloy steel chain link showing nitriding surface treatment"
                 fill
                 className="object-cover"
@@ -78,7 +78,7 @@ export default function SeriesWPage() {
             </div>
             <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
               <Image
-                src="/images/series-w-detail-edge.jpg"
+                src="/images/products/series-w-detail-edge.jpg"
                 alt="Series W cutter edge retention showing durability in dirty and frozen conditions"
                 fill
                 className="object-cover"

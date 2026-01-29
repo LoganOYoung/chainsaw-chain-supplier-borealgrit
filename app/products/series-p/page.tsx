@@ -60,7 +60,7 @@ export default function SeriesPPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
               <Image
-                src="/images/series-p-detail-cutter.jpg"
+                src="/images/products/series-p-detail-cutter.jpg"
                 alt="Series P full-chisel square-corner cutter close-up showing razor-sharp cutting edge"
                 fill
                 className="object-cover"
@@ -69,7 +69,7 @@ export default function SeriesPPage() {
             </div>
             <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
               <Image
-                src="/images/series-p-detail-chrome.jpg"
+                src="/images/products/series-p-detail-chrome.jpg"
                 alt="Series P industrial chrome coating detail showing hardened surface layer"
                 fill
                 className="object-cover"
@@ -78,7 +78,7 @@ export default function SeriesPPage() {
             </div>
             <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
               <Image
-                src="/images/series-p-detail-edge.jpg"
+                src="/images/products/series-p-detail-edge.jpg"
                 alt="Series P cutter edge showing extended sharpening interval and wear resistance"
                 fill
                 className="object-cover"
