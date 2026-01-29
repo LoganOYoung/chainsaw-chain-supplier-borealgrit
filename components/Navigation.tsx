@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect, useRef } from 'react'
 
@@ -45,8 +46,15 @@ export default function Navigation() {
     <header className="border-b border-forest-dark/50 bg-[#547950] sticky top-0 z-50">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="font-heading font-bold text-white text-lg md:text-xl tracking-tight uppercase">
-            BOREALGRIT
+          <Link href="/" className="flex items-center gap-3">
+            <Image 
+              src="/logo-white.svg" 
+              alt="Borealgrit Logo" 
+              width={180} 
+              height={54}
+              className="h-10 md:h-12 w-auto"
+              priority
+            />
           </Link>
           <ul className="hidden md:flex items-center gap-6 text-base font-semibold text-white">
             <li>

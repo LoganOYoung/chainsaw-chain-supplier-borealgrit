@@ -1,0 +1,25 @@
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Chain Link Icon - Industrial Design -->
+  <g transform="translate(2, 8)">
+    <!-- Outer chain link -->
+    <path d="M 6 10 L 6 6 Q 6 2 10 2 L 16 2 Q 20 2 20 6 L 20 10 L 24 10 L 24 6 Q 24 2 28 2 L 34 2 Q 38 2 38 6 L 38 10 L 38 16 Q 38 20 34 20 L 28 20 Q 24 20 24 16 L 24 12 L 20 12 L 20 16 Q 20 20 16 20 L 10 20 Q 6 20 6 16 Z" 
+          fill="#547950" 
+          stroke="#547950" 
+          stroke-width="1.8"
+          stroke-linejoin="round"/>
+    <!-- Inner highlights for depth -->
+    <path d="M 10 6 L 16 6 L 16 10 L 10 10 Z" fill="white" opacity="0.2"/>
+    <path d="M 28 6 L 34 6 L 34 10 L 28 10 Z" fill="white" opacity="0.2"/>
+  </g>
+  
+  <!-- Brand Name -->
+  <text x="48" y="32" 
+        font-family="Oswald, sans-serif" 
+        font-size="26" 
+        font-weight="700" 
+        fill="#547950" 
+        letter-spacing="2.5px"
+        text-transform="uppercase">
+    BOREALGRIT
+  </text>
+</svg>

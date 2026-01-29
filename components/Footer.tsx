@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -6,7 +7,15 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="md:max-w-xs">
-            <span className="font-heading font-bold text-white text-lg uppercase tracking-tight block mb-2">BOREALGRIT</span>
+            <Link href="/" className="block mb-3">
+              <Image 
+                src="/logo-white.svg" 
+                alt="Borealgrit Logo" 
+                width={180} 
+                height={45}
+                className="h-10 w-auto"
+              />
+            </Link>
             <p className="text-sm text-white/80 leading-relaxed">Chainsaw chain manufacturer. B2B only. North American distributors and OEM.</p>
           </div>
           <div className="flex flex-wrap gap-8 md:gap-10">
