@@ -44,11 +44,11 @@ export default function Navigation() {
   return (
     <header className="border-b border-forest-dark/50 bg-[#547950] sticky top-0 z-50">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14">
-          <Link href="/" className="font-heading font-bold text-white text-base md:text-lg tracking-tight uppercase">
+        <div className="flex items-center justify-between h-20">
+          <Link href="/" className="font-heading font-bold text-white text-lg md:text-xl tracking-tight uppercase">
             BOREALGRIT
           </Link>
-          <ul className="hidden md:flex items-center gap-6 text-sm font-semibold text-white">
+          <ul className="hidden md:flex items-center gap-6 text-base font-semibold text-white">
             <li>
               <Link
                 href="/"
