@@ -204,7 +204,7 @@ export default function ProductsPage() {
           <div className="grid md:grid-cols-3 gap-4">
             <Link
               href="/products/series-e"
-              className="block p-4 bg-white border border-forest-brand/30 rounded-none hover:border-forest-brand hover:shadow-md transition"
+              className="block p-4 bg-white border border-forest-brand/30 rounded-none hover:border-forest-brand transition"
             >
               <h3 className="font-semibold text-text-main mb-1">Series E</h3>
               <p className="text-xs text-text-body mb-2">Electric Era - Narrow Kerf</p>
@@ -212,7 +212,7 @@ export default function ProductsPage() {
             </Link>
             <Link
               href="/products/series-w"
-              className="block p-4 bg-white border border-forest-brand/30 rounded-none hover:border-forest-brand hover:shadow-md transition"
+              className="block p-4 bg-white border border-forest-brand/30 rounded-none hover:border-forest-brand transition"
             >
               <h3 className="font-semibold text-text-main mb-1">Series W</h3>
               <p className="text-xs text-text-body mb-2">Arctic Edge - Cold Weather</p>
@@ -220,7 +220,7 @@ export default function ProductsPage() {
             </Link>
             <Link
               href="/products/series-p"
-              className="block p-4 bg-white border border-forest-brand/30 rounded-none hover:border-forest-brand hover:shadow-md transition"
+              className="block p-4 bg-white border border-forest-brand/30 rounded-none hover:border-forest-brand transition"
             >
               <h3 className="font-semibold text-text-main mb-1">Series P</h3>
               <p className="text-xs text-text-body mb-2">Professional Logging</p>

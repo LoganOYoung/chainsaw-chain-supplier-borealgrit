@@ -85,7 +85,7 @@ export default function ProfessionalLoggersPage() {
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Recommended Products</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {/* Series P Card */}
-            <div className="bg-white border border-forest-brand/30 rounded-none p-6 hover:shadow-lg transition-shadow">
+            <div className="bg-white border border-forest-brand/30 rounded-none p-6 transition-shadow">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-lg font-semibold text-text-main mb-2">Series P</h3>
@@ -124,7 +124,7 @@ export default function ProfessionalLoggersPage() {
             </div>
 
             {/* Full Chisel .325" Card */}
-            <div className="bg-white border border-forest-brand/30 rounded-none p-6 hover:shadow-lg transition-shadow">
+            <div className="bg-white border border-forest-brand/30 rounded-none p-6 transition-shadow">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-lg font-semibold text-text-main mb-2">Full Chisel .325"</h3>

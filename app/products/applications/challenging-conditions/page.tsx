@@ -86,7 +86,7 @@ export default function ChallengingConditionsPage() {
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Recommended Products</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {/* Series W Card */}
-            <div className="bg-white border border-forest-brand/30 rounded-none p-6 hover:shadow-lg transition-shadow">
+            <div className="bg-white border border-forest-brand/30 rounded-none p-6 transition-shadow">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-lg font-semibold text-text-main mb-2">Series W</h3>
@@ -125,7 +125,7 @@ export default function ChallengingConditionsPage() {
             </div>
 
             {/* Semi Chisel 3/8" Card */}
-            <div className="bg-white border border-forest-brand/30 rounded-none p-6 hover:shadow-lg transition-shadow">
+            <div className="bg-white border border-forest-brand/30 rounded-none p-6 transition-shadow">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-lg font-semibold text-text-main mb-2">Semi Chisel 3/8"</h3>

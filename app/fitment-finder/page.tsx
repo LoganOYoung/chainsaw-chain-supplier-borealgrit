@@ -562,7 +562,7 @@ export default function FitmentFinderPage() {
                       <div className="flex flex-col gap-2">
                         <Link
                           href={buildQuoteUrl(item)}
-                          className="inline-flex items-center justify-center gap-1.5 text-xs px-4 py-2 bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition rounded-none shadow-sm hover:shadow-md"
+                          className="inline-flex items-center justify-center gap-1.5 text-xs px-4 py-2 bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand hover:border-2 hover:border-forest-brand transition rounded-none"
                         >
                           <ArrowRight className="w-3.5 h-3.5" />
                           Request Quote
