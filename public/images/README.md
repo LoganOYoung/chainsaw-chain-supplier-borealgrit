@@ -1,25 +1,21 @@
 # Site Images
 
-All image paths used by the site are filled so no 404s occur.
+## Get real images (recommended)
 
-## Current state
+**On your machine (with internet), run once:**
 
-- **Placeholder files**  
-  Run `node scripts/create-placeholder-images.js` to (re)create minimal 1×1 JPEG/PNG files for every path. These show as solid color blocks with `object-cover` and are only to avoid broken images.
+```bash
+node scripts/download-real-images.js
+```
 
-## Replacing with real images
+This downloads real photos (Picsum Photos, free to use) into `public/images` with the correct filenames. Then commit and push so the site shows real images.
 
-1. **Hero / content photos**  
-   Replace the small placeholder files with real photos (e.g. chainsaw chain, factory, packaging) in the same paths and filenames. Prefer high‑res JPEGs for heroes (e.g. 1920×800) and detail shots (e.g. 800×600).
+## Fallback: minimal placeholders
 
-2. **Brand logos** (`brands/*.png`)  
-   Use official, licensed logos from each brand. Do not use unlicensed copies. Replace the placeholder PNGs in `public/images/brands/` with the correct logo files.
+If you don't run the script, the repo has minimal 1×1 placeholder files so paths don't 404. To recreate them: `node scripts/create-placeholder-images.js`.
 
-3. **Certification badges** (`certifications/*.png`)  
-   Use official ISO/ANSI/CSA badge artwork if you have rights to do so; otherwise keep simple placeholders or remove.
+## Your own photos
 
-4. **Suggested sources for stock photos**  
-   - Unsplash / Pexels (free, check license)  
-   - Your own product/factory photography  
-
-After replacing files, keep the same filenames and paths so the app does not need code changes.
+- Replace any file in `public/images` with your own (same path and filename): hero shots, factory, packaging, product details.
+- **Brand logos** (`brands/*.png`): use official, licensed logos only.
+- **Certification badges** (`certifications/*.png`): use official artwork if you have rights.
