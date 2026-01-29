@@ -111,7 +111,8 @@ export default function ProductsPage() {
             Chainsaw Chain Product Catalog
           </h1>
           <p className="text-text-body text-sm sm:text-base leading-relaxed max-w-4xl">
-            Complete technical specifications for all chainsaw chain products. Filter by pitch, gauge, drive links, chain type, cutter profile, and steel grade. All products meet <strong>ANSI B175.1</strong> standards. Selected models certified for <strong>CSA Z62.3</strong> (Canadian market). OEM and private label configurations available.
+            <span className="hidden sm:inline">Complete technical specifications for all chainsaw chain products. Filter by pitch, gauge, drive links, chain type, cutter profile, and steel grade. All products meet <strong>ANSI B175.1</strong> standards. Selected models certified for <strong>CSA Z62.3</strong> (Canadian market). OEM and private label configurations available.</span>
+            <span className="sm:hidden">Complete technical specifications. Filter by pitch, gauge, drive links, chain type, cutter profile, and steel grade. All products meet <strong>ANSI B175.1</strong> standards. OEM and private label available.</span>
           </p>
         </header>
 
@@ -127,16 +128,24 @@ export default function ProductsPage() {
               <h2 className="text-base sm:text-lg font-bold text-text-main mb-2 sm:mb-3">About This Catalog</h2>
               <div className="space-y-2 text-xs sm:text-sm text-text-body">
                 <p>
-                  <strong className="text-text-main">Standard Products (36 models):</strong> The products listed below represent our standard catalog - these are the most commonly ordered specifications and are available for immediate order. They cover approximately 80-90% of typical market demand across four key segments: battery-powered saws, cold-weather applications, professional logging, and standard duty.
+                  <strong className="text-text-main">Standard Products (36 models):</strong> 
+                  <span className="hidden sm:inline"> The products listed below represent our standard catalog - these are the most commonly ordered specifications and are available for immediate order. They cover approximately 80-90% of typical market demand across four key segments: battery-powered saws, cold-weather applications, professional logging, and standard duty.</span>
+                  <span className="sm:hidden"> Most commonly ordered specifications, available for immediate order. Covers 80-90% of market demand.</span>
                 </p>
                 <p>
-                  <strong className="text-text-main">Custom Specifications Available:</strong> While chainsaw chains have hundreds of possible specification combinations, we can manufacture any ANSI B175.1 compliant specification to meet your specific requirements. If you need a specification not listed here, please download our <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">RFQ template</Link> or use our <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">RFQ form</Link> to request a quote for custom configurations.
+                  <strong className="text-text-main">Custom Specifications Available:</strong> 
+                  <span className="hidden sm:inline"> While chainsaw chains have hundreds of possible specification combinations, we can manufacture any ANSI B175.1 compliant specification to meet your specific requirements. If you need a specification not listed here, please download our <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">RFQ template</Link> or use our <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">RFQ form</Link> to request a quote for custom configurations.</span>
+                  <span className="sm:hidden"> We can manufacture any ANSI B175.1 compliant specification. <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">Request a quote</Link> for custom configurations.</span>
                 </p>
                 <p>
-                  <strong className="text-text-main">OEM & Private Label:</strong> All products are available in OEM and private label configurations. Custom packaging, labeling, and part numbers available. Minimum order quantities (MOQ) and lead times vary by specification - contact us for details.
+                  <strong className="text-text-main">OEM & Private Label:</strong> 
+                  <span className="hidden sm:inline"> All products are available in OEM and private label configurations. Custom packaging, labeling, and part numbers available. Minimum order quantities (MOQ) and lead times vary by specification - contact us for details.</span>
+                  <span className="sm:hidden"> Available in OEM and private label configurations. Custom packaging and labeling available.</span>
                 </p>
                 <p className="mt-3 pt-3 border-t border-forest-brand/20">
-                  <strong className="text-text-main">Request a Quote:</strong> For bulk orders or custom specifications, download our professional RFQ template from the <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">Request Quote page</Link>. Fill it out with your requirements and upload it for a comprehensive pricing analysis.
+                  <strong className="text-text-main">Request a Quote:</strong> 
+                  <span className="hidden sm:inline"> For bulk orders or custom specifications, download our professional RFQ template from the <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">Request Quote page</Link>. Fill it out with your requirements and upload it for a comprehensive pricing analysis.</span>
+                  <span className="sm:hidden"> <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">Download RFQ template</Link> for bulk orders or custom specifications.</span>
                 </p>
               </div>
             </div>

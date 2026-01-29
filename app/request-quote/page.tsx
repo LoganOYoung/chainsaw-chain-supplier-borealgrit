@@ -733,7 +733,8 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                     <h3 className="text-base sm:text-xl font-bold text-text-main">Submit Your Request</h3>
                   </div>
                   <p className="text-xs sm:text-sm text-text-body ml-0 sm:ml-13">
-                    Review your information above and click submit. We'll respond within 24 hours during business days.
+                    <span className="hidden sm:inline">Review your information above and click submit. We'll respond within 24 hours during business days.</span>
+                    <span className="sm:hidden">Review and submit. We'll respond within 24 hours.</span>
                   </p>
                 </div>
 
@@ -810,9 +811,10 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-main text-sm mb-1">Quick Start Guide</h3>
+                    <h3 className="font-semibold text-text-main text-xs sm:text-sm mb-1">Quick Start Guide</h3>
                     <p className="text-xs text-text-body">
-                      <strong>Step 1:</strong> Download the template below → <strong>Step 2:</strong> Fill in your requirements in Excel → <strong>Step 3:</strong> Upload the completed file → <strong>Step 4:</strong> Fill in your contact information and submit.
+                      <span className="hidden sm:inline"><strong>Step 1:</strong> Download the template below → <strong>Step 2:</strong> Fill in your requirements in Excel → <strong>Step 3:</strong> Upload the completed file → <strong>Step 4:</strong> Fill in your contact information and submit.</span>
+                      <span className="sm:hidden"><strong>1.</strong> Download → <strong>2.</strong> Fill Excel → <strong>3.</strong> Upload → <strong>4.</strong> Submit</span>
                     </p>
                   </div>
                 </div>
@@ -831,14 +833,19 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
             </div>
 
             {/* Template Features */}
-            <div className="mb-6 pt-4 border-t border-forest-brand/30">
-              <p className="text-xs text-text-body mb-3 font-semibold">Template Features:</p>
-              <ul className="text-xs text-text-body space-y-1">
-                <li>• Granular specification fields (Pitch, Gauge, Drive Links, Cutter Profile)</li>
-                <li>• Steel grade selection (68CrNiMo premium alloy / 65Mn standard)</li>
-                <li>• Sample request tracking per line item</li>
-                <li>• ANSI/CSA compliance fields</li>
-                <li>• Excel-compatible CSV format</li>
+            <div className="mb-4 md:mb-6 pt-3 md:pt-4 border-t border-forest-brand/30">
+              <p className="text-xs text-text-body mb-2 md:mb-3 font-semibold">Template Features:</p>
+              <ul className="text-xs text-text-body space-y-0.5 md:space-y-1">
+                <li className="hidden sm:list-item">• Granular specification fields (Pitch, Gauge, Drive Links, Cutter Profile)</li>
+                <li className="sm:hidden">• Spec fields: Pitch, Gauge, Drive Links, Cutter Profile</li>
+                <li className="hidden sm:list-item">• Steel grade selection (68CrNiMo premium alloy / 65Mn standard)</li>
+                <li className="sm:hidden">• Steel grades: 68CrNiMo premium / 65Mn standard</li>
+                <li className="hidden sm:list-item">• Sample request tracking per line item</li>
+                <li className="sm:hidden">• Sample request tracking</li>
+                <li className="hidden sm:list-item">• ANSI/CSA compliance fields</li>
+                <li className="sm:hidden">• ANSI/CSA compliance</li>
+                <li className="hidden sm:list-item">• Excel-compatible CSV format</li>
+                <li className="sm:hidden">• Excel CSV format</li>
               </ul>
             </div>
           </div>
@@ -855,7 +862,8 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
             </div>
             
             <p className="text-text-body text-xs sm:text-sm mb-3 md:mb-4 leading-relaxed">
-              Upload your completed RFQ template (CSV or Excel format). We'll parse the file and prepare a quote request form for you.
+              <span className="hidden sm:inline">Upload your completed RFQ template (CSV or Excel format). We'll parse the file and prepare a quote request form for you.</span>
+              <span className="sm:hidden">Upload your completed RFQ template. We'll parse it and prepare your quote form.</span>
             </p>
 
             {/* Upload Area - Drag & Drop */}
