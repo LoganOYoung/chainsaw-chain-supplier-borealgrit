@@ -8,9 +8,9 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   /* 极淡绿色基础背景 - 与品牌绿色 #426B3D 协调 */
   background-color: #FAFCFA;
-  /* 极淡颗粒感纹理 - 使用品牌绿色 #426B3D，透明度仅 1.5%，几乎不可察觉但增加质感 */
+  /* 极淡颗粒感纹理 - 使用品牌绿色 #547950，透明度仅 1.5%，几乎不可察觉但增加质感 */
   background-image: 
-    radial-gradient(circle at 1px 1px, rgba(66, 107, 61, 0.015) 1px, transparent 0);
+    radial-gradient(circle at 1px 1px, rgba(84, 121, 80, 0.015) 1px, transparent 0);
   background-size: 24px 24px;
   /* 确保背景固定，不随内容滚动，保持视觉一致性 */
   background-attachment: fixed;
