@@ -162,7 +162,7 @@ body {
   .fitment-crossref-table tr {
     border: 1px solid rgba(45, 90, 45, 0.3);
     border-radius: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     overflow: hidden;
     background: #fff;
   }
@@ -171,7 +171,11 @@ body {
   .fitment-crossref-table td {
     border: none;
     border-bottom: 1px solid #e5e7eb;
-    padding: 0.75rem 1rem;
+    padding: 0.4rem 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 0.5rem;
+    align-items: baseline;
   }
   .fitment-gauge-table td:last-child,
   .fitment-compat-table td:last-child,
@@ -180,18 +184,18 @@ body {
     background: #f9fafb;
     min-width: 0;
     overflow: hidden;
+    align-items: flex-start;
   }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,
   .fitment-crossref-table td::before {
-    content: attr(data-label);
-    display: block;
+    content: attr(data-label) ":";
     font-weight: 600;
     font-size: 0.6875rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #6b7280;
-    margin-bottom: 0.25rem;
+    flex-shrink: 0;
   }
 }
 
