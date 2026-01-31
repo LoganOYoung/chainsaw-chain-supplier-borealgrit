@@ -81,6 +81,36 @@ const SpecSemiChiselSvg = () => (
     <text x={140} y={106} textAnchor="middle" fontSize={10} fill="#374151">Better edge retention · hardwoods</text>
   </svg>
 )
+const SpecDriveLinkSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 192" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-[20rem] object-contain" aria-label="Drive link: Standard vs Anti-Kickback">
+    <title>Drive Link — Standard vs Anti-Kickback</title>
+    <rect width={320} height={192} fill="#fff" />
+    <text x={160} y={22} textAnchor="middle" fontSize={14} fontWeight={600} fontFamily="system-ui,sans-serif" fill="#1f2937">Drive Link: Standard vs Anti-Kickback</text>
+    {/* Standard — simple link */}
+    <text x={80} y={48} textAnchor="middle" fontSize={12} fontWeight={600} fill="#111">Standard</text>
+    <g transform="translate(30,58)">
+      <rect x={0} y={0} width={100} height={28} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
+      <rect x={8} y={6} width={20} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
+      <rect x={36} y={6} width={28} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
+      <rect x={72} y={6} width={20} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
+    </g>
+    <text x={80} y={108} textAnchor="middle" fontSize={10} fill="#374151">Full-depth cutters</text>
+    <text x={80} y={122} textAnchor="middle" fontSize={10} fill="#374151">Max cutting speed</text>
+    {/* Anti-Kickback — link with bumpers */}
+    <text x={240} y={48} textAnchor="middle" fontSize={12} fontWeight={600} fill="#111">Anti-Kickback</text>
+    <g transform="translate(190,58)">
+      <rect x={0} y={0} width={100} height={28} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
+      <rect x={6} y={6} width={18} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
+      <rect x={28} y={4} width={12} height={8} rx={1} fill="#547950" fillOpacity={0.4} stroke="#547950" />
+      <rect x={44} y={6} width={24} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
+      <rect x={72} y={4} width={12} height={8} rx={1} fill="#547950" fillOpacity={0.4} stroke="#547950" />
+      <rect x={88} y={6} width={18} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
+    </g>
+    <text x={240} y={108} textAnchor="middle" fontSize={10} fill="#374151">Bumper / depth limiters</text>
+    <text x={240} y={122} textAnchor="middle" fontSize={10} fill="#374151">Low-kickback (consumer)</text>
+    <text x={160} y={168} textAnchor="middle" fontSize={10} fill="#6b7280">Match chain type to saw and application</text>
+  </svg>
+)
 
 // Brand logo mapping with fallback
 const getBrandLogo = (brand: string) => {
@@ -630,6 +660,36 @@ export default function FitmentFinderPage() {
                   </div>
                   <p className="text-xs text-text-body italic mt-4">
                     <strong>Note:</strong> Gauge tolerance is ±0.001&quot;. Mismatched gauge causes chain derailment and bar damage.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Drive Link: Standard vs. Anti-Kickback */}
+            <div className="border-b border-forest-brand/30 pb-4 sm:pb-6">
+              <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Drive Link (Standard vs. Anti-Kickback)</h3>
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+                <div>
+                  <div className="relative w-full min-h-[18rem] sm:min-h-[20rem] mb-4 bg-white rounded-none overflow-hidden flex items-center justify-center p-1">
+                    <SpecDriveLinkSvg />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-text-body mb-4 leading-relaxed">
+                    Drive link type affects <strong className="text-text-main">kickback behavior</strong> and where the chain can be used. Match the chain to your saw and application.
+                  </p>
+                  <ul className="text-sm text-text-body space-y-2 mb-4">
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span><strong className="text-text-main">Standard:</strong> Full-depth cutters, maximum cutting speed. Typical for professional saws and experienced users.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span><strong className="text-text-main">Anti-Kickback (low-kickback):</strong> Bumper links or depth limiters between cutters reduce kickback. Often required for consumer saws (ANSI B175.1). Lower cutting speed, higher safety.</span>
+                    </li>
+                  </ul>
+                  <p className="text-xs text-text-body italic">
+                    <strong>Note:</strong> Use only chains specified for your saw. Mixing standard and anti-kickback on the wrong bar can affect safety and performance.
                   </p>
                 </div>
               </div>
