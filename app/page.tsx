@@ -87,12 +87,12 @@ export default function Home() {
             <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center text-center py-8 md:py-0">
               {/* Main Value Proposition */}
               <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase mb-4 md:mb-6 leading-tight tracking-tight text-white">
-                <span className="block">Precision in Every Link.</span>
-                <span className="block">Power in Every Cut.</span>
+                <span className="block">Precision in Every Link</span>
+                <span className="block">Power in Every Cut</span>
               </h1>
               
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
-                The rugged choice for North American forestry professionals. Industrial chainsaw chains that deliver consistent performance when every second of uptime matters.
+                The rugged choice for North American forestry professionals. Industrial chainsaw chains that deliver consistent performance when every second of uptime matters
               </p>
               
               {/* CTA Buttons */}
