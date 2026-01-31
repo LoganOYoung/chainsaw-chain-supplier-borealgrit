@@ -1,0 +1,8 @@
+# Borealgrit / Chainsaw Chain Supplier - Project Rules
+
+## Git: Push after updates
+After completing code changes to this repository:
+1. Run `git add -A` (or add only changed files if preferred).
+2. Commit with a clear, descriptive message in English.
+3. Run `git push origin main`.
+Do not skip the push unless the user explicitly says "do not push" or "不要推送".
