@@ -156,45 +156,6 @@ export default function FitmentFinderPage() {
           </p>
         </section>
 
-        {/* Why Switch to Our Premium Alternatives */}
-        <section className="mb-8 bg-gray-50 rounded-none p-4 sm:p-6 border border-forest-brand/30">
-          <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4 sm:mb-6">Why Switch to Our Premium Alternatives?</h2>
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-forest-brand/10 rounded-none flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5 text-forest-brand" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-text-main mb-2 text-sm">Direct Compatibility</h3>
-                <p className="text-sm text-text-body">No guessing games. Our chains are built to the exact same specifications as Oregon® and Stihl® equivalents, ensuring a seamless fit for your current fleet.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-forest-brand/10 rounded-none flex items-center justify-center">
-                <DollarSign className="w-5 h-5 text-forest-brand" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-text-main mb-2 text-sm">Maximized ROI</h3>
-                <p className="text-sm text-text-body">We eliminate the &apos;Brand Tax.&apos; Our clients typically see a 25-40% reduction in consumable costs without sacrificing edge retention or chain life.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-forest-brand/10 rounded-none flex items-center justify-center">
-                <Zap className="w-5 h-5 text-forest-brand" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-text-main mb-2 text-sm">Built for North America</h3>
-                <p className="text-sm text-text-body">While others sell &apos;universal&apos; chains, we offer series-specific solutions—like our Series W for frozen hardwood—ensuring better performance in your local environment than &apos;off-the-shelf&apos; originals.</p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-6 pt-6 border-t border-forest-brand/30">
-            <p className="text-sm font-semibold text-text-main">
-              We offer a <a href="#fitment-guarantee" className="text-forest-brand underline hover:no-underline">100% Fitment Guarantee</a>: If it doesn&apos;t match your specified Oregon or Stihl model, we take it back.
-            </p>
-          </div>
-        </section>
-
         {/* Search Box */}
         <div className="mb-4 sm:mb-6">
           <input
@@ -416,6 +377,45 @@ export default function FitmentFinderPage() {
           <div className="mt-6 bg-gray-50 border border-forest-brand/30 rounded-none p-4">
             <p className="text-xs text-text-body leading-relaxed">
               <strong className="text-text-main">Brand Disclaimer:</strong> Oregon®, Stihl®, Husqvarna®, Milwaukee®, Makita®, DeWalt®, EGO Power+®, Echo®, Ryobi®, Greenworks Pro®, Craftsman®, and Poulan Pro® are trademarks of their respective owners. We are not affiliated with, authorized by, or endorsed by these brands. Our products are compatible replacements designed to meet or exceed OEM specifications.
+            </p>
+          </div>
+        </section>
+
+        {/* Why Switch to Our Premium Alternatives - after tools */}
+        <section className="mb-8 bg-gray-50 rounded-none p-4 sm:p-6 border border-forest-brand/30">
+          <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4 sm:mb-6">Why Switch to Our Premium Alternatives?</h2>
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-10 h-10 bg-forest-brand/10 rounded-none flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5 text-forest-brand" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-text-main mb-2 text-sm">Direct Compatibility</h3>
+                <p className="text-sm text-text-body">No guessing games. Our chains are built to the exact same specifications as Oregon® and Stihl® equivalents, ensuring a seamless fit for your current fleet.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-10 h-10 bg-forest-brand/10 rounded-none flex items-center justify-center">
+                <DollarSign className="w-5 h-5 text-forest-brand" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-text-main mb-2 text-sm">Maximized ROI</h3>
+                <p className="text-sm text-text-body">We eliminate the &apos;Brand Tax.&apos; Our clients typically see a 25-40% reduction in consumable costs without sacrificing edge retention or chain life.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-10 h-10 bg-forest-brand/10 rounded-none flex items-center justify-center">
+                <Zap className="w-5 h-5 text-forest-brand" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-text-main mb-2 text-sm">Built for North America</h3>
+                <p className="text-sm text-text-body">While others sell &apos;universal&apos; chains, we offer series-specific solutions—like our Series W for frozen hardwood—ensuring better performance in your local environment than &apos;off-the-shelf&apos; originals.</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-6 pt-6 border-t border-forest-brand/30">
+            <p className="text-sm font-semibold text-text-main">
+              We offer a <a href="#fitment-guarantee" className="text-forest-brand underline hover:no-underline">100% Fitment Guarantee</a>: If it doesn&apos;t match your specified Oregon or Stihl model, we take it back.
             </p>
           </div>
         </section>
