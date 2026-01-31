@@ -38,7 +38,7 @@ export default function SeriesPPage() {
           Full-chisel square-corner cutters with industrial chrome coating. Designed for high-power professional saws (60cc+). Extended sharpening intervals.
         </p>
 
-        {/* Hero Image */}
+        {/* Hero Banner with Value Proposition Overlay */}
         <section className="mb-10">
           <div className="relative w-full h-64 md:h-96 lg:h-[500px] rounded-none overflow-hidden bg-gray-100">
             <Image
@@ -49,6 +49,20 @@ export default function SeriesPPage() {
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
             />
+            {/* Semi-transparent overlay */}
+            <div className="absolute inset-0 bg-forest-dark/70 md:bg-forest-dark/60" />
+            {/* Value proposition text overlay */}
+            <div className="absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-8">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase tracking-tight mb-3 md:mb-4 max-w-3xl">
+                Uncompromising Grit for Industrial Logging
+              </h2>
+              <p className="text-white/95 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mb-3 md:mb-4">
+                High-performance 68CrNiMo alloy chains built for maximum stay-sharp duration. Direct-from-factory reliability for heavy-duty forestry operations across North America.
+              </p>
+              <p className="text-white/90 text-xs sm:text-sm font-semibold uppercase tracking-wide">
+                P-Series · Built for Boreal
+              </p>
+            </div>
           </div>
         </section>
 
