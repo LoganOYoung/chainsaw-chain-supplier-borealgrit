@@ -42,17 +42,17 @@ export default function Navigation() {
   }, [productsMenuOpen, resourcesMenuOpen, aboutContactMenuOpen])
 
   return (
-    <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
+    <header className="bg-[#547950] sticky top-0 z-50 shadow-sm">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="font-heading font-bold text-white text-lg md:text-xl tracking-tight uppercase">
             BOREALGRIT
           </Link>
-          <ul className="hidden md:flex items-center gap-6 text-base font-semibold text-[#547950]">
+          <ul className="hidden md:flex items-center gap-6 text-base font-semibold text-white">
             <li>
               <Link
                 href="/"
-                className={isActive('/') ? 'text-[#547950] border-b-2 border-[#547950] pb-0.5' : 'hover:text-[#547950]/80'}
+                className={isActive('/') ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}
               >
                 Home
               </Link>
@@ -65,7 +65,7 @@ export default function Navigation() {
                   setResourcesMenuOpen(false)
                   setAboutContactMenuOpen(false)
                 }}
-                className={`flex items-center gap-1 ${isProductsActive ? 'text-[#547950] border-b-2 border-[#547950] pb-0.5' : 'hover:text-[#547950]/80'}`}
+                className={`flex items-center gap-1 ${isProductsActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
                 Products
                 <svg
@@ -190,7 +190,7 @@ export default function Navigation() {
             <li>
               <Link
                 href="/fitment-finder"
-                className={isActive('/fitment-finder') ? 'text-[#547950] border-b-2 border-[#547950] pb-0.5' : 'text-[#547950] hover:text-[#547950]/80'}
+                className={isActive('/fitment-finder') ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}
               >
                 Fitment Finder
               </Link>
@@ -198,7 +198,7 @@ export default function Navigation() {
             <li>
               <Link
                 href="/oem-private-label"
-                className={isActive('/oem-private-label') ? 'text-[#547950] border-b-2 border-[#547950] pb-0.5' : 'text-[#547950] hover:text-[#547950]/80'}
+                className={isActive('/oem-private-label') ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}
               >
                 OEM & Private Label
               </Link>
@@ -211,7 +211,7 @@ export default function Navigation() {
                   setProductsMenuOpen(false)
                   setAboutContactMenuOpen(false)
                 }}
-                className={`flex items-center gap-1 text-[#547950] ${isResourcesActive ? 'border-b-2 border-[#547950] pb-0.5' : 'hover:text-[#547950]/80'}`}
+                className={`flex items-center gap-1 ${isResourcesActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
                 Resources
                 <svg
@@ -276,7 +276,7 @@ export default function Navigation() {
                   setProductsMenuOpen(false)
                   setResourcesMenuOpen(false)
                 }}
-                className={`flex items-center gap-1 text-[#547950] ${isAboutContactActive ? 'border-b-2 border-[#547950] pb-0.5' : 'hover:text-[#547950]/80'}`}
+                className={`flex items-center gap-1 ${isAboutContactActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
                 About & Contact
                 <svg
@@ -332,7 +332,7 @@ export default function Navigation() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-none text-[#547950] hover:bg-gray-100"
+              className="p-2 rounded-none text-white hover:bg-[#426B3D]"
               aria-label="Menu"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
