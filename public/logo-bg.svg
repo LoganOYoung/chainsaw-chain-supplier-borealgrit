@@ -1,64 +1,61 @@
-<svg width="220" height="60" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
-  <!-- BG?????? - ?????????? -->
-  <g transform="translate(8, 10)">
-    <!-- B?? - ?????? -->
+<svg width="180" height="50" viewBox="0 0 180 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- BG字母组合设计 - 长方形版本 -->
+  <g transform="translate(5, 5)">
+    <!-- B字母 - 工业风格设计 -->
     <g>
-      <!-- B????? -->
-      <rect x="0" y="0" width="7" height="40" rx="3.5" fill="#547950"/>
-      <!-- B???? - ??? -->
-      <path d="M 7 2 Q 20 2 20 10 Q 20 18 7 18" 
+      <!-- B的左侧竖线 -->
+      <rect x="0" y="0" width="5" height="40" rx="2.5" fill="#547950"/>
+      <!-- B的上半圆 -->
+      <path d="M 5 2 Q 16 2 16 10 Q 16 18 5 18" 
             stroke="#547950" 
-            stroke-width="6" 
+            stroke-width="5" 
             fill="none" 
             stroke-linecap="round"
             stroke-linejoin="round"/>
-      <!-- B???? -->
-      <path d="M 7 20 Q 20 20 20 28 Q 20 36 7 36" 
+      <!-- B的下半圆 -->
+      <path d="M 5 20 Q 16 20 16 28 Q 16 36 5 36" 
             stroke="#547950" 
-            stroke-width="6" 
+            stroke-width="5" 
             fill="none" 
             stroke-linecap="round"
             stroke-linejoin="round"/>
-      <!-- B?????? -->
-      <line x1="7" y1="20" x2="20" y2="20" stroke="#547950" stroke-width="4" stroke-linecap="round"/>
+      <!-- B的内部连接线 -->
+      <line x1="5" y1="20" x2="16" y2="20" stroke="#547950" stroke-width="3.5" stroke-linecap="round"/>
     </g>
     
-    <!-- ????? - ??? -->
-    <g transform="translate(26, 16)">
-      <path d="M 0 4 Q 0 0 4 0 L 6 0 Q 10 0 10 4 L 10 8 Q 10 12 6 12 L 4 12 Q 0 12 0 8 Z" 
+    <!-- 链条连接环 -->
+    <g transform="translate(20, 16)">
+      <path d="M 0 3 Q 0 0 3 0 L 5 0 Q 8 0 8 3 L 8 6 Q 8 9 5 9 L 3 9 Q 0 9 0 6 Z" 
             fill="#547950" 
             stroke="#547950" 
-            stroke-width="1.5"
+            stroke-width="1.2"
             stroke-linejoin="round"/>
-      <!-- ???? -->
-      <path d="M 2 2 L 8 2 L 8 6 L 2 6 Z" fill="white" opacity="0.25"/>
     </g>
     
-    <!-- G?? - ???????? -->
-    <g transform="translate(40, 0)">
-      <!-- G??? - ??? -->
-      <path d="M 0 20 Q 0 0 20 0 L 28 0 Q 40 0 40 20 Q 40 40 20 40 Q 0 40 0 20" 
+    <!-- G字母 - 链条风格 -->
+    <g transform="translate(32, 0)">
+      <!-- G的外圆 -->
+      <path d="M 0 20 Q 0 0 18 0 L 24 0 Q 36 0 36 20 Q 36 40 18 40 Q 0 40 0 20" 
             stroke="#547950" 
-            stroke-width="6" 
+            stroke-width="5" 
             fill="none" 
             stroke-linecap="round"
             stroke-linejoin="round"/>
-      <!-- G??? -->
-      <line x1="20" y1="20" x2="28" y2="20" stroke="#547950" stroke-width="6" stroke-linecap="round"/>
-      <!-- G??? -->
-      <line x1="28" y1="20" x2="28" y2="30" stroke="#547950" stroke-width="6" stroke-linecap="round"/>
+      <!-- G的横线 -->
+      <line x1="18" y1="20" x2="24" y2="20" stroke="#547950" stroke-width="5" stroke-linecap="round"/>
+      <!-- G的竖线 -->
+      <line x1="24" y1="20" x2="24" y2="28" stroke="#547950" stroke-width="5" stroke-linecap="round"/>
     </g>
+    
+    <!-- 品牌名称 - 横向排列 -->
+    <text x="76" y="28" 
+          font-family="Oswald, sans-serif" 
+          font-size="22" 
+          font-weight="700" 
+          fill="#547950" 
+          letter-spacing="2px"
+          text-transform="uppercase">
+      BOREALGRIT
+    </text>
   </g>
-  
-  <!-- ???? - ?????? -->
-  <text x="8" y="52" 
-        font-family="Oswald, sans-serif" 
-        font-size="16" 
-        font-weight="600" 
-        fill="#547950" 
-        letter-spacing="2.5px"
-        text-transform="uppercase"
-        opacity="0.95">
-    BOREALGRIT
-  </text>
 </svg>

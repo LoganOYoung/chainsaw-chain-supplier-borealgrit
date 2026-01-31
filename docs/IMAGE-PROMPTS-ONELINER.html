@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片 Prompt 清单 - 一键复制</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 20px auto; padding: 0 16px; }
+    h1 { font-size: 1.25rem; margin-bottom: 8px; }
+    p.hint { color: #666; font-size: 0.875rem; margin-bottom: 16px; }
+    .row { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-bottom: 1px solid #eee; font-size: 0.875rem; }
+    .row:nth-child(even) { background: #f9f9f9; }
+    .row .file { flex: 0 0 220px; color: #055; word-break: break-all; }
+    .row .size { flex: 0 0 80px; color: #666; }
+    .row .prompt { flex: 1; color: #333; }
+    .row button { flex-shrink: 0; padding: 6px 12px; cursor: pointer; background: #166534; color: #fff; border: none; border-radius: 4px; font-size: 0.8125rem; }
+    .row button:hover { background: #14532d; }
+    .row button.copied { background: #0f766e; }
+  </style>
+</head>
+<body>
+  <h1>图片 Prompt 清单（Nano Banana 用）</h1>
+  <p class="hint">点击「Copy」复制该行 Prompt 到剪贴板，粘贴到 Nano Banana 后按「尺寸」设置，保存为「文件名」放到 public/images/ 对应文件夹。</p>
+  <div id="list"></div>
+  <script>
+    const lines = [
+      ["contact-banner.jpg", "1920x700", "Professional B2B industrial scene: chainsaw chain products in clean manufacturing or warehouse setting, neutral background, photorealistic"],
+      ["series-e-hero.jpg", "1920x600", "Battery-powered cordless chainsaw cutting wood, narrow-kerf chain on bar, daylight, photorealistic"],
+      ["series-w-hero.jpg", "1920x600", "Chainsaw cutting frozen wood in winter, snow and ice, cold-weather forestry, photorealistic"],
+      ["series-p-hero.jpg", "1920x600", "Professional logger with powerful chainsaw in forest, full-chisel chain, logging, daylight, photorealistic"],
+      ["about/production-line.jpg", "1200x800", "Factory production line for chainsaw chain manufacturing, assembly or machining of chain links, industrial clean, photorealistic"],
+      ["about/manufacturing-equipment.jpg", "1200x800", "Heavy machinery or CNC for chainsaw chain production, metal parts, industrial, photorealistic"],
+      ["fitment-guide-bar-stamping.jpg", "800x600", "Macro: guide bar tail with stamped pitch gauge drive link markings, metal bar, product shot"],
+      ["fitment-drive-link-marking.jpg", "800x600", "Macro: chainsaw chain drive link with stamped model number, metal link, sharp focus"],
+      ["fitment-count-drive-links.jpg", "800x600", "Chainsaw chain laid flat showing drive links for counting length, product photography"],
+      ["oem/retail-packaging.jpg", "800x600", "Retail packaging single chain box with space for custom artwork and barcode, product shot"],
+      ["oem/bulk-packaging.jpg", "800x600", "Bulk packaging multi-chain carton and master carton, B2B industrial"],
+      ["oem/custom-packaging.jpg", "800x600", "Custom OEM packaging with private label branding area, professional product shot"],
+      ["resources/product-catalog-cover.jpg", "600x800", "Product catalog 2025 cover layout, chainsaw chain industrial theme, vertical document"],
+      ["resources/quick-reference-guide-cover.jpg", "600x800", "Quick reference guide booklet cover, technical industrial theme"],
+      ["resources/datasheet-fc-325-preview.jpg", "600x800", "Datasheet one-page layout for Full Chisel 325 chain, technical document"],
+      ["resources/datasheet-sc-38-preview.jpg", "600x800", "Datasheet one-page layout for Semi-Chisel 38 chain, technical document"],
+      ["resources/datasheet-lp-325-preview.jpg", "600x800", "Datasheet one-page layout for Low Profile 325 chain, technical document"],
+      ["resources/fitment-guide-preview.jpg", "600x800", "Fitment compatibility guide document preview, table layout"],
+      ["certifications/iso-9001-badge.png", "200x200", "ISO 9001:2015 Quality Management certification badge, circular or shield, formal"],
+      ["certifications/ansi-b175-badge.png", "200x200", "ANSI B175.1 safety and performance standard badge, formal certification style"],
+      ["certifications/csa-z62-badge.png", "200x200", "CSA Z62.3 Canadian Standards Association certification badge, formal"],
+      ["quality/hardness-testing-equipment.jpg", "800x600", "Hardness testing equipment Rockwell tester measuring metal part, lab, photorealistic"],
+      ["quality/dimensional-measurement.jpg", "800x600", "Precision dimensional measurement calipers or gauge measuring chain link, QC lab"],
+      ["quality/safety-testing.jpg", "800x600", "Kickback safety testing rig for chainsaw chain ANSI B175.1, industrial lab"],
+      ["products/series-e-detail-kerf.jpg", "800x600", "Macro chain cross-section narrow kerf 043 inch width, metal cut, product detail"],
+      ["products/series-e-detail-cutter.jpg", "800x600", "Macro semi-chisel cutter rounded corner for battery saws, sharp focus product shot"],
+      ["products/series-e-detail-chain.jpg", "800x600", "Chain on battery saw bar low-profile design, product shot neutral background"],
+      ["products/series-w-detail-cutter.jpg", "800x600", "Macro semi-chisel cutter rounded corner for frozen wood, product detail"],
+      ["products/series-w-detail-material.jpg", "800x600", "CrNiMo alloy steel chain link nitriding surface, metal texture macro"],
+      ["products/series-w-detail-edge.jpg", "800x600", "Cutter edge in dirty or frozen conditions durability macro product shot"],
+      ["products/series-p-detail-cutter.jpg", "800x600", "Macro full-chisel square-corner cutter razor-sharp logging chain"],
+      ["products/series-p-detail-chrome.jpg", "800x600", "Industrial chrome coating on chain link reflective hardened surface macro"],
+      ["products/series-p-detail-edge.jpg", "800x600", "Full-chisel cutter edge extended sharpening interval wear resistance macro"],
+      ["products/full-chisel-325-hero.jpg", "1920x800", "Full chisel 325 chain professional logging cutting clean wood forest daylight"],
+      ["products/full-chisel-cutter-detail.jpg", "800x600", "Macro full-chisel square-corner cutter razor-sharp maximum cutting speed"],
+      ["products/full-chisel-chain-detail.jpg", "800x600", "Full-chisel chain assembly cutter spacing drive links product photography"],
+      ["products/full-chisel-application.jpg", "800x600", "Full-chisel chain cutting clean softwood professional logging outdoor"],
+      ["products/low-profile-325-hero.jpg", "1920x800", "Low-profile chainsaw chain consumer homeowner safe cutting low-kickback yard"],
+      ["products/low-profile-cutter-detail.jpg", "800x600", "Macro low-profile cutter reduced depth low-kickback safety geometry"],
+      ["products/low-profile-chain-detail.jpg", "800x600", "Low-profile chain drive link configuration safety link placement product shot"],
+      ["products/low-profile-application.jpg", "800x600", "Low-profile chain homeowner application light-duty cutting pruning garden"],
+      ["products/semi-chisel-38-hero.jpg", "1920x800", "Semi-chisel 38 chain general purpose dirty or frozen wood rounded cutters"],
+      ["products/semi-chisel-cutter-detail.jpg", "800x600", "Macro semi-chisel rounded-corner cutter durable edge retention product shot"],
+      ["products/semi-chisel-chain-detail.jpg", "800x600", "Semi-chisel chain 38 inch pitch cutter spacing product photography"],
+      ["products/semi-chisel-application.jpg", "800x600", "Semi-chisel chain cutting dirty or frozen wood Eastern hardwoods"]
+    ];
+    const list = document.getElementById("list");
+    lines.forEach(([file, size, prompt]) => {
+      const row = document.createElement("div");
+      row.className = "row";
+      row.innerHTML = `<span class="file" title="${file}">${file}</span><span class="size">${size}</span><span class="prompt">${prompt}</span><button type="button">Copy</button>`;
+      const btn = row.querySelector("button");
+      btn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(prompt);
+          btn.textContent = "Copied!";
+          btn.classList.add("copied");
+          setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove("copied"); }, 1500);
+        } catch (e) {
+          btn.textContent = "Failed";
+          setTimeout(() => { btn.textContent = "Copy"; }, 1500);
+        }
+      });
+      list.appendChild(row);
+    });
+  </script>
+</body>
+</html>
