@@ -213,8 +213,9 @@ body {
   .fitment-compat-table .fitment-actions-grid-spacer {
     grid-column: 1;
   }
+  /* Mobile: button centered across full row */
   .fitment-compat-table .fitment-actions-block > a {
-    grid-column: 2;
+    grid-column: 1 / -1;
     justify-self: center;
   }
   .fitment-gauge-table td::before,
