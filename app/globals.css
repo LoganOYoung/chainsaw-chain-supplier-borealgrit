@@ -155,6 +155,27 @@ body {
   text-align: left;
   border-bottom: 1px solid rgba(84, 121, 80, 0.2);
 }
+
+/* Desktop: more horizontal padding so right columns don't feel cramped */
+@media (min-width: 768px) {
+  .fitment-gauge-table th,
+  .fitment-gauge-table td,
+  .fitment-compat-table th,
+  .fitment-compat-table td,
+  .fitment-crossref-table th,
+  .fitment-crossref-table td {
+    padding-left: 1rem;
+    padding-right: 1.25rem;
+  }
+  .fitment-compat-table th:nth-child(6),
+  .fitment-compat-table td:nth-child(6) {
+    min-width: 10rem;
+  }
+  .fitment-compat-table th:nth-child(7),
+  .fitment-compat-table td:nth-child(7) {
+    min-width: 11rem;
+  }
+}
 .fitment-gauge-table thead th,
 .fitment-compat-table thead th,
 .fitment-crossref-table thead th {

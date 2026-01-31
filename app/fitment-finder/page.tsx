@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ShieldCheck, Zap, DollarSign, ArrowRight, ExternalLink } from 'lucide-react'
+import { ShieldCheck, Zap, DollarSign, ArrowRight } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -105,16 +105,6 @@ export default function FitmentFinderPage() {
     return `/request-quote?${params.toString()}`
   }
 
-  // Get application page link based on series
-  const getApplicationLink = (series: string) => {
-    const appMap: Record<string, string> = {
-      'Series E': '/products/applications/battery-saws',
-      'Series W': '/products/applications/cold-climate',
-      'Series P': '/products/applications/professional-loggers',
-    }
-    return appMap[series] || null
-  }
-
   const filteredData = compatibilityData.filter((item) => {
     if (!searchQuery) return true
     const query = searchQuery.toLowerCase()
@@ -205,7 +195,7 @@ export default function FitmentFinderPage() {
                 <th>Bar Length</th>
                 <th>Pitch</th>
                 <th>Gauge</th>
-                <th>Our Series</th>
+                <th>Replacement</th>
                 <th className="min-w-[180px]">Actions</th>
               </tr>
             </thead>
@@ -231,7 +221,7 @@ export default function FitmentFinderPage() {
                         item.gauge
                       )}
                     </td>
-                    <td data-label="Our Series">
+                    <td data-label="Replacement">
                       <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 sm:flex-col sm:items-start sm:gap-1">
                         <div className="flex items-center gap-2">
                           <Link
@@ -245,15 +235,6 @@ export default function FitmentFinderPage() {
                           </span>
                         </div>
                         <span className="text-text-body text-xs">({item.seriesType})</span>
-                        {getApplicationLink(item.series) && (
-                          <Link
-                            href={getApplicationLink(item.series)!}
-                            className="text-xs text-forest-brand hover:underline inline-flex items-center gap-1"
-                          >
-                            View Application
-                            <ExternalLink className="w-3 h-3 shrink-0" />
-                          </Link>
-                        )}
                       </div>
                     </td>
                     <td className="min-w-0 fitment-actions-cell" data-label="Actions">
@@ -320,7 +301,7 @@ export default function FitmentFinderPage() {
             <table className="fitment-crossref-table w-full min-w-[1000px]">
               <thead>
                 <tr>
-                  <th>Our Series</th>
+                  <th>Replacement</th>
                   <th>Pitch / Gauge</th>
                   <th>Oregon Model</th>
                   <th>Stihl Model</th>
@@ -332,7 +313,7 @@ export default function FitmentFinderPage() {
                 {filteredCrossRef.length > 0 ? (
                   filteredCrossRef.map((item) => (
                     <tr key={item.id}>
-                      <td className="font-medium" data-label="Our Series">
+                      <td className="font-medium" data-label="Replacement">
                         <Link href={item.seriesLink} className="text-forest-brand hover:underline">
                           {item.series}
                         </Link>
