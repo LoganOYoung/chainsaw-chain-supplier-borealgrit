@@ -83,32 +83,32 @@ export default function DistributorsPage() {
         {/* Where We Supply */}
         <section className="mb-10">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Where We Supply</h2>
-          <div className="grid md:grid-cols-2 gap-6 items-start">
-            <div>
-              <p className="text-text-body text-sm mb-4">
-                We focus on <strong className="text-text-main">North America</strong>. Our primary markets include:
-              </p>
-              <ul className="text-text-body text-sm list-disc pl-5 space-y-1 mb-4">
-                <li><strong>Canada:</strong> British Columbia, Alberta, and Eastern provinces</li>
-                <li><strong>United States:</strong> Pacific Northwest (WA, OR, ID), Northern states, and beyond</li>
+          <p className="text-text-body text-sm mb-4">
+            We focus on <strong className="text-text-main">North America</strong>. Our primary markets include:
+          </p>
+          <div className="grid sm:grid-cols-2 gap-6 mb-4">
+            <div className="bg-gray-50 border border-forest-brand/30 rounded-none p-4">
+              <h3 className="font-semibold text-text-main text-sm mb-2">Canada</h3>
+              <ul className="text-text-body text-sm space-y-1">
+                <li>British Columbia</li>
+                <li>Alberta</li>
+                <li>Ontario</li>
+                <li>Eastern provinces</li>
               </ul>
-              <p className="text-text-body text-sm">
-                Direct-from-factory supply to North American ports and logistics corridors. We work with you on Incoterms and delivery expectations.
-              </p>
             </div>
-            <div className="bg-gray-50 border border-forest-brand/30 rounded-none p-4 flex flex-col items-center justify-center min-h-[200px]">
-              <p className="text-xs font-semibold text-text-main uppercase tracking-wide mb-3">Core forestry regions we serve</p>
-              <Image
-                src="/images/na-forestry-map.svg"
-                alt="North America map with British Columbia, Alberta, Washington, Oregon, and Idaho highlighted in green as core forestry regions"
-                width={500}
-                height={325}
-                className="w-full max-w-[280px] h-auto"
-              />
-              <p className="text-xs text-text-body mt-2">BC · Alberta · WA · OR · ID</p>
+            <div className="bg-gray-50 border border-forest-brand/30 rounded-none p-4">
+              <h3 className="font-semibold text-text-main text-sm mb-2">United States</h3>
+              <ul className="text-text-body text-sm space-y-1">
+                <li>Pacific Northwest (WA, OR, ID)</li>
+                <li>Texas</li>
+                <li>Northern states & beyond</li>
+              </ul>
             </div>
           </div>
-          <div className="mt-6 bg-forest-brand/10 border-l-4 border-forest-brand rounded-none px-4 py-3">
+          <p className="text-text-body text-sm mb-4">
+            Direct-from-factory supply to North American ports and logistics corridors. We work with you on Incoterms and delivery expectations.
+          </p>
+          <div className="bg-forest-brand/10 border-l-4 border-forest-brand rounded-none px-4 py-3">
             <p className="text-sm text-text-main">
               <strong>North America support.</strong> Quotes provided within 12 hours during Pacific Time (PT) business hours. <Link href="/request-quote" className="text-forest-brand font-semibold hover:underline">Request a quote</Link> or <Link href="/contact" className="text-forest-brand font-semibold hover:underline">contact us</Link>.
             </p>
