@@ -122,6 +122,63 @@ body {
   }
 }
 
+/* Fitment Finder: mobile card layout for gauge, compat, crossref tables */
+@media (max-width: 639px) {
+  .fitment-gauge-table thead,
+  .fitment-compat-table thead,
+  .fitment-crossref-table thead {
+    display: none;
+  }
+  .fitment-gauge-table,
+  .fitment-gauge-table tbody,
+  .fitment-gauge-table tr,
+  .fitment-gauge-table td,
+  .fitment-compat-table,
+  .fitment-compat-table tbody,
+  .fitment-compat-table tr,
+  .fitment-compat-table td,
+  .fitment-crossref-table,
+  .fitment-crossref-table tbody,
+  .fitment-crossref-table tr,
+  .fitment-crossref-table td {
+    display: block;
+  }
+  .fitment-gauge-table tr,
+  .fitment-compat-table tr,
+  .fitment-crossref-table tr {
+    border: 1px solid rgba(45, 90, 45, 0.3);
+    border-radius: 0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background: #fff;
+  }
+  .fitment-gauge-table td,
+  .fitment-compat-table td,
+  .fitment-crossref-table td {
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.75rem 1rem;
+  }
+  .fitment-gauge-table td:last-child,
+  .fitment-compat-table td:last-child,
+  .fitment-crossref-table td:last-child {
+    border-bottom: none;
+    background: #f9fafb;
+  }
+  .fitment-gauge-table td::before,
+  .fitment-compat-table td::before,
+  .fitment-crossref-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 600;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+  }
+}
+
 /* Mobile input optimization - prevent zoom on iOS */
 @media screen and (max-width: 768px) {
   input[type="text"],
