@@ -170,10 +170,10 @@ export default function FitmentFinderPage() {
         </section>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] overflow-x-hidden sm:overflow-visible">
-          <h1 className="text-xl sm:text-2xl font-bold text-text-main mb-4">Fitment & Compatibility</h1>
+          <h1 className="text-xl sm:text-2xl font-bold text-text-main mb-6">Fitment & Compatibility</h1>
 
         {/* Search Box */}
-        <div className="mb-4 sm:mb-6">
+        <div className="mb-6">
           <input
             type="text"
             placeholder="Search by brand, model, bar length, pitch, gauge, or series..."
@@ -184,7 +184,7 @@ export default function FitmentFinderPage() {
         </div>
 
         {/* Disclaimer */}
-        <div className="mb-6 space-y-3">
+        <div className="mb-6 space-y-3 max-w-4xl">
           <p className="text-sm text-text-body italic">
             Always verify bar and chain specifications before ordering. Compatibility is based on pitch, gauge, and bar length. Saw and bar may vary. Consult your bar manufacturer or saw manual when in doubt.
           </p>
@@ -196,24 +196,24 @@ export default function FitmentFinderPage() {
         </div>
 
         {/* Compatibility Table */}
-        <div className="table-responsive -mx-4 sm:mx-0 overflow-x-hidden sm:overflow-x-auto">
-          <table className="fitment-compat-table w-full min-w-[900px] text-sm border border-forest-brand/30">
+        <div className="fitment-table-wrap table-responsive -mx-4 sm:mx-0 overflow-x-hidden sm:overflow-x-auto">
+          <table className="fitment-compat-table w-full min-w-[900px]">
             <thead>
-              <tr className="bg-gray-50">
-                <th className="text-left px-4 py-3 font-semibold">Brand</th>
-                <th className="text-left px-4 py-3 font-semibold">Saw Model</th>
-                <th className="text-left px-4 py-3 font-semibold">Bar Length</th>
-                <th className="text-left px-4 py-3 font-semibold">Pitch</th>
-                <th className="text-left px-4 py-3 font-semibold">Gauge</th>
-                <th className="text-left px-4 py-3 font-semibold">Our Series</th>
-                <th className="text-left px-4 py-3 font-semibold min-w-[180px]">Actions</th>
+              <tr>
+                <th>Brand</th>
+                <th>Saw Model</th>
+                <th>Bar Length</th>
+                <th>Pitch</th>
+                <th>Gauge</th>
+                <th>Our Series</th>
+                <th className="min-w-[180px]">Actions</th>
               </tr>
             </thead>
             <tbody>
               {filteredData.length > 0 ? (
                 filteredData.map((item, idx) => (
-                  <tr key={idx} className="border-t border-forest-brand/30 hover:bg-gray-50">
-                    <td className="px-4 py-3" data-label="Brand">
+                  <tr key={idx}>
+                    <td data-label="Brand">
                       <div className="flex items-center gap-2">
                         <span className="font-semibold text-text-main">{item.brand}</span>
                         <span className="text-xs text-text-body bg-gray-100 px-2 py-0.5 rounded">
@@ -221,17 +221,17 @@ export default function FitmentFinderPage() {
                         </span>
                       </div>
                     </td>
-                    <td className="px-4 py-3" data-label="Saw Model">{item.model}</td>
-                    <td className="px-4 py-3" data-label="Bar Length">{item.bar}</td>
-                    <td className="px-4 py-3" data-label="Pitch">{item.pitch}</td>
-                    <td className="px-4 py-3" data-label="Gauge">
+                    <td data-label="Saw Model">{item.model}</td>
+                    <td data-label="Bar Length">{item.bar}</td>
+                    <td data-label="Pitch">{item.pitch}</td>
+                    <td data-label="Gauge">
                       {item.gauge === '.043"' || item.gauge === '.050"' ? (
                         <strong>{item.gauge}</strong>
                       ) : (
                         item.gauge
                       )}
                     </td>
-                    <td className="px-4 py-3" data-label="Our Series">
+                    <td data-label="Our Series">
                       <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 sm:flex-col sm:items-start sm:gap-1">
                         <div className="flex items-center gap-2">
                           <Link
@@ -256,7 +256,7 @@ export default function FitmentFinderPage() {
                         )}
                       </div>
                     </td>
-                    <td className="px-4 py-3 min-w-0 fitment-actions-cell" data-label="Actions">
+                    <td className="min-w-0 fitment-actions-cell" data-label="Actions">
                       <div className="fitment-actions-block min-w-0 max-w-full">
                         <span className="fitment-actions-grid-spacer" aria-hidden />
                         <Link
@@ -272,7 +272,7 @@ export default function FitmentFinderPage() {
                 ))
               ) : (
                 <tr>
-                  <td colSpan={7} className="px-4 py-8 text-center text-industrial">
+                  <td colSpan={7} className="py-8 text-center text-industrial">
                     No matching results found. Try a different search term or{' '}
                     <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">
                       request a quote
@@ -293,14 +293,14 @@ export default function FitmentFinderPage() {
         )}
 
         {/* Cross-Chain Reference */}
-        <section className="mt-10 sm:mt-16 pt-8 sm:pt-10 border-t border-gray-300">
+        <section className="mt-8 sm:mt-10 pt-8 sm:pt-10 border-t border-gray-300">
           <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4">Cross-Chain Reference</h2>
-          <p className="text-text-body text-sm mb-4 max-w-3xl">
+          <p className="text-text-body text-sm mb-6 max-w-3xl">
             Cross-reference table for North American chainsaw chain models. Match our Series E, W, and P chains to equivalent Oregon, Stihl, and Husqvarna part numbers.
           </p>
 
           {/* Cross-Reference Search Box */}
-          <div className="mb-4 sm:mb-6">
+          <div className="mb-6">
             <input
               type="text"
               placeholder="Search by series, pitch/gauge, model number, or application..."
@@ -316,29 +316,29 @@ export default function FitmentFinderPage() {
             </p>
           )}
 
-          <div className="table-responsive -mx-4 sm:mx-0 overflow-x-hidden sm:overflow-x-auto">
-            <table className="fitment-crossref-table w-full min-w-[1000px] text-sm border border-forest-brand/30">
+          <div className="fitment-table-wrap table-responsive -mx-4 sm:mx-0 overflow-x-hidden sm:overflow-x-auto">
+            <table className="fitment-crossref-table w-full min-w-[1000px]">
               <thead>
-                <tr className="bg-gray-50">
-                  <th className="text-left px-4 py-3 font-semibold">Our Series</th>
-                  <th className="text-left px-4 py-3 font-semibold">Pitch / Gauge</th>
-                  <th className="text-left px-4 py-3 font-semibold">Oregon Model</th>
-                  <th className="text-left px-4 py-3 font-semibold">Stihl Model</th>
-                  <th className="text-left px-4 py-3 font-semibold">Husqvarna Model</th>
-                  <th className="text-left px-4 py-3 font-semibold">Application</th>
+                <tr>
+                  <th>Our Series</th>
+                  <th>Pitch / Gauge</th>
+                  <th>Oregon Model</th>
+                  <th>Stihl Model</th>
+                  <th>Husqvarna Model</th>
+                  <th>Application</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredCrossRef.length > 0 ? (
                   filteredCrossRef.map((item) => (
-                    <tr key={item.id} className="border-t border-forest-brand/30 hover:bg-gray-50">
-                      <td className="px-4 py-3 font-medium" data-label="Our Series">
+                    <tr key={item.id}>
+                      <td className="font-medium" data-label="Our Series">
                         <Link href={item.seriesLink} className="text-forest-brand hover:underline">
                           {item.series}
                         </Link>
                       </td>
-                      <td className="px-4 py-3" data-label="Pitch / Gauge">{item.pitchGauge}</td>
-                      <td className="px-4 py-3" data-label="Oregon Model">
+                      <td data-label="Pitch / Gauge">{item.pitchGauge}</td>
+                      <td data-label="Oregon Model">
                         {item.oregon !== '-' ? (
                           <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 sm:flex-col sm:gap-1">
                             <span className="font-medium text-text-main">{item.oregon}</span>
@@ -348,7 +348,7 @@ export default function FitmentFinderPage() {
                           <span className="text-text-body">-</span>
                         )}
                       </td>
-                      <td className="px-4 py-3" data-label="Stihl Model">
+                      <td data-label="Stihl Model">
                         {item.stihl !== '-' ? (
                           <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 sm:flex-col sm:gap-1">
                             <span className="font-medium text-text-main">{item.stihl}</span>
@@ -358,7 +358,7 @@ export default function FitmentFinderPage() {
                           <span className="text-text-body">-</span>
                         )}
                       </td>
-                      <td className="px-4 py-3" data-label="Husqvarna Model">
+                      <td data-label="Husqvarna Model">
                         {item.husqvarna !== '-' ? (
                           <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 sm:flex-col sm:gap-1">
                             <span className="font-medium text-text-main">{item.husqvarna}</span>
@@ -368,12 +368,12 @@ export default function FitmentFinderPage() {
                           <span className="text-text-body">-</span>
                         )}
                       </td>
-                      <td className="px-4 py-3 text-text-body" data-label="Application">{item.application}</td>
+                      <td className="text-text-body" data-label="Application">{item.application}</td>
                     </tr>
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={6} className="px-4 py-8 text-center text-industrial">
+                    <td colSpan={6} className="py-8 text-center text-industrial">
                       No matching results found. Try a different search term or{' '}
                       <Link href="/request-quote" className="text-forest-brand font-medium hover:underline">
                         request a quote
@@ -570,35 +570,35 @@ export default function FitmentFinderPage() {
                   <p className="text-sm text-text-body mb-4 leading-relaxed">
                     Gauge refers to the drive link thickness that fits into the guide bar groove. Precision fit is critical for safe operation.
                   </p>
-                  <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
-                    <table className="fitment-gauge-table w-full min-w-[300px] text-sm border border-forest-brand/30">
+                  <div className="fitment-table-wrap table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
+                    <table className="fitment-gauge-table w-full min-w-[300px]">
                       <thead>
-                        <tr className="bg-gray-50">
-                          <th className="text-left px-4 py-2 font-semibold text-text-main">Imperial</th>
-                          <th className="text-left px-4 py-2 font-semibold text-text-main">Metric</th>
-                          <th className="text-left px-4 py-2 font-semibold text-text-main">Application</th>
+                        <tr>
+                          <th>Imperial</th>
+                          <th>Metric</th>
+                          <th>Application</th>
                         </tr>
                       </thead>
                       <tbody className="text-industrial">
-                        <tr className="border-t border-forest-brand/30">
-                          <td className="px-4 py-2 font-medium" data-label="Imperial">.043&quot;</td>
-                          <td className="px-4 py-2" data-label="Metric">1.1mm</td>
-                          <td className="px-4 py-2 text-text-body" data-label="Application">Battery saws, narrow kerf</td>
+                        <tr>
+                          <td className="font-medium" data-label="Imperial">.043&quot;</td>
+                          <td data-label="Metric">1.1mm</td>
+                          <td className="text-text-body" data-label="Application">Battery saws, narrow kerf</td>
                         </tr>
-                        <tr className="border-t border-forest-brand/30">
-                          <td className="px-4 py-2 font-medium" data-label="Imperial">.050&quot;</td>
-                          <td className="px-4 py-2" data-label="Metric">1.3mm</td>
-                          <td className="px-4 py-2 text-text-body" data-label="Application">Consumer saws, general purpose</td>
+                        <tr>
+                          <td className="font-medium" data-label="Imperial">.050&quot;</td>
+                          <td data-label="Metric">1.3mm</td>
+                          <td className="text-text-body" data-label="Application">Consumer saws, general purpose</td>
                         </tr>
-                        <tr className="border-t border-forest-brand/30">
-                          <td className="px-4 py-2 font-medium" data-label="Imperial">.058&quot;</td>
-                          <td className="px-4 py-2" data-label="Metric">1.5mm</td>
-                          <td className="px-4 py-2 text-text-body" data-label="Application">Mid-range professional</td>
+                        <tr>
+                          <td className="font-medium" data-label="Imperial">.058&quot;</td>
+                          <td data-label="Metric">1.5mm</td>
+                          <td className="text-text-body" data-label="Application">Mid-range professional</td>
                         </tr>
-                        <tr className="border-t border-forest-brand/30">
-                          <td className="px-4 py-2 font-medium" data-label="Imperial">.063&quot;</td>
-                          <td className="px-4 py-2" data-label="Metric">1.6mm</td>
-                          <td className="px-4 py-2 text-text-body" data-label="Application">Heavy-duty professional</td>
+                        <tr>
+                          <td className="font-medium" data-label="Imperial">.063&quot;</td>
+                          <td data-label="Metric">1.6mm</td>
+                          <td className="text-text-body" data-label="Application">Heavy-duty professional</td>
                         </tr>
                       </tbody>
                     </table>
