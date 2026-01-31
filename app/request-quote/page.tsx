@@ -11,7 +11,7 @@ import Footer from '@/components/Footer'
 const CONTACT_EMAIL = 'logan@borealgrit.com'
 const CONTACT_PHONE = '(+86) 13675899493'
 const CONTACT_WECHAT = '(+86) 13675899493'
-const CONTACT_ADDRESS = 'Guangzhou, China'
+const CONTACT_ADDRESS = 'Room 636-D548, Lianyue Banshan Plaza, Nansha, Guangzhou, China'
 const BUSINESS_HOURS = 'Monday - Friday: 9:00 AM - 6:00 PM CST (China Standard Time)'
 const RESPONSE_TIME = 'We respond to all inquiries within 24 hours during business days.'
 
