@@ -39,6 +39,50 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Resources page: mobile card layout (stack rows, show labels) */
+@media (max-width: 639px) {
+  .resources-table thead {
+    display: none;
+  }
+  .resources-table,
+  .resources-table tbody,
+  .resources-table tr,
+  .resources-table td {
+    display: block;
+  }
+  .resources-table tr {
+    border: 1px solid rgba(45, 90, 45, 0.3);
+    border-radius: 0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background: #fff;
+  }
+  .resources-table td {
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.75rem 1rem;
+  }
+  .resources-table td:last-child {
+    border-bottom: none;
+    background: #f9fafb;
+    padding-top: 0.5rem;
+    padding-bottom: 0.75rem;
+  }
+  .resources-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 600;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+  }
+  .resources-table .no-mobile-label::before {
+    display: none;
+  }
+}
+
 /* Mobile input optimization - prevent zoom on iOS */
 @media screen and (max-width: 768px) {
   input[type="text"],
