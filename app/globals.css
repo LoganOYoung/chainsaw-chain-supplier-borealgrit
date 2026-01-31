@@ -83,6 +83,45 @@ body {
   }
 }
 
+/* Distributors Policies table: mobile card layout */
+@media (max-width: 639px) {
+  .distributors-policies-table thead {
+    display: none;
+  }
+  .distributors-policies-table,
+  .distributors-policies-table tbody,
+  .distributors-policies-table tr,
+  .distributors-policies-table td {
+    display: block;
+  }
+  .distributors-policies-table tr {
+    border: 1px solid rgba(45, 90, 45, 0.3);
+    border-radius: 0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background: #fff;
+  }
+  .distributors-policies-table td {
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.75rem 1rem;
+  }
+  .distributors-policies-table td:last-child {
+    border-bottom: none;
+    background: #f9fafb;
+  }
+  .distributors-policies-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 600;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+  }
+}
+
 /* Mobile input optimization - prevent zoom on iOS */
 @media screen and (max-width: 768px) {
   input[type="text"],
