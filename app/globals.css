@@ -189,15 +189,18 @@ body {
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
   }
-  /* Compat table Actions: no label, center button */
+  /* Compat table Actions: same grid as other rows, empty label so value aligns left with BAR LENGTH etc. */
   .fitment-compat-table td.fitment-actions-cell {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid !important;
+    grid-template-columns: minmax(4.25rem, auto) minmax(0, 1fr);
+    gap: 0 0.5rem;
+    align-items: flex-start;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 0.6rem;
   }
   .fitment-compat-table td.fitment-actions-cell::before {
-    display: none;
+    content: "";
+    display: block;
   }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,
