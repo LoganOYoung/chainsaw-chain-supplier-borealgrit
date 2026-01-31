@@ -26,9 +26,10 @@ export default function Navigation() {
   const isForBuyersActive = pathname?.startsWith('/for-buyers') || pathname?.startsWith('/oem-private-label')
   const isToolsActive = pathname?.startsWith('/fitment-finder') || pathname?.startsWith('/tools')
 
-  // Close dropdowns when clicking outside
+  // Close dropdowns when clicking outside (desktop only – on mobile this would close submenus incorrectly)
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      if (typeof window !== 'undefined' && window.innerWidth < 768) return
       if (productsMenuRef.current && !productsMenuRef.current.contains(event.target as Node)) {
         setProductsMenuOpen(false)
       }
@@ -52,6 +53,16 @@ export default function Navigation() {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [productsMenuOpen, resourcesMenuOpen, aboutContactMenuOpen, forBuyersMenuOpen, toolsMenuOpen])
+
+  // Close mobile menu when route changes (e.g. after navigation or browser back)
+  useEffect(() => {
+    setMobileMenuOpen(false)
+    setProductsMenuOpen(false)
+    setResourcesMenuOpen(false)
+    setAboutContactMenuOpen(false)
+    setForBuyersMenuOpen(false)
+    setToolsMenuOpen(false)
+  }, [pathname])
 
   return (
     <header className="bg-[#547950] sticky top-0 z-50 shadow-sm">
@@ -401,7 +412,7 @@ export default function Navigation() {
             </button>
           </div>
         </div>
-        <div className={`${mobileMenuOpen ? '' : 'hidden'} md:hidden py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] border-t border-white/20 bg-[#547950]`}>
+        <div className={`${mobileMenuOpen ? '' : 'hidden'} md:hidden py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] border-t border-white/20 bg-[#547950] touch-manipulation`}>
           <ul className="flex flex-col text-sm">
             <li>
               <Link href="/" className={`block py-3 ${isActive('/') ? 'text-white font-medium' : 'text-white/90'}`} onClick={() => setMobileMenuOpen(false)}>
@@ -631,7 +642,7 @@ export default function Navigation() {
               <button
                 type="button"
                 onClick={() => setForBuyersMenuOpen(!forBuyersMenuOpen)}
-                className={`flex items-center justify-between w-full py-2 text-white/90 ${isForBuyersActive ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
+                className={`flex items-center justify-between w-full py-3 min-h-[44px] text-white/90 ${isForBuyersActive ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
               >
                 For Buyers
                 <svg
@@ -786,7 +797,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/request-quote"
-                      className={`block py-2 text-sm font-semibold text-forest-brand hover:text-white hover:bg-forest-brand hover:px-2 hover:py-2 hover:-mx-2 hover:-my-2 transition ${isActive('/request-quote') ? 'font-bold' : ''}`}
+                      className={`block py-2.5 min-h-[44px] flex items-center text-sm font-semibold text-forest-brand hover:text-white hover:bg-forest-brand transition ${isActive('/request-quote') ? 'font-bold' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setAboutContactMenuOpen(false)
