@@ -528,7 +528,7 @@ export default function FitmentFinderPage() {
                         <span className="fitment-actions-grid-spacer" aria-hidden />
                         <Link
                           href={buildQuoteUrl(item)}
-                          className="flex items-center justify-center gap-1.5 text-xs py-1.5 px-4 min-h-[32px] min-w-[160px] w-full max-w-[240px] bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none [&_svg]:text-white fitment-actions-btn sm:self-start"
+                          className="flex items-center justify-center gap-1.5 text-xs sm:text-sm py-2.5 sm:py-1.5 px-5 sm:px-4 min-h-[44px] sm:min-h-[32px] w-full max-w-none sm:max-w-[240px] sm:w-auto bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none [&_svg]:text-white fitment-actions-btn sm:self-start"
                         >
                           <ArrowRight className="hidden sm:inline w-3.5 h-3.5 shrink-0" aria-hidden />
                           <span>Request Quote</span>
