@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <h3 className="font-heading font-extrabold text-white text-2xl uppercase tracking-tight mb-3 italic">BOREALGRIT</h3>
             <p className="text-sm text-white/80 leading-relaxed">
-              Professional chainsaw chain manufacturer. B2B only. Serving North American distributors and OEM partners.
+              Professional Grade Chainsaw Chains for North American Forestry
             </p>
           </div>
 
