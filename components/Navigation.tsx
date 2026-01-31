@@ -234,7 +234,7 @@ export default function Navigation() {
                     className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setToolsMenuOpen(false)}
                   >
-                    Cross-chain reference & calculators
+                    Cross Reference & calculators
                   </Link>
                 </div>
               )}
@@ -621,7 +621,7 @@ export default function Navigation() {
                         setToolsMenuOpen(false)
                       }}
                     >
-                      Cross-chain reference & calculators
+                      Cross Reference & calculators
                     </Link>
                   </li>
                 </ul>
