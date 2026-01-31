@@ -361,13 +361,6 @@ export default function FitmentFinderPage() {
           </p>
         </section>
 
-        {/* Brand Disclaimer — single placement for whole page */}
-        <div className="mb-8 max-w-4xl bg-gray-50 border border-forest-brand/30 rounded-none p-4 sm:p-5">
-          <p className="text-xs sm:text-sm text-text-body leading-relaxed">
-            <strong className="text-text-main">Brand Disclaimer:</strong> Oregon®, Stihl®, Husqvarna®, Milwaukee®, Makita®, DeWalt®, EGO Power+®, Echo®, Ryobi®, Greenworks Pro®, Craftsman®, and Poulan Pro® are trademarks of their respective owners. We are not affiliated with, authorized by, or endorsed by these brands. Our products are compatible replacements designed to meet or exceed OEM specifications.
-          </p>
-        </div>
-
         {/* Why Switch to Our Premium Alternatives - after tools */}
         <section className="mb-8 bg-gray-50 rounded-none p-4 sm:p-6 border border-forest-brand/30">
           <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4 sm:mb-6">Why Switch to Our Premium Alternatives?</h2>
@@ -476,12 +469,6 @@ export default function FitmentFinderPage() {
             </div>
           </div>
 
-          {/* Help Box */}
-          <div className="bg-forest-brand/10 border-2 border-forest-brand rounded-none p-4 sm:p-5">
-            <p className="text-sm font-semibold text-text-main">
-              Still unsure? Send us a photo of your bar stamping, and our engineers will match it for you.
-            </p>
-          </div>
         </section>
 
         {/* Industry Technical Specifications & Standards - reference at end */}
@@ -650,6 +637,13 @@ export default function FitmentFinderPage() {
             </div>
           </div>
         </section>
+
+        {/* Brand Disclaimer — page bottom */}
+        <div className="mt-8 pt-6 border-t border-gray-200 max-w-4xl bg-gray-50 rounded-none p-4 sm:p-5">
+          <p className="text-xs sm:text-sm text-text-body leading-relaxed">
+            <strong className="text-text-main">Brand Disclaimer:</strong> Oregon®, Stihl®, Husqvarna®, Milwaukee®, Makita®, DeWalt®, EGO Power+®, Echo®, Ryobi®, Greenworks Pro®, Craftsman®, and Poulan Pro® are trademarks of their respective owners. We are not affiliated with, authorized by, or endorsed by these brands. Our products are compatible replacements designed to meet or exceed OEM specifications.
+          </p>
+        </div>
         </div>
       </main>
       <Footer />
