@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Search, Filter, Download, ArrowRight, ChevronDown } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { PRODUCT_CATALOG } from '@/lib/productCatalog'
 
 export default function ProductsPage() {
@@ -105,6 +106,12 @@ export default function ProductsPage() {
     <>
       <Navigation />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10 lg:py-14">
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Products' },
+          ]}
+        />
         {/* Page Header */}
         <header className="mb-6 md:mb-10">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-main mb-3 md:mb-4">
