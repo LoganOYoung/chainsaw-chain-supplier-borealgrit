@@ -189,6 +189,16 @@ body {
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
   }
+  /* Compat table Actions: no label, center button */
+  .fitment-compat-table td.fitment-actions-cell {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .fitment-compat-table td.fitment-actions-cell::before {
+    display: none;
+  }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,
   .fitment-crossref-table td::before {

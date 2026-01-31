@@ -546,15 +546,14 @@ export default function FitmentFinderPage() {
                         )}
                       </div>
                     </td>
-                    <td className="px-4 py-3 min-w-0" data-label="Actions">
-                      <div className="flex flex-col gap-2 min-w-0 max-w-full">
+                    <td className="px-4 py-3 min-w-0 fitment-actions-cell" data-label="Actions">
+                      <div className="flex flex-col gap-2 min-w-0 max-w-full items-center">
                         <Link
                           href={buildQuoteUrl(item)}
-                          className="flex items-center justify-center gap-1.5 text-sm sm:text-xs min-h-[44px] min-w-0 w-full max-w-full sm:w-auto bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none [&_svg]:text-white"
+                          className="flex items-center justify-center gap-1.5 text-xs py-2 px-4 min-h-[36px] w-auto bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none [&_svg]:text-white"
                         >
-                          <ArrowRight className="w-4 h-4 shrink-0" aria-hidden />
-                          <span className="hidden sm:inline">Request Quote</span>
-                          <span className="sm:hidden">Quote</span>
+                          <ArrowRight className="w-3.5 h-3.5 shrink-0" aria-hidden />
+                          <span>Request Quote</span>
                         </Link>
                         {getAlternativeProducts(item.series, item.seriesType).length > 0 && (
                           <div className="text-xs text-text-body">
