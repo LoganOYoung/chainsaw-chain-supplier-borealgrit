@@ -9,41 +9,37 @@ export default function Home() {
     <>
       <Navigation />
       <main>
-        {/* Hero Banner */}
-        <section className="relative w-full h-[50vh] min-h-[400px] md:h-[60vh] md:min-h-[500px] max-h-[700px]">
-          <div className="absolute inset-0">
-            <Image
-              src="/images/contact-banner.jpg"
-              alt="Professional chainsaw chain manufacturing and B2B supply"
-              fill
-              className="object-cover"
-              priority
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-forest-brand/60"></div>
+        {/* Hero Banner - Value Proposition */}
+        <section className="relative bg-gradient-to-br from-forest-dark to-forest-brand text-white py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-20"></div>
           </div>
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-8 md:py-0">
-            <h1 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-cream-white mb-3 md:mb-4 tracking-tight uppercase">
-              Professional Chainsaw Chain Manufacturer & OEM Supplier
+          <div className="max-w-5xl mx-auto text-center relative z-10">
+            {/* Main Value Proposition */}
+            <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase mb-6 md:mb-8 leading-tight tracking-tight text-white">
+              <span className="block">Precision in Every Link.</span>
+              <span className="block">Power in Every Cut.</span>
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-cream-white/95 mb-3 md:mb-4 max-w-3xl leading-relaxed">
-              Precision-engineered chainsaw chains for North American B2B markets. ANSI B175.1 and CSA Z62.3 compliant. Application-specific engineering for distributors, importers, and OEM partners.
+            
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 mb-8 md:mb-10 leading-relaxed max-w-4xl mx-auto font-medium">
+              The rugged choice for North American forestry professionals. Industrial chainsaw chains that deliver consistent performance when every second of uptime matters.
             </p>
-            <div className="bg-forest-brand/10 backdrop-blur-sm border border-forest-brand/30 rounded-none p-3 md:p-4 mb-4 md:mb-6 max-w-3xl">
-              <p className="text-sm md:text-base text-white font-semibold mb-1 md:mb-2">
-                Same Performance, Better Value: 25-40% Cost Savings vs. Tier-1 Brands
-              </p>
-              <p className="text-xs md:text-sm text-white/90">
-                Pro-grade chains with identical specifications and ANSI-certified safety. ISO 9001 certified production. Full material traceability.
-              </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link 
+                href="/products" 
+                className="w-full sm:w-auto px-8 py-4 md:px-12 md:py-5 bg-safety-orange text-white font-bold text-base md:text-lg uppercase tracking-wide rounded-none hover:bg-safety-orange/90 transition shadow-xl hover:shadow-2xl"
+              >
+                View Specs & RFQ
+              </Link>
+              <Link 
+                href="/fitment-finder" 
+                className="w-full sm:w-auto px-8 py-4 md:px-12 md:py-5 bg-white text-forest-brand font-bold text-base md:text-lg uppercase tracking-wide rounded-none hover:bg-forest-light hover:text-forest-dark transition shadow-xl hover:shadow-2xl"
+              >
+                Find Your Chain
+              </Link>
             </div>
-            <Link
-              href="/request-quote"
-              className="inline-flex items-center gap-2 px-6 py-3 md:px-10 md:py-5 bg-forest-brand text-white font-bold text-base md:text-xl border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition rounded-none w-fit"
-            >
-              Request a Quote
-              <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
-            </Link>
           </div>
         </section>
 
