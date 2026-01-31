@@ -168,7 +168,7 @@ export default function FitmentFinderPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] overflow-x-hidden sm:overflow-visible">
         <h1 className="text-xl sm:text-2xl font-bold text-text-main mb-4">Fitment & Compatibility</h1>
         
         {/* How to Identify Your Specifications */}
@@ -486,7 +486,7 @@ export default function FitmentFinderPage() {
         </div>
 
         {/* Compatibility Table */}
-        <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
+        <div className="table-responsive -mx-4 sm:mx-0 overflow-x-hidden sm:overflow-x-auto">
           <table className="fitment-compat-table w-full min-w-[900px] text-sm border border-forest-brand/30">
             <thead>
               <tr className="bg-gray-50">
@@ -550,7 +550,7 @@ export default function FitmentFinderPage() {
                       <div className="flex flex-col gap-2">
                         <Link
                           href={buildQuoteUrl(item)}
-                          className="flex items-center justify-center gap-1.5 text-sm sm:text-xs px-4 py-3 min-h-[44px] w-full sm:w-auto bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none [&_svg]:text-white"
+                          className="flex items-center justify-center gap-1.5 text-sm sm:text-xs min-h-[44px] w-full sm:w-auto bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none [&_svg]:text-white"
                         >
                           <ArrowRight className="w-4 h-4 shrink-0" aria-hidden />
                           <span>Request Quote</span>
@@ -621,7 +621,7 @@ export default function FitmentFinderPage() {
             </p>
           )}
 
-          <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
+          <div className="table-responsive -mx-4 sm:mx-0 overflow-x-hidden sm:overflow-x-auto">
             <table className="fitment-crossref-table w-full min-w-[1000px] text-sm border border-forest-brand/30">
               <thead>
                 <tr className="bg-gray-50">

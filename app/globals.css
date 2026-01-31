@@ -41,6 +41,10 @@ body {
 
 /* Resources page: mobile card layout (stack rows, show labels) */
 @media (max-width: 767px) {
+  .resources-table {
+    min-width: 0 !important;
+    width: 100%;
+  }
   .resources-table thead {
     display: none;
   }
@@ -85,6 +89,10 @@ body {
 
 /* Distributors Policies table: mobile card layout */
 @media (max-width: 767px) {
+  .distributors-policies-table {
+    min-width: 0 !important;
+    width: 100%;
+  }
   .distributors-policies-table thead {
     display: none;
   }
@@ -124,6 +132,12 @@ body {
 
 /* Fitment Finder: mobile card layout for gauge, compat, crossref tables */
 @media (max-width: 767px) {
+  .fitment-gauge-table,
+  .fitment-compat-table,
+  .fitment-crossref-table {
+    min-width: 0 !important;
+    width: 100%;
+  }
   .fitment-gauge-table thead,
   .fitment-compat-table thead,
   .fitment-crossref-table thead {
