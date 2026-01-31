@@ -214,8 +214,8 @@ body {
     grid-column: 1;
   }
   .fitment-compat-table .fitment-actions-block > a {
-    grid-column: 1 / -1;
-    justify-self: center;
+    grid-column: 2;
+    justify-self: start;
   }
   .fitment-compat-table .fitment-actions-alt-label {
     grid-column: 1;
@@ -229,6 +229,7 @@ body {
   .fitment-compat-table .fitment-actions-alt-value {
     grid-column: 2;
     align-self: baseline;
+    justify-self: start;
   }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,
