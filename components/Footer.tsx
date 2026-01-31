@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="md:max-w-xs">
-            <span className="font-heading font-bold text-white text-lg uppercase tracking-tight block mb-2">BOREALGRIT</span>
+            <span className="font-heading font-extrabold text-white text-xl uppercase tracking-tight block mb-2">BOREALGRIT</span>
             <p className="text-sm text-white/80 leading-relaxed">Chainsaw chain manufacturer. B2B only. North American distributors and OEM.</p>
           </div>
           <div className="flex flex-wrap gap-8 md:gap-10">
