@@ -56,31 +56,29 @@ const SpecGaugeSvg = () => (
   </svg>
 )
 const SpecFullChiselSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 192" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-[20rem] object-contain" aria-label="Full-chisel cutter profile — square-corner geometry">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 128" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-[20rem] object-contain" aria-label="Full-chisel cutter profile — square-corner geometry">
     <title>Full-Chisel cutter — square-corner</title>
-    <rect width={320} height={192} fill="#fff" />
-    <text x={160} y={22} textAnchor="middle" fontSize={14} fontWeight={600} fontFamily="system-ui,sans-serif" fill="#1f2937">Full-Chisel (square-corner)</text>
-    <g transform="translate(100,45)">
-      <path d="M20 100 L20 50 L80 50 L100 70 L100 100 Z" fill="#f9fafb" stroke="#374151" strokeWidth={2} />
-      <path d="M80 50 L100 70" stroke="#547950" strokeWidth={2.5} strokeLinecap="square" />
-      <text x={60} y={130} textAnchor="middle" fontSize={12} fontWeight={500} fill="#1f2937">Square corner</text>
-      <text x={60} y={144} textAnchor="middle" fontSize={11} fill="#374151">90° — max chip clearance</text>
+    <rect width={280} height={128} fill="#fff" />
+    <text x={140} y={18} textAnchor="middle" fontSize={13} fontWeight={600} fontFamily="system-ui,sans-serif" fill="#1f2937">Full-Chisel (square-corner)</text>
+    <g transform="translate(70,28)">
+      <path d="M14 72 L14 32 L66 32 L84 52 L84 72 Z" fill="#f9fafb" stroke="#374151" strokeWidth={2} />
+      <path d="M66 32 L84 52" stroke="#547950" strokeWidth={2.5} strokeLinecap="square" />
     </g>
-    <text x={160} y={175} textAnchor="middle" fontSize={11} fontWeight={500} fill="#374151">Razor-sharp corner · fastest cutting · softwoods</text>
+    <text x={140} y={92} textAnchor="middle" fontSize={11} fontWeight={600} fill="#1f2937">Square corner · 90°</text>
+    <text x={140} y={106} textAnchor="middle" fontSize={10} fill="#374151">Max chip clearance · softwoods</text>
   </svg>
 )
 const SpecSemiChiselSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 192" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-[20rem] object-contain" aria-label="Semi-chisel cutter profile — rounded-corner geometry">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 128" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-[20rem] object-contain" aria-label="Semi-chisel cutter profile — rounded-corner geometry">
     <title>Semi-Chisel cutter — rounded-corner</title>
-    <rect width={320} height={192} fill="#fff" />
-    <text x={160} y={22} textAnchor="middle" fontSize={14} fontWeight={600} fontFamily="system-ui,sans-serif" fill="#1f2937">Semi-Chisel (rounded-corner)</text>
-    <g transform="translate(100,45)">
-      <path d="M20 100 L20 50 L75 50 Q100 60 98 75 L98 100 Z" fill="#f9fafb" stroke="#374151" strokeWidth={2} />
-      <path d="M75 50 Q95 55 98 75" stroke="#547950" strokeWidth={2.5} fill="none" />
-      <text x={60} y={130} textAnchor="middle" fontSize={12} fontWeight={500} fill="#1f2937">Rounded corner</text>
-      <text x={60} y={144} textAnchor="middle" fontSize={11} fill="#374151">Better edge retention</text>
+    <rect width={280} height={128} fill="#fff" />
+    <text x={140} y={18} textAnchor="middle" fontSize={13} fontWeight={600} fontFamily="system-ui,sans-serif" fill="#1f2937">Semi-Chisel (rounded-corner)</text>
+    <g transform="translate(70,28)">
+      <path d="M14 72 L14 32 L62 32 Q88 42 86 58 L86 72 Z" fill="#f9fafb" stroke="#374151" strokeWidth={2} />
+      <path d="M62 32 Q82 38 86 58" stroke="#547950" strokeWidth={2.5} fill="none" />
     </g>
-    <text x={160} y={175} textAnchor="middle" fontSize={11} fontWeight={500} fill="#374151">Durable · hardwoods · frozen / dirty conditions</text>
+    <text x={140} y={92} textAnchor="middle" fontSize={11} fontWeight={600} fill="#1f2937">Rounded corner</text>
+    <text x={140} y={106} textAnchor="middle" fontSize={10} fill="#374151">Better edge retention · hardwoods</text>
   </svg>
 )
 
