@@ -482,12 +482,15 @@ export default function FitmentFinderPage() {
               <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Pitch</h3>
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-                    <div className="text-center">
-                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
-                      <div className="text-xs text-text-body">3/8&quot; LP vs 3/8&quot; Pitch Comparison</div>
-                      <div className="text-xs text-text-body mt-2">Drive link spacing diagram</div>
-                    </div>
+                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
+                    <Image
+                      src="/images/specs/pitch-comparison.svg"
+                      alt="3/8&quot; LP vs 3/8&quot; pitch comparison — drive link spacing diagram"
+                      width={320}
+                      height={192}
+                      className="object-contain w-full h-full"
+                      unoptimized
+                    />
                   </div>
                 </div>
                 <div>
@@ -516,12 +519,15 @@ export default function FitmentFinderPage() {
               <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Gauge</h3>
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-                    <div className="text-center">
-                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
-                      <div className="text-xs text-text-body">Drive link gauge measurement</div>
-                      <div className="text-xs text-text-body mt-2">Cross-section view with dimensions</div>
-                    </div>
+                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
+                    <Image
+                      src="/images/specs/gauge-cross-section.svg"
+                      alt="Drive link gauge — cross-section in bar groove"
+                      width={320}
+                      height={192}
+                      className="object-contain w-full h-full"
+                      unoptimized
+                    />
                   </div>
                 </div>
                 <div>
@@ -573,12 +579,15 @@ export default function FitmentFinderPage() {
               <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Cutter Geometry</h3>
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-4">
                 <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-                    <div className="text-center">
-                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
-                      <div className="text-xs text-text-body">Full-Chisel Cutter Profile</div>
-                      <div className="text-xs text-text-body mt-2">Square-corner geometry</div>
-                    </div>
+                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
+                    <Image
+                      src="/images/specs/full-chisel-profile.svg"
+                      alt="Full-chisel cutter profile — square-corner geometry"
+                      width={320}
+                      height={192}
+                      className="object-contain w-full h-full"
+                      unoptimized
+                    />
                   </div>
                   <h4 className="text-sm font-semibold text-text-main mb-2">Full-Chisel (Square-Corner)</h4>
                   <ul className="text-sm text-text-body space-y-1 mb-3">
@@ -601,12 +610,15 @@ export default function FitmentFinderPage() {
                   </ul>
                 </div>
                 <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-                    <div className="text-center">
-                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
-                      <div className="text-xs text-text-body">Semi-Chisel Cutter Profile</div>
-                      <div className="text-xs text-text-body mt-2">Rounded-corner geometry</div>
-                    </div>
+                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
+                    <Image
+                      src="/images/specs/semi-chisel-profile.svg"
+                      alt="Semi-chisel cutter profile — rounded-corner geometry"
+                      width={320}
+                      height={192}
+                      className="object-contain w-full h-full"
+                      unoptimized
+                    />
                   </div>
                   <h4 className="text-sm font-semibold text-text-main mb-2">Semi-Chisel (Rounded-Corner)</h4>
                   <ul className="text-sm text-text-body space-y-1 mb-3">
