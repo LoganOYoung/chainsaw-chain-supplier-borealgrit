@@ -160,20 +160,21 @@ body {
   .fitment-gauge-table tr,
   .fitment-compat-table tr,
   .fitment-crossref-table tr {
-    border: 1px solid rgba(45, 90, 45, 0.3);
-    border-radius: 0;
+    border: 1px solid rgba(45, 90, 45, 0.25);
+    border-radius: 6px;
     margin-bottom: 0.75rem;
     overflow: hidden;
     background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
   .fitment-gauge-table td,
   .fitment-compat-table td,
   .fitment-crossref-table td {
     border: none;
     border-bottom: 1px solid #e5e7eb;
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1rem;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: minmax(4.25rem, auto) minmax(0, 1fr);
     gap: 0 0.5rem;
     align-items: baseline;
   }
@@ -185,6 +186,8 @@ body {
     min-width: 0;
     overflow: hidden;
     align-items: flex-start;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
   }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,
@@ -193,9 +196,30 @@ body {
     font-weight: 600;
     font-size: 0.6875rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     color: #6b7280;
     flex-shrink: 0;
+  }
+  /* Full-width cells (empty state, no results): no label, block layout */
+  .fitment-gauge-table td[colspan],
+  .fitment-compat-table td[colspan],
+  .fitment-crossref-table td[colspan] {
+    display: block !important;
+    padding: 1rem;
+    text-align: center;
+  }
+  .fitment-gauge-table td[colspan]::before,
+  .fitment-compat-table td[colspan]::before,
+  .fitment-crossref-table td[colspan]::before {
+    display: none;
+  }
+  /* Value column: allow wrap, prevent overflow */
+  .fitment-gauge-table td > *,
+  .fitment-compat-table td > *,
+  .fitment-crossref-table td > * {
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
 
