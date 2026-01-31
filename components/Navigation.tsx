@@ -11,17 +11,20 @@ export default function Navigation() {
   const [resourcesMenuOpen, setResourcesMenuOpen] = useState(false)
   const [aboutContactMenuOpen, setAboutContactMenuOpen] = useState(false)
   const [forBuyersMenuOpen, setForBuyersMenuOpen] = useState(false)
+  const [toolsMenuOpen, setToolsMenuOpen] = useState(false)
   
   const productsMenuRef = useRef<HTMLLIElement>(null)
   const resourcesMenuRef = useRef<HTMLLIElement>(null)
   const aboutContactMenuRef = useRef<HTMLLIElement>(null)
   const forBuyersMenuRef = useRef<HTMLLIElement>(null)
+  const toolsMenuRef = useRef<HTMLLIElement>(null)
 
   const isActive = (path: string) => pathname === path
   const isProductsActive = pathname?.startsWith('/products')
   const isResourcesActive = pathname?.startsWith('/resources') || pathname?.startsWith('/quality')
   const isAboutContactActive = pathname?.startsWith('/about') || pathname?.startsWith('/contact') || pathname?.startsWith('/request-quote')
   const isForBuyersActive = pathname?.startsWith('/for-buyers') || pathname?.startsWith('/oem-private-label')
+  const isToolsActive = pathname?.startsWith('/fitment-finder') || pathname?.startsWith('/tools')
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -38,14 +41,17 @@ export default function Navigation() {
       if (forBuyersMenuRef.current && !forBuyersMenuRef.current.contains(event.target as Node)) {
         setForBuyersMenuOpen(false)
       }
+      if (toolsMenuRef.current && !toolsMenuRef.current.contains(event.target as Node)) {
+        setToolsMenuOpen(false)
+      }
     }
-    if (productsMenuOpen || resourcesMenuOpen || aboutContactMenuOpen || forBuyersMenuOpen) {
+    if (productsMenuOpen || resourcesMenuOpen || aboutContactMenuOpen || forBuyersMenuOpen || toolsMenuOpen) {
       document.addEventListener('mousedown', handleClickOutside)
     }
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [productsMenuOpen, resourcesMenuOpen, aboutContactMenuOpen, forBuyersMenuOpen])
+  }, [productsMenuOpen, resourcesMenuOpen, aboutContactMenuOpen, forBuyersMenuOpen, toolsMenuOpen])
 
   return (
     <header className="bg-[#547950] sticky top-0 z-50 shadow-sm">
@@ -71,6 +77,7 @@ export default function Navigation() {
                   setResourcesMenuOpen(false)
                   setAboutContactMenuOpen(false)
                   setForBuyersMenuOpen(false)
+                  setToolsMenuOpen(false)
                 }}
                 className={`flex items-center gap-1 ${isProductsActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
@@ -191,13 +198,53 @@ export default function Navigation() {
                 </div>
               )}
             </li>
-            <li>
-              <Link
-                href="/fitment-finder"
-                className={isActive('/fitment-finder') ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}
+            <li ref={toolsMenuRef} className="relative">
+              <button
+                type="button"
+                onClick={() => {
+                  setToolsMenuOpen(!toolsMenuOpen)
+                  setProductsMenuOpen(false)
+                  setResourcesMenuOpen(false)
+                  setAboutContactMenuOpen(false)
+                  setForBuyersMenuOpen(false)
+                }}
+                className={`flex items-center gap-1 ${isToolsActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
-                Fitment Finder
-              </Link>
+                Tools
+                <svg
+                  className={`w-4 h-4 transition-transform ${toolsMenuOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {toolsMenuOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-forest-brand/30 rounded-none shadow-xl py-2 z-50 opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
+                  <Link
+                    href="/fitment-finder"
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/fitment-finder') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    onClick={() => setToolsMenuOpen(false)}
+                  >
+                    Fitment Finder
+                  </Link>
+                  <Link
+                    href="/tools/cross-chain-reference"
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname?.startsWith('/tools/cross-chain-reference') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    onClick={() => setToolsMenuOpen(false)}
+                  >
+                    Cross-chain reference
+                  </Link>
+                  <Link
+                    href="/tools"
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    onClick={() => setToolsMenuOpen(false)}
+                  >
+                    Calculators & lookup
+                  </Link>
+                </div>
+              )}
             </li>
             <li ref={forBuyersMenuRef} className="relative">
               <button
@@ -207,6 +254,7 @@ export default function Navigation() {
                   setProductsMenuOpen(false)
                   setResourcesMenuOpen(false)
                   setAboutContactMenuOpen(false)
+                  setToolsMenuOpen(false)
                 }}
                 className={`flex items-center gap-1 ${isForBuyersActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
@@ -247,6 +295,7 @@ export default function Navigation() {
                   setProductsMenuOpen(false)
                   setAboutContactMenuOpen(false)
                   setForBuyersMenuOpen(false)
+                  setToolsMenuOpen(false)
                 }}
                 className={`flex items-center gap-1 ${isResourcesActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
@@ -301,6 +350,7 @@ export default function Navigation() {
                   setProductsMenuOpen(false)
                   setResourcesMenuOpen(false)
                   setForBuyersMenuOpen(false)
+                  setToolsMenuOpen(false)
                 }}
                 className={`flex items-center gap-1 ${isAboutContactActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
@@ -540,9 +590,61 @@ export default function Navigation() {
               )}
             </li>
             <li>
-              <Link href="/fitment-finder" className={`block py-2 ${isActive('/fitment-finder') ? 'text-white font-medium' : 'text-white/90'}`} onClick={() => setMobileMenuOpen(false)}>
-                Fitment Finder
-              </Link>
+              <button
+                type="button"
+                onClick={() => setToolsMenuOpen(!toolsMenuOpen)}
+                className={`flex items-center justify-between w-full py-2 text-white/90 ${isToolsActive ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
+              >
+                Tools
+                <svg
+                  className={`w-4 h-4 transition-transform ${toolsMenuOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {toolsMenuOpen && (
+                <ul className="pl-4 mt-1 space-y-1">
+                  <li>
+                    <Link
+                      href="/fitment-finder"
+                      className={`block py-2 text-sm text-white/90 ${isActive('/fitment-finder') ? 'text-white font-medium' : ''}`}
+                      onClick={() => {
+                        setMobileMenuOpen(false)
+                        setToolsMenuOpen(false)
+                      }}
+                    >
+                      Fitment Finder
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/tools/cross-chain-reference"
+                      className={`block py-2 text-sm text-white/90 ${pathname?.startsWith('/tools/cross-chain-reference') ? 'text-white font-medium' : ''}`}
+                      onClick={() => {
+                        setMobileMenuOpen(false)
+                        setToolsMenuOpen(false)
+                      }}
+                    >
+                      Cross-chain reference
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/tools"
+                      className={`block py-2 text-sm text-white/90 ${pathname === '/tools' ? 'text-white font-medium' : ''}`}
+                      onClick={() => {
+                        setMobileMenuOpen(false)
+                        setToolsMenuOpen(false)
+                      }}
+                    >
+                      Calculators & lookup
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <button
