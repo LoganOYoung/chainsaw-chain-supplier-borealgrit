@@ -215,7 +215,7 @@ body {
   }
   .fitment-compat-table .fitment-actions-block > a {
     grid-column: 2;
-    justify-self: start;
+    justify-self: center;
   }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,
