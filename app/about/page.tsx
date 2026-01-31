@@ -126,12 +126,23 @@ export default function AboutPage() {
         </section>
 
         <section className="pt-4 border-t border-forest-brand/30">
-          <Link
-            href="/request-quote"
-            className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition"
-          >
-            Request a Quote
-          </Link>
+          <p className="text-text-body text-sm mb-4">
+            Distributors and forestry buyers: see who we serve, how we work, and why choose us.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/for-buyers"
+              className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition"
+            >
+              For Buyers
+            </Link>
+            <Link
+              href="/request-quote"
+              className="inline-flex items-center px-5 py-2.5 border-2 border-forest-brand text-forest-brand font-semibold text-sm hover:bg-forest-brand hover:text-white transition"
+            >
+              Request a Quote
+            </Link>
+          </div>
         </section>
       </main>
       <Footer />

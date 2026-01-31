@@ -18,7 +18,7 @@ export default function Navigation() {
   const isActive = (path: string) => pathname === path
   const isProductsActive = pathname?.startsWith('/products')
   const isResourcesActive = pathname?.startsWith('/resources') || pathname?.startsWith('/quality')
-  const isAboutContactActive = pathname?.startsWith('/about') || pathname?.startsWith('/contact') || pathname?.startsWith('/request-quote')
+  const isAboutContactActive = pathname?.startsWith('/about') || pathname?.startsWith('/contact') || pathname?.startsWith('/request-quote') || pathname?.startsWith('/for-buyers')
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -81,12 +81,9 @@ export default function Navigation() {
                 <div className="absolute top-full left-0 mt-2 w-[780px] bg-white border border-forest-brand/30 rounded-none shadow-xl py-3 z-50 opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
                   <Link
                     href="/products"
-                    className={`flex items-center gap-2 px-4 py-2.5 mx-2 mb-2 text-sm font-semibold text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline rounded-none transition ${isActive('/products') && !pathname?.includes('/series-') && !pathname?.includes('/full-chisel') && !pathname?.includes('/low-profile') && !pathname?.includes('/semi-chisel') ? 'text-forest-brand bg-forest-light' : ''}`}
+                    className={`block px-4 py-2.5 mx-2 mb-2 text-sm font-semibold text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline rounded-none transition ${isActive('/products') && !pathname?.includes('/series-') && !pathname?.includes('/full-chisel') && !pathname?.includes('/low-profile') && !pathname?.includes('/semi-chisel') ? 'text-forest-brand bg-forest-light' : ''}`}
                     onClick={() => setProductsMenuOpen(false)}
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
                     All Products
                   </Link>
                   <div className="border-t border-forest-brand/20 my-3"></div>
@@ -227,42 +224,30 @@ export default function Navigation() {
                 <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-forest-brand/30 rounded-none shadow-xl py-2 z-50 opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
                   <Link
                     href="/resources#catalogs"
-                    className={`flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/resources') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/resources') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setResourcesMenuOpen(false)}
                   >
-                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
                     Catalogs & Datasheets
                   </Link>
                   <Link
                     href="/resources#fitment-guides"
-                    className="flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition"
+                    className="block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition"
                     onClick={() => setResourcesMenuOpen(false)}
                   >
-                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                    </svg>
                     Fitment Guides
                   </Link>
                   <Link
                     href="/quality"
-                    className={`flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/quality') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/quality') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setResourcesMenuOpen(false)}
                   >
-                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
                     Quality & Certifications
                   </Link>
                   <Link
                     href="/resources#packaging"
-                    className="flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition"
+                    className="block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition"
                     onClick={() => setResourcesMenuOpen(false)}
                   >
-                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
                     Packaging Standards
                   </Link>
                 </div>
@@ -292,33 +277,31 @@ export default function Navigation() {
                 <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-forest-brand/30 rounded-none shadow-xl py-2 z-50 opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
                   <Link
                     href="/about"
-                    className={`flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/about') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/about') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setAboutContactMenuOpen(false)}
                   >
-                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
                     About Us
                   </Link>
                   <Link
-                    href="/contact"
-                    className={`flex items-center gap-2 px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/contact') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    href="/for-buyers"
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/for-buyers') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setAboutContactMenuOpen(false)}
                   >
-                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
+                    For Buyers
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/contact') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    onClick={() => setAboutContactMenuOpen(false)}
+                  >
                     Contact Information
                   </Link>
                   <div className="border-t border-forest-brand/20 my-2"></div>
                   <Link
                     href="/request-quote"
-                    className={`flex items-center gap-2 px-4 py-2.5 text-sm font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand bg-forest-brand/10 text-forest-brand transition ${isActive('/request-quote') ? 'bg-forest-brand/15' : ''}`}
+                    className={`block px-4 py-2.5 text-sm font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand bg-forest-brand/10 text-forest-brand transition ${isActive('/request-quote') ? 'bg-forest-brand/15' : ''}`}
                     onClick={() => setAboutContactMenuOpen(false)}
                   >
-                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
                     Request for Quote
                   </Link>
                 </div>
@@ -629,6 +612,18 @@ export default function Navigation() {
                       }}
                     >
                       About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/for-buyers"
+                      className={`block py-2 text-sm text-white/90 ${isActive('/for-buyers') ? 'text-white font-medium' : ''}`}
+                      onClick={() => {
+                        setMobileMenuOpen(false)
+                        setAboutContactMenuOpen(false)
+                      }}
+                    >
+                      For Buyers
                     </Link>
                   </li>
                   <li>
