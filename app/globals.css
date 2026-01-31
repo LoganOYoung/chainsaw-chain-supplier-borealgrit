@@ -202,19 +202,38 @@ body {
     content: "";
     display: block;
   }
-  /* Actions block: one visual group for this row (button + alternatives) */
+  /* Actions block: same 2-col grid as Brand/Gauge so Alternatives aligns with them */
   .fitment-compat-table .fitment-actions-block {
-    background: rgba(45, 90, 45, 0.05);
-    border: 1px solid rgba(45, 90, 45, 0.15);
-    border-radius: 6px;
-    padding: 0.5rem 0.75rem;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: minmax(4.25rem, auto) minmax(0, 1fr);
+    gap: 0 0.5rem;
+    align-items: center;
+    row-gap: 0.5rem;
+  }
+  .fitment-compat-table .fitment-actions-grid-spacer {
+    grid-column: 1;
   }
   .fitment-compat-table .fitment-actions-block > a {
-    align-self: center;
+    grid-column: 2;
+    justify-self: center;
   }
-  .fitment-compat-table .fitment-actions-block > div {
-    text-align: left;
+  .fitment-compat-table .fitment-actions-alt-label {
+    grid-column: 1;
+    font-weight: 600;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6b7280;
+    align-self: baseline;
+  }
+  .fitment-compat-table .fitment-actions-alt-value {
+    grid-column: 2;
+    align-self: baseline;
+  }
+  /* Whole card (tr) = one group: border + background wrap all data + button */
+  .fitment-compat-table tr {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(45, 90, 45, 0.28);
   }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,
