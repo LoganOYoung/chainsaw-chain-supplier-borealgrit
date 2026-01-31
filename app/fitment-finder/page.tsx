@@ -482,14 +482,16 @@ export default function FitmentFinderPage() {
               <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Pitch</h3>
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
-                    <Image
+                  <div className="relative w-full min-h-[12rem] mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src="/images/specs/pitch-comparison.svg"
                       alt="3/8&quot; LP vs 3/8&quot; pitch comparison — drive link spacing diagram"
                       width={320}
                       height={192}
-                      className="object-contain w-full h-full"
-                      unoptimized
+                      className="object-contain w-full h-full max-h-48"
+                      loading="eager"
+                      decoding="async"
                     />
                   </div>
                 </div>
@@ -519,14 +521,16 @@ export default function FitmentFinderPage() {
               <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Gauge</h3>
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
-                    <Image
+                  <div className="relative w-full min-h-[12rem] mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src="/images/specs/gauge-cross-section.svg"
                       alt="Drive link gauge — cross-section in bar groove"
                       width={320}
                       height={192}
-                      className="object-contain w-full h-full"
-                      unoptimized
+                      className="object-contain w-full h-full max-h-48"
+                      loading="eager"
+                      decoding="async"
                     />
                   </div>
                 </div>
@@ -579,14 +583,16 @@ export default function FitmentFinderPage() {
               <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Cutter Geometry</h3>
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-4">
                 <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
-                    <Image
+                  <div className="relative w-full min-h-[12rem] mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src="/images/specs/full-chisel-profile.svg"
                       alt="Full-chisel cutter profile — square-corner geometry"
                       width={320}
                       height={192}
-                      className="object-contain w-full h-full"
-                      unoptimized
+                      className="object-contain w-full h-full max-h-48"
+                      loading="eager"
+                      decoding="async"
                     />
                   </div>
                   <h4 className="text-sm font-semibold text-text-main mb-2">Full-Chisel (Square-Corner)</h4>
@@ -610,14 +616,16 @@ export default function FitmentFinderPage() {
                   </ul>
                 </div>
                 <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
-                    <Image
+                  <div className="relative w-full min-h-[12rem] mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src="/images/specs/semi-chisel-profile.svg"
                       alt="Semi-chisel cutter profile — rounded-corner geometry"
                       width={320}
                       height={192}
-                      className="object-contain w-full h-full"
-                      unoptimized
+                      className="object-contain w-full h-full max-h-48"
+                      loading="eager"
+                      decoding="async"
                     />
                   </div>
                   <h4 className="text-sm font-semibold text-text-main mb-2">Semi-Chisel (Rounded-Corner)</h4>
