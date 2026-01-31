@@ -206,7 +206,7 @@ export default function FitmentFinderPage() {
                 <th className="text-left px-4 py-3 font-semibold">Pitch</th>
                 <th className="text-left px-4 py-3 font-semibold">Gauge</th>
                 <th className="text-left px-4 py-3 font-semibold">Our Series</th>
-                <th className="text-left px-4 py-3 font-semibold w-[200px] min-w-[200px]">Actions</th>
+                <th className="text-left px-4 py-3 font-semibold min-w-[180px]">Actions</th>
               </tr>
             </thead>
             <tbody>

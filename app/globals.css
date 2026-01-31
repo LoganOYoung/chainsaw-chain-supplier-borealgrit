@@ -249,46 +249,35 @@ body {
   }
 }
 
-/* Desktop: compat table Actions cell grid layout */
+/* Desktop: compat table Actions cell — single column, button left-aligned with "Actions" header */
 @media (min-width: 768px) {
   .fitment-compat-table td.fitment-actions-cell {
-    display: grid !important;
-    grid-template-columns: minmax(4.25rem, auto) minmax(0, 1fr);
-    gap: 0 0.5rem;
-    align-items: center;
+    display: table-cell !important;
+    vertical-align: middle;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     padding-left: 1rem;
     padding-right: 1rem;
     text-align: left;
-    width: 200px;
-    min-width: 200px;
+    min-width: 180px;
   }
   .fitment-compat-table td.fitment-actions-cell::before {
-    content: "";
-    display: block;
+    display: none;
   }
   .fitment-compat-table td.fitment-actions-cell > .fitment-actions-block {
-    display: grid;
-    grid-template-columns: minmax(4.25rem, auto) minmax(0, 1fr);
-    gap: 0 0.5rem;
-    align-items: center;
+    display: block;
     min-width: 0;
   }
   .fitment-compat-table td.fitment-actions-cell .fitment-actions-grid-spacer {
-    display: block;
-    grid-column: 1;
+    display: none;
   }
   .fitment-compat-table td.fitment-actions-cell .fitment-actions-block > a {
-    grid-column: 2;
-    justify-self: start;
+    display: inline-flex;
     width: auto;
-    min-width: 170px;
+    min-width: 140px;
     max-width: 240px;
     margin: 0;
-    display: inline-flex;
     flex-shrink: 0;
-    white-space: nowrap;
   }
 }
 
