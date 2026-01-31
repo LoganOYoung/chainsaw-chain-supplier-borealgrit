@@ -231,10 +231,10 @@ export default function Navigation() {
                   </Link>
                   <Link
                     href="/tools"
-                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    className={`block whitespace-nowrap px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setToolsMenuOpen(false)}
                   >
-                    Cross Reference & calculators
+                    Cross Reference & Calculators
                   </Link>
                 </div>
               )}
@@ -615,13 +615,13 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/tools"
-                      className={`block py-2 text-sm text-white/90 ${pathname === '/tools' ? 'text-white font-medium' : ''}`}
+                      className={`block whitespace-nowrap py-2 text-sm text-white/90 ${pathname === '/tools' ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setToolsMenuOpen(false)
                       }}
                     >
-                      Cross Reference & calculators
+                      Cross Reference & Calculators
                     </Link>
                   </li>
                 </ul>
