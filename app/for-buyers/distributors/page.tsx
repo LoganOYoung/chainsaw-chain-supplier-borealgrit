@@ -98,14 +98,14 @@ export default function DistributorsPage() {
             </div>
             <div className="bg-gray-50 border border-forest-brand/30 rounded-none p-4 flex flex-col items-center justify-center min-h-[200px]">
               <p className="text-xs font-semibold text-text-main uppercase tracking-wide mb-3">Core forestry regions we serve</p>
-              <svg viewBox="0 0 240 160" className="w-full max-w-[280px] h-auto" aria-hidden>
-                <path fill="#e8efe8" stroke="#2d5a2d" strokeWidth="1.5" d="M45 25 L95 18 L155 22 L195 45 L205 95 L185 142 L120 155 L55 148 L25 105 L18 55 Z" />
-                <circle cx="75" cy="50" r="10" fill="#2d5a2d" aria-hidden />
-                <circle cx="115" cy="55" r="10" fill="#2d5a2d" aria-hidden />
-                <circle cx="85" cy="85" r="10" fill="#2d5a2d" aria-hidden />
-                <circle cx="155" cy="75" r="10" fill="#2d5a2d" aria-hidden />
-              </svg>
-              <p className="text-xs text-text-body mt-2">BC · Alberta · Pacific NW · Northern US</p>
+              <Image
+                src="/images/na-forestry-map.svg"
+                alt="North America map with British Columbia, Alberta, Washington, Oregon, and Idaho highlighted in green as core forestry regions"
+                width={500}
+                height={325}
+                className="w-full max-w-[280px] h-auto"
+              />
+              <p className="text-xs text-text-body mt-2">BC · Alberta · WA · OR · ID</p>
             </div>
           </div>
           <div className="mt-6 bg-forest-brand/10 border-l-4 border-forest-brand rounded-none px-4 py-3">
