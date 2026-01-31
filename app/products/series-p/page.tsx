@@ -69,37 +69,6 @@ export default function SeriesPPage() {
         {/* Technical Specifications */}
         <section className="mb-10">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Technical Specifications</h2>
-          
-          {/* Product Detail Images */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
-              <Image
-                src="/images/products/series-p-detail-cutter.jpg"
-                alt="Series P full-chisel square-corner cutter close-up showing razor-sharp cutting edge"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-              />
-            </div>
-            <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
-              <Image
-                src="/images/products/series-p-detail-chrome.jpg"
-                alt="Series P industrial chrome coating detail showing hardened surface layer"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-              />
-            </div>
-            <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
-              <Image
-                src="/images/products/series-p-detail-edge.jpg"
-                alt="Series P cutter edge showing extended sharpening interval and wear resistance"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-              />
-            </div>
-          </div>
 
           <div className="table-responsive -mx-4 sm:mx-0">
             <table className="w-full min-w-[400px] text-sm border border-forest-brand/30">
