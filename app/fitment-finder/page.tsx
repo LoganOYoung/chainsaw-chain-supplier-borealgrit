@@ -223,17 +223,12 @@ export default function FitmentFinderPage() {
                     </td>
                     <td data-label="Replacement">
                       <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 sm:flex-col sm:items-start sm:gap-1">
-                        <div className="flex items-center gap-2">
-                          <Link
-                            href={item.seriesLink}
-                            className="text-forest-brand font-medium hover:underline"
-                          >
-                            {item.series}
-                          </Link>
-                          <span className="text-xs text-forest-brand bg-forest-brand/10 px-2 py-0.5 rounded-none font-semibold">
-                            Replacement
-                          </span>
-                        </div>
+                        <Link
+                          href={item.seriesLink}
+                          className="text-forest-brand font-medium hover:underline"
+                        >
+                          {item.series}
+                        </Link>
                         <span className="text-text-body text-xs">({item.seriesType})</span>
                       </div>
                     </td>
@@ -242,7 +237,7 @@ export default function FitmentFinderPage() {
                         <span className="fitment-actions-grid-spacer" aria-hidden />
                         <Link
                           href={buildQuoteUrl(item)}
-                          className="flex items-center justify-center gap-1.5 text-xs sm:text-sm py-2.5 sm:py-1.5 px-5 sm:px-4 min-h-[44px] sm:min-h-[32px] w-full max-w-none sm:max-w-[240px] sm:w-auto bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none [&_svg]:text-white fitment-actions-btn sm:self-start"
+                          className="flex items-center justify-center gap-1.5 text-xs sm:text-sm py-2.5 sm:py-1.5 px-5 sm:px-4 min-h-[44px] sm:min-h-[32px] w-full max-w-none sm:max-w-[240px] sm:w-auto bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none [&_svg]:text-white fitment-actions-btn sm:self-start whitespace-nowrap"
                         >
                           <ArrowRight className="hidden sm:inline w-3.5 h-3.5 shrink-0" aria-hidden />
                           <span>Request Quote</span>
