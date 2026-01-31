@@ -178,6 +178,8 @@ body {
   .fitment-crossref-table td:last-child {
     border-bottom: none;
     background: #f9fafb;
+    min-width: 0;
+    overflow: hidden;
   }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,
