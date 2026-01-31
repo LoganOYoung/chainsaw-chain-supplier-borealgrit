@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-forest-brand/20 bg-[#547950] text-white py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="border-t border-forest-brand/20 bg-[#547950] text-white py-12 pb-[max(3rem,env(safe-area-inset-bottom))] px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:pl-6 sm:pr-6 lg:pl-8 lg:pr-8">
       <div className="max-w-6xl mx-auto">
         {/* Four Column Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-8">

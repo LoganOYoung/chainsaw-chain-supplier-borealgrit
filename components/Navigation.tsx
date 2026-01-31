@@ -55,7 +55,7 @@ export default function Navigation() {
 
   return (
     <header className="bg-[#547950] sticky top-0 z-50 shadow-sm">
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:pl-6 sm:pr-6 lg:pl-8 lg:pr-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="font-heading font-extrabold text-white text-xl md:text-2xl tracking-tight uppercase italic">
             BOREALGRIT
@@ -386,13 +386,13 @@ export default function Navigation() {
             </li>
           </ul>
           <div className="md:hidden flex items-center gap-2">
-            <Link href="/request-quote" className="px-3 py-1.5 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition">
+            <Link href="/request-quote" className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-4 py-3 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition">
               RFQ
             </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-none text-white hover:bg-[#426B3D]"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center p-3 rounded-none text-white hover:bg-[#426B3D] active:bg-[#426B3D]"
               aria-label="Menu"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -401,10 +401,10 @@ export default function Navigation() {
             </button>
           </div>
         </div>
-        <div className={`${mobileMenuOpen ? '' : 'hidden'} md:hidden py-3 border-t border-white/20 bg-[#547950]`}>
-          <ul className="flex flex-col gap-1 text-sm">
+        <div className={`${mobileMenuOpen ? '' : 'hidden'} md:hidden py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] border-t border-white/20 bg-[#547950]`}>
+          <ul className="flex flex-col text-sm">
             <li>
-              <Link href="/" className={`block py-2 ${isActive('/') ? 'text-white font-medium' : 'text-white/90'}`} onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/" className={`block py-3 ${isActive('/') ? 'text-white font-medium' : 'text-white/90'}`} onClick={() => setMobileMenuOpen(false)}>
                 Home
               </Link>
             </li>
@@ -412,7 +412,7 @@ export default function Navigation() {
               <button
                 type="button"
                 onClick={() => setProductsMenuOpen(!productsMenuOpen)}
-                className={`flex items-center justify-between w-full py-2 ${isProductsActive ? 'text-white font-medium' : 'text-white/90'}`}
+                className={`flex items-center justify-between w-full py-3 min-h-[44px] ${isProductsActive ? 'text-white font-medium' : 'text-white/90'}`}
               >
                 Products
                 <svg
@@ -429,7 +429,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products"
-                      className={`block py-2 text-sm text-white/90 ${isActive('/products') && !pathname?.includes('/series-') && !pathname?.includes('/full-chisel') && !pathname?.includes('/low-profile') && !pathname?.includes('/semi-chisel') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm text-white/90 ${isActive('/products') && !pathname?.includes('/series-') && !pathname?.includes('/full-chisel') && !pathname?.includes('/low-profile') && !pathname?.includes('/semi-chisel') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -444,7 +444,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/series-e"
-                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/series-e') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm pl-4 text-white/90 ${isActive('/products/series-e') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -456,7 +456,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/series-w"
-                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/series-w') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm pl-4 text-white/90 ${isActive('/products/series-w') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -468,7 +468,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/series-p"
-                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/series-p') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm pl-4 text-white/90 ${isActive('/products/series-p') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -483,7 +483,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/full-chisel-325"
-                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/full-chisel-325') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm pl-4 text-white/90 ${isActive('/products/full-chisel-325') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -495,7 +495,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/low-profile-325"
-                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/low-profile-325') ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
+                      className={`block py-2.5 text-sm pl-4 text-white/90 ${isActive('/products/low-profile-325') ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -507,7 +507,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/semi-chisel-38"
-                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/semi-chisel-38') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm pl-4 text-white/90 ${isActive('/products/semi-chisel-38') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -522,7 +522,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/applications/battery-saws"
-                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/applications/battery-saws') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm pl-4 text-white/90 ${isActive('/products/applications/battery-saws') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -534,7 +534,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/applications/cold-climate"
-                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/applications/cold-climate') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm pl-4 text-white/90 ${isActive('/products/applications/cold-climate') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -546,7 +546,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/applications/professional-loggers"
-                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/applications/professional-loggers') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm pl-4 text-white/90 ${isActive('/products/applications/professional-loggers') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -558,7 +558,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/applications/retail-consumer"
-                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/applications/retail-consumer') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm pl-4 text-white/90 ${isActive('/products/applications/retail-consumer') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -570,7 +570,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/products/applications/challenging-conditions"
-                      className={`block py-2 text-sm pl-4 text-white/90 ${isActive('/products/applications/challenging-conditions') ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
+                      className={`block py-2.5 text-sm pl-4 text-white/90 ${isActive('/products/applications/challenging-conditions') ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setProductsMenuOpen(false)
@@ -586,7 +586,7 @@ export default function Navigation() {
               <button
                 type="button"
                 onClick={() => setToolsMenuOpen(!toolsMenuOpen)}
-                className={`flex items-center justify-between w-full py-2 text-white/90 ${isToolsActive ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
+                className={`flex items-center justify-between w-full py-3 min-h-[44px] text-white/90 ${isToolsActive ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
               >
                 Tools
                 <svg
@@ -603,7 +603,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/fitment-finder"
-                      className={`block py-2 text-sm text-white/90 ${isActive('/fitment-finder') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm text-white/90 ${isActive('/fitment-finder') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setToolsMenuOpen(false)
@@ -648,7 +648,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/for-buyers/distributors"
-                      className={`block py-2 text-sm text-white/90 ${pathname?.startsWith('/for-buyers/distributors') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm text-white/90 ${pathname?.startsWith('/for-buyers/distributors') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setForBuyersMenuOpen(false)
@@ -660,7 +660,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/oem-private-label"
-                      className={`block py-2 text-sm text-white/90 ${isActive('/oem-private-label') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm text-white/90 ${isActive('/oem-private-label') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setForBuyersMenuOpen(false)
@@ -676,7 +676,7 @@ export default function Navigation() {
               <button
                 type="button"
                 onClick={() => setResourcesMenuOpen(!resourcesMenuOpen)}
-                className={`flex items-center justify-between w-full py-2 text-white/90 ${isResourcesActive ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
+                className={`flex items-center justify-between w-full py-3 min-h-[44px] text-white/90 ${isResourcesActive ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
               >
                 Resources
                 <svg
@@ -693,7 +693,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/resources#catalogs"
-                      className={`block py-2 text-sm text-white/90 ${isActive('/resources') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm text-white/90 ${isActive('/resources') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setResourcesMenuOpen(false)
@@ -705,7 +705,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/resources#fitment-guides"
-                      className="block py-2 text-sm text-white/90"
+                      className="block py-2.5 text-sm text-white/90"
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setResourcesMenuOpen(false)
@@ -717,7 +717,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/quality"
-                      className={`block py-2 text-sm text-white/90 ${isActive('/quality') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm text-white/90 ${isActive('/quality') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setResourcesMenuOpen(false)
@@ -729,7 +729,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/resources#packaging"
-                      className="block py-2 text-sm text-white/90"
+                      className="block py-2.5 text-sm text-white/90"
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setResourcesMenuOpen(false)
@@ -745,7 +745,7 @@ export default function Navigation() {
               <button
                 type="button"
                 onClick={() => setAboutContactMenuOpen(!aboutContactMenuOpen)}
-                className={`flex items-center justify-between w-full py-2 text-white/90 ${isAboutContactActive ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
+                className={`flex items-center justify-between w-full py-3 min-h-[44px] text-white/90 ${isAboutContactActive ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
               >
                 About & Contact
                 <svg
@@ -762,7 +762,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/about"
-                      className={`block py-2 text-sm text-white/90 ${isActive('/about') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm text-white/90 ${isActive('/about') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setAboutContactMenuOpen(false)
@@ -774,7 +774,7 @@ export default function Navigation() {
                   <li>
                     <Link
                       href="/contact"
-                      className={`block py-2 text-sm text-white/90 ${isActive('/contact') ? 'text-white font-medium' : ''}`}
+                      className={`block py-2.5 text-sm text-white/90 ${isActive('/contact') ? 'text-white font-medium' : ''}`}
                       onClick={() => {
                         setMobileMenuOpen(false)
                         setAboutContactMenuOpen(false)

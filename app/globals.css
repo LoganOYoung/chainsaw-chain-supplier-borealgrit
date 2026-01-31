@@ -52,15 +52,13 @@ body {
   }
 }
 
-/* Ensure touch targets are at least 44x44px */
+/* Touch targets: buttons and [role="button"] at least 44px tall (width not forced to avoid layout break) */
 @media (pointer: coarse) {
   button,
-  a,
   input[type="button"],
   input[type="submit"],
   [role="button"] {
     min-height: 44px;
-    min-width: 44px;
   }
 }
 
