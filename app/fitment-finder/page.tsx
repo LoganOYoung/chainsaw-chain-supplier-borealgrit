@@ -145,21 +145,32 @@ export default function FitmentFinderPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] overflow-x-hidden sm:overflow-visible">
-        <h1 className="text-xl sm:text-2xl font-bold text-text-main mb-4">Fitment & Compatibility</h1>
-        
-        {/* Performance Without the Brand Premium — semi-transparent banner (full width of content area, no overflow) */}
-        <section
-          id="fitment-guarantee"
-          className="-mx-4 sm:-mx-6 lg:-mx-8 mb-8 py-6 sm:py-8 px-4 sm:px-6 lg:px-8 bg-white/85 border-y border-forest-brand/20"
-        >
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4">Performance Without the &quot;Brand Premium&quot;</h2>
-            <p className="text-text-body text-sm leading-relaxed">
-              Pro-grade chains at smart-value pricing: same high-carbon CrNiMo alloy, ANSI-certified safety, and industrial-grade durability as Tier-1 brands—without the logo markup. Our series-matched alternatives deliver the pitch, gauge, and cutting performance you trust. <strong className="text-text-main">100% Fitment Guaranteed.</strong>
+      <main>
+        {/* Full-bleed semi-transparent banner (same style as homepage hero) */}
+        <section id="fitment-guarantee" className="relative w-full min-h-[240px] md:min-h-[280px] flex flex-col justify-center py-12 md:py-16 overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/contact-banner.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-forest-brand/60" aria-hidden />
+          </div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4 tracking-tight">
+              Performance Without the &quot;Brand Premium&quot;
+            </h2>
+            <p className="text-white/95 text-sm sm:text-base max-w-3xl leading-relaxed">
+              Pro-grade chains at smart-value pricing: same high-carbon CrNiMo alloy, ANSI-certified safety, and industrial-grade durability as Tier-1 brands—without the logo markup. Our series-matched alternatives deliver the pitch, gauge, and cutting performance you trust.{' '}
+              <strong className="text-white">100% Fitment Guaranteed.</strong>
             </p>
           </div>
         </section>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] overflow-x-hidden sm:overflow-visible">
+          <h1 className="text-xl sm:text-2xl font-bold text-text-main mb-4">Fitment & Compatibility</h1>
 
         {/* Search Box */}
         <div className="mb-4 sm:mb-6">
@@ -195,7 +206,7 @@ export default function FitmentFinderPage() {
                 <th className="text-left px-4 py-3 font-semibold">Pitch</th>
                 <th className="text-left px-4 py-3 font-semibold">Gauge</th>
                 <th className="text-left px-4 py-3 font-semibold">Our Series</th>
-                <th className="text-left px-4 py-3 font-semibold">Actions</th>
+                <th className="text-left px-4 py-3 font-semibold min-w-[180px]">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -668,6 +679,7 @@ export default function FitmentFinderPage() {
             </div>
           </div>
         </section>
+        </div>
       </main>
       <Footer />
     </>
