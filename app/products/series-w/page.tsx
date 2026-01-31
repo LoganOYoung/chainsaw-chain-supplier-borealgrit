@@ -38,20 +38,7 @@ export default function SeriesWPage() {
           CrNiMo (Chromium-Nickel-Molybdenum) alloy steel with specialized nitriding heat treatment. Impact toughness maintained at -40°C. Semi-chisel cutter design.
         </p>
 
-        {/* Value Proposition Banner */}
-        <section className="mb-8 md:mb-10 py-6 md:py-8 px-5 md:px-8 bg-gradient-to-r from-forest-brand/10 to-transparent border-l-4 border-forest-brand rounded-none">
-          <h2 className="font-heading text-xl md:text-2xl font-bold text-text-main uppercase tracking-tight mb-2">
-            Engineered for the Frozen North
-          </h2>
-          <p className="text-text-body text-sm md:text-base leading-relaxed max-w-3xl">
-            Professional-grade chainsaw chains designed to conquer sub-zero temperatures and high-density hardwood. Zero compromises on durability in the toughest Boreal environments.
-          </p>
-          <p className="text-forest-brand text-xs md:text-sm font-semibold uppercase tracking-wide mt-3">
-            W-Series · Built for Boreal
-          </p>
-        </section>
-
-        {/* Hero Image */}
+        {/* Hero Banner with Value Proposition Overlay */}
         <section className="mb-10">
           <div className="relative w-full h-64 md:h-96 lg:h-[500px] rounded-none overflow-hidden bg-gray-100">
             <Image
@@ -62,6 +49,20 @@ export default function SeriesWPage() {
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
             />
+            {/* Semi-transparent overlay */}
+            <div className="absolute inset-0 bg-forest-dark/70 md:bg-forest-dark/60" />
+            {/* Value proposition text overlay */}
+            <div className="absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-8">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase tracking-tight mb-3 md:mb-4 max-w-3xl">
+                Engineered for the Frozen North
+              </h2>
+              <p className="text-white/95 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mb-3 md:mb-4">
+                Professional-grade chainsaw chains designed to conquer sub-zero temperatures and high-density hardwood. Zero compromises on durability in the toughest Boreal environments.
+              </p>
+              <p className="text-white/90 text-xs sm:text-sm font-semibold uppercase tracking-wide">
+                W-Series · Built for Boreal
+              </p>
+            </div>
           </div>
         </section>
 
