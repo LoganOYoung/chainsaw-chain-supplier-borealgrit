@@ -148,10 +148,10 @@ export default function FitmentFinderPage() {
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] overflow-x-hidden sm:overflow-visible">
         <h1 className="text-xl sm:text-2xl font-bold text-text-main mb-4">Fitment & Compatibility</h1>
         
-        {/* Performance Without the Brand Premium — semi-transparent full-width banner */}
+        {/* Performance Without the Brand Premium — semi-transparent banner (full width of content area, no overflow) */}
         <section
           id="fitment-guarantee"
-          className="w-screen max-w-none ml-[calc(-50vw+50%)] mr-[calc(-50vw+50%)] mb-8 py-6 sm:py-8 px-4 sm:px-6 lg:px-8 bg-white/85 border-y border-forest-brand/20"
+          className="-mx-4 sm:-mx-6 lg:-mx-8 mb-8 py-6 sm:py-8 px-4 sm:px-6 lg:px-8 bg-white/85 border-y border-forest-brand/20"
         >
           <div className="max-w-6xl mx-auto">
             <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4">Performance Without the &quot;Brand Premium&quot;</h2>
