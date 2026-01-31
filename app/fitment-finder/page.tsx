@@ -7,6 +7,83 @@ import { ShieldCheck, Zap, DollarSign, ArrowRight } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
+// Inline SVGs for Industry Specs — no network request, always display
+const SpecPitchSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 192" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-48 object-contain" aria-label="3/8&quot; LP vs 3/8&quot; pitch comparison — drive link spacing diagram">
+    <title>3/8&quot; LP vs 3/8&quot; Pitch — Drive link spacing</title>
+    <rect width={320} height={192} fill="#fff" />
+    <text x={160} y={20} textAnchor="middle" fontSize={11} fontFamily="system-ui,sans-serif" fill="#6b7280">Pitch comparison</text>
+    <text x={80} y={42} textAnchor="middle" fontSize={10} fontWeight={600} fill="#222">3/8&quot; LP</text>
+    <text x={80} y={56} textAnchor="middle" fontSize={9} fill="#6b7280">0.365&quot; (9.27mm)</text>
+    <g transform="translate(40,70)">
+      <rect x={0} y={20} width={36} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
+      <rect x={42} y={20} width={36} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
+      <rect x={84} y={20} width={36} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
+      <line x1={36} y1={32} x2={42} y2={32} stroke="#547950" strokeWidth={2} />
+      <line x1={78} y1={32} x2={84} y2={32} stroke="#547950" strokeWidth={2} />
+      <text x={60} y={90} textAnchor="middle" fontSize={8} fill="#6b7280">pitch</text>
+    </g>
+    <text x={240} y={42} textAnchor="middle" fontSize={10} fontWeight={600} fill="#222">3/8&quot;</text>
+    <text x={240} y={56} textAnchor="middle" fontSize={9} fill="#6b7280">0.375&quot; (9.525mm)</text>
+    <g transform="translate(200,70)">
+      <rect x={0} y={20} width={38} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
+      <rect x={44} y={20} width={38} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
+      <rect x={88} y={20} width={38} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
+      <line x1={38} y1={32} x2={44} y2={32} stroke="#547950" strokeWidth={2} />
+      <line x1={82} y1={32} x2={88} y2={32} stroke="#547950" strokeWidth={2} />
+      <text x={63} y={90} textAnchor="middle" fontSize={8} fill="#6b7280">pitch</text>
+    </g>
+    <text x={160} y={175} textAnchor="middle" fontSize={9} fill="#6b7280">Drive link spacing — not interchangeable</text>
+  </svg>
+)
+const SpecGaugeSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 192" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-48 object-contain" aria-label="Drive link gauge — cross-section in bar groove">
+    <title>Drive link gauge — cross-section</title>
+    <rect width={320} height={192} fill="#fff" />
+    <text x={160} y={20} textAnchor="middle" fontSize={11} fontFamily="system-ui,sans-serif" fill="#6b7280">Gauge (drive link thickness)</text>
+    <g transform="translate(80,50)">
+      <path d="M0 46 L0 96 L120 96 L120 46 L100 56 L20 56 Z" fill="#e5e7eb" stroke="#9ca3af" />
+      <rect x={30} y={50} width={60} height={42} fill="#f9fafb" stroke="#547950" strokeWidth={2} />
+      <text x={60} y={78} textAnchor="middle" fontSize={9} fill="#374151">.050&quot;</text>
+      <text x={60} y={90} textAnchor="middle" fontSize={8} fill="#6b7280">1.3mm</text>
+      <text x={60} y={115} textAnchor="middle" fontSize={9} fill="#6b7280">Drive link in bar groove</text>
+    </g>
+    <line x1={95} y1={45} x2={95} y2={54} stroke="#374151" strokeWidth={1} />
+    <line x1={95} y1={92} x2={95} y2={101} stroke="#374151" strokeWidth={1} />
+    <line x1={95} y1={50} x2={95} y2={96} stroke="#374151" strokeDasharray="4 2" />
+    <text x={105} y={75} fontSize={8} fill="#374151">gauge</text>
+    <text x={160} y={175} textAnchor="middle" fontSize={9} fill="#6b7280">Fit into guide bar groove — tolerance ±0.001&quot;</text>
+  </svg>
+)
+const SpecFullChiselSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 192" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-48 object-contain" aria-label="Full-chisel cutter profile — square-corner geometry">
+    <title>Full-Chisel cutter — square-corner</title>
+    <rect width={320} height={192} fill="#fff" />
+    <text x={160} y={20} textAnchor="middle" fontSize={11} fontFamily="system-ui,sans-serif" fill="#6b7280">Full-Chisel (square-corner)</text>
+    <g transform="translate(100,45)">
+      <path d="M20 100 L20 50 L80 50 L100 70 L100 100 Z" fill="#f9fafb" stroke="#374151" strokeWidth={2} />
+      <path d="M80 50 L100 70" stroke="#547950" strokeWidth={2.5} strokeLinecap="square" />
+      <text x={60} y={130} textAnchor="middle" fontSize={9} fill="#6b7280">Square corner</text>
+      <text x={60} y={142} textAnchor="middle" fontSize={8} fill="#6b7280">90° — max chip clearance</text>
+    </g>
+    <text x={160} y={175} textAnchor="middle" fontSize={9} fill="#6b7280">Razor-sharp corner · fastest cutting · softwoods</text>
+  </svg>
+)
+const SpecSemiChiselSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 192" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-48 object-contain" aria-label="Semi-chisel cutter profile — rounded-corner geometry">
+    <title>Semi-Chisel cutter — rounded-corner</title>
+    <rect width={320} height={192} fill="#fff" />
+    <text x={160} y={20} textAnchor="middle" fontSize={11} fontFamily="system-ui,sans-serif" fill="#6b7280">Semi-Chisel (rounded-corner)</text>
+    <g transform="translate(100,45)">
+      <path d="M20 100 L20 50 L75 50 Q100 60 98 75 L98 100 Z" fill="#f9fafb" stroke="#374151" strokeWidth={2} />
+      <path d="M75 50 Q95 55 98 75" stroke="#547950" strokeWidth={2.5} fill="none" />
+      <text x={60} y={130} textAnchor="middle" fontSize={9} fill="#6b7280">Rounded corner</text>
+      <text x={60} y={142} textAnchor="middle" fontSize={8} fill="#6b7280">Better edge retention</text>
+    </g>
+    <text x={160} y={175} textAnchor="middle" fontSize={9} fill="#6b7280">Durable · hardwoods · frozen / dirty conditions</text>
+  </svg>
+)
+
 // Brand logo mapping with fallback
 const getBrandLogo = (brand: string) => {
   const brandMap: Record<string, string> = {
@@ -483,16 +560,7 @@ export default function FitmentFinderPage() {
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <div className="relative w-full min-h-[12rem] mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/images/specs/pitch-comparison.svg"
-                      alt="3/8&quot; LP vs 3/8&quot; pitch comparison — drive link spacing diagram"
-                      width={320}
-                      height={192}
-                      className="object-contain w-full h-full max-h-48"
-                      loading="eager"
-                      decoding="async"
-                    />
+                    <SpecPitchSvg />
                   </div>
                 </div>
                 <div>
@@ -522,16 +590,7 @@ export default function FitmentFinderPage() {
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <div className="relative w-full min-h-[12rem] mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/images/specs/gauge-cross-section.svg"
-                      alt="Drive link gauge — cross-section in bar groove"
-                      width={320}
-                      height={192}
-                      className="object-contain w-full h-full max-h-48"
-                      loading="eager"
-                      decoding="async"
-                    />
+                    <SpecGaugeSvg />
                   </div>
                 </div>
                 <div>
@@ -584,16 +643,7 @@ export default function FitmentFinderPage() {
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-4">
                 <div>
                   <div className="relative w-full min-h-[12rem] mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/images/specs/full-chisel-profile.svg"
-                      alt="Full-chisel cutter profile — square-corner geometry"
-                      width={320}
-                      height={192}
-                      className="object-contain w-full h-full max-h-48"
-                      loading="eager"
-                      decoding="async"
-                    />
+                    <SpecFullChiselSvg />
                   </div>
                   <h4 className="text-sm font-semibold text-text-main mb-2">Full-Chisel (Square-Corner)</h4>
                   <ul className="text-sm text-text-body space-y-1 mb-3">
@@ -617,16 +667,7 @@ export default function FitmentFinderPage() {
                 </div>
                 <div>
                   <div className="relative w-full min-h-[12rem] mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/images/specs/semi-chisel-profile.svg"
-                      alt="Semi-chisel cutter profile — rounded-corner geometry"
-                      width={320}
-                      height={192}
-                      className="object-contain w-full h-full max-h-48"
-                      loading="eager"
-                      decoding="async"
-                    />
+                    <SpecSemiChiselSvg />
                   </div>
                   <h4 className="text-sm font-semibold text-text-main mb-2">Semi-Chisel (Rounded-Corner)</h4>
                   <ul className="text-sm text-text-body space-y-1 mb-3">
