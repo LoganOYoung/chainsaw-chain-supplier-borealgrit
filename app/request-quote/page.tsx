@@ -436,9 +436,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
           <section className="mb-8 bg-white rounded-none border-2 border-forest-brand shadow-lg p-6">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm ${
-                  currentStep >= 3 ? 'bg-forest-brand text-white' : 'bg-gray-200 text-gray-400'
-                }`}>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm bg-forest-brand text-white">
                   {currentStep > 3 ? <CheckCircle className="w-5 h-5" /> : '3'}
                 </div>
                 <h2 className="text-2xl font-bold text-text-main flex items-center gap-2">
@@ -790,9 +788,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
           {/* Step 1: Download Template */}
           <div className="mb-8">
             <div className="flex items-center gap-2 sm:gap-3 mb-3 md:mb-4">
-              <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm ${
-                currentStep >= 1 ? 'bg-forest-brand text-white' : 'bg-gray-200 text-gray-400'
-              }`}>
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm bg-forest-brand text-white">
                 {currentStep > 1 ? <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" /> : '1'}
               </div>
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-text-main">Download RFQ Template</h2>
