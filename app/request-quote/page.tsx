@@ -802,26 +802,6 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
               Download our Professional RFQ Template to streamline your procurement process. This template is designed specifically for North American forestry standards (ANSI/CSA). Fill it out with your product requirements, then upload it in the next step.
             </p>
 
-            {/* Quick Start Tip */}
-            {currentStep === 1 && (
-              <div className="mb-6 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-none">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 mt-0.5">
-                    <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-text-main text-xs sm:text-sm mb-1">Quick Start Guide</h3>
-                    <p className="text-xs text-text-body">
-                      <span className="hidden sm:inline"><strong>Step 1:</strong> Download the template below → <strong>Step 2:</strong> Fill in your requirements in Excel → <strong>Step 3:</strong> Upload the completed file → <strong>Step 4:</strong> Fill in your contact information and submit.</span>
-                      <span className="sm:hidden"><strong>1.</strong> Download → <strong>2.</strong> Fill Excel → <strong>3.</strong> Upload → <strong>4.</strong> Submit</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-
             {/* Download Button */}
             <div className="mb-4 md:mb-6">
               <button
