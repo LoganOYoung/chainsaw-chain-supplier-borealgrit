@@ -522,7 +522,7 @@ export default function FitmentFinderPage() {
                       )}
                     </td>
                     <td className="px-4 py-3" data-label="Our Series">
-                      <div className="flex flex-col gap-1">
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 sm:flex-col sm:items-start sm:gap-1">
                         <div className="flex items-center gap-2">
                           <Link
                             href={item.seriesLink}
@@ -538,10 +538,10 @@ export default function FitmentFinderPage() {
                         {getApplicationLink(item.series) && (
                           <Link
                             href={getApplicationLink(item.series)!}
-                            className="text-xs text-forest-brand hover:underline flex items-center gap-1 mt-1"
+                            className="text-xs text-forest-brand hover:underline inline-flex items-center gap-1"
                           >
                             View Application
-                            <ExternalLink className="w-3 h-3" />
+                            <ExternalLink className="w-3 h-3 shrink-0" />
                           </Link>
                         )}
                       </div>
