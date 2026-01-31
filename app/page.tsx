@@ -9,13 +9,13 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const totalSlides = 2
+  const totalSlides = 3
 
-  // Auto-advance slides every 6 seconds
+  // Auto-advance slides every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % totalSlides)
-    }, 6000)
+    }, 5000)
     return () => clearInterval(timer)
   }, [])
 
@@ -34,12 +34,12 @@ export default function Home() {
         {/* Hero Banner Carousel */}
         <section className="relative w-full h-[50vh] min-h-[400px] md:h-[60vh] md:min-h-[500px] max-h-[700px] overflow-hidden">
           
-          {/* Slide 1: Original Hero with Image Background */}
+          {/* Slide 1: Brand Positioning - Clean & Simple */}
           <div className={`absolute inset-0 transition-opacity duration-1000 ${currentSlide === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
             <div className="absolute inset-0">
               <Image
                 src="/images/contact-banner.jpg"
-                alt="Professional chainsaw chain manufacturing and B2B supply"
+                alt="Professional chainsaw chain manufacturing"
                 fill
                 className="object-cover"
                 priority
@@ -48,31 +48,23 @@ export default function Home() {
               <div className="absolute inset-0 bg-forest-brand/60"></div>
             </div>
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-8 md:py-0">
-              <h1 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-cream-white mb-3 md:mb-4 tracking-tight uppercase">
-                Professional Chainsaw Chain Manufacturer & OEM Supplier
+              <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase">
+                Professional Chainsaw Chain Manufacturer
               </h1>
-              <p className="text-sm sm:text-base md:text-lg text-cream-white/95 mb-3 md:mb-4 max-w-3xl leading-relaxed">
-                Precision-engineered chainsaw chains for North American B2B markets. ANSI B175.1 and CSA Z62.3 compliant. Application-specific engineering for distributors, importers, and OEM partners.
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 mb-6 md:mb-8 max-w-3xl leading-relaxed font-medium">
+                B2B supplier for North American distributors and OEM partners
               </p>
-              <div className="bg-forest-brand/10 backdrop-blur-sm border border-forest-brand/30 rounded-none p-3 md:p-4 mb-4 md:mb-6 max-w-3xl">
-                <p className="text-sm md:text-base text-white font-semibold mb-1 md:mb-2">
-                  Same Performance, Better Value: 25-40% Cost Savings vs. Tier-1 Brands
-                </p>
-                <p className="text-xs md:text-sm text-white/90">
-                  Pro-grade chains with identical specifications and ANSI-certified safety. ISO 9001 certified production. Full material traceability.
-                </p>
-              </div>
               <Link
-                href="/request-quote"
-                className="inline-flex items-center gap-2 px-6 py-3 md:px-10 md:py-5 bg-forest-brand text-white font-bold text-base md:text-xl border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition rounded-none w-fit"
+                href="/products"
+                className="inline-flex items-center gap-2 px-8 py-4 md:px-12 md:py-5 bg-white text-forest-brand font-bold text-base md:text-lg uppercase tracking-wide rounded-none hover:bg-forest-light hover:text-forest-dark transition shadow-xl hover:shadow-2xl w-fit"
               >
-                Request a Quote
+                View Products
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
               </Link>
             </div>
           </div>
 
-          {/* Slide 2: Value Proposition with Image Background */}
+          {/* Slide 2: Value Proposition - Uptime Focus */}
           <div className={`absolute inset-0 transition-opacity duration-1000 ${currentSlide === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
             <div className="absolute inset-0">
               <Image
@@ -85,7 +77,6 @@ export default function Home() {
               <div className="absolute inset-0 bg-forest-dark/70"></div>
             </div>
             <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center text-center py-8 md:py-0">
-              {/* Main Value Proposition */}
               <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase mb-4 md:mb-6 leading-tight tracking-tight text-white">
                 <span className="block">Precision in Every Link</span>
                 <span className="block">Power in Every Cut</span>
@@ -95,7 +86,6 @@ export default function Home() {
                 The rugged choice for North American forestry professionals. Industrial chainsaw chains that deliver consistent performance when every second of uptime matters
               </p>
               
-              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <Link 
                   href="/products" 
@@ -110,6 +100,43 @@ export default function Home() {
                   Find Your Chain
                 </Link>
               </div>
+            </div>
+          </div>
+
+          {/* Slide 3: Cost Advantage - Value Focus */}
+          <div className={`absolute inset-0 transition-opacity duration-1000 ${currentSlide === 2 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+            <div className="absolute inset-0">
+              <Image
+                src="/images/contact-banner.jpg"
+                alt="Better value chainsaw chains"
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
+              <div className="absolute inset-0 bg-forest-brand/65"></div>
+            </div>
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-8 md:py-0">
+              <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-5 tracking-tight uppercase">
+                Same Performance, Better Value
+              </h1>
+              <p className="text-xl sm:text-2xl md:text-3xl text-white font-bold mb-4 md:mb-6">
+                25-40% Cost Savings vs. Tier-1 Brands
+              </p>
+              <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-none p-4 md:p-6 mb-6 md:mb-8 max-w-3xl">
+                <p className="text-sm sm:text-base md:text-lg text-white leading-relaxed">
+                  ✓ Pro-grade chains with identical specifications<br/>
+                  ✓ ANSI B175.1 and CSA Z62.3 certified safety<br/>
+                  ✓ ISO 9001 certified production<br/>
+                  ✓ Full material traceability
+                </p>
+              </div>
+              <Link
+                href="/request-quote"
+                className="inline-flex items-center gap-2 px-8 py-4 md:px-12 md:py-5 bg-safety-orange text-white font-bold text-base md:text-lg uppercase tracking-wide rounded-none hover:bg-safety-orange/90 transition shadow-xl hover:shadow-2xl w-fit"
+              >
+                Request Quote
+                <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
+              </Link>
             </div>
           </div>
 
