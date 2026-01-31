@@ -7,12 +7,12 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Series W: Cold-Weather Chainsaw Chains | Borealgrit',
-  description: 'CrNiMo alloy steel chainsaw chains for cold weather. Impact toughness maintained at -40°C. Semi-chisel design for frozen and dirty wood. Canadian fitment guide.',
-  keywords: 'Series W chainsaw chain, cold weather chainsaw chain, CrNiMo alloy chain, winter chainsaw chain, frozen wood chain, Canadian chainsaw chain, Husqvarna 455 chain, Stihl MS 250 chain, sub-zero chainsaw chain, -40°C chainsaw chain',
+  title: 'Series W: Cold-Resilient Chainsaw Chains for Frozen Hardwood | BorealGrit™',
+  description: 'Don\'t let the frost stop your operation. BorealGrit Series W chains feature specialized heat treatment to prevent brittleness at -30°C. Optimized for Canadian and Northern US forestry professionals.',
+  keywords: 'Series W chainsaw chain, cold weather chainsaw chain, frozen hardwood chain, sub-zero chainsaw chain, Canadian forestry, Northern US logging, -30°C chainsaw chain, CrNiMo alloy, winter logging, BorealGrit',
   openGraph: {
-    title: 'Series W: Cold-Weather Chainsaw Chains',
-    description: 'CrNiMo alloy steel with specialized nitriding. Impact toughness maintained at -40°C. ANSI/CSA compliant.',
+    title: 'Series W: Cold-Resilient Chainsaw Chains for Frozen Hardwood | BorealGrit™',
+    description: 'Don\'t let the frost stop your operation. BorealGrit Series W chains feature specialized heat treatment to prevent brittleness at -30°C. Optimized for Canadian and Northern US forestry professionals.',
     type: 'website',
   },
   alternates: {
@@ -43,7 +43,7 @@ export default function SeriesWPage() {
           <div className="relative w-full h-64 md:h-96 lg:h-[500px] rounded-none overflow-hidden bg-gray-100">
             <Image
               src="/images/series-w-hero.jpg"
-              alt="Series W cold-weather chainsaw chain cutting frozen wood in winter conditions"
+              alt="68CrNiMo cold-resilient chainsaw chain cutting frozen hardwood in sub-zero conditions"
               fill
               className="object-cover"
               priority

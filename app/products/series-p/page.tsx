@@ -7,12 +7,12 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Series P: Professional High-Speed Logging Chains | Borealgrit',
-  description: 'Full-chisel chainsaw chains with industrial chrome coating. 3/8" and .404" pitch for professional logging. Compatible with Stihl MS 362/661, Husqvarna 460/572.',
-  keywords: 'Series P chainsaw chain, professional logging chain, full chisel chain, chrome coated chain, Stihl MS 362 chain, Stihl MS 661 chain, Husqvarna 460 chain, Husqvarna 572 chain, .404 pitch chain, professional chainsaw chain',
+  title: 'Series P: Industrial Grade Chainsaw Chains for High-Volume Logging | BorealGrit™',
+  description: 'Maximize your cuts per hour. BorealGrit Series P is built for high-output forestry operations. Featuring premium alloy steel for maximum stay-sharp duration and reduced chain stretch.',
+  keywords: 'Series P chainsaw chain, heavy-duty logging chain, professional logging chain, full chisel chain, long-lasting saw chain, professional forestry consumables, full chisel replacement, Stihl Husqvarna compatible, BorealGrit',
   openGraph: {
-    title: 'Series P: Professional High-Speed Logging Chains',
-    description: 'Full-chisel design with industrial chrome coating. Maximum chip clearance speed for professional loggers.',
+    title: 'Series P: Industrial Grade Chainsaw Chains for High-Volume Logging | BorealGrit™',
+    description: 'Maximize your cuts per hour. BorealGrit Series P is built for high-output forestry operations. Maximum stay-sharp duration and reduced chain stretch.',
     type: 'website',
   },
   alternates: {

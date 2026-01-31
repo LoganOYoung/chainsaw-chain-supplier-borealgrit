@@ -7,12 +7,12 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Series E: Narrow Kerf Chains for Battery-Powered Saws | Borealgrit',
-  description: '.043" Narrow Kerf chains for battery-powered saws. Compatible with Milwaukee, Makita, EGO, DeWalt cordless saws. Technical specifications and compatibility data.',
-  keywords: 'Series E chainsaw chain, narrow kerf chain, battery chainsaw chain, cordless saw chain, .043 gauge chain, Milwaukee chainsaw chain, Makita chainsaw chain, EGO chainsaw chain, DeWalt chainsaw chain, electric chainsaw chain',
+  title: 'Series E: High-Efficiency & Low Vibration Chains for Arborists | BorealGrit™',
+  description: 'Smooth cutting meets professional efficiency. BorealGrit Series E is optimized for electric saws and precision pruning. Reduce operator fatigue and extend battery runtime with our low-vibration design.',
+  keywords: 'Series E chainsaw chain, arborist chainsaw chain, electric saw optimized chain, low vibration saw chain, landscaping chain supply, battery chainsaw chain, Milwaukee Makita EGO DeWalt, BorealGrit',
   openGraph: {
-    title: 'Series E: Narrow Kerf Chains for Battery-Powered Saws',
-    description: '.043" Narrow Kerf chains optimized for cordless saws. Reduces power consumption by 15-25%. ANSI compliant.',
+    title: 'Series E: High-Efficiency & Low Vibration Chains for Arborists | BorealGrit™',
+    description: 'Smooth cutting meets professional efficiency. BorealGrit Series E optimized for electric saws and precision pruning. Reduce fatigue, extend battery runtime.',
     type: 'website',
   },
   alternates: {

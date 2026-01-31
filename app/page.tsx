@@ -39,7 +39,7 @@ export default function Home() {
             <div className="absolute inset-0">
               <Image
                 src="/images/contact-banner.jpg"
-                alt="Professional chainsaw chain manufacturing"
+                alt="68CrNiMo alloy chainsaw chain manufacturing for North American forestry"
                 fill
                 className="object-cover"
                 priority

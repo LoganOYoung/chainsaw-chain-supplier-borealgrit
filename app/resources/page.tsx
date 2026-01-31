@@ -14,13 +14,8 @@ import { generateBuyersGuide } from '@/lib/pdfGenerators/buyersGuide'
 import { generateFAQDocument } from '@/lib/pdfGenerators/faqDocument'
 import { generateQuickReferenceGuide } from '@/lib/pdfGenerators/quickReference'
 import { downloadCatalogCSV } from '@/lib/clientDownloadUtils'
-import { useEffect } from 'react'
 
 export default function ResourcesPage() {
-  useEffect(() => {
-    document.title = 'Resources & Downloads | Chainsaw Chain | Borealgrit'
-  }, [])
-
   return (
     <>
       <Navigation />
