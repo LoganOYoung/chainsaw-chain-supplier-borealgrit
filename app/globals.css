@@ -202,7 +202,10 @@ body {
     content: "";
     display: block;
   }
-  /* Actions block: same 2-col grid as Brand/Gauge so Alternatives aligns with them */
+  /* Mobile: actions block spans full td so button can be centered */
+  .fitment-compat-table td.fitment-actions-cell > .fitment-actions-block {
+    grid-column: 1 / -1;
+  }
   .fitment-compat-table .fitment-actions-block {
     display: grid;
     grid-template-columns: minmax(4.25rem, auto) minmax(0, 1fr);
@@ -213,7 +216,7 @@ body {
   .fitment-compat-table .fitment-actions-grid-spacer {
     grid-column: 1;
   }
-  /* Mobile: button centered across full row */
+  /* Mobile: button full row, centered */
   .fitment-compat-table .fitment-actions-block > a {
     grid-column: 1 / -1;
     justify-self: center;
