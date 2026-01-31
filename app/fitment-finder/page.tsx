@@ -148,12 +148,17 @@ export default function FitmentFinderPage() {
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] overflow-x-hidden sm:overflow-visible">
         <h1 className="text-xl sm:text-2xl font-bold text-text-main mb-4">Fitment & Compatibility</h1>
         
-        {/* Performance Without the Brand Premium */}
-        <section id="fitment-guarantee" className="mb-8 bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
-          <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4">Performance Without the &quot;Brand Premium&quot;</h2>
-          <p className="text-text-body text-sm leading-relaxed">
-            Pro-grade chains at smart-value pricing: same high-carbon CrNiMo alloy, ANSI-certified safety, and industrial-grade durability as Tier-1 brands—without the logo markup. Our series-matched alternatives deliver the pitch, gauge, and cutting performance you trust. <strong className="text-text-main">100% Fitment Guaranteed.</strong>
-          </p>
+        {/* Performance Without the Brand Premium — semi-transparent full-width banner */}
+        <section
+          id="fitment-guarantee"
+          className="w-screen max-w-none ml-[calc(-50vw+50%)] mr-[calc(-50vw+50%)] mb-8 py-6 sm:py-8 px-4 sm:px-6 lg:px-8 bg-white/85 border-y border-forest-brand/20"
+        >
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4">Performance Without the &quot;Brand Premium&quot;</h2>
+            <p className="text-text-body text-sm leading-relaxed">
+              Pro-grade chains at smart-value pricing: same high-carbon CrNiMo alloy, ANSI-certified safety, and industrial-grade durability as Tier-1 brands—without the logo markup. Our series-matched alternatives deliver the pitch, gauge, and cutting performance you trust. <strong className="text-text-main">100% Fitment Guaranteed.</strong>
+            </p>
+          </div>
         </section>
 
         {/* Search Box */}
