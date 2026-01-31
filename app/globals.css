@@ -202,6 +202,13 @@ body {
     content: "";
     display: block;
   }
+  /* Actions block: one visual group for this row (button + alternatives) */
+  .fitment-compat-table .fitment-actions-block {
+    background: rgba(45, 90, 45, 0.05);
+    border: 1px solid rgba(45, 90, 45, 0.15);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+  }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,
   .fitment-crossref-table td::before {
