@@ -9,11 +9,11 @@ export default function Footer() {
           <div className="md:max-w-xs">
             <Link href="/" className="block mb-3">
               <Image 
-                src="/logo-borealgrit-champagne.svg" 
+                src="/logo-bg-white.svg" 
                 alt="Borealgrit Logo" 
-                width={280} 
-                height={90}
-                className="h-14 md:h-16 w-auto"
+                width={180} 
+                height={50}
+                className="h-9 w-auto"
               />
             </Link>
             <p className="text-sm text-white/80 leading-relaxed">Chainsaw chain manufacturer. B2B only. North American distributors and OEM.</p>

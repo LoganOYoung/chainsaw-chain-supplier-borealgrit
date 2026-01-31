@@ -48,11 +48,11 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3">
             <Image 
-              src="/logo-borealgrit-champagne.svg" 
+              src="/logo-bg-white.svg" 
               alt="Borealgrit Logo" 
-              width={280} 
-              height={90}
-              className="h-14 md:h-16 w-auto"
+              width={180} 
+              height={50}
+              className="h-9 md:h-11 w-auto"
               priority
             />
           </Link>
