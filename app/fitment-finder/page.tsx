@@ -413,26 +413,14 @@ export default function FitmentFinderPage() {
               </div>
             </div>
           </div>
-
-          {/* Help Box */}
-          <div className="mt-6 bg-forest-brand/10 border-2 border-forest-brand rounded-none p-5">
-            <p className="text-sm font-semibold text-text-main">
-              Still unsure? Send us a photo of your bar stamping, and our engineers will match it for you.
-            </p>
-          </div>
         </section>
         
         {/* Performance Without the Brand Premium */}
-        <section className="mb-8 bg-white border border-forest-brand/30 rounded-none p-6">
+        <section id="fitment-guarantee" className="mb-8 bg-white border border-forest-brand/30 rounded-none p-6">
           <h2 className="text-xl font-bold text-text-main mb-4">Performance Without the &quot;Brand Premium&quot;</h2>
-          <p className="text-text-body text-sm leading-relaxed mb-4">
-            Finding the perfect fit shouldn&apos;t mean paying for a logo. Our chainsaw chains are precision-engineered using the same high-carbon CrNiMo alloy steel as Tier-1 brands. By optimizing our supply chain and focusing on specialized performance—like our Arctic-grade tempering for cold climates—we provide the exact same pitch, gauge, and cutting speed you trust, at a price point that boosts your bottom line. Tested to ANSI standards, trusted by professionals, and 100% compatible.
+          <p className="text-text-body text-sm leading-relaxed">
+            Pro-grade chains at smart-value pricing: same high-carbon CrNiMo alloy, ANSI-certified safety, and industrial-grade durability as Tier-1 brands—without the logo markup. Our series-matched alternatives deliver the pitch, gauge, and cutting performance you trust. <strong className="text-text-main">100% Fitment Guaranteed.</strong>
           </p>
-          <div className="bg-accent/5 border-l-4 border-forest-brand p-4 rounded">
-            <p className="text-sm font-semibold text-text-main">
-              Pro-Grade Chains. Smart-Value Pricing. Stop overpaying for replacement chains. Our Series-matched alternatives deliver the same ANSI-certified safety and industrial-grade durability as the world&apos;s leading brands. 100% Fitment Guaranteed.
-            </p>
-          </div>
         </section>
 
         {/* Why Switch to Our Premium Alternatives */}
@@ -469,7 +457,7 @@ export default function FitmentFinderPage() {
           </div>
           <div className="mt-6 pt-6 border-t border-forest-brand/30">
             <p className="text-sm font-semibold text-text-main">
-              We offer a 100% Fitment Guarantee: If it doesn&apos;t match your specified Oregon or Stihl model, we take it back.
+              We offer a <a href="#fitment-guarantee" className="text-forest-brand underline hover:no-underline">100% Fitment Guarantee</a>: If it doesn&apos;t match your specified Oregon or Stihl model, we take it back.
             </p>
           </div>
         </section>
