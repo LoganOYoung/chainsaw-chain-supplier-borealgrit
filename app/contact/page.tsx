@@ -3,11 +3,12 @@ import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
-// Contact information - Update these with your actual contact details
-const CONTACT_EMAIL = 'sales@example.com'
-const CONTACT_PHONE = '+1 (555) 123-4567'
-const CONTACT_ADDRESS = 'Your Company Address, City, State, ZIP Code'
-const BUSINESS_HOURS = 'Monday - Friday: 8:00 AM - 5:00 PM EST'
+// Contact information
+const CONTACT_EMAIL = 'logan@borealgrit.com'
+const CONTACT_PHONE = '(+86) 13675899493'
+const CONTACT_WECHAT = '(+86) 13675899493'
+const CONTACT_ADDRESS = 'Guangzhou, China'
+const BUSINESS_HOURS = 'Monday - Friday: 9:00 AM - 6:00 PM CST (China Standard Time)'
 const RESPONSE_TIME = 'We respond to all inquiries within 24 hours during business days.'
 
 export default function ContactPage() {
@@ -45,20 +46,21 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Phone */}
+            {/* Phone & WeChat */}
             <div className="bg-white rounded-none border border-forest-brand/30 p-5 hover:border-forest-brand transition">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-forest-brand/10 rounded-none flex items-center justify-center">
                   <Phone className="w-6 h-6 text-forest-brand" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-sm font-semibold text-text-main mb-1">Phone</h3>
+                  <h3 className="text-sm font-semibold text-text-main mb-1">Phone / WeChat</h3>
                   <a 
-                    href={`tel:${CONTACT_PHONE.replace(/\s+/g, '')}`}
-                    className="text-text-bodyhover:text-forest-brand/80 font-medium text-sm block"
+                    href={`tel:${CONTACT_PHONE.replace(/\s+/g, '').replace(/[()]/g, '')}`}
+                    className="text-forest-brand hover:underline font-medium text-sm block"
                   >
                     {CONTACT_PHONE}
                   </a>
+                  <p className="text-xs text-text-body mt-1">Same number for WeChat</p>
                 </div>
               </div>
             </div>
