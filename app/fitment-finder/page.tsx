@@ -174,15 +174,10 @@ export default function FitmentFinderPage() {
         </div>
 
         {/* Disclaimer */}
-        <div className="mb-6 space-y-3 max-w-4xl">
+        <div className="mb-6 max-w-4xl">
           <p className="text-sm text-text-body italic">
             Always verify bar and chain specifications before ordering. Compatibility is based on pitch, gauge, and bar length. Saw and bar may vary. Consult your bar manufacturer or saw manual when in doubt.
           </p>
-          <div className="bg-gray-50 border border-forest-brand/30 rounded-none p-4">
-            <p className="text-xs text-text-body leading-relaxed">
-              <strong className="text-text-main">Brand Disclaimer:</strong> All brand names mentioned are trademarks of their respective owners. We are not affiliated with, authorized by, or endorsed by these brands. Our products are compatible replacements designed to meet or exceed OEM specifications.
-            </p>
-          </div>
         </div>
 
         {/* Compatibility Table */}
@@ -364,14 +359,14 @@ export default function FitmentFinderPage() {
           <p className="text-sm text-text-body italic mt-4">
             Cross-reference data is provided for compatibility guidance. Always verify specifications with your bar and saw manufacturer before ordering.
           </p>
-          
-          {/* Brand Disclaimer */}
-          <div className="mt-6 bg-gray-50 border border-forest-brand/30 rounded-none p-4">
-            <p className="text-xs text-text-body leading-relaxed">
-              <strong className="text-text-main">Brand Disclaimer:</strong> Oregon®, Stihl®, Husqvarna®, Milwaukee®, Makita®, DeWalt®, EGO Power+®, Echo®, Ryobi®, Greenworks Pro®, Craftsman®, and Poulan Pro® are trademarks of their respective owners. We are not affiliated with, authorized by, or endorsed by these brands. Our products are compatible replacements designed to meet or exceed OEM specifications.
-            </p>
-          </div>
         </section>
+
+        {/* Brand Disclaimer — single placement for whole page */}
+        <div className="mb-8 max-w-4xl bg-gray-50 border border-forest-brand/30 rounded-none p-4 sm:p-5">
+          <p className="text-xs sm:text-sm text-text-body leading-relaxed">
+            <strong className="text-text-main">Brand Disclaimer:</strong> Oregon®, Stihl®, Husqvarna®, Milwaukee®, Makita®, DeWalt®, EGO Power+®, Echo®, Ryobi®, Greenworks Pro®, Craftsman®, and Poulan Pro® are trademarks of their respective owners. We are not affiliated with, authorized by, or endorsed by these brands. Our products are compatible replacements designed to meet or exceed OEM specifications.
+          </p>
+        </div>
 
         {/* Why Switch to Our Premium Alternatives - after tools */}
         <section className="mb-8 bg-gray-50 rounded-none p-4 sm:p-6 border border-forest-brand/30">
