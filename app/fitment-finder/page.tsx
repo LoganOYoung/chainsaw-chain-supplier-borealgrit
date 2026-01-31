@@ -194,7 +194,7 @@ export default function FitmentFinderPage() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
-              <p className="text-sm text-text-bodyleading-relaxed">
+              <p className="text-sm text-text-body leading-relaxed">
                 Most guide bars have the <strong className="text-text-main">Pitch, Gauge, and Drive Link count</strong> stamped on the tail end. Look for markings like &quot;.325&quot; &quot;.050&quot; &quot;56DL&quot; or similar specifications.
               </p>
             </div>
@@ -214,7 +214,7 @@ export default function FitmentFinderPage() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
-              <p className="text-sm text-text-bodyleading-relaxed">
+              <p className="text-sm text-text-body leading-relaxed">
                 Observe the stamped numbers on the drive links. Common markings include <strong className="text-text-main">Oregon&apos;s 91</strong> or <strong className="text-text-main">Stihl&apos;s 6</strong>. These numbers correspond to specific chain models.
               </p>
             </div>
@@ -234,7 +234,7 @@ export default function FitmentFinderPage() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
-              <p className="text-sm text-text-bodyleading-relaxed">
+              <p className="text-sm text-text-body leading-relaxed">
                 If specifications are unclear, lay the chain flat and <strong className="text-text-main">count the total number of drive links</strong>. This gives you the chain length (e.g., 56DL = 56 drive links).
               </p>
             </div>
@@ -271,7 +271,7 @@ export default function FitmentFinderPage() {
                   <p className="text-sm text-text-body mb-4 leading-relaxed">
                     <strong className="text-text-main">3/8&quot; LP (Low Profile)</strong> and <strong className="text-text-main">3/8&quot;</strong> are mechanically distinct pitch standards:
                   </p>
-                  <ul className="text-sm text-text-bodyspace-y-2 mb-4">
+                  <ul className="text-sm text-text-body space-y-2 mb-4">
                     <li className="flex items-start gap-2">
                       <span className="text-forest-brand mt-1">•</span>
                       <span><strong>3/8&quot; LP:</strong> Drive link spacing = 0.365&quot; (9.27mm). Designed for low-kickback safety chains on consumer saws. Reduced cutter depth limits chip size.</span>
@@ -358,7 +358,7 @@ export default function FitmentFinderPage() {
                     </div>
                   </div>
                   <h4 className="text-sm font-semibold text-text-main mb-2">Full-Chisel (Square-Corner)</h4>
-                  <ul className="text-sm text-text-bodyspace-y-1 mb-3">
+                  <ul className="text-sm text-text-body space-y-1 mb-3">
                     <li className="flex items-start gap-2">
                       <span className="text-forest-brand mt-1">•</span>
                       <span>Razor-sharp square corners</span>
@@ -386,7 +386,7 @@ export default function FitmentFinderPage() {
                     </div>
                   </div>
                   <h4 className="text-sm font-semibold text-text-main mb-2">Semi-Chisel (Rounded-Corner)</h4>
-                  <ul className="text-sm text-text-bodyspace-y-1 mb-3">
+                  <ul className="text-sm text-text-body space-y-1 mb-3">
                     <li className="flex items-start gap-2">
                       <span className="text-forest-brand mt-1">•</span>
                       <span>Rounded cutting corners</span>
@@ -646,7 +646,7 @@ export default function FitmentFinderPage() {
                       <td className="px-4 py-3" data-label="Pitch / Gauge">{item.pitchGauge}</td>
                       <td className="px-4 py-3" data-label="Oregon Model">
                         {item.oregon !== '-' ? (
-                          <div className="flex flex-col gap-1">
+                          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 sm:flex-col sm:gap-1">
                             <span className="font-medium text-text-main">{item.oregon}</span>
                             <span className="text-xs text-text-body">Replacement for</span>
                           </div>
@@ -656,7 +656,7 @@ export default function FitmentFinderPage() {
                       </td>
                       <td className="px-4 py-3" data-label="Stihl Model">
                         {item.stihl !== '-' ? (
-                          <div className="flex flex-col gap-1">
+                          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 sm:flex-col sm:gap-1">
                             <span className="font-medium text-text-main">{item.stihl}</span>
                             <span className="text-xs text-text-body">Replacement for</span>
                           </div>
@@ -666,7 +666,7 @@ export default function FitmentFinderPage() {
                       </td>
                       <td className="px-4 py-3" data-label="Husqvarna Model">
                         {item.husqvarna !== '-' ? (
-                          <div className="flex flex-col gap-1">
+                          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 sm:flex-col sm:gap-1">
                             <span className="font-medium text-text-main">{item.husqvarna}</span>
                             <span className="text-xs text-text-body">Replacement for</span>
                           </div>

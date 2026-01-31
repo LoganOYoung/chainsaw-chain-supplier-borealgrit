@@ -160,11 +160,11 @@ body {
   .fitment-gauge-table tr,
   .fitment-compat-table tr,
   .fitment-crossref-table tr {
-    border: 1px solid rgba(45, 90, 45, 0.25);
+    border: 1px solid rgba(45, 90, 45, 0.28);
     border-radius: 6px;
     margin-bottom: 0.75rem;
     overflow: hidden;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
   .fitment-gauge-table td,
@@ -229,11 +229,6 @@ body {
   .fitment-compat-table .fitment-actions-alt-value {
     grid-column: 2;
     align-self: baseline;
-  }
-  /* Whole card (tr) = one group: border + background wrap all data + button */
-  .fitment-compat-table tr {
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(45, 90, 45, 0.28);
   }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,
