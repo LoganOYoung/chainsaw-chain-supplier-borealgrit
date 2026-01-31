@@ -83,16 +83,36 @@ export default function DistributorsPage() {
         {/* Where We Supply */}
         <section className="mb-10">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Where We Supply</h2>
-          <p className="text-text-body text-sm mb-4">
-            We focus on <strong className="text-text-main">North America</strong>. Our primary markets include:
-          </p>
-          <ul className="text-text-body text-sm list-disc pl-5 space-y-1 mb-4">
-            <li><strong>Canada:</strong> British Columbia, Alberta, and Eastern provinces</li>
-            <li><strong>United States:</strong> Pacific Northwest (WA, OR, ID), Northern states, and beyond</li>
-          </ul>
-          <p className="text-text-body text-sm">
-            Direct-from-factory supply to North American ports and logistics corridors. We work with you on Incoterms and delivery expectations.
-          </p>
+          <div className="grid md:grid-cols-2 gap-6 items-start">
+            <div>
+              <p className="text-text-body text-sm mb-4">
+                We focus on <strong className="text-text-main">North America</strong>. Our primary markets include:
+              </p>
+              <ul className="text-text-body text-sm list-disc pl-5 space-y-1 mb-4">
+                <li><strong>Canada:</strong> British Columbia, Alberta, and Eastern provinces</li>
+                <li><strong>United States:</strong> Pacific Northwest (WA, OR, ID), Northern states, and beyond</li>
+              </ul>
+              <p className="text-text-body text-sm">
+                Direct-from-factory supply to North American ports and logistics corridors. We work with you on Incoterms and delivery expectations.
+              </p>
+            </div>
+            <div className="bg-gray-50 border border-forest-brand/30 rounded-none p-4 flex flex-col items-center justify-center min-h-[200px]">
+              <p className="text-xs font-semibold text-text-main uppercase tracking-wide mb-3">Core forestry regions we serve</p>
+              <svg viewBox="0 0 240 160" className="w-full max-w-[280px] h-auto" aria-hidden>
+                <path fill="#e8efe8" stroke="#2d5a2d" strokeWidth="1.5" d="M45 25 L95 18 L155 22 L195 45 L205 95 L185 142 L120 155 L55 148 L25 105 L18 55 Z" />
+                <circle cx="75" cy="50" r="10" fill="#2d5a2d" aria-hidden />
+                <circle cx="115" cy="55" r="10" fill="#2d5a2d" aria-hidden />
+                <circle cx="85" cy="85" r="10" fill="#2d5a2d" aria-hidden />
+                <circle cx="155" cy="75" r="10" fill="#2d5a2d" aria-hidden />
+              </svg>
+              <p className="text-xs text-text-body mt-2">BC · Alberta · Pacific NW · Northern US</p>
+            </div>
+          </div>
+          <div className="mt-6 bg-forest-brand/10 border-l-4 border-forest-brand rounded-none px-4 py-3">
+            <p className="text-sm text-text-main">
+              <strong>North America support.</strong> Quotes provided within 12 hours during Pacific Time (PT) business hours. <Link href="/request-quote" className="text-forest-brand font-semibold hover:underline">Request a quote</Link> or <Link href="/contact" className="text-forest-brand font-semibold hover:underline">contact us</Link>.
+            </p>
+          </div>
         </section>
 
         {/* Why BorealGrit */}
@@ -148,34 +168,34 @@ export default function DistributorsPage() {
         {/* Policies at a Glance */}
         <section className="mb-10">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Policies at a Glance</h2>
-          <div className="table-responsive -mx-4 sm:mx-0">
-            <table className="w-full min-w-[400px] text-sm border border-forest-brand/30">
+          <div className="table-responsive -mx-4 sm:mx-0 overflow-hidden rounded-none border-2 border-forest-brand/40">
+            <table className="w-full min-w-[400px] text-xs border-collapse">
               <thead>
-                <tr className="bg-gray-50">
-                  <th className="text-left px-4 py-3 font-semibold">Topic</th>
-                  <th className="text-left px-4 py-3 font-semibold">Summary</th>
+                <tr className="bg-forest-brand/15 border-b-2 border-forest-brand/40">
+                  <th className="text-left px-4 py-2.5 font-bold text-text-main uppercase tracking-wide">Topic</th>
+                  <th className="text-left px-4 py-2.5 font-bold text-text-main uppercase tracking-wide">Summary</th>
                 </tr>
               </thead>
-              <tbody className="text-industrial">
-                <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">MOQ</td>
-                  <td className="px-4 py-3">Varies by product line and pitch. We can discuss volume and mix to fit your needs.</td>
+              <tbody className="text-text-body">
+                <tr className="border-b border-forest-brand/20 bg-white">
+                  <td className="px-4 py-2.5 font-bold text-text-main align-top w-[120px] sm:w-[140px]">MOQ</td>
+                  <td className="px-4 py-2.5 leading-snug">Varies by product line and pitch. We can discuss volume and mix to fit your needs.</td>
                 </tr>
-                <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">Samples</td>
-                  <td className="px-4 py-3">Available for qualified B2B inquiries. Terms (e.g. paid sample or credit on first order) can be discussed.</td>
+                <tr className="border-b border-forest-brand/20 bg-gray-50/80">
+                  <td className="px-4 py-2.5 font-bold text-text-main align-top">Samples</td>
+                  <td className="px-4 py-2.5 leading-snug">Available for qualified B2B inquiries. Terms (e.g. paid sample or credit on first order) can be discussed.</td>
                 </tr>
-                <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">Payment</td>
-                  <td className="px-4 py-3">Standard terms such as T/T, L/C. Discuss with us for your situation.</td>
+                <tr className="border-b border-forest-brand/20 bg-white">
+                  <td className="px-4 py-2.5 font-bold text-text-main align-top">Payment</td>
+                  <td className="px-4 py-2.5 leading-snug">Standard terms such as T/T, L/C. Discuss with us for your situation.</td>
                 </tr>
-                <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">Lead time</td>
-                  <td className="px-4 py-3">From order confirmation to production and shipment. Typical ranges apply; we will confirm per order.</td>
+                <tr className="border-b border-forest-brand/20 bg-gray-50/80">
+                  <td className="px-4 py-2.5 font-bold text-text-main align-top">Lead time</td>
+                  <td className="px-4 py-2.5 leading-snug">From order confirmation to production and shipment. Typical ranges apply; we will confirm per order.</td>
                 </tr>
-                <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">Incoterms</td>
-                  <td className="px-4 py-3">FOB, CIF, or other terms as agreed. We support standard North American logistics.</td>
+                <tr className="bg-white">
+                  <td className="px-4 py-2.5 font-bold text-text-main align-top">Incoterms</td>
+                  <td className="px-4 py-2.5 leading-snug">FOB, CIF, or other terms as agreed. We support standard North American logistics.</td>
                 </tr>
               </tbody>
             </table>
@@ -228,21 +248,21 @@ export default function DistributorsPage() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/fitment-finder"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none"
             >
               Fitment Finder <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/resources"
-              className="inline-flex items-center gap-2 px-4 py-2.5 border-2 border-forest-brand text-forest-brand font-semibold text-sm hover:bg-forest-brand hover:text-white transition"
+              className="inline-flex items-center gap-2 px-4 py-2.5 border-2 border-forest-brand text-forest-brand font-semibold text-sm hover:bg-forest-brand hover:text-white transition rounded-none"
             >
               Catalogs & Resources
             </Link>
             <Link
               href="/request-quote"
-              className="inline-flex items-center gap-2 px-4 py-2.5 border-2 border-forest-brand text-forest-brand font-semibold text-sm hover:bg-forest-brand hover:text-white transition"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none"
             >
-              Request for Quote
+              Request for Quote <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </section>
