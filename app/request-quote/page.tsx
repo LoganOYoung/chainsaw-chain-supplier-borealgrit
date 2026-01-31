@@ -834,9 +834,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
           {/* Step 2: Upload Section */}
           <div className="mb-8">
             <div className="flex items-center gap-2 sm:gap-3 mb-3 md:mb-4">
-              <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm ${
-                currentStep >= 2 ? 'bg-forest-brand text-white' : 'bg-gray-200 text-gray-400'
-              }`}>
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm bg-forest-brand text-white">
                 {currentStep > 2 ? <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" /> : '2'}
               </div>
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-text-main">Upload Your Filled RFQ Template</h2>
