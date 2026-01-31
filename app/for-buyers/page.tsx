@@ -1,17 +1,16 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'For Buyers | BorealGrit™ – Distributors & Forestry',
-  description: 'Factory-direct chainsaw chains for North American distributors, logging operations, and OEMs. Who we serve, how we work, policies, and why choose BorealGrit.',
-  keywords: 'chainsaw chain distributor, B2B forestry supply, North America chainsaw chain, factory direct, wholesale chainsaw chain, logging supply, OEM chainsaw chain',
+  title: 'For Buyers | BorealGrit™ – Distributors, Forestry & OEM',
+  description: 'Factory-direct chainsaw chains for North American distributors, logging operations, and OEM partners. Choose your path: Distributors & Forestry or OEM & Private Label.',
+  keywords: 'chainsaw chain buyer, B2B forestry supply, North America chainsaw chain, OEM chainsaw chain, distributor chainsaw chain',
   openGraph: {
-    title: 'For Buyers | BorealGrit™ – Distributors & Forestry',
-    description: 'Factory-direct chainsaw chains for North American distributors, logging operations, and OEMs. How we work and why choose BorealGrit.',
+    title: 'For Buyers | BorealGrit™ – Distributors, Forestry & OEM',
+    description: 'Factory-direct chainsaw chains for North American distributors, logging operations, and OEM partners.',
     type: 'website',
   },
   alternates: {
@@ -19,225 +18,42 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ForBuyersPage() {
+export default function ForBuyersHubPage() {
   return (
     <>
       <Navigation />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
-        {/* Hero */}
-        <section className="mb-10">
-          <div className="relative w-full h-48 md:h-64 lg:h-72 rounded-none overflow-hidden bg-gray-100">
-            <Image
-              src="/images/contact-banner.jpg"
-              alt="BorealGrit factory-direct chainsaw chains for North American forestry and distribution"
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-            />
-            <div className="absolute inset-0 bg-forest-brand/60" />
-            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-8">
-              <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3 tracking-tight uppercase">
-                Built for North American Forestry & Distribution
-              </h1>
-              <p className="text-white/95 text-base sm:text-lg md:text-xl max-w-2xl">
-                Factory-direct chainsaw chains for distributors, logging operations, and OEMs. Clear policies, reliable supply, and a partner focused on your uptime.
-              </p>
-            </div>
-          </div>
-        </section>
+        <h1 className="text-2xl font-bold text-text-main mb-4">For Buyers</h1>
+        <p className="text-text-body mb-10 max-w-3xl">
+          We supply North American distributors, logging operations, and OEM partners with factory-direct chainsaw chains. Choose your path below.
+        </p>
 
-        {/* Who We Serve */}
-        <section className="mb-10">
-          <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Who We Serve</h2>
-          <div className="grid sm:grid-cols-3 gap-6">
-            <div className="border border-forest-brand/30 rounded-none p-4 bg-white">
-              <h3 className="font-semibold text-text-main mb-2">Distributors & Dealers</h3>
-              <p className="text-text-body text-sm">
-                Saw chain and forestry equipment distributors who need consistent bulk supply, clear specs, and documentation for resale.
-              </p>
-            </div>
-            <div className="border border-forest-brand/30 rounded-none p-4 bg-white">
-              <h3 className="font-semibold text-text-main mb-2">Logging & Sawmill Operations</h3>
-              <p className="text-text-body text-sm">
-                High-consumption operations that depend on reliable supply and chains built to minimize downtime in the field.
-              </p>
-            </div>
-            <div className="border border-forest-brand/30 rounded-none p-4 bg-white">
-              <h3 className="font-semibold text-text-main mb-2">OEM & Private Label</h3>
-              <p className="text-text-body text-sm">
-                Chainsaw and outdoor power equipment manufacturers who need matching chains, custom packaging, and part-number alignment.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Where We Supply */}
-        <section className="mb-10">
-          <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Where We Supply</h2>
-          <p className="text-text-body text-sm mb-4">
-            We focus on <strong className="text-text-main">North America</strong>. Our primary markets include:
-          </p>
-          <ul className="text-text-body text-sm list-disc pl-5 space-y-1 mb-4">
-            <li><strong>Canada:</strong> British Columbia, Alberta, and Eastern provinces</li>
-            <li><strong>United States:</strong> Pacific Northwest (WA, OR, ID), Northern states, and beyond</li>
-          </ul>
-          <p className="text-text-body text-sm">
-            Direct-from-factory supply to North American ports and logistics corridors. We work with you on Incoterms and delivery expectations.
-          </p>
-        </section>
-
-        {/* Why BorealGrit */}
-        <section className="mb-10">
-          <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Why BorealGrit</h2>
-          <ul className="text-text-body text-sm space-y-3">
-            <li className="flex gap-2">
-              <span className="text-forest-brand font-bold shrink-0">1.</span>
-              <span><strong className="text-text-main">Factory direct.</strong> No extra layers—better price and direct communication with the source.</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-forest-brand font-bold shrink-0">2.</span>
-              <span><strong className="text-text-main">68CrNiMo alloy & quality.</strong> Premium alloy and heat treatment for longer life and fewer failures in the field.</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-forest-brand font-bold shrink-0">3.</span>
-              <span><strong className="text-text-main">Cold-resilient & heavy-duty.</strong> Series W for sub-zero conditions, Series P for high-output logging, Series E for arborists and battery saws.</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-forest-brand font-bold shrink-0">4.</span>
-              <span><strong className="text-text-main">Minimize downtime.</strong> Reliable supply and chains built for professional use so your operations stay running.</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-forest-brand font-bold shrink-0">5.</span>
-              <span><strong className="text-text-main">B2B only.</strong> We are built for distributors and forestry buyers, not retail consumers.</span>
-            </li>
-          </ul>
-        </section>
-
-        {/* How We Work */}
-        <section className="mb-10">
-          <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">How We Work</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="border-l-4 border-forest-brand pl-4 py-2">
-              <h3 className="font-semibold text-text-main text-sm mb-1">Step 1 · Inquiry</h3>
-              <p className="text-text-body text-xs">Send an RFQ or inquiry via our form, email, or phone. Tell us product, volume, and timeline.</p>
-            </div>
-            <div className="border-l-4 border-forest-brand pl-4 py-2">
-              <h3 className="font-semibold text-text-main text-sm mb-1">Step 2 · Quote & Samples</h3>
-              <p className="text-text-body text-xs">We respond with a quote and specs. Samples available where applicable.</p>
-            </div>
-            <div className="border-l-4 border-forest-brand pl-4 py-2">
-              <h3 className="font-semibold text-text-main text-sm mb-1">Step 3 · Order & Payment</h3>
-              <p className="text-text-body text-xs">Confirm order and payment terms. We use standard B2B terms (e.g. T/T, L/C).</p>
-            </div>
-            <div className="border-l-4 border-forest-brand pl-4 py-2">
-              <h3 className="font-semibold text-text-main text-sm mb-1">Step 4 · Production & Delivery</h3>
-              <p className="text-text-body text-xs">Production and shipping to your chosen port or destination. Clear documentation and logistics support.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Policies at a Glance */}
-        <section className="mb-10">
-          <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Policies at a Glance</h2>
-          <div className="table-responsive -mx-4 sm:mx-0">
-            <table className="w-full min-w-[400px] text-sm border border-forest-brand/30">
-              <thead>
-                <tr className="bg-gray-50">
-                  <th className="text-left px-4 py-3 font-semibold">Topic</th>
-                  <th className="text-left px-4 py-3 font-semibold">Summary</th>
-                </tr>
-              </thead>
-              <tbody className="text-industrial">
-                <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">MOQ</td>
-                  <td className="px-4 py-3">Varies by product line and pitch. We can discuss volume and mix to fit your needs.</td>
-                </tr>
-                <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">Samples</td>
-                  <td className="px-4 py-3">Available for qualified B2B inquiries. Terms (e.g. paid sample or credit on first order) can be discussed.</td>
-                </tr>
-                <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">Payment</td>
-                  <td className="px-4 py-3">Standard terms such as T/T, L/C. Discuss with us for your situation.</td>
-                </tr>
-                <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">Lead time</td>
-                  <td className="px-4 py-3">From order confirmation to production and shipment. Typical ranges apply; we will confirm per order.</td>
-                </tr>
-                <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">Incoterms</td>
-                  <td className="px-4 py-3">FOB, CIF, or other terms as agreed. We support standard North American logistics.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        {/* Quality & Compliance */}
-        <section className="mb-10">
-          <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Quality & Compliance</h2>
-          <p className="text-text-body text-sm mb-4">
-            We manufacture to strict material and process standards. Our chains align with relevant North American safety and performance expectations (e.g. ANSI B175.1, CSA). Quality management is ISO 9001 oriented. For full details on certifications and testing, see our Quality & Certifications page.
-          </p>
+        <div className="grid sm:grid-cols-2 gap-6">
           <Link
-            href="/quality"
-            className="inline-flex items-center gap-1 text-forest-brand font-semibold text-sm hover:underline"
+            href="/for-buyers/distributors"
+            className="block border-2 border-forest-brand/30 rounded-none p-6 hover:border-forest-brand hover:bg-forest-light/30 transition"
           >
-            Quality & Certifications <ArrowRight className="w-4 h-4" />
+            <h2 className="text-lg font-bold text-text-main mb-2">Distributors & Forestry</h2>
+            <p className="text-text-body text-sm mb-4">
+              Who we serve, where we supply, why BorealGrit, how we work, and policies at a glance. For distributors, dealers, and logging operations.
+            </p>
+            <span className="inline-flex items-center gap-1 text-forest-brand font-semibold text-sm">
+              View page <ArrowRight className="w-4 h-4" />
+            </span>
           </Link>
-        </section>
-
-        {/* Next Steps */}
-        <section className="mb-10">
-          <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Find Your Product & Next Steps</h2>
-          <p className="text-text-body text-sm mb-4">
-            Match your application to the right series, then use our tools to confirm fitment and request a quote.
-          </p>
-          <div className="grid sm:grid-cols-3 gap-4 mb-6">
-            <Link
-              href="/products/series-w"
-              className="block border border-forest-brand/30 rounded-none p-4 hover:bg-forest-light hover:border-forest-brand transition"
-            >
-              <span className="font-semibold text-text-main block mb-1">Cold-climate operations</span>
-              <span className="text-text-body text-sm">Series W — sub-zero and frozen hardwood.</span>
-            </Link>
-            <Link
-              href="/products/series-p"
-              className="block border border-forest-brand/30 rounded-none p-4 hover:bg-forest-light hover:border-forest-brand transition"
-            >
-              <span className="font-semibold text-text-main block mb-1">High-volume logging</span>
-              <span className="text-text-body text-sm">Series P — full chisel, stay-sharp, heavy duty.</span>
-            </Link>
-            <Link
-              href="/products/series-e"
-              className="block border border-forest-brand/30 rounded-none p-4 hover:bg-forest-light hover:border-forest-brand transition"
-            >
-              <span className="font-semibold text-text-main block mb-1">Arborists & battery saws</span>
-              <span className="text-text-body text-sm">Series E — narrow kerf, low vibration, efficiency.</span>
-            </Link>
-          </div>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/fitment-finder"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition"
-            >
-              Fitment Finder <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/resources"
-              className="inline-flex items-center gap-2 px-4 py-2.5 border-2 border-forest-brand text-forest-brand font-semibold text-sm hover:bg-forest-brand hover:text-white transition"
-            >
-              Catalogs & Resources
-            </Link>
-            <Link
-              href="/request-quote"
-              className="inline-flex items-center gap-2 px-4 py-2.5 border-2 border-forest-brand text-forest-brand font-semibold text-sm hover:bg-forest-brand hover:text-white transition"
-            >
-              Request for Quote
-            </Link>
-          </div>
-        </section>
+          <Link
+            href="/oem-private-label"
+            className="block border-2 border-forest-brand/30 rounded-none p-6 hover:border-forest-brand hover:bg-forest-light/30 transition"
+          >
+            <h2 className="text-lg font-bold text-text-main mb-2">OEM & Private Label</h2>
+            <p className="text-text-body text-sm mb-4">
+              Custom packaging, labeling, part numbers, and supply terms for chainsaw and outdoor power equipment manufacturers.
+            </p>
+            <span className="inline-flex items-center gap-1 text-forest-brand font-semibold text-sm">
+              View page <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+        </div>
       </main>
       <Footer />
     </>

@@ -10,15 +10,18 @@ export default function Navigation() {
   const [productsMenuOpen, setProductsMenuOpen] = useState(false)
   const [resourcesMenuOpen, setResourcesMenuOpen] = useState(false)
   const [aboutContactMenuOpen, setAboutContactMenuOpen] = useState(false)
+  const [forBuyersMenuOpen, setForBuyersMenuOpen] = useState(false)
   
   const productsMenuRef = useRef<HTMLLIElement>(null)
   const resourcesMenuRef = useRef<HTMLLIElement>(null)
   const aboutContactMenuRef = useRef<HTMLLIElement>(null)
+  const forBuyersMenuRef = useRef<HTMLLIElement>(null)
 
   const isActive = (path: string) => pathname === path
   const isProductsActive = pathname?.startsWith('/products')
   const isResourcesActive = pathname?.startsWith('/resources') || pathname?.startsWith('/quality')
-  const isAboutContactActive = pathname?.startsWith('/about') || pathname?.startsWith('/contact') || pathname?.startsWith('/request-quote') || pathname?.startsWith('/for-buyers')
+  const isAboutContactActive = pathname?.startsWith('/about') || pathname?.startsWith('/contact') || pathname?.startsWith('/request-quote')
+  const isForBuyersActive = pathname?.startsWith('/for-buyers') || pathname?.startsWith('/oem-private-label')
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -32,14 +35,17 @@ export default function Navigation() {
       if (aboutContactMenuRef.current && !aboutContactMenuRef.current.contains(event.target as Node)) {
         setAboutContactMenuOpen(false)
       }
+      if (forBuyersMenuRef.current && !forBuyersMenuRef.current.contains(event.target as Node)) {
+        setForBuyersMenuOpen(false)
+      }
     }
-    if (productsMenuOpen || resourcesMenuOpen || aboutContactMenuOpen) {
+    if (productsMenuOpen || resourcesMenuOpen || aboutContactMenuOpen || forBuyersMenuOpen) {
       document.addEventListener('mousedown', handleClickOutside)
     }
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [productsMenuOpen, resourcesMenuOpen, aboutContactMenuOpen])
+  }, [productsMenuOpen, resourcesMenuOpen, aboutContactMenuOpen, forBuyersMenuOpen])
 
   return (
     <header className="bg-[#547950] sticky top-0 z-50 shadow-sm">
@@ -64,6 +70,7 @@ export default function Navigation() {
                   setProductsMenuOpen(!productsMenuOpen)
                   setResourcesMenuOpen(false)
                   setAboutContactMenuOpen(false)
+                  setForBuyersMenuOpen(false)
                 }}
                 className={`flex items-center gap-1 ${isProductsActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
@@ -192,13 +199,45 @@ export default function Navigation() {
                 Fitment Finder
               </Link>
             </li>
-            <li>
-              <Link
-                href="/oem-private-label"
-                className={isActive('/oem-private-label') ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}
+            <li ref={forBuyersMenuRef} className="relative">
+              <button
+                type="button"
+                onClick={() => {
+                  setForBuyersMenuOpen(!forBuyersMenuOpen)
+                  setProductsMenuOpen(false)
+                  setResourcesMenuOpen(false)
+                  setAboutContactMenuOpen(false)
+                }}
+                className={`flex items-center gap-1 ${isForBuyersActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
-                OEM & Private Label
-              </Link>
+                For Buyers
+                <svg
+                  className={`w-4 h-4 transition-transform ${forBuyersMenuOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {forBuyersMenuOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-forest-brand/30 rounded-none shadow-xl py-2 z-50 opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
+                  <Link
+                    href="/for-buyers/distributors"
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname?.startsWith('/for-buyers/distributors') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    onClick={() => setForBuyersMenuOpen(false)}
+                  >
+                    Distributors & Forestry
+                  </Link>
+                  <Link
+                    href="/oem-private-label"
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/oem-private-label') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    onClick={() => setForBuyersMenuOpen(false)}
+                  >
+                    OEM & Private Label
+                  </Link>
+                </div>
+              )}
             </li>
             <li ref={resourcesMenuRef} className="relative">
               <button
@@ -207,6 +246,7 @@ export default function Navigation() {
                   setResourcesMenuOpen(!resourcesMenuOpen)
                   setProductsMenuOpen(false)
                   setAboutContactMenuOpen(false)
+                  setForBuyersMenuOpen(false)
                 }}
                 className={`flex items-center gap-1 ${isResourcesActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
@@ -260,6 +300,7 @@ export default function Navigation() {
                   setAboutContactMenuOpen(!aboutContactMenuOpen)
                   setProductsMenuOpen(false)
                   setResourcesMenuOpen(false)
+                  setForBuyersMenuOpen(false)
                 }}
                 className={`flex items-center gap-1 ${isAboutContactActive ? 'text-white border-b-2 border-white pb-0.5' : 'text-white hover:text-white/80'}`}
               >
@@ -281,13 +322,6 @@ export default function Navigation() {
                     onClick={() => setAboutContactMenuOpen(false)}
                   >
                     About Us
-                  </Link>
-                  <Link
-                    href="/for-buyers"
-                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/for-buyers') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
-                    onClick={() => setAboutContactMenuOpen(false)}
-                  >
-                    For Buyers
                   </Link>
                   <Link
                     href="/contact"
@@ -511,9 +545,49 @@ export default function Navigation() {
               </Link>
             </li>
             <li>
-              <Link href="/oem-private-label" className={`block py-2 ${isActive('/oem-private-label') ? 'text-white font-medium' : 'text-white/90'}`} onClick={() => setMobileMenuOpen(false)}>
-                OEM & Private Label
-              </Link>
+              <button
+                type="button"
+                onClick={() => setForBuyersMenuOpen(!forBuyersMenuOpen)}
+                className={`flex items-center justify-between w-full py-2 text-white/90 ${isForBuyersActive ? 'text-white font-medium' : 'hover:text-[#547950]'}`}
+              >
+                For Buyers
+                <svg
+                  className={`w-4 h-4 transition-transform ${forBuyersMenuOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {forBuyersMenuOpen && (
+                <ul className="pl-4 mt-1 space-y-1">
+                  <li>
+                    <Link
+                      href="/for-buyers/distributors"
+                      className={`block py-2 text-sm text-white/90 ${pathname?.startsWith('/for-buyers/distributors') ? 'text-white font-medium' : ''}`}
+                      onClick={() => {
+                        setMobileMenuOpen(false)
+                        setForBuyersMenuOpen(false)
+                      }}
+                    >
+                      Distributors & Forestry
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/oem-private-label"
+                      className={`block py-2 text-sm text-white/90 ${isActive('/oem-private-label') ? 'text-white font-medium' : ''}`}
+                      onClick={() => {
+                        setMobileMenuOpen(false)
+                        setForBuyersMenuOpen(false)
+                      }}
+                    >
+                      OEM & Private Label
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <button
@@ -612,18 +686,6 @@ export default function Navigation() {
                       }}
                     >
                       About Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/for-buyers"
-                      className={`block py-2 text-sm text-white/90 ${isActive('/for-buyers') ? 'text-white font-medium' : ''}`}
-                      onClick={() => {
-                        setMobileMenuOpen(false)
-                        setAboutContactMenuOpen(false)
-                      }}
-                    >
-                      For Buyers
                     </Link>
                   </li>
                   <li>
