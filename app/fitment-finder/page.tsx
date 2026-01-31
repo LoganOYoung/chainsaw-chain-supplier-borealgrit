@@ -148,173 +148,6 @@ export default function FitmentFinderPage() {
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] overflow-x-hidden sm:overflow-visible">
         <h1 className="text-xl sm:text-2xl font-bold text-text-main mb-4">Fitment & Compatibility</h1>
         
-        {/* Industry Technical Specifications & Standards */}
-        <section className="mb-8 sm:mb-10 bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
-          <h2 className="text-lg sm:text-xl font-bold text-text-main mb-2">Industry Technical Specifications & Standards</h2>
-          <p className="text-sm text-text-body mb-4 sm:mb-6 italic">Technical Reference for Professional Buyers</p>
-          
-          <div className="space-y-6 sm:space-y-8">
-            {/* Pitch */}
-            <div className="border-b border-forest-brand/30 pb-4 sm:pb-6">
-              <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Pitch</h3>
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-                <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-                    <div className="text-center">
-                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
-                      <div className="text-xs text-text-body">3/8&quot; LP vs 3/8&quot; Pitch Comparison</div>
-                      <div className="text-xs text-text-body mt-2">Drive link spacing diagram</div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm text-text-body mb-4 leading-relaxed">
-                    <strong className="text-text-main">3/8&quot; LP (Low Profile)</strong> and <strong className="text-text-main">3/8&quot;</strong> are mechanically distinct pitch standards:
-                  </p>
-                  <ul className="text-sm text-text-body space-y-2 mb-4">
-                    <li className="flex items-start gap-2">
-                      <span className="text-forest-brand mt-1">•</span>
-                      <span><strong>3/8&quot; LP:</strong> Drive link spacing = 0.365&quot; (9.27mm). Designed for low-kickback safety chains on consumer saws. Reduced cutter depth limits chip size.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-forest-brand mt-1">•</span>
-                      <span><strong>3/8&quot;:</strong> Drive link spacing = 0.375&quot; (9.525mm). Standard professional pitch for mid-to-large saws. Higher chip clearance, faster cutting speed.</span>
-                    </li>
-                  </ul>
-                  <p className="text-xs text-text-body italic">
-                    <strong>Critical:</strong> These are NOT interchangeable. LP chains will not seat properly on standard 3/8&quot; bars, and vice versa.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Gauge */}
-            <div className="border-b border-forest-brand/30 pb-4 sm:pb-6">
-              <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Gauge</h3>
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-                <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-                    <div className="text-center">
-                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
-                      <div className="text-xs text-text-body">Drive link gauge measurement</div>
-                      <div className="text-xs text-text-body mt-2">Cross-section view with dimensions</div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm text-text-body mb-4 leading-relaxed">
-                    Gauge refers to the drive link thickness that fits into the guide bar groove. Precision fit is critical for safe operation.
-                  </p>
-                  <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
-                    <table className="fitment-gauge-table w-full min-w-[300px] text-sm border border-forest-brand/30">
-                      <thead>
-                        <tr className="bg-gray-50">
-                          <th className="text-left px-4 py-2 font-semibold text-text-main">Imperial</th>
-                          <th className="text-left px-4 py-2 font-semibold text-text-main">Metric</th>
-                          <th className="text-left px-4 py-2 font-semibold text-text-main">Application</th>
-                        </tr>
-                      </thead>
-                      <tbody className="text-industrial">
-                        <tr className="border-t border-forest-brand/30">
-                          <td className="px-4 py-2 font-medium" data-label="Imperial">.043&quot;</td>
-                          <td className="px-4 py-2" data-label="Metric">1.1mm</td>
-                          <td className="px-4 py-2 text-text-body" data-label="Application">Battery saws, narrow kerf</td>
-                        </tr>
-                        <tr className="border-t border-forest-brand/30">
-                          <td className="px-4 py-2 font-medium" data-label="Imperial">.050&quot;</td>
-                          <td className="px-4 py-2" data-label="Metric">1.3mm</td>
-                          <td className="px-4 py-2 text-text-body" data-label="Application">Consumer saws, general purpose</td>
-                        </tr>
-                        <tr className="border-t border-forest-brand/30">
-                          <td className="px-4 py-2 font-medium" data-label="Imperial">.058&quot;</td>
-                          <td className="px-4 py-2" data-label="Metric">1.5mm</td>
-                          <td className="px-4 py-2 text-text-body" data-label="Application">Mid-range professional</td>
-                        </tr>
-                        <tr className="border-t border-forest-brand/30">
-                          <td className="px-4 py-2 font-medium" data-label="Imperial">.063&quot;</td>
-                          <td className="px-4 py-2" data-label="Metric">1.6mm</td>
-                          <td className="px-4 py-2 text-text-body" data-label="Application">Heavy-duty professional</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <p className="text-xs text-text-body italic mt-4">
-                    <strong>Note:</strong> Gauge tolerance is ±0.001&quot;. Mismatched gauge causes chain derailment and bar damage.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Cutter Geometry */}
-            <div>
-              <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Cutter Geometry</h3>
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-4">
-                <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-                    <div className="text-center">
-                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
-                      <div className="text-xs text-text-body">Full-Chisel Cutter Profile</div>
-                      <div className="text-xs text-text-body mt-2">Square-corner geometry</div>
-                    </div>
-                  </div>
-                  <h4 className="text-sm font-semibold text-text-main mb-2">Full-Chisel (Square-Corner)</h4>
-                  <ul className="text-sm text-text-body space-y-1 mb-3">
-                    <li className="flex items-start gap-2">
-                      <span className="text-forest-brand mt-1">•</span>
-                      <span>Razor-sharp square corners</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-forest-brand mt-1">•</span>
-                      <span>Highest chip clearance speed</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-forest-brand mt-1">•</span>
-                      <span>Optimal for: Western softwoods (pine, fir, cedar)</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-forest-brand mt-1">•</span>
-                      <span>Requires frequent sharpening in dirty conditions</span>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-                    <div className="text-center">
-                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
-                      <div className="text-xs text-text-body">Semi-Chisel Cutter Profile</div>
-                      <div className="text-xs text-text-body mt-2">Rounded-corner geometry</div>
-                    </div>
-                  </div>
-                  <h4 className="text-sm font-semibold text-text-main mb-2">Semi-Chisel (Rounded-Corner)</h4>
-                  <ul className="text-sm text-text-body space-y-1 mb-3">
-                    <li className="flex items-start gap-2">
-                      <span className="text-forest-brand mt-1">•</span>
-                      <span>Rounded cutting corners</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-forest-brand mt-1">•</span>
-                      <span>Superior edge retention</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-forest-brand mt-1">•</span>
-                      <span>Optimal for: Eastern hardwoods (oak, maple, hickory), frozen wood, dirty conditions</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-forest-brand mt-1">•</span>
-                      <span>Less prone to dulling, extended sharpening intervals</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="bg-gray-50 border border-forest-brand/30 rounded-none p-4">
-                <p className="text-xs text-text-body">
-                  <strong className="text-text-main">Regional Application Guide:</strong> Eastern North America (hardwood-dominant) benefits from Semi-Chisel for durability in dense timber. Western North America (softwood-dominant) can maximize productivity with Full-Chisel for faster cutting speeds.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         {/* Performance Without the Brand Premium */}
         <section id="fitment-guarantee" className="mb-8 bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
           <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4">Performance Without the &quot;Brand Premium&quot;</h2>
@@ -661,6 +494,173 @@ export default function FitmentFinderPage() {
             <p className="text-sm font-semibold text-text-main">
               Still unsure? Send us a photo of your bar stamping, and our engineers will match it for you.
             </p>
+          </div>
+        </section>
+
+        {/* Industry Technical Specifications & Standards - reference at end */}
+        <section className="mb-8 sm:mb-10 bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
+          <h2 className="text-lg sm:text-xl font-bold text-text-main mb-2">Industry Technical Specifications & Standards</h2>
+          <p className="text-sm text-text-body mb-4 sm:mb-6 italic">Technical Reference for Professional Buyers</p>
+          
+          <div className="space-y-6 sm:space-y-8">
+            {/* Pitch */}
+            <div className="border-b border-forest-brand/30 pb-4 sm:pb-6">
+              <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Pitch</h3>
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+                <div>
+                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+                    <div className="text-center">
+                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
+                      <div className="text-xs text-text-body">3/8&quot; LP vs 3/8&quot; Pitch Comparison</div>
+                      <div className="text-xs text-text-body mt-2">Drive link spacing diagram</div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-text-body mb-4 leading-relaxed">
+                    <strong className="text-text-main">3/8&quot; LP (Low Profile)</strong> and <strong className="text-text-main">3/8&quot;</strong> are mechanically distinct pitch standards:
+                  </p>
+                  <ul className="text-sm text-text-body space-y-2 mb-4">
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span><strong>3/8&quot; LP:</strong> Drive link spacing = 0.365&quot; (9.27mm). Designed for low-kickback safety chains on consumer saws. Reduced cutter depth limits chip size.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span><strong>3/8&quot;:</strong> Drive link spacing = 0.375&quot; (9.525mm). Standard professional pitch for mid-to-large saws. Higher chip clearance, faster cutting speed.</span>
+                    </li>
+                  </ul>
+                  <p className="text-xs text-text-body italic">
+                    <strong>Critical:</strong> These are NOT interchangeable. LP chains will not seat properly on standard 3/8&quot; bars, and vice versa.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Gauge */}
+            <div className="border-b border-forest-brand/30 pb-4 sm:pb-6">
+              <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Gauge</h3>
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+                <div>
+                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+                    <div className="text-center">
+                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
+                      <div className="text-xs text-text-body">Drive link gauge measurement</div>
+                      <div className="text-xs text-text-body mt-2">Cross-section view with dimensions</div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-text-body mb-4 leading-relaxed">
+                    Gauge refers to the drive link thickness that fits into the guide bar groove. Precision fit is critical for safe operation.
+                  </p>
+                  <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
+                    <table className="fitment-gauge-table w-full min-w-[300px] text-sm border border-forest-brand/30">
+                      <thead>
+                        <tr className="bg-gray-50">
+                          <th className="text-left px-4 py-2 font-semibold text-text-main">Imperial</th>
+                          <th className="text-left px-4 py-2 font-semibold text-text-main">Metric</th>
+                          <th className="text-left px-4 py-2 font-semibold text-text-main">Application</th>
+                        </tr>
+                      </thead>
+                      <tbody className="text-industrial">
+                        <tr className="border-t border-forest-brand/30">
+                          <td className="px-4 py-2 font-medium" data-label="Imperial">.043&quot;</td>
+                          <td className="px-4 py-2" data-label="Metric">1.1mm</td>
+                          <td className="px-4 py-2 text-text-body" data-label="Application">Battery saws, narrow kerf</td>
+                        </tr>
+                        <tr className="border-t border-forest-brand/30">
+                          <td className="px-4 py-2 font-medium" data-label="Imperial">.050&quot;</td>
+                          <td className="px-4 py-2" data-label="Metric">1.3mm</td>
+                          <td className="px-4 py-2 text-text-body" data-label="Application">Consumer saws, general purpose</td>
+                        </tr>
+                        <tr className="border-t border-forest-brand/30">
+                          <td className="px-4 py-2 font-medium" data-label="Imperial">.058&quot;</td>
+                          <td className="px-4 py-2" data-label="Metric">1.5mm</td>
+                          <td className="px-4 py-2 text-text-body" data-label="Application">Mid-range professional</td>
+                        </tr>
+                        <tr className="border-t border-forest-brand/30">
+                          <td className="px-4 py-2 font-medium" data-label="Imperial">.063&quot;</td>
+                          <td className="px-4 py-2" data-label="Metric">1.6mm</td>
+                          <td className="px-4 py-2 text-text-body" data-label="Application">Heavy-duty professional</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-text-body italic mt-4">
+                    <strong>Note:</strong> Gauge tolerance is ±0.001&quot;. Mismatched gauge causes chain derailment and bar damage.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Cutter Geometry */}
+            <div>
+              <h3 className="text-base sm:text-lg font-semibold text-text-main mb-4">Cutter Geometry</h3>
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-4">
+                <div>
+                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+                    <div className="text-center">
+                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
+                      <div className="text-xs text-text-body">Full-Chisel Cutter Profile</div>
+                      <div className="text-xs text-text-body mt-2">Square-corner geometry</div>
+                    </div>
+                  </div>
+                  <h4 className="text-sm font-semibold text-text-main mb-2">Full-Chisel (Square-Corner)</h4>
+                  <ul className="text-sm text-text-body space-y-1 mb-3">
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span>Razor-sharp square corners</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span>Highest chip clearance speed</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span>Optimal for: Western softwoods (pine, fir, cedar)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span>Requires frequent sharpening in dirty conditions</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <div className="relative w-full h-48 mb-4 bg-white border-2 border-gray-300 rounded-none flex items-center justify-center" style={{ backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+                    <div className="text-center">
+                      <div className="text-xs text-text-body font-mono mb-2">Technical Drawing</div>
+                      <div className="text-xs text-text-body">Semi-Chisel Cutter Profile</div>
+                      <div className="text-xs text-text-body mt-2">Rounded-corner geometry</div>
+                    </div>
+                  </div>
+                  <h4 className="text-sm font-semibold text-text-main mb-2">Semi-Chisel (Rounded-Corner)</h4>
+                  <ul className="text-sm text-text-body space-y-1 mb-3">
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span>Rounded cutting corners</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span>Superior edge retention</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span>Optimal for: Eastern hardwoods (oak, maple, hickory), frozen wood, dirty conditions</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-forest-brand mt-1">•</span>
+                      <span>Less prone to dulling, extended sharpening intervals</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bg-gray-50 border border-forest-brand/30 rounded-none p-4">
+                <p className="text-xs text-text-body">
+                  <strong className="text-text-main">Regional Application Guide:</strong> Eastern North America (hardwood-dominant) benefits from Semi-Chisel for durability in dense timber. Western North America (softwood-dominant) can maximize productivity with Full-Chisel for faster cutting speeds.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
