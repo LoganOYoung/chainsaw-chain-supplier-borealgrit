@@ -208,6 +208,13 @@ body {
     border: 1px solid rgba(45, 90, 45, 0.15);
     border-radius: 6px;
     padding: 0.5rem 0.75rem;
+    align-items: stretch;
+  }
+  .fitment-compat-table .fitment-actions-block > a {
+    align-self: center;
+  }
+  .fitment-compat-table .fitment-actions-block > div {
+    text-align: left;
   }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,

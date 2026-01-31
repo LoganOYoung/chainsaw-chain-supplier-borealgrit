@@ -547,16 +547,16 @@ export default function FitmentFinderPage() {
                       </div>
                     </td>
                     <td className="px-4 py-3 min-w-0 fitment-actions-cell" data-label="Actions">
-                      <div className="fitment-actions-block flex flex-col gap-2 min-w-0 max-w-full items-center sm:items-stretch">
+                      <div className="fitment-actions-block flex flex-col gap-2 min-w-0 max-w-full">
                         <Link
                           href={buildQuoteUrl(item)}
-                          className="flex items-center justify-center gap-1.5 text-xs py-1.5 px-4 min-h-[32px] min-w-[160px] w-full max-w-[240px] bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none [&_svg]:text-white sm:self-start"
+                          className="flex items-center justify-center gap-1.5 text-xs py-1.5 px-4 min-h-[32px] min-w-[160px] w-full max-w-[240px] bg-forest-brand text-white font-semibold hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none [&_svg]:text-white self-center sm:self-start"
                         >
-                          <ArrowRight className="w-3.5 h-3.5 shrink-0 hidden sm:inline" aria-hidden />
+                          <ArrowRight className="hidden sm:inline w-3.5 h-3.5 shrink-0" aria-hidden />
                           <span>Request Quote</span>
                         </Link>
                         {getAlternativeProducts(item.series, item.seriesType).length > 0 && (
-                          <div className="text-xs text-text-body flex flex-wrap items-baseline gap-x-1 gap-y-0.5 w-full text-left" title="Same fitment, other product options">
+                          <div className="text-xs text-text-body text-left flex flex-wrap items-baseline gap-x-1 gap-y-0.5" title="Same fitment, other product options">
                             <span className="font-semibold text-text-main shrink-0">Alternatives:</span>
                             <span className="inline-flex flex-wrap items-baseline gap-x-1.5 gap-y-0.5">
                               {getAlternativeProducts(item.series, item.seriesType).map((alt, idx) => (
