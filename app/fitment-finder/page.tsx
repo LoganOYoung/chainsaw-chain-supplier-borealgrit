@@ -115,29 +115,6 @@ export default function FitmentFinderPage() {
     return appMap[series] || null
   }
 
-  // Get alternative products based on series type
-  const getAlternativeProducts = (series: string, seriesType: string) => {
-    const alternatives: Array<{ name: string; link: string; reason: string }> = []
-    
-    if (series === 'Series P' || seriesType.includes('Professional')) {
-      alternatives.push({
-        name: 'Full Chisel .325"',
-        link: '/products/full-chisel-325',
-        reason: 'Mid-size professional saws'
-      })
-    }
-    
-    if (series === 'Series W' || seriesType.includes('Cold Weather') || seriesType.includes('General')) {
-      alternatives.push({
-        name: 'Semi Chisel 3/8"',
-        link: '/products/semi-chisel-38',
-        reason: 'Challenging conditions'
-      })
-    }
-    
-    return alternatives
-  }
-
   const filteredData = compatibilityData.filter((item) => {
     if (!searchQuery) return true
     const query = searchQuery.toLowerCase()
@@ -556,22 +533,6 @@ export default function FitmentFinderPage() {
                           <ArrowRight className="hidden sm:inline w-3.5 h-3.5 shrink-0" aria-hidden />
                           <span>Request Quote</span>
                         </Link>
-                        {getAlternativeProducts(item.series, item.seriesType).length > 0 && (
-                          <>
-                            <span className="fitment-actions-alt-label" title="Same fitment, other product options">Alternatives:</span>
-                            <span className="fitment-actions-alt-value inline-flex flex-wrap items-baseline gap-x-1.5 gap-y-0.5">
-                              {getAlternativeProducts(item.series, item.seriesType).map((alt, idx) => (
-                                <Link
-                                  key={idx}
-                                  href={alt.link}
-                                  className="text-xs text-forest-brand hover:underline"
-                                >
-                                  {alt.name}
-                                </Link>
-                              ))}
-                            </span>
-                          </>
-                        )}
                       </div>
                     </td>
                   </tr>
