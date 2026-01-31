@@ -189,37 +189,31 @@ body {
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
   }
-  /* Compat table Actions: same grid as other rows, empty label so value aligns left with BAR LENGTH etc. */
+  /* Compat table Actions: mobile = single full-width centered button */
   .fitment-compat-table td.fitment-actions-cell {
-    display: grid !important;
-    grid-template-columns: minmax(4.25rem, auto) minmax(0, 1fr);
-    gap: 0 0.5rem;
-    align-items: flex-start;
+    display: block !important;
     border-top: 1px solid #e5e7eb;
-    padding-top: 0.6rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
   }
   .fitment-compat-table td.fitment-actions-cell::before {
-    content: "";
-    display: block;
+    display: none;
   }
-  /* Mobile: actions block spans full td so button can be centered */
   .fitment-compat-table td.fitment-actions-cell > .fitment-actions-block {
-    grid-column: 1 / -1;
+    display: block;
+    width: 100%;
+    max-width: 100%;
   }
-  .fitment-compat-table .fitment-actions-block {
-    display: grid;
-    grid-template-columns: minmax(4.25rem, auto) minmax(0, 1fr);
-    gap: 0 0.5rem;
-    align-items: center;
-    row-gap: 0.5rem;
+  .fitment-compat-table td.fitment-actions-cell .fitment-actions-grid-spacer {
+    display: none;
   }
-  .fitment-compat-table .fitment-actions-grid-spacer {
-    grid-column: 1;
-  }
-  /* Mobile: button full row, centered */
-  .fitment-compat-table .fitment-actions-block > a {
-    grid-column: 1 / -1;
-    justify-self: center;
+  .fitment-compat-table td.fitment-actions-cell .fitment-actions-block > a {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
   }
   .fitment-gauge-table td::before,
   .fitment-compat-table td::before,
@@ -252,6 +246,40 @@ body {
     min-width: 0;
     overflow-wrap: break-word;
     word-break: break-word;
+  }
+}
+
+/* Desktop: compat table Actions cell grid layout */
+@media (min-width: 768px) {
+  .fitment-compat-table td.fitment-actions-cell {
+    display: grid !important;
+    grid-template-columns: minmax(4.25rem, auto) minmax(0, 1fr);
+    gap: 0 0.5rem;
+    align-items: flex-start;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    text-align: left;
+  }
+  .fitment-compat-table td.fitment-actions-cell::before {
+    content: "";
+    display: block;
+  }
+  .fitment-compat-table td.fitment-actions-cell > .fitment-actions-block {
+    display: grid;
+    grid-template-columns: minmax(4.25rem, auto) minmax(0, 1fr);
+    gap: 0 0.5rem;
+  }
+  .fitment-compat-table td.fitment-actions-cell .fitment-actions-grid-spacer {
+    display: block;
+    grid-column: 1;
+  }
+  .fitment-compat-table td.fitment-actions-cell .fitment-actions-block > a {
+    grid-column: 2;
+    justify-self: start;
+    width: auto;
+    max-width: 240px;
+    margin: 0;
+    display: inline-flex;
   }
 }
 

@@ -148,83 +148,6 @@ export default function FitmentFinderPage() {
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] overflow-x-hidden sm:overflow-visible">
         <h1 className="text-xl sm:text-2xl font-bold text-text-main mb-4">Fitment & Compatibility</h1>
         
-        {/* How to Identify Your Specifications */}
-        <section className="mb-8 sm:mb-10 bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
-          <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4">How to Identify Your Specifications</h2>
-          <p className="text-sm text-text-body mb-4 sm:mb-6">
-            Follow these three steps to identify the correct chain specifications for your chainsaw. Most guide bars have the specifications stamped on the tail end.
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-6">
-            {/* Step 1 */}
-            <div className="bg-gray-50 rounded-none p-4 sm:p-5 border border-forest-brand/30">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">1</div>
-                <h3 className="text-base sm:text-lg font-semibold text-text-main">Check the Bar</h3>
-              </div>
-              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden">
-                <Image
-                  src="/images/fitment-guide-bar-stamping.jpg"
-                  alt="Guide bar tail end showing stamped specifications: Pitch, Gauge, and Drive Link count"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <p className="text-sm text-text-body leading-relaxed">
-                Most guide bars have the <strong className="text-text-main">Pitch, Gauge, and Drive Link count</strong> stamped on the tail end. Look for markings like &quot;.325&quot; &quot;.050&quot; &quot;56DL&quot; or similar specifications.
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="bg-gray-50 rounded-none p-4 sm:p-5 border border-forest-brand/30">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">2</div>
-                <h3 className="text-base sm:text-lg font-semibold text-text-main">Read the Drive Link</h3>
-              </div>
-              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden">
-                <Image
-                  src="/images/fitment-drive-link-marking.jpg"
-                  alt="Close-up macro shot of drive link showing stamped model number (e.g., Oregon 91 or Stihl 6)"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <p className="text-sm text-text-body leading-relaxed">
-                Observe the stamped numbers on the drive links. Common markings include <strong className="text-text-main">Oregon&apos;s 91</strong> or <strong className="text-text-main">Stihl&apos;s 6</strong>. These numbers correspond to specific chain models.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="bg-gray-50 rounded-none p-4 sm:p-5 border border-forest-brand/30">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">3</div>
-                <h3 className="text-base sm:text-lg font-semibold text-text-main">Count the Links</h3>
-              </div>
-              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden">
-                <Image
-                  src="/images/fitment-count-drive-links.jpg"
-                  alt="Chain laid flat showing how to count total drive links for chain length"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <p className="text-sm text-text-body leading-relaxed">
-                If specifications are unclear, lay the chain flat and <strong className="text-text-main">count the total number of drive links</strong>. This gives you the chain length (e.g., 56DL = 56 drive links).
-              </p>
-            </div>
-          </div>
-
-          {/* Help Box */}
-          <div className="bg-forest-brand/10 border-2 border-forest-brand rounded-none p-4 sm:p-5">
-            <p className="text-sm font-semibold text-text-main">
-              Still unsure? Send us a photo of your bar stamping, and our engineers will match it for you.
-            </p>
-          </div>
-        </section>
-        
         {/* Industry Technical Specifications & Standards */}
         <section className="mb-8 sm:mb-10 bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
           <h2 className="text-lg sm:text-xl font-bold text-text-main mb-2">Industry Technical Specifications & Standards</h2>
@@ -660,6 +583,83 @@ export default function FitmentFinderPage() {
           <div className="mt-6 bg-gray-50 border border-forest-brand/30 rounded-none p-4">
             <p className="text-xs text-text-body leading-relaxed">
               <strong className="text-text-main">Brand Disclaimer:</strong> Oregon®, Stihl®, Husqvarna®, Milwaukee®, Makita®, DeWalt®, EGO Power+®, Echo®, Ryobi®, Greenworks Pro®, Craftsman®, and Poulan Pro® are trademarks of their respective owners. We are not affiliated with, authorized by, or endorsed by these brands. Our products are compatible replacements designed to meet or exceed OEM specifications.
+            </p>
+          </div>
+        </section>
+
+        {/* How to Identify Your Specifications - reference at end */}
+        <section className="mb-8 sm:mb-10 bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
+          <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4">How to Identify Your Specifications</h2>
+          <p className="text-sm text-text-body mb-4 sm:mb-6">
+            Follow these three steps to identify the correct chain specifications for your chainsaw. Most guide bars have the specifications stamped on the tail end.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-6">
+            {/* Step 1 */}
+            <div className="bg-gray-50 rounded-none p-4 sm:p-5 border border-forest-brand/30">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">1</div>
+                <h3 className="text-base sm:text-lg font-semibold text-text-main">Check the Bar</h3>
+              </div>
+              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden">
+                <Image
+                  src="/images/fitment-guide-bar-stamping.jpg"
+                  alt="Guide bar tail end showing stamped specifications: Pitch, Gauge, and Drive Link count"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+              <p className="text-sm text-text-body leading-relaxed">
+                Most guide bars have the <strong className="text-text-main">Pitch, Gauge, and Drive Link count</strong> stamped on the tail end. Look for markings like &quot;.325&quot; &quot;.050&quot; &quot;56DL&quot; or similar specifications.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-gray-50 rounded-none p-4 sm:p-5 border border-forest-brand/30">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">2</div>
+                <h3 className="text-base sm:text-lg font-semibold text-text-main">Read the Drive Link</h3>
+              </div>
+              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden">
+                <Image
+                  src="/images/fitment-drive-link-marking.jpg"
+                  alt="Close-up macro shot of drive link showing stamped model number (e.g., Oregon 91 or Stihl 6)"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+              <p className="text-sm text-text-body leading-relaxed">
+                Observe the stamped numbers on the drive links. Common markings include <strong className="text-text-main">Oregon&apos;s 91</strong> or <strong className="text-text-main">Stihl&apos;s 6</strong>. These numbers correspond to specific chain models.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-gray-50 rounded-none p-4 sm:p-5 border border-forest-brand/30">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">3</div>
+                <h3 className="text-base sm:text-lg font-semibold text-text-main">Count the Links</h3>
+              </div>
+              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden">
+                <Image
+                  src="/images/fitment-count-drive-links.jpg"
+                  alt="Chain laid flat showing how to count total drive links for chain length"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+              <p className="text-sm text-text-body leading-relaxed">
+                If specifications are unclear, lay the chain flat and <strong className="text-text-main">count the total number of drive links</strong>. This gives you the chain length (e.g., 56DL = 56 drive links).
+              </p>
+            </div>
+          </div>
+
+          {/* Help Box */}
+          <div className="bg-forest-brand/10 border-2 border-forest-brand rounded-none p-4 sm:p-5">
+            <p className="text-sm font-semibold text-text-main">
+              Still unsure? Send us a photo of your bar stamping, and our engineers will match it for you.
             </p>
           </div>
         </section>
