@@ -230,18 +230,11 @@ export default function Navigation() {
                     Fitment Finder
                   </Link>
                   <Link
-                    href="/tools/cross-chain-reference"
-                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname?.startsWith('/tools/cross-chain-reference') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
-                    onClick={() => setToolsMenuOpen(false)}
-                  >
-                    Cross-chain reference
-                  </Link>
-                  <Link
                     href="/tools"
                     className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setToolsMenuOpen(false)}
                   >
-                    Calculators & lookup
+                    Cross-chain reference & calculators
                   </Link>
                 </div>
               )}
@@ -621,18 +614,6 @@ export default function Navigation() {
                   </li>
                   <li>
                     <Link
-                      href="/tools/cross-chain-reference"
-                      className={`block py-2 text-sm text-white/90 ${pathname?.startsWith('/tools/cross-chain-reference') ? 'text-white font-medium' : ''}`}
-                      onClick={() => {
-                        setMobileMenuOpen(false)
-                        setToolsMenuOpen(false)
-                      }}
-                    >
-                      Cross-chain reference
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/tools"
                       className={`block py-2 text-sm text-white/90 ${pathname === '/tools' ? 'text-white font-medium' : ''}`}
                       onClick={() => {
@@ -640,7 +621,7 @@ export default function Navigation() {
                         setToolsMenuOpen(false)
                       }}
                     >
-                      Calculators & lookup
+                      Cross-chain reference & calculators
                     </Link>
                   </li>
                 </ul>

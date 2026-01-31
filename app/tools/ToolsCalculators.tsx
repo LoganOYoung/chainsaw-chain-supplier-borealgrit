@@ -13,7 +13,23 @@ export default function ToolsCalculators() {
 
   return (
     <div className="space-y-12">
-      {/* 1. Chain length / drive link calculator */}
+      {/* 1. Cross-chain reference — CTA only, table lives on Fitment Finder */}
+      <section id="cross-chain-reference" className="scroll-mt-6 border border-forest-brand/30 rounded-none p-6 bg-white">
+        <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">
+          Cross-chain reference
+        </h2>
+        <p className="text-text-body text-sm mb-4">
+          Look up Oregon, Stihl, Husqvarna and other part numbers and find the corresponding BorealGrit series. The full cross-reference table and saw compatibility are in Fitment Finder.
+        </p>
+        <Link
+          href="/fitment-finder"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-forest-brand text-white font-semibold text-sm rounded-none hover:bg-forest-dark transition"
+        >
+          Open Fitment Finder <ArrowRight className="w-4 h-4" />
+        </Link>
+      </section>
+
+      {/* 2. Chain length / drive link calculator */}
       <section id="chain-length-calculator" className="scroll-mt-6 border border-forest-brand/30 rounded-none p-6 bg-white">
         <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">
           Chain length / drive link calculator
@@ -63,7 +79,7 @@ export default function ToolsCalculators() {
         <p className="text-text-body text-xs mt-3">Results will appear here once logic is connected.</p>
       </section>
 
-      {/* 2. OEM / part number lookup */}
+      {/* 3. OEM / part number lookup */}
       <section id="oem-lookup" className="scroll-mt-6 border border-forest-brand/30 rounded-none p-6 bg-white">
         <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">
           OEM / part number lookup
@@ -84,10 +100,10 @@ export default function ToolsCalculators() {
         <button type="button" className="px-4 py-2 bg-forest-brand text-white font-semibold text-sm rounded-none hover:bg-forest-dark transition">
           Look up
         </button>
-        <p className="text-text-body text-xs mt-3">Lookup results will appear here once database is connected. For now, use <Link href="/tools/cross-chain-reference" className="text-forest-brand hover:underline">Cross-chain reference</Link> or <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>.</p>
+        <p className="text-text-body text-xs mt-3">Lookup results will appear here once database is connected. For now, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link> for cross-reference.</p>
       </section>
 
-      {/* 3. Product / series selector */}
+      {/* 4. Product / series selector */}
       <section id="series-selector" className="scroll-mt-6 border border-forest-brand/30 rounded-none p-6 bg-white">
         <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">
           Product / series selector
@@ -121,7 +137,7 @@ export default function ToolsCalculators() {
         </div>
       </section>
 
-      {/* 4. Compatibility checker */}
+      {/* 5. Compatibility checker */}
       <section id="compatibility-checker" className="scroll-mt-6 border border-forest-brand/30 rounded-none p-6 bg-white">
         <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">
           Compatibility checker
