@@ -31,11 +31,14 @@ export default function Home() {
     <>
       <Navigation />
       <main>
-        {/* Hero Banner Carousel */}
+        {/* Hero Banner Carousel - slide left, no fade */}
         <section className="relative w-full h-[50vh] min-h-[400px] md:h-[60vh] md:min-h-[500px] max-h-[700px] overflow-hidden">
-          
+          <div
+            className="flex h-full w-[300%] transition-transform duration-500 ease-out"
+            style={{ transform: `translateX(-${currentSlide * (100 / totalSlides)}%)` }}
+          >
           {/* Slide 1: Brand Positioning - Clean & Simple */}
-          <div className={`absolute inset-0 transition-opacity duration-1000 ${currentSlide === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+          <div className="relative shrink-0 w-1/3 h-full">
             <div className="absolute inset-0">
               <Image
                 src="/images/contact-banner.jpg"
@@ -65,7 +68,7 @@ export default function Home() {
           </div>
 
           {/* Slide 2: Value Proposition - Uptime Focus */}
-          <div className={`absolute inset-0 transition-opacity duration-1000 ${currentSlide === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+          <div className="relative shrink-0 w-1/3 h-full">
             <div className="absolute inset-0">
               <Image
                 src="/images/contact-banner.jpg"
@@ -104,7 +107,7 @@ export default function Home() {
           </div>
 
           {/* Slide 3: Cost Advantage - Value Focus */}
-          <div className={`absolute inset-0 transition-opacity duration-1000 ${currentSlide === 2 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+          <div className="relative shrink-0 w-1/3 h-full">
             <div className="absolute inset-0">
               <Image
                 src="/images/contact-banner.jpg"
@@ -139,6 +142,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
+          </div>
 
           {/* Navigation Arrows */}
           <button
@@ -156,8 +160,8 @@ export default function Home() {
             <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-white" />
           </button>
 
-          {/* Slide Indicators */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {/* Slide Indicators - hidden on mobile */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 hidden md:flex gap-2">
             {[...Array(totalSlides)].map((_, index) => (
               <button
                 key={index}
