@@ -247,6 +247,13 @@ export default function Navigation() {
                   >
                     Cross Reference & Calculators
                   </Link>
+                  <Link
+                    href="/tools/technical-specs"
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools/technical-specs' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    onClick={() => setToolsMenuOpen(false)}
+                  >
+                    Technical Specifications & Standards
+                  </Link>
                 </div>
               )}
             </li>
@@ -542,6 +549,11 @@ export default function Navigation() {
                   <li>
                     <Link href="/tools" className={`block whitespace-nowrap py-2.5 min-h-[44px] flex items-center text-sm text-white/90 cursor-pointer select-none ${pathname === '/tools' ? 'text-white font-medium' : ''}`}>
                       Cross Reference & Calculators
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/tools/technical-specs" className={`block py-2.5 min-h-[44px] flex items-center text-sm text-white/90 cursor-pointer select-none ${pathname === '/tools/technical-specs' ? 'text-white font-medium' : ''}`}>
+                      Technical Specifications & Standards
                     </Link>
                   </li>
                 </ul>
