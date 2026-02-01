@@ -171,10 +171,7 @@ export default function TechnicalSpecsPage() {
 
         <section className="bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
           <h1 className="text-lg sm:text-xl font-bold text-text-main mb-2">Industry Technical Specifications & Standards</h1>
-          <p className="text-sm text-text-body mb-2 italic">Technical Reference for Professional Buyers</p>
-          <p className="text-xs text-text-body mb-4">
-            This reference aligns with <strong className="text-text-main">ANSI B175.1</strong> and common industry chain specifications. Definitions and tolerances are as of current standards; verify with OEM or latest standards when specifying. For fitment by saw/bar, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>.
-          </p>
+          <p className="text-sm text-text-body mb-4 italic">Technical Reference for Professional Buyers</p>
           
           <div className="space-y-6 sm:space-y-8">
             {/* Pitch */}
@@ -391,14 +388,16 @@ export default function TechnicalSpecsPage() {
                   </ul>
                 </div>
               </div>
-              <div className="bg-gray-50 border border-forest-brand/30 rounded-none p-4">
-                <p className="text-xs text-text-body">
-                  <strong className="text-text-main">Regional Application Guide:</strong> Eastern North America (hardwood-dominant) benefits from Semi-Chisel for durability in dense timber. Western North America (softwood-dominant) can maximize productivity with Full-Chisel for faster cutting speeds.
-                </p>
-              </div>
+              <p className="text-sm text-text-body">
+                See <Link href="/tools/regional-guide" className="text-forest-brand hover:underline">Regional Application Guide</Link> for hardwood vs softwood recommendations by region.
+              </p>
             </div>
 
           </div>
+
+          <p className="mt-8 pt-6 border-t border-forest-brand/20 text-xs text-text-body">
+            This reference aligns with <strong className="text-text-main">ANSI B175.1</strong> and common industry chain specifications. Definitions and tolerances are as of current standards; verify with OEM or latest standards when specifying. For fitment by saw/bar, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>.
+          </p>
         </section>
 
         <Link

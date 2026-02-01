@@ -254,6 +254,13 @@ export default function Navigation() {
                   >
                     Technical Specifications & Standards
                   </Link>
+                  <Link
+                    href="/tools/regional-guide"
+                    className={`block whitespace-nowrap px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools/regional-guide' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    onClick={() => setToolsMenuOpen(false)}
+                  >
+                    Regional Application Guide
+                  </Link>
                 </div>
               )}
             </li>
@@ -554,6 +561,11 @@ export default function Navigation() {
                   <li>
                     <Link href="/tools/technical-specs" className={`block py-2.5 min-h-[44px] flex items-center text-sm text-white/90 cursor-pointer select-none ${pathname === '/tools/technical-specs' ? 'text-white font-medium' : ''}`}>
                       Technical Specifications & Standards
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/tools/regional-guide" className={`block py-2.5 min-h-[44px] flex items-center text-sm text-white/90 cursor-pointer select-none ${pathname === '/tools/regional-guide' ? 'text-white font-medium' : ''}`}>
+                      Regional Application Guide
                     </Link>
                   </li>
                 </ul>
