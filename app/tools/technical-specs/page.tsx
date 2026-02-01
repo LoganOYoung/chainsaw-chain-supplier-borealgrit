@@ -121,6 +121,55 @@ const SpecDriveLinkSvg = () => (
     <text x={160} y={168} textAnchor="middle" fontSize={10} fill="#6b7280">Match chain type to saw and application</text>
   </svg>
 )
+const SpecMeasurePitchSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-32 object-contain" aria-label="How to measure pitch: three rivets, divide by two">
+    <title>How to measure pitch</title>
+    <rect width={240} height={100} fill="#fff" />
+    <text x={120} y={14} textAnchor="middle" fontSize={11} fontWeight={600} fill="#1f2937">Measuring pitch</text>
+    <g transform="translate(40,28)">
+      <circle cx={0} cy={20} r={8} fill="#e5e7eb" stroke="#6b7280" />
+      <circle cx={40} cy={20} r={8} fill="#e5e7eb" stroke="#6b7280" />
+      <circle cx={80} cy={20} r={8} fill="#e5e7eb" stroke="#6b7280" />
+      <line x1={8} y1={20} x2={72} y2={20} stroke="#547950" strokeWidth={2} strokeDasharray="4 2" />
+      <text x={40} y={55} textAnchor="middle" fontSize={10} fill="#374151">distance ÷ 2 = pitch</text>
+    </g>
+    <text x={120} y={88} textAnchor="middle" fontSize={9} fill="#6b7280">Center-to-center of 3 rivets</text>
+  </svg>
+)
+const SpecKerfSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-40 object-contain" aria-label="Narrow kerf vs Standard kerf cut width">
+    <title>Kerf — narrow vs standard</title>
+    <rect width={280} height={120} fill="#fff" />
+    <text x={140} y={16} textAnchor="middle" fontSize={12} fontWeight={600} fill="#1f2937">Kerf (cut width)</text>
+    <g transform="translate(30,32)">
+      <text x={50} y={0} textAnchor="middle" fontSize={10} fontWeight={600} fill="#111">Narrow kerf</text>
+      <rect x={10} y={12} width={80} height={24} rx={1} fill="#e5e7eb" stroke="#9ca3af" />
+      <rect x={25} y={18} width={50} height={12} fill="#547950" fillOpacity={0.3} stroke="#547950" />
+      <text x={50} y={52} textAnchor="middle" fontSize={9} fill="#374151">Thinner cut</text>
+    </g>
+    <g transform="translate(170,32)">
+      <text x={50} y={0} textAnchor="middle" fontSize={10} fontWeight={600} fill="#111">Standard kerf</text>
+      <rect x={10} y={12} width={80} height={24} rx={1} fill="#e5e7eb" stroke="#9ca3af" />
+      <rect x={18} y={16} width={64} height={16} fill="#374151" fillOpacity={0.25} stroke="#374151" />
+      <text x={50} y={52} textAnchor="middle" fontSize={9} fill="#374151">Wider cut</text>
+    </g>
+    <text x={140} y={108} textAnchor="middle" fontSize={9} fill="#6b7280">Bar and chain kerf must match</text>
+  </svg>
+)
+const SpecChainLengthSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-36 object-contain" aria-label="Chain length: count drive links">
+    <title>Chain length — drive link count</title>
+    <rect width={320} height={100} fill="#fff" />
+    <text x={160} y={16} textAnchor="middle" fontSize={12} fontWeight={600} fill="#1f2937">Drive link count = chain length</text>
+    <g transform="translate(20,28)">
+      {[0,1,2,3,4,5,6,7,8,9,10].map((i) => (
+        <rect key={i} x={i * 26} y={0} width={22} height={28} rx={2} fill={i % 2 === 0 ? "#f3f4f6" : "#e5e7eb"} stroke="#9ca3af" />
+      ))}
+      <text x={143} y={58} textAnchor="middle" fontSize={10} fill="#374151">… count all drive links</text>
+    </g>
+    <text x={160} y={88} textAnchor="middle" fontSize={11} fontWeight={600} fill="#111">e.g. 56 DL = 56 drive links</text>
+  </svg>
+)
 
 export default function TechnicalSpecsPage() {
   return (
@@ -144,12 +193,35 @@ export default function TechnicalSpecsPage() {
 
         <section className="bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
           <h1 className="text-lg sm:text-xl font-bold text-text-main mb-2">Industry Technical Specifications & Standards</h1>
-          <p className="text-sm text-text-body mb-6 italic">Technical Reference for Professional Buyers</p>
+          <p className="text-sm text-text-body mb-2 italic">Technical Reference for Professional Buyers</p>
+          <p className="text-xs text-text-body mb-4">
+            This reference aligns with <strong className="text-text-main">ANSI B175.1</strong> and common industry chain specifications. Definitions and tolerances are as of current standards; verify with OEM or latest standards when specifying. For fitment by saw/bar, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>.
+          </p>
+          <nav className="mb-6 p-3 bg-gray-50 border border-forest-brand/20 rounded-none" aria-label="Page sections">
+            <p className="text-xs font-medium text-text-main mb-2">On this page</p>
+            <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-text-body">
+              <li><a href="#pitch" className="text-forest-brand hover:underline">Pitch</a></li>
+              <li><a href="#gauge" className="text-forest-brand hover:underline">Gauge</a></li>
+              <li><a href="#drive-link" className="text-forest-brand hover:underline">Drive link type</a></li>
+              <li><a href="#cutter-geometry" className="text-forest-brand hover:underline">Cutter geometry</a></li>
+              <li><a href="#kerf" className="text-forest-brand hover:underline">Kerf</a></li>
+              <li><a href="#chain-length" className="text-forest-brand hover:underline">Chain length</a></li>
+            </ul>
+          </nav>
+          <div className="mb-6 p-3 bg-forest-brand/5 border border-forest-brand/20 rounded-none">
+            <p className="text-xs font-medium text-text-main mb-1">How to measure</p>
+            <p className="text-xs text-text-body">
+              <strong>Pitch:</strong> Measure center-to-center of three consecutive drive link rivets, divide by two. <strong>Gauge:</strong> Measure drive link thickness with a caliper or use a chain gauge tool.
+            </p>
+          </div>
           
           <div className="space-y-6 sm:space-y-8">
             {/* Pitch */}
-            <div className="border-b border-forest-brand/30 pb-4 sm:pb-6">
+            <div id="pitch" className="scroll-mt-6 border-b border-forest-brand/30 pb-4 sm:pb-6">
               <h2 className="text-base sm:text-lg font-semibold text-text-main mb-4">Pitch</h2>
+              <p className="text-sm text-text-body mb-4 leading-relaxed">
+                Pitch is the <strong className="text-text-main">distance between any three consecutive drive link rivets divided by two</strong> (i.e., center-to-center spacing of drive links). Chain and bar pitch must match exactly.
+              </p>
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <div className="relative w-full min-h-[18rem] sm:min-h-[20rem] mb-4 bg-white rounded-none overflow-hidden flex items-center justify-center p-1">
@@ -157,28 +229,74 @@ export default function TechnicalSpecsPage() {
                   </div>
                 </div>
                 <div>
-                  <p className="text-sm text-text-body mb-4 leading-relaxed">
-                    <strong className="text-text-main">3/8&quot; LP (Low Profile)</strong> and <strong className="text-text-main">3/8&quot;</strong> are mechanically distinct pitch standards:
+                  <p className="text-sm text-text-body mb-3 leading-relaxed">
+                    <strong className="text-text-main">3/8&quot; LP (Low Profile)</strong> and <strong className="text-text-main">3/8&quot;</strong> are mechanically distinct:
                   </p>
                   <ul className="text-sm text-text-body space-y-2 mb-4">
                     <li className="flex items-start gap-2">
                       <span className="text-forest-brand mt-1">•</span>
-                      <span><strong>3/8&quot; LP:</strong> Drive link spacing = 0.365&quot; (9.27mm). Designed for low-kickback safety chains on consumer saws. Reduced cutter depth limits chip size.</span>
+                      <span><strong>3/8&quot; LP:</strong> 0.365&quot; (9.27mm). Low-kickback consumer saws. Reduced cutter depth.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-forest-brand mt-1">•</span>
-                      <span><strong>3/8&quot;:</strong> Drive link spacing = 0.375&quot; (9.525mm). Standard professional pitch for mid-to-large saws. Higher chip clearance, faster cutting speed.</span>
+                      <span><strong>3/8&quot;:</strong> 0.375&quot; (9.525mm). Mid-to-large professional saws. Higher chip clearance.</span>
                     </li>
                   </ul>
-                  <p className="text-xs text-text-body italic">
-                    <strong>Critical:</strong> These are NOT interchangeable. LP chains will not seat properly on standard 3/8&quot; bars, and vice versa.
+                  <p className="text-xs text-text-body italic mb-4">
+                    <strong>Critical:</strong> LP and standard 3/8&quot; are NOT interchangeable.
                   </p>
+                  <p className="text-xs font-medium text-text-main mb-2">Common pitch summary</p>
+                  <div className="fitment-table-wrap table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
+                    <table className="fitment-gauge-table w-full min-w-[280px]">
+                      <thead>
+                        <tr>
+                          <th>Pitch</th>
+                          <th>Spacing (approx.)</th>
+                          <th>Typical use</th>
+                        </tr>
+                      </thead>
+                      <tbody className="text-industrial">
+                        <tr>
+                          <td className="font-medium" data-label="Pitch">1/4&quot; P</td>
+                          <td data-label="Spacing">0.250&quot; (6.35mm)</td>
+                          <td className="text-text-body" data-label="Use">Mini / pole saws</td>
+                        </tr>
+                        <tr>
+                          <td className="font-medium" data-label="Pitch">.325&quot;</td>
+                          <td data-label="Spacing">0.325&quot; (8.26mm)</td>
+                          <td className="text-text-body" data-label="Use">Mid-size pro / prosumer</td>
+                        </tr>
+                        <tr>
+                          <td className="font-medium" data-label="Pitch">3/8&quot; LP</td>
+                          <td data-label="Spacing">0.365&quot; (9.27mm)</td>
+                          <td className="text-text-body" data-label="Use">Consumer, low-kickback</td>
+                        </tr>
+                        <tr>
+                          <td className="font-medium" data-label="Pitch">3/8&quot;</td>
+                          <td data-label="Spacing">0.375&quot; (9.525mm)</td>
+                          <td className="text-text-body" data-label="Use">Professional, large saws</td>
+                        </tr>
+                        <tr>
+                          <td className="font-medium" data-label="Pitch">.404&quot;</td>
+                          <td data-label="Spacing">0.404&quot; (10.26mm)</td>
+                          <td className="text-text-body" data-label="Use">Harvester / heavy-duty</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-text-body italic mt-2">
+                    Chains of different pitch cannot be used on the same bar.
+                  </p>
+                  <p className="text-xs font-medium text-text-main mt-4 mb-2">How to measure</p>
+                  <div className="relative w-full max-w-xs min-h-[6rem] bg-white rounded-none overflow-hidden flex items-center justify-center p-2 border border-forest-brand/20">
+                    <SpecMeasurePitchSvg />
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Gauge */}
-            <div className="border-b border-forest-brand/30 pb-4 sm:pb-6">
+            <div id="gauge" className="scroll-mt-6 border-b border-forest-brand/30 pb-4 sm:pb-6">
               <h2 className="text-base sm:text-lg font-semibold text-text-main mb-4">Gauge</h2>
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
@@ -188,7 +306,7 @@ export default function TechnicalSpecsPage() {
                 </div>
                 <div>
                   <p className="text-sm text-text-body mb-4 leading-relaxed">
-                    Gauge refers to the drive link thickness that fits into the guide bar groove. Precision fit is critical for safe operation.
+                    Gauge is the <strong className="text-text-main">drive link thickness</strong> that fits into the guide bar groove. Measure with a caliper or chain gauge tool. Precision fit is critical for safe operation; mismatch causes derailment and bar wear.
                   </p>
                   <div className="fitment-table-wrap table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
                     <table className="fitment-gauge-table w-full min-w-[300px]">
@@ -231,7 +349,7 @@ export default function TechnicalSpecsPage() {
             </div>
 
             {/* Drive Link */}
-            <div className="border-b border-forest-brand/30 pb-4 sm:pb-6">
+            <div id="drive-link" className="scroll-mt-6 border-b border-forest-brand/30 pb-4 sm:pb-6">
               <h2 className="text-base sm:text-lg font-semibold text-text-main mb-4">Drive Link (Standard vs. Anti-Kickback)</h2>
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
@@ -261,8 +379,11 @@ export default function TechnicalSpecsPage() {
             </div>
 
             {/* Cutter Geometry */}
-            <div>
+            <div id="cutter-geometry" className="scroll-mt-6">
               <h2 className="text-base sm:text-lg font-semibold text-text-main mb-4">Cutter Geometry</h2>
+              <p className="text-sm text-text-body mb-4 leading-relaxed">
+                Full-chisel and semi-chisel are the two main cutter profiles in common use. Chipper and other specialty profiles exist for specific applications; the guide below covers the majority of chains.
+              </p>
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-4">
                 <div>
                   <div className="relative w-full min-h-[18rem] sm:min-h-[20rem] mb-4 bg-white rounded-none overflow-hidden flex items-center justify-center p-1">
@@ -319,6 +440,61 @@ export default function TechnicalSpecsPage() {
                 </p>
               </div>
             </div>
+
+            {/* Kerf */}
+            <div id="kerf" className="scroll-mt-6 border-b border-forest-brand/30 pb-4 sm:pb-6">
+              <h2 className="text-base sm:text-lg font-semibold text-text-main mb-4">Kerf (cut width)</h2>
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+                <div>
+                  <div className="relative w-full min-h-[8rem] sm:min-h-[10rem] mb-4 bg-white rounded-none overflow-hidden flex items-center justify-center p-2 border border-forest-brand/20">
+                    <SpecKerfSvg />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-text-body mb-3 leading-relaxed">
+                    <strong className="text-text-main">Kerf</strong> is the width of the cut made by the chain. <strong className="text-text-main">Narrow kerf</strong> chains use a thinner cutter and bar groove, reducing power demand and kickback—common on battery and small gas saws. <strong className="text-text-main">Standard kerf</strong> chains are used on most mid-to-large saws.
+                  </p>
+                  <p className="text-xs text-text-body mb-3">
+                    Bar and chain kerf must match; mixing narrow-kerf chain with a standard bar (or vice versa) affects fit and safety.
+                  </p>
+                  <p className="text-xs text-text-body">
+                    For bar/chain selection by saw model, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Chain length (drive link count) */}
+            <div id="chain-length" className="scroll-mt-6">
+              <h2 className="text-base sm:text-lg font-semibold text-text-main mb-4">Chain length (drive link count)</h2>
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+                <div>
+                  <div className="relative w-full min-h-[7rem] sm:min-h-[9rem] mb-4 bg-white rounded-none overflow-hidden flex items-center justify-center p-2 border border-forest-brand/20">
+                    <SpecChainLengthSvg />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-text-body mb-3 leading-relaxed">
+                    Chain length is specified by the <strong className="text-text-main">number of drive links</strong> (e.g. 56DL = 56 drive links). Bar length and pitch together determine the required count; the same bar length can require different link counts for different pitch.
+                  </p>
+                  <p className="text-xs text-text-body">
+                    To find the correct chain length for your saw and bar, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link> or count the links on your existing chain.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 p-4 bg-gray-50 border border-forest-brand/20 rounded-none">
+            <h2 className="text-sm font-semibold text-text-main mb-3">Key terms</h2>
+            <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-xs text-text-body">
+              <div><dt className="font-medium text-text-main">Pitch</dt><dd>Drive link spacing; chain and bar must match.</dd></div>
+              <div><dt className="font-medium text-text-main">Gauge</dt><dd>Drive link thickness; must fit bar groove.</dd></div>
+              <div><dt className="font-medium text-text-main">Drive link</dt><dd>Standard (full-depth) vs anti-kickback (bumper/depth limiters).</dd></div>
+              <div><dt className="font-medium text-text-main">Kerf</dt><dd>Cut width; narrow kerf vs standard, must match bar.</dd></div>
+              <div><dt className="font-medium text-text-main">Full-chisel</dt><dd>Square-corner cutter; max speed, softwoods.</dd></div>
+              <div><dt className="font-medium text-text-main">Semi-chisel</dt><dd>Rounded-corner; better edge retention, hardwoods/dirty.</dd></div>
+            </dl>
           </div>
         </section>
 
