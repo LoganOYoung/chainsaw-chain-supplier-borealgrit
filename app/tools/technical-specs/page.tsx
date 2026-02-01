@@ -389,7 +389,7 @@ export default function TechnicalSpecsPage() {
                 </div>
               </div>
               <p className="text-sm text-text-body">
-                See <Link href="/tools/regional-guide" className="text-forest-brand hover:underline">Regional Application Guide</Link> for hardwood vs softwood recommendations by region.
+                See <Link href="/tools/regional-guide" className="text-forest-brand hover:underline">Regional Application Guide</Link> for Series W, P, E recommendations by North American region.
               </p>
             </div>
 

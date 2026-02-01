@@ -45,22 +45,6 @@ export default function ToolsCalculators() {
         </Link>
       </section>
 
-      {/* 2b. Regional Application Guide */}
-      <section id="regional-guide" className="scroll-mt-6 border border-forest-brand/30 rounded-none p-6 bg-white">
-        <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">
-          Regional Application Guide
-        </h2>
-        <p className="text-text-body text-sm mb-4">
-          Full-Chisel vs Semi-Chisel selection by region: Eastern hardwood, Western softwood, Northern boreal. Cutter type recommendations for wood species and conditions.
-        </p>
-        <Link
-          href="/tools/regional-guide"
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-forest-brand text-white font-semibold text-sm rounded-none hover:bg-forest-dark transition"
-        >
-          View Regional Guide <ArrowRight className="w-4 h-4" />
-        </Link>
-      </section>
-
       {/* 3. Chain length / drive link calculator */}
       <section id="chain-length-calculator" className="scroll-mt-6 border border-forest-brand/30 rounded-none p-6 bg-white">
         <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">

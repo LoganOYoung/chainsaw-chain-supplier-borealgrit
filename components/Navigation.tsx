@@ -23,7 +23,7 @@ export default function Navigation() {
   const isProductsActive = pathname?.startsWith('/products')
   const isResourcesActive = pathname?.startsWith('/resources') || pathname?.startsWith('/quality')
   const isAboutContactActive = pathname?.startsWith('/about') || pathname?.startsWith('/contact') || pathname?.startsWith('/request-quote')
-  const isForBuyersActive = pathname?.startsWith('/for-buyers') || pathname?.startsWith('/oem-private-label')
+  const isForBuyersActive = pathname?.startsWith('/for-buyers') || pathname?.startsWith('/oem-private-label') || pathname === '/tools/regional-guide' || pathname === '/tools/chain-selection-matrix'
   const isToolsActive = pathname?.startsWith('/fitment-finder') || pathname?.startsWith('/tools')
 
   // Close dropdowns when clicking outside (desktop only – on mobile this would close submenus incorrectly)
@@ -254,13 +254,6 @@ export default function Navigation() {
                   >
                     Technical Specifications & Standards
                   </Link>
-                  <Link
-                    href="/tools/regional-guide"
-                    className={`block whitespace-nowrap px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools/regional-guide' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
-                    onClick={() => setToolsMenuOpen(false)}
-                  >
-                    Regional Application Guide
-                  </Link>
                 </div>
               )}
             </li>
@@ -301,6 +294,20 @@ export default function Navigation() {
                     onClick={() => setForBuyersMenuOpen(false)}
                   >
                     OEM & Private Label
+                  </Link>
+                  <Link
+                    href="/tools/regional-guide"
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools/regional-guide' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    onClick={() => setForBuyersMenuOpen(false)}
+                  >
+                    Regional Application Guide
+                  </Link>
+                  <Link
+                    href="/tools/chain-selection-matrix"
+                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools/chain-selection-matrix' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    onClick={() => setForBuyersMenuOpen(false)}
+                  >
+                    Chain Selection Matrix
                   </Link>
                 </div>
               )}
@@ -563,11 +570,6 @@ export default function Navigation() {
                       Technical Specifications & Standards
                     </Link>
                   </li>
-                  <li>
-                    <Link href="/tools/regional-guide" className={`block py-2.5 min-h-[44px] flex items-center text-sm text-white/90 cursor-pointer select-none ${pathname === '/tools/regional-guide' ? 'text-white font-medium' : ''}`}>
-                      Regional Application Guide
-                    </Link>
-                  </li>
                 </ul>
               )}
             </li>
@@ -599,6 +601,16 @@ export default function Navigation() {
                   <li>
                     <Link href="/oem-private-label" className={`block py-2.5 min-h-[44px] flex items-center text-sm text-white/90 cursor-pointer select-none ${isActive('/oem-private-label') ? 'text-white font-medium' : ''}`}>
                       OEM & Private Label
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/tools/regional-guide" className={`block py-2.5 min-h-[44px] flex items-center text-sm text-white/90 cursor-pointer select-none ${pathname === '/tools/regional-guide' ? 'text-white font-medium' : ''}`}>
+                      Regional Application Guide
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/tools/chain-selection-matrix" className={`block py-2.5 min-h-[44px] flex items-center text-sm text-white/90 cursor-pointer select-none ${pathname === '/tools/chain-selection-matrix' ? 'text-white font-medium' : ''}`}>
+                      Chain Selection Matrix
                     </Link>
                   </li>
                 </ul>
