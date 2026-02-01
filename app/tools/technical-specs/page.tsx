@@ -121,21 +121,6 @@ const SpecDriveLinkSvg = () => (
     <text x={160} y={168} textAnchor="middle" fontSize={10} fill="#6b7280">Match chain type to saw and application</text>
   </svg>
 )
-const SpecMeasurePitchSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-32 object-contain" aria-label="How to measure pitch: three rivets, divide by two">
-    <title>How to measure pitch</title>
-    <rect width={240} height={100} fill="#fff" />
-    <text x={120} y={14} textAnchor="middle" fontSize={11} fontWeight={600} fill="#1f2937">Measuring pitch</text>
-    <g transform="translate(40,28)">
-      <circle cx={0} cy={20} r={8} fill="#e5e7eb" stroke="#6b7280" />
-      <circle cx={40} cy={20} r={8} fill="#e5e7eb" stroke="#6b7280" />
-      <circle cx={80} cy={20} r={8} fill="#e5e7eb" stroke="#6b7280" />
-      <line x1={8} y1={20} x2={72} y2={20} stroke="#547950" strokeWidth={2} strokeDasharray="4 2" />
-      <text x={40} y={55} textAnchor="middle" fontSize={10} fill="#374151">distance ÷ 2 = pitch</text>
-    </g>
-    <text x={120} y={88} textAnchor="middle" fontSize={9} fill="#6b7280">Center-to-center of 3 rivets</text>
-  </svg>
-)
 const SpecKerfSvg = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-40 object-contain" aria-label="Narrow kerf vs Standard kerf cut width">
     <title>Kerf — narrow vs standard</title>
@@ -197,17 +182,6 @@ export default function TechnicalSpecsPage() {
           <p className="text-xs text-text-body mb-4">
             This reference aligns with <strong className="text-text-main">ANSI B175.1</strong> and common industry chain specifications. Definitions and tolerances are as of current standards; verify with OEM or latest standards when specifying. For fitment by saw/bar, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>.
           </p>
-          <nav className="mb-6 p-3 bg-gray-50 border border-forest-brand/20 rounded-none" aria-label="Page sections">
-            <p className="text-xs font-medium text-text-main mb-2">On this page</p>
-            <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-text-body">
-              <li><a href="#pitch" className="text-forest-brand hover:underline">Pitch</a></li>
-              <li><a href="#gauge" className="text-forest-brand hover:underline">Gauge</a></li>
-              <li><a href="#drive-link" className="text-forest-brand hover:underline">Drive link type</a></li>
-              <li><a href="#cutter-geometry" className="text-forest-brand hover:underline">Cutter geometry</a></li>
-              <li><a href="#kerf" className="text-forest-brand hover:underline">Kerf</a></li>
-              <li><a href="#chain-length" className="text-forest-brand hover:underline">Chain length</a></li>
-            </ul>
-          </nav>
           <div className="mb-6 p-3 bg-forest-brand/5 border border-forest-brand/20 rounded-none">
             <p className="text-xs font-medium text-text-main mb-1">How to measure</p>
             <p className="text-xs text-text-body">
@@ -287,10 +261,6 @@ export default function TechnicalSpecsPage() {
                   <p className="text-xs text-text-body italic mt-2">
                     Chains of different pitch cannot be used on the same bar.
                   </p>
-                  <p className="text-xs font-medium text-text-main mt-4 mb-2">How to measure</p>
-                  <div className="relative w-full max-w-xs min-h-[6rem] bg-white rounded-none overflow-hidden flex items-center justify-center p-2 border border-forest-brand/20">
-                    <SpecMeasurePitchSvg />
-                  </div>
                 </div>
               </div>
             </div>
