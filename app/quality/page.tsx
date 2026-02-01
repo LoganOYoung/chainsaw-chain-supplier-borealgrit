@@ -44,7 +44,7 @@ export default function QualityPage() {
             <div className="flex flex-col items-center text-center">
               <div className="relative w-32 h-32 mb-4 bg-white border-2 border-forest-brand/30 rounded-none overflow-hidden flex items-center justify-center">
                 <Image
-                  src="/images/certifications/iso-9001-badge.svg"
+                  src="/images/certifications/iso-9001-badge.png"
                   alt="ISO 9001:2015 Quality Management System Certification Badge"
                   fill
                   className="object-contain p-2"
