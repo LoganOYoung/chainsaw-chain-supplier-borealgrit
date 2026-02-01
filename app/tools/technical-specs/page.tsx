@@ -121,41 +121,6 @@ const SpecDriveLinkSvg = () => (
     <text x={160} y={168} textAnchor="middle" fontSize={10} fill="#6b7280">Match chain type to saw and application</text>
   </svg>
 )
-const SpecKerfSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-40 object-contain" aria-label="Narrow kerf vs Standard kerf cut width">
-    <title>Kerf — narrow vs standard</title>
-    <rect width={280} height={120} fill="#fff" />
-    <text x={140} y={16} textAnchor="middle" fontSize={12} fontWeight={600} fill="#1f2937">Kerf (cut width)</text>
-    <g transform="translate(30,32)">
-      <text x={50} y={0} textAnchor="middle" fontSize={10} fontWeight={600} fill="#111">Narrow kerf</text>
-      <rect x={10} y={12} width={80} height={24} rx={1} fill="#e5e7eb" stroke="#9ca3af" />
-      <rect x={25} y={18} width={50} height={12} fill="#547950" fillOpacity={0.3} stroke="#547950" />
-      <text x={50} y={52} textAnchor="middle" fontSize={9} fill="#374151">Thinner cut</text>
-    </g>
-    <g transform="translate(170,32)">
-      <text x={50} y={0} textAnchor="middle" fontSize={10} fontWeight={600} fill="#111">Standard kerf</text>
-      <rect x={10} y={12} width={80} height={24} rx={1} fill="#e5e7eb" stroke="#9ca3af" />
-      <rect x={18} y={16} width={64} height={16} fill="#374151" fillOpacity={0.25} stroke="#374151" />
-      <text x={50} y={52} textAnchor="middle" fontSize={9} fill="#374151">Wider cut</text>
-    </g>
-    <text x={140} y={108} textAnchor="middle" fontSize={9} fill="#6b7280">Bar and chain kerf must match</text>
-  </svg>
-)
-const SpecChainLengthSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-36 object-contain" aria-label="Chain length: count drive links">
-    <title>Chain length — drive link count</title>
-    <rect width={320} height={100} fill="#fff" />
-    <text x={160} y={16} textAnchor="middle" fontSize={12} fontWeight={600} fill="#1f2937">Drive link count = chain length</text>
-    <g transform="translate(20,28)">
-      {[0,1,2,3,4,5,6,7,8,9,10].map((i) => (
-        <rect key={i} x={i * 26} y={0} width={22} height={28} rx={2} fill={i % 2 === 0 ? "#f3f4f6" : "#e5e7eb"} stroke="#9ca3af" />
-      ))}
-      <text x={143} y={58} textAnchor="middle" fontSize={10} fill="#374151">… count all drive links</text>
-    </g>
-    <text x={160} y={88} textAnchor="middle" fontSize={11} fontWeight={600} fill="#111">e.g. 56 DL = 56 drive links</text>
-  </svg>
-)
-
 export default function TechnicalSpecsPage() {
   return (
     <>
@@ -405,60 +370,6 @@ export default function TechnicalSpecsPage() {
               </div>
             </div>
 
-            {/* Kerf */}
-            <div id="kerf" className="scroll-mt-6 border-b border-forest-brand/30 pb-4 sm:pb-6">
-              <h2 className="text-base sm:text-lg font-semibold text-text-main mb-4">Kerf (cut width)</h2>
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-                <div>
-                  <div className="relative w-full min-h-[8rem] sm:min-h-[10rem] mb-4 bg-white rounded-none overflow-hidden flex items-center justify-center p-2 border border-forest-brand/20">
-                    <SpecKerfSvg />
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm text-text-body mb-3 leading-relaxed">
-                    <strong className="text-text-main">Kerf</strong> is the width of the cut made by the chain. <strong className="text-text-main">Narrow kerf</strong> chains use a thinner cutter and bar groove, reducing power demand and kickback—common on battery and small gas saws. <strong className="text-text-main">Standard kerf</strong> chains are used on most mid-to-large saws.
-                  </p>
-                  <p className="text-xs text-text-body mb-3">
-                    Bar and chain kerf must match; mixing narrow-kerf chain with a standard bar (or vice versa) affects fit and safety.
-                  </p>
-                  <p className="text-xs text-text-body">
-                    For bar/chain selection by saw model, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Chain length (drive link count) */}
-            <div id="chain-length" className="scroll-mt-6">
-              <h2 className="text-base sm:text-lg font-semibold text-text-main mb-4">Chain length (drive link count)</h2>
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-                <div>
-                  <div className="relative w-full min-h-[7rem] sm:min-h-[9rem] mb-4 bg-white rounded-none overflow-hidden flex items-center justify-center p-2 border border-forest-brand/20">
-                    <SpecChainLengthSvg />
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm text-text-body mb-3 leading-relaxed">
-                    Chain length is specified by the <strong className="text-text-main">number of drive links</strong> (e.g. 56DL = 56 drive links). Bar length and pitch together determine the required count; the same bar length can require different link counts for different pitch.
-                  </p>
-                  <p className="text-xs text-text-body">
-                    To find the correct chain length for your saw and bar, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link> or count the links on your existing chain.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8 p-4 bg-gray-50 border border-forest-brand/20 rounded-none">
-            <h2 className="text-sm font-semibold text-text-main mb-3">Key terms</h2>
-            <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-xs text-text-body">
-              <div><dt className="font-medium text-text-main">Pitch</dt><dd>Drive link spacing; chain and bar must match.</dd></div>
-              <div><dt className="font-medium text-text-main">Gauge</dt><dd>Drive link thickness; must fit bar groove.</dd></div>
-              <div><dt className="font-medium text-text-main">Drive link</dt><dd>Standard (full-depth) vs anti-kickback (bumper/depth limiters).</dd></div>
-              <div><dt className="font-medium text-text-main">Kerf</dt><dd>Cut width; narrow kerf vs standard, must match bar.</dd></div>
-              <div><dt className="font-medium text-text-main">Full-chisel</dt><dd>Square-corner cutter; max speed, softwoods.</dd></div>
-              <div><dt className="font-medium text-text-main">Semi-chisel</dt><dd>Rounded-corner; better edge retention, hardwoods/dirty.</dd></div>
-            </dl>
           </div>
         </section>
 
