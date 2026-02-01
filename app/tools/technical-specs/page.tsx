@@ -19,106 +19,134 @@ export const metadata: Metadata = {
   },
 }
 
-// Inline SVGs — no network request, always display
+// Inline SVGs — technical reference style (Oregon/OEM manual)
 const SpecPitchSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 192" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-[20rem] object-contain" aria-label="3/8&quot; LP vs 3/8&quot; pitch comparison — drive link spacing diagram">
-    <title>3/8&quot; LP vs 3/8&quot; Pitch — Drive link spacing</title>
-    <rect width={320} height={192} fill="#fff" />
-    <text x={160} y={22} textAnchor="middle" fontSize={14} fontWeight={600} fontFamily="system-ui,sans-serif" fill="#1f2937">Pitch comparison</text>
-    <text x={80} y={44} textAnchor="middle" fontSize={13} fontWeight={600} fill="#111">3/8&quot; LP</text>
-    <text x={80} y={60} textAnchor="middle" fontSize={11} fill="#374151">0.365&quot; (9.27mm)</text>
-    <g transform="translate(40,70)">
-      <rect x={0} y={20} width={36} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
-      <rect x={42} y={20} width={36} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
-      <rect x={84} y={20} width={36} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
-      <line x1={36} y1={32} x2={42} y2={32} stroke="#547950" strokeWidth={2} />
-      <line x1={78} y1={32} x2={84} y2={32} stroke="#547950" strokeWidth={2} />
-      <text x={60} y={90} textAnchor="middle" fontSize={11} fontWeight={500} fill="#374151">pitch</text>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 200" fill="none" stroke="#374151" strokeWidth={1.2} className="w-full h-full max-h-[20rem] object-contain" aria-label="Pitch — distance between three consecutive rivets divided by two">
+    <title>Pitch: 3 consecutive rivets ÷ 2</title>
+    <rect width={340} height={200} fill="#fafafa" />
+    <text x={170} y={18} textAnchor="middle" fontSize={13} fontWeight={700} fontFamily="system-ui,sans-serif" fill="#111">Pitch = (R1–R3) ÷ 2</text>
+    <text x={85} y={38} textAnchor="middle" fontSize={12} fontWeight={600} fill="#111">3/8&quot; LP</text>
+    <text x={85} y={52} textAnchor="middle" fontSize={10} fill="#4b5563">0.365&quot; (9.27 mm)</text>
+    <g transform="translate(20,58)">
+      {/* Drive links + rivets — 3/8 LP */}
+      <path d="M0 28 L0 8 L28 8 L32 18 L32 28 Z" fill="#e8eaed" stroke="#6b7280" strokeWidth={1.2} />
+      <path d="M34 28 L34 8 L62 8 L66 18 L66 28 Z" fill="#e8eaed" stroke="#6b7280" strokeWidth={1.2} />
+      <path d="M68 28 L68 8 L96 8 L100 18 L100 28 Z" fill="#e8eaed" stroke="#6b7280" strokeWidth={1.2} />
+      <circle cx={16} cy={28} r={4} fill="#374151" stroke="#1f2937" strokeWidth={1} />
+      <circle cx={50} cy={28} r={4} fill="#374151" stroke="#1f2937" strokeWidth={1} />
+      <circle cx={84} cy={28} r={4} fill="#374151" stroke="#1f2937" strokeWidth={1} />
+      <text x={16} y={55} textAnchor="middle" fontSize={9} fill="#374151">R1</text>
+      <text x={50} y={55} textAnchor="middle" fontSize={9} fill="#374151">R2</text>
+      <text x={84} y={55} textAnchor="middle" fontSize={9} fill="#374151">R3</text>
+      <line x1={16} y1={44} x2={84} y2={44} stroke="#059669" strokeWidth={1.5} strokeDasharray="3 2" />
+      <polygon points="84,44 80,41 80,47" fill="#059669" />
+      <text x={50} y={38} textAnchor="middle" fontSize={9} fontWeight={600} fill="#059669">2 × pitch</text>
     </g>
-    <text x={240} y={44} textAnchor="middle" fontSize={13} fontWeight={600} fill="#111">3/8&quot;</text>
-    <text x={240} y={60} textAnchor="middle" fontSize={11} fill="#374151">0.375&quot; (9.525mm)</text>
-    <g transform="translate(200,70)">
-      <rect x={0} y={20} width={38} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
-      <rect x={44} y={20} width={38} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
-      <rect x={88} y={20} width={38} height={24} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
-      <line x1={38} y1={32} x2={44} y2={32} stroke="#547950" strokeWidth={2} />
-      <line x1={82} y1={32} x2={88} y2={32} stroke="#547950" strokeWidth={2} />
-      <text x={63} y={90} textAnchor="middle" fontSize={11} fontWeight={500} fill="#374151">pitch</text>
+    <text x={255} y={38} textAnchor="middle" fontSize={12} fontWeight={600} fill="#111">3/8&quot;</text>
+    <text x={255} y={52} textAnchor="middle" fontSize={10} fill="#4b5563">0.375&quot; (9.525 mm)</text>
+    <g transform="translate(190,58)">
+      <path d="M0 28 L0 8 L30 8 L34 18 L34 28 Z" fill="#e8eaed" stroke="#6b7280" strokeWidth={1.2} />
+      <path d="M36 28 L36 8 L66 8 L70 18 L70 28 Z" fill="#e8eaed" stroke="#6b7280" strokeWidth={1.2} />
+      <path d="M72 28 L72 8 L102 8 L106 18 L106 28 Z" fill="#e8eaed" stroke="#6b7280" strokeWidth={1.2} />
+      <circle cx={17} cy={28} r={4} fill="#374151" stroke="#1f2937" strokeWidth={1} />
+      <circle cx={53} cy={28} r={4} fill="#374151" stroke="#1f2937" strokeWidth={1} />
+      <circle cx={89} cy={28} r={4} fill="#374151" stroke="#1f2937" strokeWidth={1} />
+      <line x1={17} y1={44} x2={89} y2={44} stroke="#059669" strokeWidth={1.5} strokeDasharray="3 2" />
+      <polygon points="89,44 85,41 85,47" fill="#059669" />
+      <text x={53} y={38} textAnchor="middle" fontSize={9} fontWeight={600} fill="#059669">2 × pitch</text>
     </g>
-    <text x={160} y={175} textAnchor="middle" fontSize={11} fontWeight={500} fill="#374151">Drive link spacing — not interchangeable</text>
+    <text x={170} y={188} textAnchor="middle" fontSize={10} fill="#6b7280">Rivets R1–R3 · Chain and bar pitch must match</text>
   </svg>
 )
 const SpecGaugeSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 192" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-[20rem] object-contain" aria-label="Drive link gauge — cross-section in bar groove">
-    <title>Drive link gauge — cross-section</title>
-    <rect width={320} height={192} fill="#fff" />
-    <text x={160} y={22} textAnchor="middle" fontSize={14} fontWeight={600} fontFamily="system-ui,sans-serif" fill="#1f2937">Gauge (drive link thickness)</text>
-    <g transform="translate(80,50)">
-      <path d="M0 46 L0 96 L120 96 L120 46 L100 56 L20 56 Z" fill="#e5e7eb" stroke="#9ca3af" />
-      <rect x={30} y={50} width={60} height={42} fill="#f9fafb" stroke="#547950" strokeWidth={2} />
-      <text x={60} y={78} textAnchor="middle" fontSize={12} fontWeight={600} fill="#111">.050&quot;</text>
-      <text x={60} y={92} textAnchor="middle" fontSize={11} fill="#374151">1.3mm</text>
-      <text x={60} y={115} textAnchor="middle" fontSize={11} fontWeight={500} fill="#374151">Drive link in bar groove</text>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 200" fill="none" stroke="#374151" strokeWidth={1.2} className="w-full h-full max-h-[20rem] object-contain" aria-label="Gauge — drive link tang thickness in bar groove">
+    <title>Gauge: Drive link thickness in bar groove</title>
+    <rect width={340} height={200} fill="#fafafa" />
+    <text x={170} y={18} textAnchor="middle" fontSize={13} fontWeight={700} fontFamily="system-ui,sans-serif" fill="#111">Gauge (drive link tang thickness)</text>
+    <g transform="translate(85,36)">
+      {/* Bar cross-section: groove = channel, drive link fits in */}
+      <path d="M0 20 L0 100 L25 100 L25 55 L115 55 L115 100 L140 100 L140 20 Z" fill="#d1d5db" stroke="#6b7280" strokeWidth={1.5} />
+      <text x={70} y={12} textAnchor="middle" fontSize={9} fill="#4b5563">Bar groove</text>
+      {/* Drive link tang in groove */}
+      <rect x={52} y={60} width={46} height={32} fill="#e8eaed" stroke="#374151" strokeWidth={2} rx={1} />
+      <text x={75} y={78} textAnchor="middle" fontSize={11} fontWeight={700} fill="#111">.050&quot;</text>
+      <text x={75} y={90} textAnchor="middle" fontSize={9} fill="#4b5563">1.3 mm</text>
+      {/* Gauge dimension */}
+      <line x1={52} y1={48} x2={52} y2={60} stroke="#059669" strokeWidth={1} />
+      <line x1={98} y1={48} x2={98} y2={60} stroke="#059669" strokeWidth={1} />
+      <line x1={52} y1={52} x2={98} y2={52} stroke="#059669" strokeWidth={1.5} strokeDasharray="3 2" />
+      <polygon points="98,52 95,49 95,55" fill="#059669" />
+      <text x={75} y={44} textAnchor="middle" fontSize={9} fontWeight={600} fill="#059669">gauge</text>
     </g>
-    <line x1={95} y1={45} x2={95} y2={54} stroke="#374151" strokeWidth={1} />
-    <line x1={95} y1={92} x2={95} y2={101} stroke="#374151" strokeWidth={1} />
-    <line x1={95} y1={50} x2={95} y2={96} stroke="#374151" strokeDasharray="4 2" />
-    <text x={105} y={75} fontSize={11} fontWeight={500} fill="#1f2937">gauge</text>
-    <text x={160} y={175} textAnchor="middle" fontSize={11} fontWeight={500} fill="#374151">Fit into guide bar groove — tolerance ±0.001&quot;</text>
+    <text x={170} y={188} textAnchor="middle" fontSize={10} fill="#6b7280">Tolerance ±0.001&quot; · Mismatch causes derailment</text>
   </svg>
 )
 const SpecFullChiselSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 128" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-[20rem] object-contain" aria-label="Full-chisel cutter profile — square-corner geometry">
-    <title>Full-Chisel cutter — square-corner</title>
-    <rect width={280} height={128} fill="#fff" />
-    <text x={140} y={18} textAnchor="middle" fontSize={13} fontWeight={600} fontFamily="system-ui,sans-serif" fill="#1f2937">Full-Chisel (square-corner)</text>
-    <g transform="translate(70,28)">
-      <path d="M14 72 L14 32 L66 32 L84 52 L84 72 Z" fill="#f9fafb" stroke="#374151" strokeWidth={2} />
-      <path d="M66 32 L84 52" stroke="#547950" strokeWidth={2.5} strokeLinecap="square" />
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" fill="none" stroke="#374151" strokeWidth={1.2} className="w-full h-full max-h-[20rem] object-contain" aria-label="Full-chisel cutter profile — top plate, depth gauge, square corner">
+    <title>Full-Chisel: Square-corner cutter profile</title>
+    <rect width={300} height={150} fill="#fafafa" />
+    <text x={150} y={16} textAnchor="middle" fontSize={12} fontWeight={700} fontFamily="system-ui,sans-serif" fill="#111">Full-Chisel (Chisel / Square-Corner)</text>
+    <g transform="translate(50,30)">
+      {/* Cutter profile: top plate (horizontal), side plate, cutting corner 90°, depth gauge, gullet */}
+      <path d="M8 90 L8 42 L70 42 L88 58 L88 90 L75 90 L75 70 L20 70 L20 90 Z" fill="#e8eaed" stroke="#4b5563" strokeWidth={1.5} />
+      <path d="M70 42 L88 58" stroke="#059669" strokeWidth={2.5} strokeLinecap="square" />
+      <circle cx={70} cy={50} r={3} fill="none" stroke="#059669" strokeWidth={1} />
+      <text x={79} y={48} fontSize={9} fontWeight={600} fill="#059669">90°</text>
+      <text x={48} y={38} fontSize={9} fill="#4b5563">Top plate</text>
+      <text x={10} y={80} fontSize={9} fill="#4b5563">Side plate</text>
+      <text x={45} y={95} fontSize={9} fill="#4b5563">Gullet</text>
+      <text x={82} y={82} fontSize={9} fill="#4b5563">Depth gauge</text>
     </g>
-    <text x={140} y={92} textAnchor="middle" fontSize={11} fontWeight={600} fill="#1f2937">Square corner · 90°</text>
-    <text x={140} y={106} textAnchor="middle" fontSize={10} fill="#374151">Max chip clearance · softwoods</text>
+    <text x={150} y={138} textAnchor="middle" fontSize={10} fill="#6b7280">Square cutting corner · Max chip clearance · Softwoods</text>
   </svg>
 )
 const SpecSemiChiselSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 128" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-[20rem] object-contain" aria-label="Semi-chisel cutter profile — rounded-corner geometry">
-    <title>Semi-Chisel cutter — rounded-corner</title>
-    <rect width={280} height={128} fill="#fff" />
-    <text x={140} y={18} textAnchor="middle" fontSize={13} fontWeight={600} fontFamily="system-ui,sans-serif" fill="#1f2937">Semi-Chisel (rounded-corner)</text>
-    <g transform="translate(70,28)">
-      <path d="M14 72 L14 32 L62 32 Q88 42 86 58 L86 72 Z" fill="#f9fafb" stroke="#374151" strokeWidth={2} />
-      <path d="M62 32 Q82 38 86 58" stroke="#547950" strokeWidth={2.5} fill="none" />
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" fill="none" stroke="#374151" strokeWidth={1.2} className="w-full h-full max-h-[20rem] object-contain" aria-label="Semi-chisel cutter profile — rounded cutting corner">
+    <title>Semi-Chisel: Rounded-corner cutter profile</title>
+    <rect width={300} height={150} fill="#fafafa" />
+    <text x={150} y={16} textAnchor="middle" fontSize={12} fontWeight={700} fontFamily="system-ui,sans-serif" fill="#111">Semi-Chisel (Rounded-Corner)</text>
+    <g transform="translate(50,30)">
+      <path d="M8 90 L8 42 L58 42 Q90 48 88 62 L88 90 L75 90 L75 70 L20 70 L20 90 Z" fill="#e8eaed" stroke="#4b5563" strokeWidth={1.5} />
+      <path d="M58 42 Q78 44 88 62" stroke="#059669" strokeWidth={2.5} fill="none" />
+      <text x={73} y={50} fontSize={9} fontWeight={600} fill="#059669">Rounded</text>
+      <text x={48} y={38} fontSize={9} fill="#4b5563">Top plate</text>
+      <text x={10} y={80} fontSize={9} fill="#4b5563">Side plate</text>
+      <text x={45} y={95} fontSize={9} fill="#4b5563">Gullet</text>
+      <text x={82} y={82} fontSize={9} fill="#4b5563">Depth gauge</text>
     </g>
-    <text x={140} y={92} textAnchor="middle" fontSize={11} fontWeight={600} fill="#1f2937">Rounded corner</text>
-    <text x={140} y={106} textAnchor="middle" fontSize={10} fill="#374151">Better edge retention · hardwoods</text>
+    <text x={150} y={138} textAnchor="middle" fontSize={10} fill="#6b7280">Rounded cutting corner · Edge retention · Hardwoods, dirty wood</text>
   </svg>
 )
 const SpecDriveLinkSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 192" fill="none" stroke="#374151" strokeWidth={1.5} className="w-full h-full max-h-[20rem] object-contain" aria-label="Drive link: Standard vs Anti-Kickback">
-    <title>Drive Link — Standard vs Anti-Kickback</title>
-    <rect width={320} height={192} fill="#fff" />
-    <text x={160} y={22} textAnchor="middle" fontSize={14} fontWeight={600} fontFamily="system-ui,sans-serif" fill="#1f2937">Drive Link: Standard vs Anti-Kickback</text>
-    <text x={80} y={48} textAnchor="middle" fontSize={12} fontWeight={600} fill="#111">Standard</text>
-    <g transform="translate(30,58)">
-      <rect x={0} y={0} width={100} height={28} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
-      <rect x={8} y={6} width={20} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
-      <rect x={36} y={6} width={28} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
-      <rect x={72} y={6} width={20} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 210" fill="none" stroke="#374151" strokeWidth={1.2} className="w-full h-full max-h-[20rem] object-contain" aria-label="Drive link type: Standard vs Anti-Kickback (bumper links)">
+    <title>Drive Link: Standard vs Anti-Kickback</title>
+    <rect width={340} height={210} fill="#fafafa" />
+    <text x={170} y={18} textAnchor="middle" fontSize={13} fontWeight={700} fontFamily="system-ui,sans-serif" fill="#111">Drive Link Type: Standard vs Anti-Kickback</text>
+    <text x={85} y={40} textAnchor="middle" fontSize={11} fontWeight={600} fill="#111">Standard (full-depth)</text>
+    <g transform="translate(15,50)">
+      {/* Standard: Cutter–Tie–Cutter–Tie–Cutter — side view, no bumpers */}
+      <path d="M0 32 L0 8 L22 8 L26 20 L26 32 Z" fill="#d1d5db" stroke="#6b7280" strokeWidth={1.2} />
+      <path d="M28 32 L28 12 L38 12 L38 32 Z" fill="#e5e7eb" stroke="#9ca3af" strokeWidth={1} />
+      <path d="M40 32 L40 8 L62 8 L66 20 L66 32 Z" fill="#d1d5db" stroke="#6b7280" strokeWidth={1.2} />
+      <path d="M68 32 L68 12 L78 12 L78 32 Z" fill="#e5e7eb" stroke="#9ca3af" strokeWidth={1} />
+      <path d="M80 32 L80 8 L102 8 L106 20 L106 32 Z" fill="#d1d5db" stroke="#6b7280" strokeWidth={1.2} />
+      <text x={53} y={52} textAnchor="middle" fontSize={8} fill="#6b7280">Cutter</text>
+      <text x={33} y={52} textAnchor="middle" fontSize={8} fill="#6b7280">Tie</text>
     </g>
-    <text x={80} y={108} textAnchor="middle" fontSize={10} fill="#374151">Full-depth cutters</text>
-    <text x={80} y={122} textAnchor="middle" fontSize={10} fill="#374151">Max cutting speed</text>
-    <text x={240} y={48} textAnchor="middle" fontSize={12} fontWeight={600} fill="#111">Anti-Kickback</text>
-    <g transform="translate(190,58)">
-      <rect x={0} y={0} width={100} height={28} rx={2} fill="#f3f4f6" stroke="#9ca3af" />
-      <rect x={6} y={6} width={18} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
-      <rect x={28} y={4} width={12} height={8} rx={1} fill="#547950" fillOpacity={0.4} stroke="#547950" />
-      <rect x={44} y={6} width={24} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
-      <rect x={72} y={4} width={12} height={8} rx={1} fill="#547950" fillOpacity={0.4} stroke="#547950" />
-      <rect x={88} y={6} width={18} height={16} rx={1} fill="#e5e7eb" stroke="#6b7280" />
+    <text x={85} y={95} textAnchor="middle" fontSize={9} fill="#4b5563">No depth limiters · Max cutting speed</text>
+    <text x={255} y={40} textAnchor="middle" fontSize={11} fontWeight={600} fill="#111">Anti-Kickback (low-kickback)</text>
+    <g transform="translate(185,50)">
+      {/* Anti-kickback: Cutter–Bumper–Cutter–Bumper — bumper has raised hump */}
+      <path d="M0 32 L0 8 L20 8 L24 20 L24 32 Z" fill="#d1d5db" stroke="#6b7280" strokeWidth={1.2} />
+      <path d="M26 32 L26 16 L30 12 L34 16 L34 32 Z" fill="#059669" fillOpacity={0.4} stroke="#047857" strokeWidth={1.5} />
+      <path d="M36 32 L36 8 L56 8 L60 20 L60 32 Z" fill="#d1d5db" stroke="#6b7280" strokeWidth={1.2} />
+      <path d="M62 32 L62 16 L66 12 L70 16 L70 32 Z" fill="#059669" fillOpacity={0.4} stroke="#047857" strokeWidth={1.5} />
+      <path d="M72 32 L72 8 L92 8 L96 20 L96 32 Z" fill="#d1d5db" stroke="#6b7280" strokeWidth={1.2} />
+      <text x={48} y={52} textAnchor="middle" fontSize={8} fill="#6b7280">Cutter</text>
+      <text x={30} y={52} textAnchor="middle" fontSize={8} fill="#047857">Bumper</text>
     </g>
-    <text x={240} y={108} textAnchor="middle" fontSize={10} fill="#374151">Bumper / depth limiters</text>
-    <text x={240} y={122} textAnchor="middle" fontSize={10} fill="#374151">Low-kickback (consumer)</text>
-    <text x={160} y={168} textAnchor="middle" fontSize={10} fill="#6b7280">Match chain type to saw and application</text>
+    <text x={255} y={95} textAnchor="middle" fontSize={9} fill="#4b5563">Bumper links limit cutter depth · ANSI B175.1</text>
+    <text x={170} y={200} textAnchor="middle" fontSize={10} fill="#6b7280">Match chain type to saw OEM specification</text>
   </svg>
 )
 export default function TechnicalSpecsPage() {
