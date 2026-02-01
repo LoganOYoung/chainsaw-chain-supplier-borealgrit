@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Chainsaw Chain Selection Matrix: By Species, Equipment & Task | BorealGrit™',
-  description: 'Find the right chainsaw chain by wood species, power source, and task. Best chain for hardwood, battery saw replacement, commercial logging. Series W, P, E recommendations.',
-  keywords: 'best chain for frozen oak, chainsaw chain Douglas fir, battery chainsaw chain replacement, electric saw chain, professional logging chain, arborist chainsaw chain, wildfire fuel reduction tools',
+  title: 'Chain Selection Matrix: Reference by Species, Equipment & Task | BorealGrit™',
+  description: 'Professional reference: how wood species, power source, and application affect chainsaw chain choice. Hardwood, softwood, frozen timber; gas, electric, harvester; logging, arborist, firewood. Inform your decision with specs and Fitment Finder.',
+  keywords: 'best chain for frozen oak, chainsaw chain Douglas fir, battery chainsaw chain replacement, electric saw chain, professional logging chain, arborist chainsaw chain, wildfire fuel reduction tools, chain selection reference',
   openGraph: {
-    title: 'Chainsaw Chain Selection Matrix | BorealGrit™',
-    description: 'Select chain by species, equipment, and task. Series W, P, E for North American forestry.',
+    title: 'Chain Selection Matrix: Reference by Species, Equipment & Task | BorealGrit™',
+    description: 'Information reference for chain selection by species, equipment, and task. North American forestry and arborist applications.',
     type: 'website',
   },
   alternates: {

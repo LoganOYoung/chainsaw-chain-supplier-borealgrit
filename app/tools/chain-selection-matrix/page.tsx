@@ -1,98 +1,10 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { ArrowRight, ArrowLeft } from 'lucide-react'
 
-const SPECIES = [
-  { id: 'hardwood', label: 'Hardwood', desc: 'Oak, Maple, Hickory', series: 'P' as const },
-  { id: 'softwood', label: 'Softwood', desc: 'Douglas Fir, Pine, Spruce', series: 'P' as const },
-  { id: 'frozen', label: 'Frozen / Dirty Timber', desc: 'Winter logging, ground contact', series: 'W' as const },
-]
-
-const EQUIPMENT = [
-  { id: 'gas-heavy', label: 'Gas Heavy Duty (70cc+)', desc: 'Professional logging saws', series: 'P' as const },
-  { id: 'electric', label: 'Electric / Cordless', desc: 'Stihl MSA, Milwaukee M18, battery saws', series: 'E' as const },
-  { id: 'harvester', label: 'Mechanical Harvester', desc: 'Feller Buncher, processing heads', series: 'P' as const },
-]
-
-const TASKS = [
-  { id: 'logging', label: 'Commercial Logging', desc: 'High-volume, TCO-focused', series: 'P' as const },
-  { id: 'arborist', label: 'Arboriculture & Pruning', desc: 'Precision cuts, tree healing', series: 'E' as const },
-  { id: 'firewood', label: 'Firewood Processing', desc: 'Dry wood, abrasion resistance', series: 'P' as const },
-  { id: 'disaster', label: 'Disaster Recovery', desc: 'Complex conditions, impact resistance', series: 'W' as const },
-]
-
-const SERIES_INFO = {
-  W: {
-    name: 'Series W (Arctic Shield)',
-    href: '/products/series-w',
-    tagline: 'Cold-resilient alloy for sub-zero and impact-heavy work.',
-    reasons: [
-      '68CrNiMo alloy maintains toughness to -40°C',
-      'Prevents chain fatigue and tooth fracture in frozen wood',
-      'Ideal for winter logging and disaster recovery',
-    ],
-  },
-  P: {
-    name: 'Series P (Industrial)',
-    href: '/products/series-p',
-    tagline: 'High output, stay-sharp, and maximum chip clearance.',
-    reasons: [
-      'Full-chisel design for hardwood and softwood',
-      'Industrial chrome for extended sharpening intervals',
-      'Built for gas saws 70cc+ and mechanical harvesters',
-    ],
-  },
-  E: {
-    name: 'Series E (Efficiency)',
-    href: '/products/series-e',
-    tagline: 'Narrow kerf, low vibration, battery-optimized.',
-    reasons: [
-      '15–25% less power draw for longer battery runtime',
-      'Smooth cutting for arborist and precision work',
-      'Designed for cordless and electric saws',
-    ],
-  },
-}
-
-function getRecommendedSeries(
-  speciesId: string | null,
-  equipmentId: string | null,
-  taskId: string | null
-): 'W' | 'P' | 'E' | null {
-  if (!speciesId && !equipmentId && !taskId) return null
-  const votes: Record<string, number> = { W: 0, P: 0, E: 0 }
-  const add = (s: 'W' | 'P' | 'E', n: number) => { votes[s] += n }
-  if (speciesId) {
-    const s = SPECIES.find((x) => x.id === speciesId)
-    if (s) add(s.series, 2)
-  }
-  if (equipmentId) {
-    const e = EQUIPMENT.find((x) => x.id === equipmentId)
-    if (e) add(e.series, 2)
-  }
-  if (taskId) {
-    const t = TASKS.find((x) => x.id === taskId)
-    if (t) add(t.series, 2)
-  }
-  const max = Math.max(votes.W, votes.P, votes.E)
-  if (max === 0) return null
-  if (votes.W === max) return 'W'
-  if (votes.E === max) return 'E'
-  return 'P'
-}
-
 export default function ChainSelectionMatrixPage() {
-  const [species, setSpecies] = useState<string | null>(null)
-  const [equipment, setEquipment] = useState<string | null>(null)
-  const [task, setTask] = useState<string | null>(null)
-  const recommended = getRecommendedSeries(species, equipment, task)
-  const info = recommended ? SERIES_INFO[recommended] : null
-
   return (
     <>
       <Navigation />
@@ -112,180 +24,96 @@ export default function ChainSelectionMatrixPage() {
           Back to For Buyers
         </Link>
 
-        {/* Header */}
-        <header className="mb-8">
+        <header className="mb-10">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-main mb-2">
-            Chainsaw Chain Selection Matrix
+            Chain Selection Matrix: A Reference by Species, Equipment & Task
           </h1>
-          <p className="text-sm sm:text-base text-text-body max-w-3xl leading-relaxed">
-            Select by <strong className="text-text-main">species</strong>, <strong className="text-text-main">equipment</strong>, and <strong className="text-text-main">task</strong> to get the right BorealGrit series for your conditions.
+          <p className="text-sm sm:text-base text-text-body max-w-3xl leading-relaxed mb-4">
+            This page is an <strong className="text-text-main">information reference</strong> for professional buyers. It explains how <strong className="text-text-main">wood species</strong>, <strong className="text-text-main">power source and equipment</strong>, and <strong className="text-text-main">application type</strong> influence chain design and suitability—so you can weigh options yourself. For region-based context, see the <Link href="/tools/regional-guide" className="text-forest-brand hover:underline">Regional Application Guide</Link>; for exact saw and bar compatibility, use the <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>.
           </p>
         </header>
 
-        {/* Interactive filters */}
-        <section className="mb-8 p-5 sm:p-6 bg-white border-2 border-forest-brand/30 rounded-none">
-          <h2 className="text-base font-semibold text-text-main mb-4">Select your application</h2>
-          <div className="grid sm:grid-cols-3 gap-4 mb-6">
-            <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-text-main mb-2">
-                By species
-              </label>
-              <select
-                value={species ?? ''}
-                onChange={(e) => setSpecies(e.target.value || null)}
-                className="w-full border border-forest-brand/30 rounded-none px-3 py-2.5 text-sm bg-white"
-              >
-                <option value="">— Select —</option>
-                {SPECIES.map((s) => (
-                  <option key={s.id} value={s.id}>
-                    {s.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-text-main mb-2">
-                By equipment
-              </label>
-              <select
-                value={equipment ?? ''}
-                onChange={(e) => setEquipment(e.target.value || null)}
-                className="w-full border border-forest-brand/30 rounded-none px-3 py-2.5 text-sm bg-white"
-              >
-                <option value="">— Select —</option>
-                {EQUIPMENT.map((e) => (
-                  <option key={e.id} value={e.id}>
-                    {e.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-text-main mb-2">
-                By task
-              </label>
-              <select
-                value={task ?? ''}
-                onChange={(e) => setTask(e.target.value || null)}
-                className="w-full border border-forest-brand/30 rounded-none px-3 py-2.5 text-sm bg-white"
-              >
-                <option value="">— Select —</option>
-                {TASKS.map((t) => (
-                  <option key={t.id} value={t.id}>
-                    {t.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          {/* Dynamic result */}
-          {info && (
-            <div className="p-4 sm:p-5 bg-forest-light/30 border border-forest-brand/30 rounded-none">
-              <p className="text-xs font-semibold uppercase tracking-wide text-forest-brand mb-2">Recommended</p>
-              <h3 className="text-lg font-bold text-text-main mb-2">{info.name}</h3>
-              <p className="text-sm text-text-body mb-4">{info.tagline}</p>
-              <p className="text-xs font-medium text-text-main mb-2">Why this works:</p>
-              <ul className="text-sm text-text-body space-y-1 mb-4">
-                {info.reasons.map((r, i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="text-forest-brand">•</span>
-                    <span>{r}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href={info.href}
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-forest-brand text-white font-semibold text-sm rounded-none hover:bg-forest-dark transition"
-              >
-                View {info.name.split(' ')[0]} specs <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          )}
-        </section>
-
-        {/* SEO content: By Species */}
+        {/* By Species */}
         <section className="mb-10">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">
-            Best chain for hardwood, softwood, and frozen timber
+            Chain considerations by species: hardwood, softwood, and frozen timber
           </h2>
           <div className="space-y-4 text-sm text-text-body">
             <div>
-              <h3 className="font-semibold text-text-main mb-2">Best chain for hardwood (Oak, Maple, Hickory)</h3>
+              <h3 className="font-semibold text-text-main mb-2">Hardwood (Oak, Maple, Hickory)</h3>
               <p>
-                Hardwoods demand <strong>edge retention and abrasion resistance</strong>. <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> full-chisel cutters with industrial chrome deliver extended sharpening intervals in dense oak, maple, and hickory.
+                Dense hardwoods place high demand on <strong>edge retention and abrasion resistance</strong>. Chains built for this use typically combine full-chisel geometry with hard-wearing surface treatment to extend sharpening intervals. BorealGrit <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> is designed for high-output cutting in oak, maple, and hickory with industrial chrome and full-chisel cutters; specifications and pitch/gauge options are on the series page.
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-text-main mb-2">Best chain for softwood (Douglas Fir, Pine, Spruce)</h3>
+              <h3 className="font-semibold text-text-main mb-2">Softwood (Douglas Fir, Pine, Spruce)</h3>
               <p>
-                Softwoods benefit from <strong>maximum chip clearance and cutting speed</strong>. <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> high-output design handles moisture-heavy Douglas Fir and continuous softwood logging.
+                Softwoods often have higher moisture content and benefit from <strong>maximum chip clearance and sustained cutting speed</strong> to avoid packing and overheating. Chains suited to continuous softwood logging typically emphasize chip flow and stay-sharp performance. <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> is engineered for moisture-heavy Douglas Fir and high-volume softwood operations; compare specs with your bar length and pitch before ordering.
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-text-main mb-2">Best chain for frozen wood and dirty timber</h3>
+              <h3 className="font-semibold text-text-main mb-2">Frozen wood and dirty timber</h3>
               <p>
-                Sub-zero temperatures and ground contact require <strong>steel that stays tough</strong>. <Link href="/products/series-w" className="text-forest-brand hover:underline">Series W</Link> 68CrNiMo alloy maintains impact toughness to -40°C, preventing chain fatigue and tooth fracture.
+                Sub-zero temperatures and ground contact increase <strong>impact loading and fatigue risk</strong>; steel toughness and low-temperature performance become critical. Chains intended for frozen and dirty timber often use alloy and heat treatment specified for cold conditions. BorealGrit <Link href="/products/series-w" className="text-forest-brand hover:underline">Series W</Link> uses 68CrNiMo alloy and is designed to maintain impact toughness to -40°C, reducing chain fatigue and tooth fracture in winter logging and dirty-wood applications. Check the series datasheet for operating limits.
               </p>
             </div>
           </div>
         </section>
 
-        {/* SEO content: By Equipment */}
+        {/* By Equipment */}
         <section className="mb-10">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">
-            Replacement chain for gas saws, electric saws, and harvesters
+            Chain considerations by equipment: gas saws, electric/cordless saws, and harvesters
           </h2>
           <div className="space-y-4 text-sm text-text-body">
             <div>
               <h3 className="font-semibold text-text-main mb-2">Professional gas chainsaw chain (70cc+)</h3>
               <p>
-                Heavy-duty gas saws need <strong>strength and anti-stretch</strong>. <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> is built for 60cc+ professional saws with full-chisel cutters and industrial-grade construction.
+                Heavy-duty gas saws deliver high torque and require chains with <strong>strength, anti-stretch, and chip clearance</strong> to match power output. Full-chisel cutters and industrial-grade construction are common for 60cc+ professional applications. <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> is built for this class of saw; verify pitch, gauge, and drive link count against your bar and sprocket in the <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>.
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-text-main mb-2">Battery chainsaw chain replacement / electric saw chain</h3>
               <p>
-                Cordless and electric saws perform best with <strong>narrow kerf and low power draw</strong>. <Link href="/products/series-e" className="text-forest-brand hover:underline">Series E</Link> reduces consumption 15–25%, extending battery runtime for Stihl MSA, Milwaukee M18, and similar platforms.
+                Cordless and electric saws are power-limited; chains that reduce <strong>kerf width and power draw</strong> help extend runtime and reduce motor load. Narrow-kerf, low-vibration profiles are often specified for Stihl MSA, Milwaukee M18, and similar platforms. BorealGrit <Link href="/products/series-e" className="text-forest-brand hover:underline">Series E</Link> is designed for cordless and electric saws with lower power consumption (on the order of 15–25% in typical testing) and smoother cutting; confirm compatibility with your saw and bar before purchase.
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-text-main mb-2">Chainsaw chain for mechanical harvesters</h3>
               <p>
-                Feller Bunchers and processing heads require <strong>industrial-grade reliability</strong>. <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> meets high-output OEM and harvester specifications. Contact us for bulk and custom configurations.
+                Feller bunchers and processing heads run at high duty cycles and require <strong>industrial-grade reliability and consistent performance</strong>. Chain specifications for harvesters often align with OEM and high-output gas saw requirements. <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> is used in harvester and heavy-duty applications; bulk and custom configurations are available—contact us with your machine and bar specifications for exact fitment.
               </p>
             </div>
           </div>
         </section>
 
-        {/* SEO content: By Task */}
+        {/* By Task */}
         <section className="mb-10">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">
-            Best chain for logging, arborist work, firewood, and land clearing
+            Chain considerations by application: logging, arborist work, firewood, and land clearing
           </h2>
           <div className="space-y-4 text-sm text-text-body">
             <div>
               <h3 className="font-semibold text-text-main mb-2">Commercial logging chainsaw chain</h3>
               <p>
-                High-volume logging prioritizes <strong>cuts per hour and TCO</strong>. <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> maximizes productivity and stay-sharp duration for commercial operations.
+                High-volume logging prioritizes <strong>cuts per hour and total cost of ownership</strong>. Chains selected for this application typically emphasize productivity, stay-sharp duration, and compatibility with large gas saws. <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> is designed for commercial logging; match pitch and gauge to your bar and verify drive link count for your setup.
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-text-main mb-2">Arborist chainsaw chain / pruning chain</h3>
               <p>
-                Tree care requires <strong>smooth cuts and low vibration</strong>. <Link href="/products/series-e" className="text-forest-brand hover:underline">Series E</Link> narrow kerf profile reduces fatigue and promotes clean, healing-friendly cuts.
+                Tree care and pruning benefit from <strong>smooth cuts, low vibration, and precision</strong> to support tree health and operator comfort. Narrow-kerf, low-vibration profiles are often preferred for battery and mid-size saws used in arboriculture. <Link href="/products/series-e" className="text-forest-brand hover:underline">Series E</Link> is designed for this type of work; use the Fitment Finder to confirm fit for your saw and bar.
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-text-main mb-2">Firewood processing and land clearing chain</h3>
               <p>
-                Firewood often involves dry, abrasive wood; land clearing adds impact and debris. <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> for general firewood; <Link href="/products/series-w" className="text-forest-brand hover:underline">Series W</Link> for frozen or disaster-recovery conditions.
+                Firewood involves dry, often abrasive wood; land clearing can add impact, dirt, and mixed conditions. For <strong>general firewood</strong>, chains with good abrasion resistance and chip clearance are typical; for <strong>frozen wood or disaster-recovery</strong> conditions, toughness at low temperature becomes important. <Link href="/products/series-p" className="text-forest-brand hover:underline">Series P</Link> suits many firewood and clearing applications; <Link href="/products/series-w" className="text-forest-brand hover:underline">Series W</Link> is an option when cold or impact-heavy conditions dominate. Compare specs and your operating environment before choosing.
               </p>
             </div>
           </div>
         </section>
 
-        {/* CTAs */}
         <section className="flex flex-wrap gap-4">
           <Link
             href="/tools/regional-guide"
