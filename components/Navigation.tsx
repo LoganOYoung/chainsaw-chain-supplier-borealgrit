@@ -68,7 +68,7 @@ export default function Navigation() {
     <header className="bg-[#547950] sticky top-0 z-50 shadow-sm">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:pl-6 sm:pr-6 lg:pl-8 lg:pr-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="font-heading font-black text-white text-xl md:text-2xl tracking-tight uppercase italic">
+          <Link href="/" className="font-heading font-black text-white text-2xl md:text-3xl tracking-tight uppercase italic">
             BOREALGRIT
           </Link>
           <ul className="hidden md:flex items-center gap-6 text-base font-semibold text-white">

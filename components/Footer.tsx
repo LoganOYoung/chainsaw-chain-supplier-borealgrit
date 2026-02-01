@@ -9,7 +9,7 @@ export default function Footer() {
           
           {/* Column 1: About / Brand */}
           <div>
-            <h3 className="font-heading font-black text-white text-2xl uppercase tracking-tight mb-3 italic">BOREALGRIT</h3>
+            <h3 className="font-heading font-black text-white text-3xl uppercase tracking-tight mb-3 italic">BOREALGRIT</h3>
             <p className="text-sm text-white/80 leading-relaxed">
               Professional Grade Chainsaw Chains for North American Forestry
             </p>
