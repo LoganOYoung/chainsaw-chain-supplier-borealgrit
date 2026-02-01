@@ -10,9 +10,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://borealgrit.com'),
-  title: 'BorealGrit™ | Industrial Chainsaw Chain Manufacturer for North America',
+  title: 'BorealGrit™ | Industrial Chainsaw Chain Supplier for North America',
   description: 'Professional-grade 68CrNiMo alloy chainsaw chains engineered for extreme Boreal environments. Direct-from-factory reliability for logging operations in BC, PNW, and beyond. Minimize your downtime today.',
-  keywords: 'chainsaw chain manufacturer, industrial chainsaw chain, 68CrNiMo alloy chain, Boreal chainsaw chain, North America forestry, direct-from-factory, cold weather chainsaw chain, professional logging, BC Oregon Washington PNW, minimize downtime, Series W Series P Series E',
+  keywords: 'chainsaw chain supplier, industrial chainsaw chain, 68CrNiMo alloy chain, Boreal chainsaw chain, North America forestry, direct-from-factory, cold weather chainsaw chain, professional logging, BC Oregon Washington PNW, minimize downtime, Series W Series P Series E',
   authors: [{ name: 'BorealGrit' }],
   creator: 'BorealGrit',
   publisher: 'BorealGrit',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'BorealGrit™ | Industrial Chainsaw Chain Manufacturer for North America',
+    title: 'BorealGrit™ | Industrial Chainsaw Chain Supplier for North America',
     description: 'Professional-grade 68CrNiMo alloy chainsaw chains engineered for extreme Boreal environments. Direct-from-factory reliability for logging operations in BC, PNW, and beyond. Minimize your downtime today.',
     url: 'https://borealgrit.com',
     siteName: 'BorealGrit',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: '/images/contact-banner.jpg',
         width: 1200,
         height: 630,
-        alt: 'BorealGrit industrial chainsaw chain manufacturer for North American forestry',
+        alt: 'BorealGrit industrial chainsaw chain supplier for North American forestry',
       },
     ],
     locale: 'en_US',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BorealGrit™ | Industrial Chainsaw Chain Manufacturer for North America',
-    description: 'Professional-grade 68CrNiMo alloy chainsaw chains for BC, PNW, and beyond. Direct-from-factory reliability. Minimize your downtime today.',
+    title: 'BorealGrit™ | Industrial Chainsaw Chain Supplier for North America',
+    description: 'Professional-grade 68CrNiMo alloy chainsaw chains engineered for extreme Boreal environments. Direct-from-factory reliability for logging operations in BC, PNW, and beyond. Minimize your downtime today.',
     images: ['/images/contact-banner.jpg'],
   },
   robots: {
@@ -56,6 +56,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://borealgrit.com',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/logo-bg-icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/favicon.png',
   },
 }
 

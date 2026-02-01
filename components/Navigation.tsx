@@ -418,8 +418,12 @@ export default function Navigation() {
             </li>
           </ul>
           <div className="md:hidden flex items-center gap-2">
-            <Link href="/request-quote" className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-4 py-3 bg-forest-brand text-white text-sm font-semibold rounded-none hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition">
-              RFQ
+            <Link
+              href="/request-quote"
+              className="min-h-[44px] shrink-0 inline-flex items-center justify-center px-4 py-3 bg-white text-forest-brand text-sm font-semibold rounded-none border-2 border-white shadow-sm active:bg-forest-light transition"
+              aria-label="Request for Quote"
+            >
+              Request Quote
             </Link>
             <button
               type="button"
