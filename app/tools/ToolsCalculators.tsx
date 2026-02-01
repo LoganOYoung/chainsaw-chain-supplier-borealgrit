@@ -29,7 +29,23 @@ export default function ToolsCalculators() {
         </Link>
       </section>
 
-      {/* 2. Chain length / drive link calculator */}
+      {/* 2. Technical Specifications & Standards */}
+      <section id="technical-specs" className="scroll-mt-6 border border-forest-brand/30 rounded-none p-6 bg-white">
+        <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">
+          Technical Specifications & Standards
+        </h2>
+        <p className="text-text-body text-sm mb-4">
+          Reference for pitch, gauge, drive link type (Standard vs. Anti-Kickback), and cutter geometry. Diagrams, tables, and application notes for professional buyers.
+        </p>
+        <Link
+          href="/tools/technical-specs"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-forest-brand text-white font-semibold text-sm rounded-none hover:bg-forest-dark transition"
+        >
+          View Technical Specifications <ArrowRight className="w-4 h-4" />
+        </Link>
+      </section>
+
+      {/* 3. Chain length / drive link calculator */}
       <section id="chain-length-calculator" className="scroll-mt-6 border border-forest-brand/30 rounded-none p-6 bg-white">
         <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">
           Chain length / drive link calculator
