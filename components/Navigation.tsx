@@ -232,10 +232,10 @@ export default function Navigation() {
                 </svg>
               </button>
               {toolsMenuOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-forest-brand/30 rounded-none shadow-xl py-2 z-50 opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
+                <div className="absolute top-full left-0 mt-2 min-w-[18rem] w-max max-w-[90vw] bg-white border border-forest-brand/30 rounded-none shadow-xl py-2 z-50 opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
                   <Link
                     href="/fitment-finder"
-                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/fitment-finder') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    className={`block whitespace-nowrap px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${isActive('/fitment-finder') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setToolsMenuOpen(false)}
                   >
                     Fitment Finder
@@ -249,7 +249,7 @@ export default function Navigation() {
                   </Link>
                   <Link
                     href="/tools/technical-specs"
-                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools/technical-specs' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
+                    className={`block whitespace-nowrap px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/tools/technical-specs' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setToolsMenuOpen(false)}
                   >
                     Technical Specifications & Standards
