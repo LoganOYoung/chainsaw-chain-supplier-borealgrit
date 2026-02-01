@@ -44,7 +44,7 @@ export default function QualityPage() {
             <div className="flex flex-col items-center text-center">
               <div className="relative w-32 h-32 mb-4 bg-white border-2 border-forest-brand/30 rounded-none overflow-hidden flex items-center justify-center">
                 <Image
-                  src="/images/certifications/iso-9001-badge.png"
+                  src="/images/certifications/iso-9001-badge.svg"
                   alt="ISO 9001:2015 Quality Management System Certification Badge"
                   fill
                   className="object-contain p-2"
@@ -59,7 +59,7 @@ export default function QualityPage() {
             <div className="flex flex-col items-center text-center">
               <div className="relative w-32 h-32 mb-4 bg-white border-2 border-forest-brand/30 rounded-none overflow-hidden flex items-center justify-center">
                 <Image
-                  src="/images/certifications/ansi-b175-badge.png"
+                  src="/images/certifications/ansi-b175-badge.svg"
                   alt="ANSI B175.1 Safety and Performance Standard Badge"
                   fill
                   className="object-contain p-2"
@@ -74,7 +74,7 @@ export default function QualityPage() {
             <div className="flex flex-col items-center text-center">
               <div className="relative w-32 h-32 mb-4 bg-white border-2 border-forest-brand/30 rounded-none overflow-hidden flex items-center justify-center">
                 <Image
-                  src="/images/certifications/csa-z62-badge.png"
+                  src="/images/certifications/csa-z62-badge.svg"
                   alt="CSA Z62.3 Canadian Standards Association Certification Badge"
                   fill
                   className="object-contain p-2"
