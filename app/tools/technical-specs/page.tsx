@@ -182,12 +182,6 @@ export default function TechnicalSpecsPage() {
           <p className="text-xs text-text-body mb-4">
             This reference aligns with <strong className="text-text-main">ANSI B175.1</strong> and common industry chain specifications. Definitions and tolerances are as of current standards; verify with OEM or latest standards when specifying. For fitment by saw/bar, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>.
           </p>
-          <div className="mb-6 p-3 bg-forest-brand/5 border border-forest-brand/20 rounded-none">
-            <p className="text-xs font-medium text-text-main mb-1">How to measure</p>
-            <p className="text-xs text-text-body">
-              <strong>Pitch:</strong> Measure center-to-center of three consecutive drive link rivets, divide by two. <strong>Gauge:</strong> Measure drive link thickness with a caliper or use a chain gauge tool.
-            </p>
-          </div>
           
           <div className="space-y-6 sm:space-y-8">
             {/* Pitch */}
