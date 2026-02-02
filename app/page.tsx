@@ -71,10 +71,10 @@ export default function Home() {
           <div className="relative shrink-0 w-1/3 h-full">
             <div className="absolute inset-0">
               <Image
-                src="/images/hero-banner.png"
+                src="/images/hero-slide-2.png"
                 alt="Precision and power in every chainsaw chain"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-[55%_50%]"
                 sizes="100vw"
               />
               <div className="absolute inset-0 bg-forest-dark/70"></div>
