@@ -59,7 +59,7 @@ export default function QualityPage() {
             <div className="flex flex-col items-center text-center">
               <div className="relative w-32 h-32 mb-4 bg-white border-2 border-forest-brand/30 rounded-none overflow-hidden flex items-center justify-center">
                 <Image
-                  src="/images/certifications/ansi-b175-badge.svg"
+                  src="/images/certifications/ansi-b175-badge.png"
                   alt="ANSI B175.1 Safety and Performance Standard Badge"
                   fill
                   className="object-contain p-2"

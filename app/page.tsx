@@ -41,10 +41,10 @@ export default function Home() {
           <div className="relative shrink-0 w-1/3 h-full">
             <div className="absolute inset-0">
               <Image
-                src="/images/contact-banner.jpg"
+                src="/images/hero-banner.png"
                 alt="68CrNiMo alloy chainsaw chain manufacturing for North American forestry"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 priority
                 sizes="100vw"
               />
@@ -71,10 +71,10 @@ export default function Home() {
           <div className="relative shrink-0 w-1/3 h-full">
             <div className="absolute inset-0">
               <Image
-                src="/images/contact-banner.jpg"
+                src="/images/hero-banner.png"
                 alt="Precision and power in every chainsaw chain"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="100vw"
               />
               <div className="absolute inset-0 bg-forest-dark/70"></div>
@@ -110,10 +110,10 @@ export default function Home() {
           <div className="relative shrink-0 w-1/3 h-full">
             <div className="absolute inset-0">
               <Image
-                src="/images/contact-banner.jpg"
+                src="/images/hero-banner.png"
                 alt="Better value chainsaw chains"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="100vw"
               />
               <div className="absolute inset-0 bg-forest-brand/65"></div>
