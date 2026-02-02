@@ -59,7 +59,7 @@ export default function Home() {
               </p>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 px-8 py-4 md:px-12 md:py-5 bg-forest-brand text-white font-bold text-base md:text-lg uppercase tracking-wide rounded-none hover:bg-white hover:text-forest-brand transition shadow-xl hover:shadow-2xl w-fit"
+                className="inline-flex items-center gap-2 px-8 py-4 md:px-12 md:py-5 bg-forest-brand text-white font-bold text-base md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl w-fit"
               >
                 View Products
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -92,13 +92,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <Link 
                   href="/products" 
-                  className="w-full sm:w-auto px-6 py-3 md:px-10 md:py-4 bg-forest-brand text-white font-bold text-sm md:text-lg uppercase tracking-wide rounded-none hover:bg-white hover:text-forest-brand transition shadow-xl hover:shadow-2xl"
+                  className="w-full sm:w-auto px-6 py-3 md:px-10 md:py-4 bg-forest-brand text-white font-bold text-sm md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl"
                 >
                   View Specs & RFQ
                 </Link>
                 <Link 
                   href="/fitment-finder" 
-                  className="w-full sm:w-auto px-6 py-3 md:px-10 md:py-4 bg-forest-brand text-white font-bold text-sm md:text-lg uppercase tracking-wide rounded-none hover:bg-white hover:text-forest-brand transition shadow-xl hover:shadow-2xl"
+                  className="w-full sm:w-auto px-6 py-3 md:px-10 md:py-4 bg-forest-brand text-white font-bold text-sm md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl"
                 >
                   Find Your Chain
                 </Link>
@@ -135,7 +135,7 @@ export default function Home() {
               </div>
               <Link
                 href="/request-quote"
-                className="inline-flex items-center gap-2 px-8 py-4 md:px-12 md:py-5 bg-forest-brand text-white font-bold text-base md:text-lg uppercase tracking-wide rounded-none hover:bg-white hover:text-forest-brand transition shadow-xl hover:shadow-2xl w-fit"
+                className="inline-flex items-center gap-2 px-8 py-4 md:px-12 md:py-5 bg-forest-brand text-white font-bold text-base md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl w-fit"
               >
                 Request Quote
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
