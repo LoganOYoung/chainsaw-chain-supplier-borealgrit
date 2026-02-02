@@ -254,7 +254,7 @@ export default function DistributorsPage() {
             </Link>
             <Link
               href="/resources"
-              className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 min-h-[44px] border-2 border-forest-brand text-forest-brand font-semibold text-sm hover:bg-forest-brand hover:text-white transition rounded-none w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 min-h-[44px] bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none w-full sm:w-auto"
             >
               Catalogs & Resources
             </Link>
