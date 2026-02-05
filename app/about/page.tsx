@@ -22,12 +22,10 @@ export default function AboutPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
-        <h1 className="text-2xl font-bold text-text-main mb-4">About Us</h1>
-        
-        {/* Banner Image */}
-        <section className="mb-8">
-          <div className="relative w-full h-48 md:h-64 lg:h-80 rounded-none overflow-hidden bg-gray-100 shadow-sm">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14">
+        {/* Hero Banner */}
+        <section className="mb-8 -mx-4 sm:mx-0">
+          <div className="relative w-full h-44 sm:h-48 md:h-64 lg:h-72 rounded-none overflow-hidden bg-gray-100">
             <Image
               src="/images/about-banner.png"
               alt="Freshly cut logs in forest—BorealGrit serves North American forestry and B2B supply"
@@ -36,6 +34,12 @@ export default function AboutPage() {
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
             />
+            <div className="absolute inset-0 bg-forest-brand/60" />
+            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-6 sm:py-8">
+              <h1 className="font-heading text-xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight uppercase">
+                About Us
+              </h1>
+            </div>
           </div>
         </section>
         <p className="text-text-body mb-8 max-w-3xl">

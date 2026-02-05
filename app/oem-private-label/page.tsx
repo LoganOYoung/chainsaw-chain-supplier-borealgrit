@@ -23,19 +23,29 @@ export default function OEMPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
-        {/* Page Header */}
-        <header className="mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-text-main mb-4">
-            OEM & Private Label Manufacturing
-          </h1>
-          <p className="text-lg text-text-body mb-2 max-w-3xl">
-            Professional chainsaw chain manufacturing for OEM partners and private label programs. Custom specifications, packaging, branding, and part numbers tailored to your brand requirements.
-          </p>
-          <p className="text-sm text-text-body max-w-3xl">
-            ISO 9001 certified production. ANSI B175.1 compliant. CSA Z62.3 certified models available for Canadian market. B2B wholesale only.
-          </p>
-        </header>
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14">
+        {/* Hero Banner */}
+        <section className="mb-8 sm:mb-10 -mx-4 sm:mx-0">
+          <div className="relative w-full h-44 sm:h-48 md:h-64 lg:h-72 rounded-none overflow-hidden bg-gray-100">
+            <Image
+              src="/images/contact-banner.jpg"
+              alt="OEM and private label chainsaw chain manufacturing"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+            />
+            <div className="absolute inset-0 bg-forest-brand/60" />
+            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-6 sm:py-8">
+              <h1 className="font-heading text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3 tracking-tight uppercase">
+                OEM & Private Label Manufacturing
+              </h1>
+              <p className="text-white/95 text-sm sm:text-lg md:text-xl max-w-2xl">
+                Custom specifications, packaging, branding, and part numbers. ISO 9001 certified. ANSI B175.1 and CSA Z62.3 compliant. B2B wholesale only.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Key Benefits */}
         <section className="mb-10 bg-white border border-forest-brand/30 rounded-none p-6">
@@ -148,62 +158,6 @@ export default function OEMPage() {
             {/* Packaging & Branding */}
             <div className="bg-white border border-forest-brand/30 rounded-none p-6">
               <h3 className="text-lg font-semibold text-text-main mb-4">Packaging & Branding</h3>
-              
-              {/* Packaging Images */}
-              <div className="grid grid-cols-3 gap-4 mb-4">
-                <div className="text-center">
-                  <div className="relative w-full h-32 mb-2 bg-gray-50 border-2 border-forest-brand/30 rounded-none overflow-hidden flex items-center justify-center">
-                    <Image
-                      src="/images/oem/retail-packaging.jpg"
-                      alt="Retail packaging example: single chain box with custom artwork and UPC barcode"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 33vw, 150px"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-gray-50/90 opacity-0 hover:opacity-100 transition">
-                      <div className="text-center p-2">
-                        <div className="text-xs text-text-body font-mono">Retail Box</div>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-xs text-text-body">Retail Packaging</p>
-                </div>
-                <div className="text-center">
-                  <div className="relative w-full h-32 mb-2 bg-gray-50 border-2 border-forest-brand/30 rounded-none overflow-hidden flex items-center justify-center">
-                    <Image
-                      src="/images/oem/bulk-packaging.jpg"
-                      alt="Bulk packaging example: multi-chain carton and master carton configuration"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 33vw, 150px"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-gray-50/90 opacity-0 hover:opacity-100 transition">
-                      <div className="text-center p-2">
-                        <div className="text-xs text-text-body font-mono">Bulk Carton</div>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-xs text-text-body">Bulk Packaging</p>
-                </div>
-                <div className="text-center">
-                  <div className="relative w-full h-32 mb-2 bg-gray-50 border-2 border-forest-brand/30 rounded-none overflow-hidden flex items-center justify-center">
-                    <Image
-                      src="/images/oem/custom-packaging.jpg"
-                      alt="Custom OEM packaging example with private label branding"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 33vw, 150px"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-gray-50/90 opacity-0 hover:opacity-100 transition">
-                      <div className="text-center p-2">
-                        <div className="text-xs text-text-body font-mono">Custom OEM</div>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-xs text-text-body">Custom OEM</p>
-                </div>
-              </div>
-              
               <div className="space-y-3 text-sm text-industrial">
                 <div className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-forest-brand mt-0.5 flex-shrink-0" />
