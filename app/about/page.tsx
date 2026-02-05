@@ -29,8 +29,8 @@ export default function AboutPage() {
         <section className="mb-8">
           <div className="relative w-full h-48 md:h-64 lg:h-80 rounded-none overflow-hidden bg-gray-100 shadow-sm">
             <Image
-              src="/images/contact-banner.jpg"
-              alt="Professional chainsaw chain manufacturing and B2B supply"
+              src="/images/about-banner.png"
+              alt="Freshly cut logs in forest—BorealGrit serves North American forestry and B2B supply"
               fill
               className="object-cover"
               priority

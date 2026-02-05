@@ -37,7 +37,7 @@ export default function DistributorsPage() {
           <div className="relative w-full h-44 sm:h-48 md:h-64 lg:h-72 rounded-none overflow-hidden bg-gray-100">
             <Image
               src="/images/distributors-banner.png"
-              alt="Freshly cut logs in forest—BorealGrit supplies chainsaw chains for North American forestry and distribution"
+              alt="Professional logger with chainsaw and forestry truck—BorealGrit supplies chains for North American distributors and operations"
               fill
               className="object-cover"
               priority
