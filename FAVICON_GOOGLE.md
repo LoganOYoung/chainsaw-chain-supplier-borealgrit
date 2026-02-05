@@ -3,30 +3,48 @@
 ## 当前配置
 
 - **根 layout**（`app/layout.tsx`）已配置 `metadata.icons`：
-  - 优先：`public/favicon.ico`（Google 常抓取此路径）
-  - 备用：`public/favicon.png`、`public/logo-bg-icon.svg`
-  - Apple：`public/favicon.png`
+  - `public/favicon.png`、`public/favicon.ico`、Apple 用 `favicon.png`。
 - **文件**：`public/favicon.ico` 与 `public/favicon.png` 已存在（松林 + BG 图标）。
 
-## 为何 SERP 里还是显示蓝色地球？
+## ⚠️ 发现的问题：扩展名与真实格式不符
 
-1. **Google 更新有延迟**  
-   站上已经加上 favicon 并部署，但 **Google 不会立刻换掉 SERP 里的图标**。它要重新抓取首页和 `/favicon.ico`，再更新索引，通常需要 **几天到几周**。所以「优化已经做了」和「SERP 里马上变」是两回事。
+用 `file` 检查当前文件可知：
 
-2. **已按 Google 习惯做了配置**  
-   项目里已提供 `public/favicon.ico`，并在 layout 里把它放在 `icons` 的第一项，首页会输出 `<link rel="icon" href="/favicon.ico">`。部署后，Google 抓取首页时会请求 `https://borealgrit.com/favicon.ico` 并拿到你的图标。
+| 文件           | 声明类型 | 实际内容 |
+|----------------|----------|----------|
+| `favicon.ico`  | ICO      | **JPEG (JFIF)**，1024×1024 |
+| `favicon.png`  | PNG      | **JPEG (JFIF)**，1024×1024 |
 
-3. **若仍长期不更新**  
-   - 在 [Google Search Console](https://search.google.com/search-console) 用 **URL 检查** 对首页 `https://borealgrit.com` 请求编入索引，促使其重新抓取。  
-   - 确认线上能直接打开 `https://borealgrit.com/favicon.ico` 且返回 200、无 404。  
-   - 若 Google 对当前 `favicon.ico`（实为 PNG 内容）不认可，可用 [favicon.io](https://favicon.io/) 等工具把 `favicon.png` 转成标准 ICO 再替换 `public/favicon.ico`。
+也就是说：**两个文件本质都是 JPEG，只是扩展名写成了 .ico 和 .png**。会导致：
+
+- 浏览器/爬虫按扩展名期待 ICO 或 PNG，解析可能失败 → **标签页或 SERP 图标空白/异常**。
+- 服务器若按扩展名返回 `image/x-icon` 或 `image/png`，与真实 JPEG 内容不一致，部分客户端会拒绝或显示异常。
+
+## 已执行的修复（当前仓库）
+
+1. **PNG**：用 macOS `sips` 将原错误扩展名的 JPEG 转为真实 PNG，已覆盖 `public/favicon.png`（现为 PNG image data, 1024×1024）。
+2. **ICO**：用 npm 包 `png-to-ico` 从 `public/favicon.png` 生成标准 ICO，已覆盖 `public/favicon.ico`。  
+   - 重新生成命令：`npx png-to-ico public/favicon.png > public/favicon.ico`
+
+## 若需再次修复或手动生成
+
+1. **生成真正的 ICO**  
+   - 本地：`npx png-to-ico public/favicon.png > public/favicon.ico`  
+   - 或用 [favicon.io](https://favicon.io/) / [realfavicongenerator.net](https://realfavicongenerator.net/) 生成后替换。
+
+2. **提供真正的 PNG**  
+   - 从设计稿导出 PNG，或用 `sips -s format png 源图.jpg --out public/favicon.png` 转换后覆盖。
+
+3. **部署后验证**  
+   - 访问 `https://borealgrit.com/` 和 `https://borealgrit.com/favicon.ico`，确认图标正常、无 404。  
+   - 若 SERP 仍不更新，在 [Google Search Console](https://search.google.com/search-console) 对首页做 **URL 检查 → 请求编入索引**。
 
 ## 标题在 SERP 里和站内不一致
 
-SERP 显示的标题（如 "Borealgrit - Professional Chainsaw Chain Manufacturer"）也可能来自旧缓存或 Google 自动改写。根 layout 里的 `metadata.title` 已设为 "BorealGrit™ | Industrial Chainsaw Chain Manufacturer for North America"。标题更新同样要等 Google 重新抓取和更新索引，通常也是数天到数周。同样可用 Search Console 的「URL 检查 → 请求编入索引」加速。
+SERP 显示的标题可能来自旧缓存或 Google 自动改写。根 layout 的 `metadata.title` 已设为 "BorealGrit™ | Industrial Chainsaw Chain Supplier for North America"。标题更新要等 Google 重新抓取，通常数天到数周；可用 Search Console「URL 检查 → 请求编入索引」加速。
 
-## 检查清单
+## 检查清单（修复格式后）
 
-- 部署后浏览器访问 `https://borealgrit.com/`，标签页应显示松林 + BG 图标。
-- 直接访问 `https://borealgrit.com/favicon.ico`，应返回 200、无 404。
-- 若超过 2–4 周仍无变化，在 Search Console 对首页请求编入索引，并确认 `favicon.ico` 未被 robots.txt 或 noindex 限制。
+- 部署后访问 `https://borealgrit.com/`，标签页应显示松林 + BG 图标。
+- 直接访问 `https://borealgrit.com/favicon.ico`，应返回 200，且为**真实 ICO 格式**（非 JPEG 改扩展名）。
+- 若超过 2–4 周 SERP 仍无图标，在 Search Console 对首页请求编入索引，并确认 `favicon.ico` 未被 robots 或 noindex 限制。
