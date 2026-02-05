@@ -140,8 +140,8 @@ export default function FitmentFinderPage() {
         <section id="fitment-guarantee" className="relative w-full min-h-[240px] md:min-h-[280px] flex flex-col justify-center py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/images/contact-banner.jpg"
-              alt="Industrial chainsaw chain fitment and compatibility finder"
+              src="/images/fitment-finder-banner.jpg"
+              alt="Chainsaw cutting wood—find compatible BorealGrit chain by brand, bar, and pitch"
               fill
               className="object-cover"
               sizes="100vw"
