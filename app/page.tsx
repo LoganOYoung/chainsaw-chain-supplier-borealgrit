@@ -80,10 +80,10 @@ export default function Home() {
               <div className="absolute inset-0 bg-forest-dark/70"></div>
             </div>
             <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center text-center py-8 md:py-0">
-              <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase mb-4 md:mb-6 leading-tight tracking-tight text-white">
+              <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase mb-4 md:mb-6 leading-tight tracking-tight text-white">
                 <span className="block">Precision in Every Link</span>
                 <span className="block">Power in Every Cut</span>
-              </h1>
+              </h2>
               
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
                 The rugged choice for North American forestry professionals. Industrial chainsaw chains that deliver consistent performance when every second of uptime matters
@@ -119,9 +119,9 @@ export default function Home() {
               <div className="absolute inset-0 bg-forest-brand/65"></div>
             </div>
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-8 md:py-0">
-              <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-5 tracking-tight uppercase">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-5 tracking-tight uppercase">
                 Same Performance, Better Value
-              </h1>
+              </h2>
               <p className="text-xl sm:text-2xl md:text-3xl text-white font-bold mb-4 md:mb-6">
                 25-40% Cost Savings vs. Tier-1 Brands
               </p>
@@ -182,7 +182,7 @@ export default function Home() {
               How It Works
             </h2>
             <p className="text-xs sm:text-sm text-text-body text-center mb-6 md:mb-10 max-w-2xl mx-auto">
-              Get started with Borealgrit in four simple steps.
+              Get started with BorealGrit™ in four simple steps.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">

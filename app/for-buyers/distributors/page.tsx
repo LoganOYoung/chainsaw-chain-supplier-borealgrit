@@ -115,6 +115,33 @@ export default function DistributorsPage() {
           </div>
         </section>
 
+        {/* Lead Time & Inventory */}
+        <section className="mb-8 sm:mb-10">
+          <h2 className="text-base sm:text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Lead Time & Inventory</h2>
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-4">
+            <div className="border border-forest-brand/30 rounded-none p-4 bg-white">
+              <h3 className="font-semibold text-text-main mb-2 text-sm">Standard SKUs</h3>
+              <p className="text-text-body text-sm">
+                High-demand pitch/gauge combinations (e.g. .325″, 3/8″, .404″) are held in regular stock. We confirm availability and lead time at quote stage so you can plan orders.
+              </p>
+            </div>
+            <div className="border border-forest-brand/30 rounded-none p-4 bg-white">
+              <h3 className="font-semibold text-text-main mb-2 text-sm">North American Logistics</h3>
+              <p className="text-text-body text-sm">
+                We ship FOB origin or CIF to North American ports. Partner logistics and warehouse options can be discussed for larger or recurring orders to simplify your supply chain.
+              </p>
+            </div>
+          </div>
+          <div className="bg-gray-50 border border-forest-brand/30 rounded-none px-4 py-3">
+            <h3 className="font-semibold text-text-main text-sm mb-2">Typical Lead Times</h3>
+            <ul className="text-text-body text-sm space-y-1">
+              <li><strong className="text-text-main">FOB:</strong> Typically 3–4 weeks from order confirmation to ready for shipment.</li>
+              <li><strong className="text-text-main">CIF to West Coast (North America):</strong> Approximately 5–6 weeks from order to port arrival; we confirm per order.</li>
+            </ul>
+            <p className="text-text-body text-xs mt-2">Exact lead times depend on SKU, volume, and season; we provide a clear date at confirmation.</p>
+          </div>
+        </section>
+
         {/* Why BorealGrit */}
         <section className="mb-8 sm:mb-10">
           <h2 className="text-base sm:text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Why BorealGrit</h2>
@@ -140,6 +167,34 @@ export default function DistributorsPage() {
               <span><strong className="text-text-main">B2B only.</strong> We are built for distributors and forestry buyers, not retail consumers.</span>
             </li>
           </ul>
+        </section>
+
+        {/* What Our Partners See */}
+        <section className="mb-8 sm:mb-10">
+          <h2 className="text-base sm:text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">What Our Partners See</h2>
+          <p className="text-text-body text-sm mb-4">
+            Buyers across segments report measurable savings and reliable performance. We do not publish named case studies; the following reflects typical feedback by partner type:
+          </p>
+          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-4">
+            <div className="border border-forest-brand/30 rounded-none p-4 bg-white">
+              <h3 className="font-semibold text-text-main mb-2 text-sm">North American distributors</h3>
+              <p className="text-text-body text-sm">
+                Regional saw-chain and forestry distributors often see <strong className="text-text-main">25–40% lower cost per chain</strong> versus Tier-1 brands at comparable specs, with clear documentation for resale.
+              </p>
+            </div>
+            <div className="border border-forest-brand/30 rounded-none p-4 bg-white">
+              <h3 className="font-semibold text-text-main mb-2 text-sm">Logging & sawmill operations</h3>
+              <p className="text-text-body text-sm">
+                High-consumption operations report <strong className="text-text-main">meaningful TCO reduction</strong> on consumables while maintaining edge life and field reliability, with fewer downtime incidents.
+              </p>
+            </div>
+            <div className="border border-forest-brand/30 rounded-none p-4 bg-white">
+              <h3 className="font-semibold text-text-main mb-2 text-sm">OEM & private-label partners</h3>
+              <p className="text-text-body text-sm">
+                Partners using our chains under their brand report consistent quality, on-spec delivery, and <strong className="text-text-main">better margin</strong> versus sourcing branded replacement chains.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* How We Work */}
@@ -254,7 +309,7 @@ export default function DistributorsPage() {
             </Link>
             <Link
               href="/resources"
-              className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 min-h-[44px] bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition rounded-none w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 min-h-[44px] border-2 border-forest-brand text-forest-brand font-semibold text-sm hover:bg-forest-brand hover:text-white transition rounded-none w-full sm:w-auto"
             >
               Catalogs & Resources
             </Link>

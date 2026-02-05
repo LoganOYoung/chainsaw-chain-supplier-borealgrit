@@ -6,13 +6,16 @@ import { Metadata } from 'next'
 import { CheckCircle2, Package, FileText, ShieldCheck, Factory, Clock, DollarSign, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'OEM & Private Label Chainsaw Chains | Custom Manufacturing | Borealgrit',
+  title: 'OEM & Private Label Chainsaw Chains | Custom Manufacturing | BorealGrit™',
   description: 'OEM and private label chainsaw chain manufacturing. Custom specifications, packaging, branding, and part numbers. ANSI B175.1 and CSA Z62.3 compliant. B2B wholesale for North American distributors and importers. MOQ and lead time per project.',
   keywords: 'OEM chainsaw chain, private label chainsaw chain, custom chainsaw chain manufacturing, chainsaw chain OEM supplier, private label chainsaw chain manufacturer, custom chainsaw chain packaging, chainsaw chain branding, B2B chainsaw chain wholesale, chainsaw chain contract manufacturing, custom chainsaw chain specifications',
   openGraph: {
     title: 'OEM & Private Label Chainsaw Chains | Custom Manufacturing',
     description: 'Professional OEM and private label chainsaw chain manufacturing. Custom specifications, packaging, and branding for B2B partners.',
     type: 'website',
+  },
+  alternates: {
+    canonical: '/oem-private-label',
   },
 }
 

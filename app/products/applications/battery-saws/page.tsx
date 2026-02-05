@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Chainsaw Chains for Battery-Powered Saws | Borealgrit',
+  title: 'Chainsaw Chains for Battery-Powered Saws | BorealGrit™',
   description: 'Narrow kerf chainsaw chains optimized for battery-powered cordless saws. Reduces power consumption by 15-25%. Compatible with Milwaukee, Makita, EGO, DeWalt.',
   keywords: 'battery chainsaw chain, cordless saw chain, narrow kerf chain, battery-powered chainsaw chain, Milwaukee chainsaw chain, Makita chainsaw chain, EGO chainsaw chain, DeWalt chainsaw chain, electric chainsaw chain',
   openGraph: {

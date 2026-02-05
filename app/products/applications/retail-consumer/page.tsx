@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Chainsaw Chains for Retail & Consumer Market | Borealgrit',
+  title: 'Chainsaw Chains for Retail & Consumer Market | BorealGrit™',
   description: 'Low-kickback chainsaw chains for consumer and homeowner saws. ANSI B175.1 compliant. Safe, reliable chains for retail market and DIY applications.',
   keywords: 'consumer chainsaw chain, homeowner chainsaw chain, retail chainsaw chain, low kickback chain, safety chain, ANSI compliant chain, DIY chainsaw chain',
   openGraph: {

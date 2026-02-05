@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Chainsaw Chain Fitment & Compatibility Finder | Borealgrit',
+  title: 'Chainsaw Chain Fitment & Compatibility Finder | BorealGrit™',
   description: 'Find compatible chainsaw chains by brand, pitch, gauge, drive links, chain type. Match your saw and bar. Cross-reference Oregon, Stihl, Husqvarna models. Always verify bar and chain specs before ordering.',
   keywords: 'chainsaw chain fitment, chainsaw compatibility, chain fitment finder, Oregon chain replacement, Stihl chain replacement, Husqvarna chain replacement, chainsaw chain compatibility tool, find chainsaw chain',
   openGraph: {

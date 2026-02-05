@@ -141,7 +141,7 @@ export default function FitmentFinderPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/contact-banner.jpg"
-              alt=""
+              alt="Industrial chainsaw chain fitment and compatibility finder"
               fill
               className="object-cover"
               sizes="100vw"

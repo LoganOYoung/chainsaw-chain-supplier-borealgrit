@@ -3,10 +3,10 @@ import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { Metadata } from 'next'
-import { ShieldCheck, Award, CheckCircle2, FileText, Microscope, BarChart3, Factory, ArrowRight, Download } from 'lucide-react'
+import { ShieldCheck, Award, CheckCircle2, FileText, Microscope, BarChart3, Factory, ArrowRight, Download, MessageCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Quality & Certifications | ISO 9001, ANSI B175.1, CSA Z62.3 | Borealgrit',
+  title: 'Quality & Certifications | ISO 9001, ANSI B175.1, CSA Z62.3 | BorealGrit™',
   description: 'Chainsaw chain quality control and certifications. ISO 9001:2015 certified quality management system. ANSI B175.1 and CSA Z62.3 compliant. Material traceability, batch testing, pre-shipment inspection. B2B quality assurance for distributors and importers.',
   keywords: 'chainsaw chain quality control, ISO 9001 chainsaw chain, ANSI B175.1 compliant, CSA Z62.3 certified, chainsaw chain quality assurance, material traceability, batch testing, pre-shipment inspection, chainsaw chain certifications, quality management system',
   openGraph: {
@@ -431,6 +431,45 @@ export default function QualityPage() {
                   <span>Custom testing protocols for OEM partners</span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* After-Sales Support & Quality Commitment */}
+        <section className="mb-10 bg-white border border-forest-brand/30 rounded-none p-6">
+          <h2 className="text-xl font-bold text-text-main mb-6">After-Sales Support & Quality Commitment</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <MessageCircle className="w-5 h-5 text-forest-brand" />
+                <h3 className="font-semibold text-text-main">Returns, Complaints & Support</h3>
+              </div>
+              <p className="text-sm text-text-body mb-3">
+                We take every quality concern seriously. For returns, defects, or complaints:
+              </p>
+              <ul className="text-sm text-text-body space-y-2">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-forest-brand mt-0.5 flex-shrink-0" />
+                  <span>Contact us via the <Link href="/contact" className="text-forest-brand underline hover:no-underline">contact form</Link> or your account manager with order/batch details and a brief description.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-forest-brand mt-0.5 flex-shrink-0" />
+                  <span>We respond to quality-related inquiries within 1–2 business days and will guide you through our return or replacement process.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-forest-brand mt-0.5 flex-shrink-0" />
+                  <span>Defective or non-conforming product: we arrange return authorization and, upon verification, provide replacement or credit per our terms.</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <ShieldCheck className="w-5 h-5 text-forest-brand" />
+                <h3 className="font-semibold text-text-main">Quality Promise</h3>
+              </div>
+              <p className="text-sm text-text-body">
+                We stand behind our product: any verified quality or specification issue is resolved with replacement or credit in line with our supply terms. Our ISO 9001 processes and full traceability support fast root-cause analysis and corrective action when needed.
+              </p>
             </div>
           </div>
         </section>

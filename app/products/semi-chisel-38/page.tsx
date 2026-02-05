@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'SC-38 Semi-Chisel 3/8" Chainsaw Chain | Borealgrit',
+  title: 'SC-38 Semi-Chisel 3/8" Chainsaw Chain | BorealGrit™',
   description: 'Semi-chisel chainsaw chain, 3/8" pitch. General-purpose chain with rounded-corner cutters. Holds edge better in dirty or frozen wood. ANSI compliant.',
   keywords: 'semi chisel chainsaw chain, 3/8 pitch chain, SC-38 chain, general purpose chain, rounded-none corner chain, dirty wood chain, frozen wood chain, ANSI compliant chain',
   openGraph: {

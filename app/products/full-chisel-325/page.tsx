@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'FC-325 Full Chisel .325" Chainsaw Chain | Borealgrit',
+  title: 'FC-325 Full Chisel .325" Chainsaw Chain | BorealGrit™',
   description: 'Full chisel chainsaw chain, .325" pitch. Square-corner cutters for professional felling and bucking. ANSI compliant. Request quote or download datasheet.',
   keywords: 'full chisel chainsaw chain, .325 pitch chain, FC-325 chain, square corner chain, professional chainsaw chain, felling chain, bucking chain, ANSI compliant chain',
   openGraph: {

@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Us | Chainsaw Chain Manufacturer | Borealgrit',
+  title: 'About Us | Chainsaw Chain Manufacturer | BorealGrit™',
   description: 'Chainsaw chain manufacturer. B2B export, OEM, wholesale. North American distributors and importers. ISO 9001 certified, ANSI B175.1 and CSA Z62.3 compliant.',
   keywords: 'chainsaw chain manufacturer, B2B chainsaw chain supplier, OEM chainsaw chain, chainsaw chain exporter, ISO 9001 chainsaw chain, ANSI compliant manufacturer',
   openGraph: {
