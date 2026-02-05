@@ -74,7 +74,7 @@ export default function QualityPage() {
             <div className="flex flex-col items-center text-center">
               <div className="relative w-32 h-32 mb-4 bg-white border-2 border-forest-brand/30 rounded-none overflow-hidden flex items-center justify-center">
                 <Image
-                  src="/images/certifications/csa-z62-badge.svg"
+                  src="/images/certifications/csa-z62-badge.png"
                   alt="CSA Z62.3 Canadian Standards Association Certification Badge"
                   fill
                   className="object-contain p-2"
