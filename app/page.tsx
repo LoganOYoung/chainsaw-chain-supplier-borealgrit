@@ -470,36 +470,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "Chainsaw Chain",
-            "description": "Professional chainsaw chains for North American B2B markets. ANSI B175.1 and CSA Z62.3 compliant.",
-            "brand": {
-              "@type": "Brand",
-              "name": "Borealgrit"
-            },
-            "category": "Industrial Equipment",
-            "offers": {
-              "@type": "AggregateOffer",
-              "availability": "https://schema.org/InStock",
-              "priceCurrency": "USD",
-              "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "priceCurrency": "USD",
-                "price": "Varies by volume"
-              }
-            },
-            "audience": {
-              "@type": "BusinessAudience",
-              "audienceType": "Distributors, Importers, OEM Partners"
-            }
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Borealgrit - Professional Chainsaw Chain Manufacturer",
             "url": "https://borealgrit.com",
