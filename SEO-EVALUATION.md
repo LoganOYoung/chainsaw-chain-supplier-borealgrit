@@ -133,3 +133,10 @@
 5. ~~**品牌名**: 全局统一为 “BorealGrit™”（在 title/OG 等出现处）~~ ✅ 已统一。
 
 技术侧 SEO 基础可视为**优秀**；持续迭代可再加强结构化数据与内容深度（如案例、地域长尾词）。
+
+---
+
+## 六、后续优化（已实施）
+
+- **重定向页 noindex**：`/tools/regional-guide`、`/tools/chain-selection-matrix`、`/tools/cross-chain-reference` 为客户端重定向页，已通过各路由的 `layout.tsx` 设置 `robots: { index: false, follow: false }`，避免被索引为重复内容。
+- **根 layout**：已增加 `themeColor: '#547950'`（品牌绿），用于移动端浏览器地址栏/状态栏。

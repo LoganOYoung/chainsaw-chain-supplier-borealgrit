@@ -6,6 +6,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
+  themeColor: '#547950', // brand green – mobile browser chrome
 }
 
 export const metadata: Metadata = {
