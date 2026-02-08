@@ -101,13 +101,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/tools/regional-guide`,
+      url: `${baseUrl}/for-buyers/regional-guide`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/tools/chain-selection-matrix`,
+      url: `${baseUrl}/for-buyers/chain-selection-matrix`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,

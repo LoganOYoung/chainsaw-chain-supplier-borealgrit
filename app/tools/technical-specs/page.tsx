@@ -162,11 +162,11 @@ export default function TechnicalSpecsPage() {
           ]}
         />
         <Link
-          href="/fitment-finder"
+          href="/tools"
           className="inline-flex items-center gap-1.5 text-sm text-forest-brand hover:underline mb-4"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to Fitment Finder
+          Back to Tools
         </Link>
 
         <section className="bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
@@ -389,7 +389,7 @@ export default function TechnicalSpecsPage() {
                 </div>
               </div>
               <p className="text-sm text-text-body">
-                See <Link href="/tools/regional-guide" className="text-forest-brand hover:underline">Regional Application Guide</Link> for Series W, P, E recommendations by North American region.
+                See <Link href="/for-buyers/regional-guide" className="text-forest-brand hover:underline">Regional Application Guide</Link> for Series W, P, E recommendations by North American region.
               </p>
             </div>
 

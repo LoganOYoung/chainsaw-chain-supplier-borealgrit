@@ -28,7 +28,7 @@ export default function ForBuyersHubPage() {
           We supply North American distributors, logging operations, and OEM partners with factory-direct chainsaw chains. Choose your path below.
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <Link
             href="/for-buyers/distributors"
             className="block border-2 border-forest-brand/30 rounded-none p-6 hover:border-forest-brand hover:bg-forest-light/30 transition"
@@ -51,6 +51,30 @@ export default function ForBuyersHubPage() {
             </p>
             <span className="inline-flex items-center gap-1 text-forest-brand font-semibold text-sm">
               View page <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+          <Link
+            href="/for-buyers/regional-guide"
+            className="block border-2 border-forest-brand/30 rounded-none p-6 hover:border-forest-brand hover:bg-forest-light/30 transition"
+          >
+            <h2 className="text-lg font-bold text-text-main mb-2">Regional Application Guide</h2>
+            <p className="text-text-body text-sm mb-4">
+              Chain selection by North American region: Pacific Northwest & BC, Boreal Belt, Urban Forestry. Series P, W, E recommendations.
+            </p>
+            <span className="inline-flex items-center gap-1 text-forest-brand font-semibold text-sm">
+              View guide <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+          <Link
+            href="/for-buyers/chain-selection-matrix"
+            className="block border-2 border-forest-brand/30 rounded-none p-6 hover:border-forest-brand hover:bg-forest-light/30 transition"
+          >
+            <h2 className="text-lg font-bold text-text-main mb-2">Chain Selection Matrix</h2>
+            <p className="text-text-body text-sm mb-4">
+              Reference by species, equipment, and task: hardwood, softwood, frozen timber; gas, battery, harvester; logging, arborist, firewood.
+            </p>
+            <span className="inline-flex items-center gap-1 text-forest-brand font-semibold text-sm">
+              View matrix <ArrowRight className="w-4 h-4" />
             </span>
           </Link>
         </div>
