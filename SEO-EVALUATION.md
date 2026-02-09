@@ -53,7 +53,7 @@
 - **About**: Organization（supplier 表述、certification 含 ISO/ANSI/CSA）+ BreadcrumbList。
 - **Series W/E/P**: Product + BreadcrumbList。
 - **Products 目录**: Product（代表品类）。
-- **OEM**: Service。
+- **OEM**（`/oem-private-label`）：Service（原有）+ WebPage + BreadcrumbList。
 - **Tools hub**（`/tools`）：WebPage + BreadcrumbList。
 - **Technical Specs**（`/tools/technical-specs`）：WebPage + BreadcrumbList。
 - **For Buyers hub**（`/for-buyers`）、**Regional Guide**（`/for-buyers/regional-guide`）、**Chain Selection Matrix**（`/for-buyers/chain-selection-matrix`）、**Distributors**（`/for-buyers/distributors`）：各页 WebPage + BreadcrumbList。
@@ -156,3 +156,5 @@
   - **Regional Guide（/for-buyers/regional-guide）**：补全 `openGraph.url`、`twitter`；新增 WebPage + BreadcrumbList；`main` 增加 `aria-label`；CTA 段落中「Fitment Finder」改为内链。
   - **Chain Selection Matrix（/for-buyers/chain-selection-matrix）**：补全 `openGraph.url`、`twitter`；新增 WebPage + BreadcrumbList；`main` 增加 `aria-label`。
   - **Distributors（/for-buyers/distributors）**：补全 `openGraph.url`、`twitter`；新增 WebPage + BreadcrumbList；`main` 增加 `aria-label`；Policies 表增加 `caption`（sr-only）与 `aria-describedby`。
+- **OEM & Private Label（/oem-private-label）**：补全 `openGraph.url`、`twitter`；新增 WebPage + BreadcrumbList JSON-LD（原有 Service 保留）；`main` 增加 `aria-label`。
+- **导航 For Buyers 入口**：下拉菜单增加首项「For Buyers」链接至 `/for-buyers`，并设 `pathname === '/for-buyers'` 时高亮，便于从导航进入 Hub 页。

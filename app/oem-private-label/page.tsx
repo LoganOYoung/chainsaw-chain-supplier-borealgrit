@@ -14,6 +14,12 @@ export const metadata: Metadata = {
     title: 'OEM & Private Label Chainsaw Chains | Custom Manufacturing',
     description: 'Professional OEM and private label chainsaw chain manufacturing. Custom specifications, packaging, and branding for B2B partners.',
     type: 'website',
+    url: 'https://borealgrit.com/oem-private-label',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'OEM & Private Label Chainsaw Chains | Custom Manufacturing | BorealGrit™',
+    description: 'Professional OEM and private label chainsaw chain manufacturing. Custom specifications, packaging, and branding for B2B partners.',
   },
   alternates: {
     canonical: '/oem-private-label',
@@ -24,7 +30,7 @@ export default function OEMPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14" aria-label="OEM & Private Label">
         <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Buyers', href: '/for-buyers' }, { label: 'OEM & Private Label' }]} />
         {/* Hero Banner */}
         <section className="mb-8 sm:mb-10 -mx-4 sm:mx-0">
@@ -485,6 +491,33 @@ export default function OEMPage() {
         />
       </main>
       <Footer />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'OEM & Private Label Chainsaw Chains | Custom Manufacturing | BorealGrit',
+            description: 'OEM and private label chainsaw chain manufacturing. Custom specifications, packaging, branding, and part numbers. ANSI B175.1 and CSA Z62.3 compliant.',
+            url: 'https://borealgrit.com/oem-private-label',
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://borealgrit.com' },
+              { '@type': 'ListItem', position: 2, name: 'For Buyers', item: 'https://borealgrit.com/for-buyers' },
+              { '@type': 'ListItem', position: 3, name: 'OEM & Private Label' },
+            ],
+          }),
+        }}
+      />
     </>
   )
 }
