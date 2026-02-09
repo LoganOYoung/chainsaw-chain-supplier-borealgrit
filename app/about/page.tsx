@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
         <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
 
         {/* Hero */}
@@ -35,21 +35,21 @@ export default function AboutPage() {
               fill
               className="object-cover"
               priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
             />
             <div className="absolute inset-0 bg-forest-brand/60" />
-            <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-center py-6">
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-6">
               <h1 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight uppercase">
                 About Us
               </h1>
               <p className="text-white/90 text-sm mt-1.5 max-w-xl">
-                Your factory-direct source for professional chainsaw chains across North America.
+                Professional chainsaw chains for North America—direct supply, clear specs, reliable delivery.
               </p>
             </div>
           </div>
         </section>
 
-        <p className="text-text-body text-sm leading-relaxed mb-8">
+        <p className="text-text-body text-sm leading-relaxed mb-8 max-w-3xl">
           BorealGrit supplies industrial-grade chainsaw chains to distributors, logging operations, and OEM partners in North America. We focus on technical accuracy, documented quality, and reliable supply so your business can count on consistent specs and clear documentation.
         </p>
 
