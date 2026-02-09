@@ -27,7 +27,7 @@ export default function ResourcesPage() {
         </p>
 
         {/* 1. Product Catalogs */}
-        <section id="catalogs" className="mb-12">
+        <section id="catalogs" className="mb-12 scroll-mt-24">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">1. Product Catalogs</h2>
           <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
             <table className="resources-table w-full min-w-[500px] text-sm border border-forest-brand/30">
@@ -81,7 +81,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* 2. Technical Datasheets */}
-        <section id="datasheets" className="mb-12">
+        <section id="datasheets" className="mb-12 scroll-mt-24">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">2. Technical Datasheets</h2>
           <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
             <table className="resources-table w-full min-w-[500px] text-sm border border-forest-brand/30">
@@ -144,7 +144,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* 3. Fitment & Compatibility Guides */}
-        <section id="fitment-guides" className="mb-12">
+        <section id="fitment-guides" className="mb-12 scroll-mt-24">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">3. Fitment & Compatibility Guides</h2>
           <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
             <table className="resources-table w-full min-w-[500px] text-sm border border-forest-brand/30">
@@ -187,7 +187,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* 4. Packaging & Labeling Standards */}
-        <section id="packaging" className="mb-12">
+        <section id="packaging" className="mb-12 scroll-mt-24">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">4. Packaging & Labeling Standards</h2>
           <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
             <table className="resources-table w-full min-w-[500px] text-sm border border-forest-brand/30">
@@ -227,7 +227,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* 5. Quality & Certifications */}
-        <section id="quality-certs" className="mb-12">
+        <section id="quality-certs" className="mb-12 scroll-mt-24">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">5. Quality & Certifications</h2>
           <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
             <table className="resources-table w-full min-w-[500px] text-sm border border-forest-brand/30">
@@ -275,7 +275,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* 6. Ordering & Logistics Information */}
-        <section id="ordering" className="mb-12">
+        <section id="ordering" className="mb-12 scroll-mt-24">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">6. Ordering & Logistics Information</h2>
           <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
             <table className="resources-table w-full min-w-[500px] text-sm border border-forest-brand/30">
@@ -325,7 +325,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* 7. Media & Marketing Assets */}
-        <section id="media" className="mb-12">
+        <section id="media" className="mb-12 scroll-mt-24">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">7. Media & Marketing Assets</h2>
           <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
             <table className="resources-table w-full min-w-[500px] text-sm border border-forest-brand/30">
@@ -365,7 +365,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* 8. Guides & FAQs */}
-        <section id="guides" className="mb-12">
+        <section id="guides" className="mb-12 scroll-mt-24">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">8. Guides & FAQs</h2>
           <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
             <table className="resources-table w-full min-w-[500px] text-sm border border-forest-brand/30">
