@@ -8,7 +8,8 @@
     "export": "next build",
     "start": "next start -p 3000",
     "lint": "next lint",
-    "favicon:ico": "png-to-ico public/favicon.png > public/favicon.ico"
+    "favicon:ico": "png-to-ico public/favicon.png > public/favicon.ico",
+    "ping-sitemap": "bash scripts/ping-sitemap.sh"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
