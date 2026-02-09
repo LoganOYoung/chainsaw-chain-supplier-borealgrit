@@ -56,7 +56,7 @@
 - **OEM**（`/oem-private-label`）：Service（原有）+ WebPage + BreadcrumbList。
 - **Tools hub**（`/tools`）：WebPage + BreadcrumbList。
 - **Technical Specs**（`/tools/technical-specs`）：WebPage + BreadcrumbList。
-- **For Buyers hub**（`/for-buyers`）、**Regional Guide**（`/for-buyers/regional-guide`）、**Chain Selection Matrix**（`/for-buyers/chain-selection-matrix`）、**Distributors**（`/for-buyers/distributors`）：各页 WebPage + BreadcrumbList。
+- **Regional Guide**（`/for-buyers/regional-guide`）、**Chain Selection Matrix**（`/for-buyers/chain-selection-matrix`）、**Distributors**（`/for-buyers/distributors`）：各页 WebPage + BreadcrumbList。
 - 类型与内容匹配，利于摘要与知识图谱。
 
 ### 6. 内容与结构
@@ -152,9 +152,8 @@
   - **Technical Specs（/tools/technical-specs）**：补全 `openGraph.url`、`twitter` 卡片；新增 WebPage + BreadcrumbList JSON-LD；`main` 增加 `aria-label="Technical Specifications"`；Pitch / Gauge 两表增加 `caption`（sr-only）与 `aria-describedby`；页脚增加至 Tools 的内链。
   - **重定向子路径**：已确认 noindex，未列入 sitemap，符合预期。
 - **For Buyers 全页 SEO 审计与优化**：
-  - **Hub（/for-buyers）**：补全 `openGraph.url`、`twitter` 卡片；新增 WebPage + BreadcrumbList JSON-LD；`main` 增加 `aria-label="For Buyers"`。
   - **Regional Guide（/for-buyers/regional-guide）**：补全 `openGraph.url`、`twitter`；新增 WebPage + BreadcrumbList；`main` 增加 `aria-label`；CTA 段落中「Fitment Finder」改为内链。
   - **Chain Selection Matrix（/for-buyers/chain-selection-matrix）**：补全 `openGraph.url`、`twitter`；新增 WebPage + BreadcrumbList；`main` 增加 `aria-label`。
   - **Distributors（/for-buyers/distributors）**：补全 `openGraph.url`、`twitter`；新增 WebPage + BreadcrumbList；`main` 增加 `aria-label`；Policies 表增加 `caption`（sr-only）与 `aria-describedby`。
 - **OEM & Private Label（/oem-private-label）**：补全 `openGraph.url`、`twitter`；新增 WebPage + BreadcrumbList JSON-LD（原有 Service 保留）；`main` 增加 `aria-label`。
-- **导航 For Buyers 入口**：下拉菜单增加首项「For Buyers」链接至 `/for-buyers`，并设 `pathname === '/for-buyers'` 时高亮，便于从导航进入 Hub 页。
+- **For Buyers Hub 页与导航项已移除**：`/for-buyers` 页面及导航下拉中对应入口已删除；站内链与面包屑已改为指向 `/for-buyers/distributors` 或仅文案「For Buyers」。

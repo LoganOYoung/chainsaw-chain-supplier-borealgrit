@@ -84,16 +84,16 @@ export default function RegionalGuidePage() {
         <Breadcrumbs
           items={[
             { label: 'Home', href: '/' },
-            { label: 'For Buyers', href: '/for-buyers' },
+            { label: 'For Buyers' },
             { label: 'Regional Application Guide' },
           ]}
         />
         <Link
-          href="/for-buyers"
+          href="/for-buyers/distributors"
           className="inline-flex items-center gap-1.5 text-sm text-forest-brand hover:underline mb-4"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to For Buyers
+          Distributors & Forestry
         </Link>
 
         {/* Header */}
@@ -182,11 +182,11 @@ export default function RegionalGuidePage() {
         </section>
 
         <Link
-          href="/for-buyers"
+          href="/for-buyers/distributors"
           className="inline-flex items-center gap-1.5 text-sm text-forest-brand hover:underline mt-6"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to For Buyers
+          Distributors & Forestry
         </Link>
       </main>
       <Footer />
@@ -211,8 +211,7 @@ export default function RegionalGuidePage() {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://borealgrit.com' },
-              { '@type': 'ListItem', position: 2, name: 'For Buyers', item: 'https://borealgrit.com/for-buyers' },
-              { '@type': 'ListItem', position: 3, name: 'Regional Application Guide' },
+              { '@type': 'ListItem', position: 2, name: 'Regional Application Guide' },
             ],
           }),
         }}

@@ -143,12 +143,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/for-buyers`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/for-buyers/distributors`,
       lastModified: new Date(),
       changeFrequency: 'monthly',

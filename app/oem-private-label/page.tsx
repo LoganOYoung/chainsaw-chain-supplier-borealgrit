@@ -31,7 +31,7 @@ export default function OEMPage() {
     <>
       <Navigation />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14" aria-label="OEM & Private Label">
-        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Buyers', href: '/for-buyers' }, { label: 'OEM & Private Label' }]} />
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Buyers' }, { label: 'OEM & Private Label' }]} />
         {/* Hero Banner */}
         <section className="mb-8 sm:mb-10 -mx-4 sm:mx-0">
           <div className="relative w-full h-44 sm:h-48 md:h-64 lg:h-72 rounded-none overflow-hidden bg-gray-100">
@@ -512,8 +512,7 @@ export default function OEMPage() {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://borealgrit.com' },
-              { '@type': 'ListItem', position: 2, name: 'For Buyers', item: 'https://borealgrit.com/for-buyers' },
-              { '@type': 'ListItem', position: 3, name: 'OEM & Private Label' },
+              { '@type': 'ListItem', position: 2, name: 'OEM & Private Label' },
             ],
           }),
         }}

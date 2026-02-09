@@ -34,7 +34,7 @@ export default function DistributorsPage() {
         <Breadcrumbs
           items={[
             { label: 'Home', href: '/' },
-            { label: 'For Buyers', href: '/for-buyers' },
+            { label: 'For Buyers' },
             { label: 'Distributors & Forestry' },
           ]}
         />
@@ -351,8 +351,7 @@ export default function DistributorsPage() {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://borealgrit.com' },
-              { '@type': 'ListItem', position: 2, name: 'For Buyers', item: 'https://borealgrit.com/for-buyers' },
-              { '@type': 'ListItem', position: 3, name: 'Distributors & Forestry' },
+              { '@type': 'ListItem', position: 2, name: 'Distributors & Forestry' },
             ],
           }),
         }}

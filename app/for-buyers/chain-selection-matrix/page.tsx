@@ -33,16 +33,16 @@ export default function ChainSelectionMatrixPage() {
         <Breadcrumbs
           items={[
             { label: 'Home', href: '/' },
-            { label: 'For Buyers', href: '/for-buyers' },
+            { label: 'For Buyers' },
             { label: 'Chain Selection Matrix' },
           ]}
         />
         <Link
-          href="/for-buyers"
+          href="/for-buyers/distributors"
           className="inline-flex items-center gap-1.5 text-sm text-forest-brand hover:underline mb-4"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to For Buyers
+          Distributors & Forestry
         </Link>
 
         <header className="mb-10">
@@ -151,11 +151,11 @@ export default function ChainSelectionMatrixPage() {
         </section>
 
         <Link
-          href="/for-buyers"
+          href="/for-buyers/distributors"
           className="inline-flex items-center gap-1.5 text-sm text-forest-brand hover:underline mt-6"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to For Buyers
+          Distributors & Forestry
         </Link>
       </main>
       <Footer />
@@ -180,8 +180,7 @@ export default function ChainSelectionMatrixPage() {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://borealgrit.com' },
-              { '@type': 'ListItem', position: 2, name: 'For Buyers', item: 'https://borealgrit.com/for-buyers' },
-              { '@type': 'ListItem', position: 3, name: 'Chain Selection Matrix' },
+              { '@type': 'ListItem', position: 2, name: 'Chain Selection Matrix' },
             ],
           }),
         }}

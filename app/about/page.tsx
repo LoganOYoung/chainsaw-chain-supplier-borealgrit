@@ -56,7 +56,7 @@ export default function AboutPage() {
         </section>
 
         <p className="text-text-body text-sm leading-relaxed mb-8">
-          BorealGrit supplies industrial-grade chainsaw chains to <Link href="/for-buyers" className="text-forest-brand hover:underline">distributors</Link>, logging operations, and <Link href="/oem-private-label" className="text-forest-brand hover:underline">OEM partners</Link> in North America. We focus on technical accuracy, documented quality, and reliable supply so your business can count on consistent specs and clear documentation.
+          BorealGrit supplies industrial-grade chainsaw chains to <Link href="/for-buyers/distributors" className="text-forest-brand hover:underline">distributors</Link>, logging operations, and <Link href="/oem-private-label" className="text-forest-brand hover:underline">OEM partners</Link> in North America. We focus on technical accuracy, documented quality, and reliable supply so your business can count on consistent specs and clear documentation.
         </p>
 
         <section className="mb-8">
@@ -119,10 +119,10 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/for-buyers"
+              href="/for-buyers/distributors"
               className="inline-flex items-center px-4 py-2 bg-forest-brand text-white font-medium text-sm hover:bg-forest-dark transition"
             >
-              For Buyers
+              Distributors & Forestry
             </Link>
             <Link
               href="/request-quote"

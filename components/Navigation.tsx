@@ -282,13 +282,6 @@ export default function Navigation() {
               {forBuyersMenuOpen && (
                 <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-forest-brand/30 rounded-none shadow-xl py-2 z-50 opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
                   <Link
-                    href="/for-buyers"
-                    className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname === '/for-buyers' ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
-                    onClick={() => setForBuyersMenuOpen(false)}
-                  >
-                    For Buyers
-                  </Link>
-                  <Link
                     href="/for-buyers/distributors"
                     className={`block px-4 py-2.5 text-sm text-text-main hover:bg-forest-light hover:text-forest-brand hover:underline transition ${pathname?.startsWith('/for-buyers/distributors') ? 'text-forest-brand font-medium bg-forest-light/50' : ''}`}
                     onClick={() => setForBuyersMenuOpen(false)}
@@ -597,11 +590,6 @@ export default function Navigation() {
               </button>
               {forBuyersMenuOpen && (
                 <ul className="pl-4 mt-1 space-y-1">
-                  <li>
-                    <Link href="/for-buyers" className={`block py-2.5 min-h-[44px] flex items-center text-sm text-white/90 cursor-pointer select-none ${pathname === '/for-buyers' ? 'text-white font-medium' : ''}`}>
-                      For Buyers
-                    </Link>
-                  </li>
                   <li>
                     <Link href="/for-buyers/distributors" className={`block py-2.5 min-h-[44px] flex items-center text-sm text-white/90 cursor-pointer select-none ${pathname?.startsWith('/for-buyers/distributors') ? 'text-white font-medium' : ''}`}>
                       Distributors & Forestry
