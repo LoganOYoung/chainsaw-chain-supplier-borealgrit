@@ -50,6 +50,7 @@
 
 - **首页**: Organization、Product（代表产品）、WebSite。
 - **Quality**: Organization + Certification。
+- **About**: Organization（supplier 表述、certification 含 ISO/ANSI/CSA）+ BreadcrumbList。
 - **Series W/E/P**: Product + BreadcrumbList。
 - **Products 目录**: Product（代表品类）。
 - **OEM**: Service。
@@ -64,6 +65,7 @@
 ### 7. 内部链接
 
 - 导航、Footer、产品/工具页之间的交叉链接充足，有利于权重与发现。
+- **About 页**：正文中已加入指向 For Buyers、OEM、Fitment Finder、Quality、Resources 的内链，增强站内关联与爬虫发现。
 
 ---
 
