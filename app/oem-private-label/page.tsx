@@ -458,7 +458,7 @@ export default function OEMPage() {
           </div>
         </section>
 
-        {/* Structured Data for SEO */}
+        {/* Structured Data for SEO — Service only; no Product to avoid Product snippet validation errors */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -466,26 +466,14 @@ export default function OEMPage() {
               "@context": "https://schema.org",
               "@type": "Service",
               "serviceType": "OEM Manufacturing & Private Label",
+              "name": "OEM & Private Label Chainsaw Chain Manufacturing",
+              "description": "Custom specifications, packaging, branding, and part numbers for chainsaw and outdoor power equipment. ANSI B175.1 and CSA Z62.3 compliant. B2B only.",
               "provider": {
                 "@type": "Organization",
-                "name": "Borealgrit",
-                "description": "Professional chainsaw chain manufacturer for OEM and private label programs"
+                "name": "BorealGrit",
+                "url": "https://borealgrit.com"
               },
-              "areaServed": "North America",
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "OEM Chainsaw Chain Manufacturing",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Product",
-                      "name": "Custom Chainsaw Chains",
-                      "description": "OEM and private label chainsaw chains with custom specifications, packaging, and branding"
-                    }
-                  }
-                ]
-              }
+              "areaServed": { "@type": "GeoRegion", "name": "North America" }
             })
           }}
         />
