@@ -13,6 +13,12 @@ export const metadata: Metadata = {
     title: 'Industry Technical Specifications & Standards | BorealGrit™',
     description: 'Technical reference for pitch, gauge, drive link type, and cutter geometry.',
     type: 'website',
+    url: 'https://borealgrit.com/tools/technical-specs',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Industry Technical Specifications & Standards | BorealGrit™',
+    description: 'Technical reference for pitch, gauge, drive link type, and cutter geometry.',
   },
   alternates: {
     canonical: '/tools/technical-specs',
@@ -153,7 +159,7 @@ export default function TechnicalSpecsPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14" aria-label="Technical Specifications">
         <Breadcrumbs
           items={[
             { label: 'Home', href: '/' },
@@ -205,7 +211,8 @@ export default function TechnicalSpecsPage() {
                   </p>
                   <p className="text-xs font-medium text-text-main mb-2">Common pitch summary</p>
                   <div className="fitment-table-wrap table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
-                    <table className="fitment-gauge-table w-full min-w-[280px]">
+                    <table className="fitment-gauge-table w-full min-w-[280px]" aria-describedby="pitch-table-desc">
+                      <caption id="pitch-table-desc" className="sr-only">Common pitch summary: pitch size, spacing, and typical use.</caption>
                       <thead>
                         <tr>
                           <th>Pitch</th>
@@ -263,7 +270,8 @@ export default function TechnicalSpecsPage() {
                     Gauge is the <strong className="text-text-main">drive link thickness</strong> that fits into the guide bar groove. Measure with a caliper or chain gauge tool. Precision fit is critical for safe operation; mismatch causes derailment and bar wear.
                   </p>
                   <div className="fitment-table-wrap table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto">
-                    <table className="fitment-gauge-table w-full min-w-[300px]">
+                    <table className="fitment-gauge-table w-full min-w-[300px]" aria-describedby="gauge-table-desc">
+                      <caption id="gauge-table-desc" className="sr-only">Chain gauge: imperial, metric, and typical application.</caption>
                       <thead>
                         <tr>
                           <th>Imperial</th>
@@ -396,7 +404,7 @@ export default function TechnicalSpecsPage() {
           </div>
 
           <p className="mt-8 pt-6 border-t border-forest-brand/20 text-xs text-text-body">
-            This reference aligns with <strong className="text-text-main">ANSI B175.1</strong> and common industry chain specifications. Definitions and tolerances are as of current standards; verify with OEM or latest standards when specifying. For fitment by saw/bar, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>.
+            This reference aligns with <strong className="text-text-main">ANSI B175.1</strong> and common industry chain specifications. Definitions and tolerances are as of current standards; verify with OEM or latest standards when specifying. For fitment by saw/bar, use <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link>; return to <Link href="/tools" className="text-forest-brand hover:underline">Tools</Link> for calculators and cross-reference.
           </p>
         </section>
 
@@ -409,6 +417,33 @@ export default function TechnicalSpecsPage() {
         </Link>
       </main>
       <Footer />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Industry Technical Specifications & Standards | BorealGrit',
+            description: 'Technical reference for pitch, gauge, drive link type (Standard vs Anti-Kickback), and cutter geometry. Professional buyers and spec identification.',
+            url: 'https://borealgrit.com/tools/technical-specs',
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://borealgrit.com' },
+              { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://borealgrit.com/tools' },
+              { '@type': 'ListItem', position: 3, name: 'Technical Specifications' },
+            ],
+          }),
+        }}
+      />
     </>
   )
 }

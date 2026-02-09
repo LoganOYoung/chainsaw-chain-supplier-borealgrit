@@ -54,6 +54,8 @@
 - **Series W/E/P**: Product + BreadcrumbList。
 - **Products 目录**: Product（代表品类）。
 - **OEM**: Service。
+- **Tools hub**（`/tools`）：WebPage + BreadcrumbList。
+- **Technical Specs**（`/tools/technical-specs`）：WebPage + BreadcrumbList。
 - 类型与内容匹配，利于摘要与知识图谱。
 
 ### 6. 内容与结构
@@ -66,6 +68,7 @@
 
 - 导航、Footer、产品/工具页之间的交叉链接充足，有利于权重与发现。
 - **About 页**：正文中已加入指向 For Buyers、OEM、Fitment Finder、Quality、Resources 的内链，增强站内关联与爬虫发现。
+- **Tools 页**：Hub 首段「Fitment Finder」内链至 `/fitment-finder`；Technical Specs 页脚链至 Fitment Finder 与 Tools，表格增加 caption（sr-only）利于可访问性与 SEO。
 
 ---
 
@@ -142,3 +145,7 @@
 
 - **重定向页 noindex**：`/tools/regional-guide`、`/tools/chain-selection-matrix`、`/tools/cross-chain-reference` 为客户端重定向页，已通过各路由的 `layout.tsx` 设置 `robots: { index: false, follow: false }`，避免被索引为重复内容。
 - **根 layout**：已增加 `themeColor: '#547950'`（品牌绿），用于移动端浏览器地址栏/状态栏。
+- **Tools 全页 SEO 审计与优化**：
+  - **Hub（/tools）**：补全 `openGraph.url`、`twitter` 卡片、canonical 已有；新增 WebPage + BreadcrumbList JSON-LD；`main` 增加 `aria-label="Tools"`；首段「Fitment Finder」改为内链。
+  - **Technical Specs（/tools/technical-specs）**：补全 `openGraph.url`、`twitter` 卡片；新增 WebPage + BreadcrumbList JSON-LD；`main` 增加 `aria-label="Technical Specifications"`；Pitch / Gauge 两表增加 `caption`（sr-only）与 `aria-describedby`；页脚增加至 Tools 的内链。
+  - **重定向子路径**：已确认 noindex，未列入 sitemap，符合预期。
