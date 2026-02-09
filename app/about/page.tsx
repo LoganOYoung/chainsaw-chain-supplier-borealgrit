@@ -6,12 +6,12 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Us | Chainsaw Chain Manufacturer | BorealGrit™',
-  description: 'Chainsaw chain manufacturer. B2B export, OEM, wholesale. North American distributors and importers. ISO 9001 certified, ANSI B175.1 and CSA Z62.3 compliant.',
-  keywords: 'chainsaw chain manufacturer, B2B chainsaw chain supplier, OEM chainsaw chain, chainsaw chain exporter, ISO 9001 chainsaw chain, ANSI compliant manufacturer',
+  title: 'About Us | BorealGrit™ – Industrial Chainsaw Chain Supplier',
+  description: 'BorealGrit supplies professional-grade chainsaw chains to North American distributors, logging operations, and OEM partners. Factory-direct, ISO 9001 and ANSI B175.1 compliant. Reliable supply and full documentation.',
+  keywords: 'chainsaw chain supplier, B2B chainsaw chain, North America forestry supply, OEM chainsaw chain, ISO 9001 chainsaw chain, ANSI compliant supplier, factory-direct chainsaw chain',
   openGraph: {
-    title: 'About Us | Chainsaw Chain Manufacturer',
-    description: 'Professional chainsaw chain manufacturer for North American B2B markets. ISO 9001 certified, ANSI/CSA compliant.',
+    title: 'About Us | BorealGrit™ – Industrial Chainsaw Chain Supplier',
+    description: 'Factory-direct professional chainsaw chains for North American B2B markets. ISO 9001 certified, ANSI/CSA compliant.',
     type: 'website',
   },
   alternates: {
@@ -41,55 +41,29 @@ export default function AboutPage() {
               <h1 className="font-heading text-xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight uppercase">
                 About Us
               </h1>
+              <p className="text-white/95 text-sm sm:text-base mt-2 max-w-2xl">
+                Your factory-direct source for professional chainsaw chains across North America.
+              </p>
             </div>
           </div>
         </section>
-        <p className="text-text-body mb-8 max-w-3xl">
-          Chainsaw chain manufacturer. B2B export, OEM, and wholesale. We supply North American distributors, importers, and OEM brands. ISO 9001 certified. ANSI B175.1 compliant production.
+
+        <p className="text-text-body mb-10 max-w-3xl text-base">
+          BorealGrit supplies industrial-grade chainsaw chains to distributors, logging operations, and OEM partners in North America. We focus on technical accuracy, documented quality, and reliable supply so your business can count on consistent specs and clear documentation.
         </p>
 
         <section className="mb-10">
-          <h2 className="text-lg font-bold text-text-main mb-4">Company</h2>
-          <p className="text-text-body text-sm mb-6">
-            We manufacture chainsaw chains for the North American B2B market. Our focus is on technical accuracy, quality control, and reliable supply. We serve distributors, importers, and OEM partners who require consistent product specifications and documentation.
+          <h2 className="text-lg font-bold text-text-main mb-4">Who We Work With</h2>
+          <p className="text-text-body text-sm mb-4">
+            We partner with businesses that need chainsaw chains at scale: distributors and dealers who resell to end users, logging and sawmill operations that run chains hard every day, and OEM and private-label partners who need exact specs and custom packaging. Our entire operation is built around serving these partners with the same standards you expect from a dedicated industrial supplier.
           </p>
-          <p className="text-text-body text-sm mb-6">
-            We are not a retail or DTC brand. We are a B2B supplier. Our customers are businesses that resell or incorporate our chains into their products.
+          <p className="text-text-body text-sm">
+            Direct-from-factory supply means you get clear pricing, full traceability, and documentation that meets North American requirements—so you can order with confidence and keep your operations running.
           </p>
-          
-          {/* Manufacturing Images */}
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="relative w-full h-64 bg-gray-50 border-2 border-forest-brand/30 rounded-none overflow-hidden">
-              <Image
-                src="/images/about/production-line.jpg"
-                alt="Production line showing chainsaw chain manufacturing process"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
-                <p className="text-sm font-semibold">Production Line</p>
-                <p className="text-xs text-gray-200">ISO 9001 certified manufacturing facility</p>
-              </div>
-            </div>
-            <div className="relative w-full h-64 bg-gray-50 border-2 border-forest-brand/30 rounded-none overflow-hidden">
-              <Image
-                src="/images/about/manufacturing-equipment.jpg"
-                alt="Key manufacturing equipment for chainsaw chain production"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
-                <p className="text-sm font-semibold">Manufacturing Equipment</p>
-                <p className="text-xs text-gray-200">Precision machinery for quality production</p>
-              </div>
-            </div>
-          </div>
         </section>
 
         <section className="mb-10">
-          <h2 className="text-lg font-bold text-text-main mb-4">Capabilities</h2>
+          <h2 className="text-lg font-bold text-text-main mb-4">What You Can Expect</h2>
           <div className="table-responsive -mx-4 sm:mx-0">
             <table className="w-full min-w-[400px] text-sm border border-forest-brand/30">
               <thead>
@@ -101,19 +75,19 @@ export default function AboutPage() {
               <tbody className="text-industrial">
                 <tr className="border-t border-forest-brand/30">
                   <td className="px-4 py-3 font-medium">Product range</td>
-                  <td className="px-4 py-3">Full, semi, low profile. .325&quot;, 3/8&quot;, .404&quot; pitch. Standard and custom drive link counts.</td>
+                  <td className="px-4 py-3">Full, semi, and low-profile chains. .325&quot;, 3/8&quot;, and .404&quot; pitch. Standard and custom drive link counts to match your needs.</td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
                   <td className="px-4 py-3 font-medium">OEM & private label</td>
-                  <td className="px-4 py-3">Custom packaging, labeling, part numbers. MOQ and lead time per project.</td>
+                  <td className="px-4 py-3">Custom packaging, labeling, and part numbers. MOQ and lead times tailored per project.</td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">Quality</td>
-                  <td className="px-4 py-3">ISO 9001 certified. ANSI B175.1 compliant. Material traceability, batch testing.</td>
+                  <td className="px-4 py-3 font-medium">Quality & compliance</td>
+                  <td className="px-4 py-3">ISO 9001 certified quality system. ANSI B175.1 and CSA Z62.3 compliant. Full material traceability and batch testing.</td>
                 </tr>
                 <tr className="border-t border-forest-brand/30">
-                  <td className="px-4 py-3 font-medium">Export</td>
-                  <td className="px-4 py-3">North American market. Standard shipping terms, documentation, logistics support.</td>
+                  <td className="px-4 py-3 font-medium">Supply & support</td>
+                  <td className="px-4 py-3">North America–focused delivery, clear shipping terms, and documentation. We respond to quotes within 24 hours on business days.</td>
                 </tr>
               </tbody>
             </table>
@@ -121,19 +95,19 @@ export default function AboutPage() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-lg font-bold text-text-main mb-4">Why work with us</h2>
+          <h2 className="text-lg font-bold text-text-main mb-4">Why Partners Choose BorealGrit</h2>
           <ul className="text-text-body text-sm list-disc pl-5 space-y-2">
-            <li>Technical accuracy: precise specifications, fitment documentation</li>
-            <li>Quality control: ISO certified, ANSI compliant, material traceability</li>
-            <li>B2B focus: we understand distributor and OEM requirements</li>
-            <li>Documentation: catalogs, datasheets, fitment guides, compliance certificates</li>
-            <li>Reliable supply: consistent lead times, clear MOQ and terms</li>
+            <li><strong className="text-text-main">Precise specifications and fitment</strong> — Detailed specs and fitment guides so you can match the right chain to the right saw and bar.</li>
+            <li><strong className="text-text-main">Quality you can verify</strong> — ISO 9001 certified processes, ANSI/CSA compliant products, and material traceability from raw steel to finished chain.</li>
+            <li><strong className="text-text-main">Built for B2B</strong> — Pricing, MOQ, lead times, and documentation designed for distributors and OEMs.</li>
+            <li><strong className="text-text-main">Documentation that travels with the product</strong> — Catalogs, datasheets, fitment guides, and compliance certificates when you need them.</li>
+            <li><strong className="text-text-main">Reliable supply</strong> — Consistent lead times and clear terms so you can plan inventory and keep downtime to a minimum.</li>
           </ul>
         </section>
 
         <section className="pt-4 border-t border-forest-brand/30">
           <p className="text-text-body text-sm mb-4">
-            Distributors and forestry buyers: see who we serve, how we work, and why choose us.
+            See who we serve, how we work, and what we offer for distributors and forestry buyers.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
