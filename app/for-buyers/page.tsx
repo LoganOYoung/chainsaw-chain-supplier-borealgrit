@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 
@@ -23,6 +24,7 @@ export default function ForBuyersHubPage() {
     <>
       <Navigation />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Buyers' }]} />
         <h1 className="text-2xl font-bold text-text-main mb-4">For Buyers</h1>
         <p className="text-text-body mb-10 max-w-3xl">
           We supply North American distributors, logging operations, and OEM partners with factory-direct chainsaw chains. Choose your path below.

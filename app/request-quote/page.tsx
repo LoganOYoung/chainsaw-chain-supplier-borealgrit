@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import emailjs from '@emailjs/browser'
 import { Mail, Phone, MapPin, Clock, Download, CheckCircle2, Loader2, X, ShoppingCart, ArrowRight, Upload, FileText, CheckCircle, DollarSign } from 'lucide-react'
 import Navigation from '@/components/Navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Footer from '@/components/Footer'
 
 // Contact information
@@ -401,6 +402,7 @@ ${uploadedFile ? `\n--- Uploaded RFQ File: ${uploadedFile.name} ---\n${uploadedF
     <>
       <Navigation />
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Request for Quote' }]} />
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-text-main mb-2">
             {resourceRequest ? 'Resource Request' : 'Request for Quote'}

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function AboutPage() {
     <>
       <Navigation />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
         {/* Hero Banner */}
         <section className="mb-8 -mx-4 sm:mx-0">
           <div className="relative w-full h-44 sm:h-48 md:h-64 lg:h-72 rounded-none overflow-hidden bg-gray-100">

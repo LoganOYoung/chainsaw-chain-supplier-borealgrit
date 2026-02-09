@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { Download, Mail } from 'lucide-react'
 import { generateFC325Datasheet } from '@/lib/pdfGenerators/fc325Datasheet'
 import { generateSC38Datasheet } from '@/lib/pdfGenerators/sc38Datasheet'
@@ -19,6 +20,7 @@ export default function ResourcesPage() {
     <>
       <Navigation />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Resources' }]} />
         <h1 className="text-xl sm:text-2xl font-bold text-text-main mb-4">Resources & Downloads</h1>
         <p className="text-text-body text-sm sm:text-base mb-8 sm:mb-10 max-w-3xl">
           Technical and commercial resources for distributors, importers, and OEM partners. Download catalogs, datasheets, fitment guides, packaging standards, and ordering information.

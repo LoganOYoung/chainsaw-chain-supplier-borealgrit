@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 // Contact information
 const CONTACT_EMAIL = 'logan@borealgrit.com'
@@ -16,6 +17,7 @@ export default function ContactPage() {
     <>
       <Navigation />
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-text-main mb-2">Contact Us</h1>
           <p className="text-text-body text-sm">
