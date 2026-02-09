@@ -342,46 +342,19 @@ export default function QualityPage() {
           </div>
         </section>
 
-        {/* Testing & Inspection Equipment */}
+        {/* Testing & Inspection */}
         <section className="mb-10 bg-white border border-forest-brand/30 rounded-none p-6">
-          <h2 className="text-xl font-bold text-text-main mb-6">Testing & Inspection Equipment</h2>
+          <h2 className="text-xl font-bold text-text-main mb-6">Testing & Inspection</h2>
           <div className="grid md:grid-cols-3 gap-6 mb-6">
             <div className="text-center">
-              <div className="relative w-full h-48 mb-4 bg-gray-50 border-2 border-forest-brand/30 rounded-none overflow-hidden">
-                <Image
-                  src="/images/quality/hardness-testing-equipment.jpg"
-                  alt="Hardness testing equipment (Rockwell C scale) for measuring chain cutter and tie strap hardness"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
               <h3 className="font-semibold text-text-main mb-2 text-sm">Hardness Testing</h3>
               <p className="text-xs text-text-body">Rockwell C scale measurement for cutter (HRC 58-62) and tie strap (HRC 45-50) hardness verification.</p>
             </div>
             <div className="text-center">
-              <div className="relative w-full h-48 mb-4 bg-gray-50 border-2 border-forest-brand/30 rounded-none overflow-hidden">
-                <Image
-                  src="/images/quality/dimensional-measurement.jpg"
-                  alt="Precision dimensional measurement equipment for pitch, gauge, and drive link spacing accuracy"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
               <h3 className="font-semibold text-text-main mb-2 text-sm">Dimensional Measurement</h3>
               <p className="text-xs text-text-body">Precision measurement equipment for pitch (±0.001&quot;), gauge (±0.001&quot;), and drive link spacing accuracy.</p>
             </div>
             <div className="text-center">
-              <div className="relative w-full h-48 mb-4 bg-gray-50 border-2 border-forest-brand/30 rounded-none overflow-hidden">
-                <Image
-                  src="/images/quality/safety-testing.jpg"
-                  alt="Kickback safety testing equipment for ANSI B175.1 compliance verification"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
               <h3 className="font-semibold text-text-main mb-2 text-sm">Safety Testing</h3>
               <p className="text-xs text-text-body">Kickback testing equipment for ANSI B175.1 compliance verification and safety performance standards.</p>
             </div>
