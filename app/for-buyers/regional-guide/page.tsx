@@ -13,6 +13,12 @@ export const metadata: Metadata = {
     title: 'Regional Application Guide: Precision for North American Forests | BorealGrit™',
     description: 'Local expert chain recommendations for Pacific Northwest, Boreal Belt, and Urban Forestry. Series P, W, E by region.',
     type: 'website',
+    url: 'https://borealgrit.com/for-buyers/regional-guide',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Regional Application Guide: Precision for North American Forests | BorealGrit™',
+    description: 'Local expert chain recommendations for Pacific Northwest, Boreal Belt, and Urban Forestry. Series P, W, E by region.',
   },
   alternates: {
     canonical: '/for-buyers/regional-guide',
@@ -74,7 +80,7 @@ export default function RegionalGuidePage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14" aria-label="Regional Application Guide">
         <Breadcrumbs
           items={[
             { label: 'Home', href: '/' },
@@ -165,7 +171,7 @@ export default function RegionalGuidePage() {
         {/* Fitment Finder CTA */}
         <section className="bg-white border-2 border-forest-brand/30 rounded-none p-5 sm:p-6">
           <p className="text-sm text-text-body mb-4">
-            <strong className="text-text-main">Still unsure?</strong> Use our Fitment Finder to match your specific saw and bar model to the right BorealGrit chain.
+            <strong className="text-text-main">Still unsure?</strong> Use our <Link href="/fitment-finder" className="text-forest-brand hover:underline">Fitment Finder</Link> to match your specific saw and bar model to the right BorealGrit chain.
           </p>
           <Link
             href="/fitment-finder"
@@ -184,6 +190,33 @@ export default function RegionalGuidePage() {
         </Link>
       </main>
       <Footer />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Regional Application Guide: Precision for North American Forests | BorealGrit',
+            description: 'Chainsaw chain selection by region: Pacific Northwest & BC, Boreal Belt, Urban Forestry. Series P, W, E recommendations.',
+            url: 'https://borealgrit.com/for-buyers/regional-guide',
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://borealgrit.com' },
+              { '@type': 'ListItem', position: 2, name: 'For Buyers', item: 'https://borealgrit.com/for-buyers' },
+              { '@type': 'ListItem', position: 3, name: 'Regional Application Guide' },
+            ],
+          }),
+        }}
+      />
     </>
   )
 }

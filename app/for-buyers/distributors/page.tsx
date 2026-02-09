@@ -14,6 +14,12 @@ export const metadata: Metadata = {
     title: 'Distributors & Forestry | BorealGrit™ – For Buyers',
     description: 'Factory-direct chainsaw chains for North American distributors and logging operations. How we work and why choose BorealGrit.',
     type: 'website',
+    url: 'https://borealgrit.com/for-buyers/distributors',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Distributors & Forestry | BorealGrit™ – For Buyers',
+    description: 'Factory-direct chainsaw chains for North American distributors and logging operations. How we work and why choose BorealGrit.',
   },
   alternates: {
     canonical: '/for-buyers/distributors',
@@ -24,7 +30,7 @@ export default function DistributorsPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]" aria-label="Distributors & Forestry">
         <Breadcrumbs
           items={[
             { label: 'Home', href: '/' },
@@ -224,7 +230,8 @@ export default function DistributorsPage() {
         <section className="mb-8 sm:mb-10">
           <h2 className="text-base sm:text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Policies at a Glance</h2>
           <div className="table-responsive -mx-4 sm:mx-0 overflow-visible sm:overflow-x-auto rounded-none border-2 border-forest-brand/40">
-            <table className="distributors-policies-table w-full min-w-[400px] text-xs border-collapse">
+            <table className="distributors-policies-table w-full min-w-[400px] text-xs border-collapse" aria-describedby="policies-table-desc">
+              <caption id="policies-table-desc" className="sr-only">Policies at a glance: MOQ, samples, payment, lead time, Incoterms.</caption>
               <thead>
                 <tr className="bg-forest-brand/15 border-b-2 border-forest-brand/40">
                   <th className="text-left px-4 py-2.5 font-bold text-text-main uppercase tracking-wide">Topic</th>
@@ -323,6 +330,33 @@ export default function DistributorsPage() {
         </section>
       </main>
       <Footer />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Distributors & Forestry | BorealGrit – For Buyers',
+            description: 'Factory-direct chainsaw chains for North American distributors, logging operations, and OEMs. Who we serve, how we work, policies, and why choose BorealGrit.',
+            url: 'https://borealgrit.com/for-buyers/distributors',
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://borealgrit.com' },
+              { '@type': 'ListItem', position: 2, name: 'For Buyers', item: 'https://borealgrit.com/for-buyers' },
+              { '@type': 'ListItem', position: 3, name: 'Distributors & Forestry' },
+            ],
+          }),
+        }}
+      />
     </>
   )
 }

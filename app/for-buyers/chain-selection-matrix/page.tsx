@@ -13,6 +13,12 @@ export const metadata: Metadata = {
     title: 'Chain Selection Matrix: Reference by Species, Equipment & Task | BorealGrit™',
     description: 'Information reference for chain selection by species, equipment, and task. North American forestry and arborist applications.',
     type: 'website',
+    url: 'https://borealgrit.com/for-buyers/chain-selection-matrix',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Chain Selection Matrix: Reference by Species, Equipment & Task | BorealGrit™',
+    description: 'Information reference for chain selection by species, equipment, and task. North American forestry and arborist applications.',
   },
   alternates: {
     canonical: '/for-buyers/chain-selection-matrix',
@@ -23,7 +29,7 @@ export default function ChainSelectionMatrixPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14" aria-label="Chain Selection Matrix">
         <Breadcrumbs
           items={[
             { label: 'Home', href: '/' },
@@ -153,6 +159,33 @@ export default function ChainSelectionMatrixPage() {
         </Link>
       </main>
       <Footer />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Chain Selection Matrix: Reference by Species, Equipment & Task | BorealGrit',
+            description: 'Professional reference for chain selection by wood species, power source, and application. North American forestry and arborist.',
+            url: 'https://borealgrit.com/for-buyers/chain-selection-matrix',
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://borealgrit.com' },
+              { '@type': 'ListItem', position: 2, name: 'For Buyers', item: 'https://borealgrit.com/for-buyers' },
+              { '@type': 'ListItem', position: 3, name: 'Chain Selection Matrix' },
+            ],
+          }),
+        }}
+      />
     </>
   )
 }

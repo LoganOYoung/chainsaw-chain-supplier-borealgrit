@@ -13,6 +13,12 @@ export const metadata: Metadata = {
     title: 'For Buyers | BorealGrit™ – Distributors, Forestry & OEM',
     description: 'Factory-direct chainsaw chains for North American distributors, logging operations, and OEM partners.',
     type: 'website',
+    url: 'https://borealgrit.com/for-buyers',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'For Buyers | BorealGrit™ – Distributors, Forestry & OEM',
+    description: 'Factory-direct chainsaw chains for North American distributors, logging operations, and OEM partners.',
   },
   alternates: {
     canonical: '/for-buyers',
@@ -23,7 +29,7 @@ export default function ForBuyersHubPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14" aria-label="For Buyers">
         <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Buyers' }]} />
         <h1 className="text-2xl font-bold text-text-main mb-4">For Buyers</h1>
         <p className="text-text-body mb-10 max-w-3xl">
@@ -82,6 +88,32 @@ export default function ForBuyersHubPage() {
         </div>
       </main>
       <Footer />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'For Buyers | BorealGrit – Distributors, Forestry & OEM',
+            description: 'Factory-direct chainsaw chains for North American distributors, logging operations, and OEM partners.',
+            url: 'https://borealgrit.com/for-buyers',
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://borealgrit.com' },
+              { '@type': 'ListItem', position: 2, name: 'For Buyers' },
+            ],
+          }),
+        }}
+      />
     </>
   )
 }
