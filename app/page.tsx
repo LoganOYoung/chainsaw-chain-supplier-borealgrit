@@ -52,10 +52,10 @@ export default function Home() {
             </div>
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-8 md:py-0">
               <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase">
-                Professional Chainsaw Chain Manufacturer
+                Built for the Cut
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 mb-6 md:mb-8 max-w-3xl leading-relaxed font-medium">
-                B2B supplier for North American distributors and OEM partners
+                Factory-direct chainsaw chains for North American distributors and logging. Fewer failures, more uptime.
               </p>
               <Link
                 href="/products"
