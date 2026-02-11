@@ -36,8 +36,8 @@ export default function OEMPage() {
         <section className="mb-8 sm:mb-10 -mx-4 sm:mx-0">
           <div className="relative w-full h-44 sm:h-48 md:h-64 lg:h-72 rounded-none overflow-hidden bg-gray-100">
             <Image
-              src="/images/contact-banner.jpg"
-              alt="OEM and private label chainsaw chain manufacturing"
+              src="/images/oem-banner.png"
+              alt="OEM and private label chainsaw chain manufacturing — close-up of professional chainsaw chain"
               fill
               className="object-cover"
               priority
