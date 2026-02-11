@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { Search, Filter, Download, ArrowRight, ChevronDown } from 'lucide-react'
+import { ProductChainFullChisel, ProductChainSemiChisel, ProductChainLowProfile } from '@/components/product-chain-illustrations'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -214,11 +215,7 @@ export default function ProductsPage() {
               className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition group"
             >
               <div className="relative w-full aspect-[3/2] mb-3 bg-gray-50 rounded-none overflow-hidden flex items-center justify-center p-2">
-                <img
-                  src="/images/products/product-chain-low-profile.svg"
-                  alt="Series E — Low-profile narrow kerf chain for battery saws"
-                  className="object-contain w-full h-full group-hover:scale-[1.02] transition-transform"
-                />
+                <ProductChainLowProfile className="w-full h-full max-h-[140px] object-contain group-hover:scale-[1.02] transition-transform" aria-label="Series E — Low-profile narrow kerf chain for battery saws" />
               </div>
               <h3 className="font-semibold text-text-main mb-1">Series E</h3>
               <p className="text-xs text-text-body mb-2">Electric Era - Narrow Kerf</p>
@@ -229,11 +226,7 @@ export default function ProductsPage() {
               className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition group"
             >
               <div className="relative w-full aspect-[3/2] mb-3 bg-gray-50 rounded-none overflow-hidden flex items-center justify-center p-2">
-                <img
-                  src="/images/products/product-chain-semi-chisel.svg"
-                  alt="Series W — Semi-chisel cold-weather chain"
-                  className="object-contain w-full h-full group-hover:scale-[1.02] transition-transform"
-                />
+                <ProductChainSemiChisel className="w-full h-full max-h-[140px] object-contain group-hover:scale-[1.02] transition-transform" aria-label="Series W — Semi-chisel cold-weather chain" />
               </div>
               <h3 className="font-semibold text-text-main mb-1">Series W</h3>
               <p className="text-xs text-text-body mb-2">Arctic Edge - Cold Weather</p>
@@ -244,11 +237,7 @@ export default function ProductsPage() {
               className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition group"
             >
               <div className="relative w-full aspect-[3/2] mb-3 bg-gray-50 rounded-none overflow-hidden flex items-center justify-center p-2">
-                <img
-                  src="/images/products/product-chain-full-chisel.svg"
-                  alt="Series P — Full-chisel professional logging chain"
-                  className="object-contain w-full h-full group-hover:scale-[1.02] transition-transform"
-                />
+                <ProductChainFullChisel className="w-full h-full max-h-[140px] object-contain group-hover:scale-[1.02] transition-transform" aria-label="Series P — Full-chisel professional logging chain" />
               </div>
               <h3 className="font-semibold text-text-main mb-1">Series P</h3>
               <p className="text-xs text-text-body mb-2">Professional Logging</p>

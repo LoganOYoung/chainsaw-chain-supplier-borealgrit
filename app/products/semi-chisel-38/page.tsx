@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import { SemiChiselCutterSvg, Chain38Svg } from '@/components/product-diagrams'
+import { ProductChainSemiChisel } from '@/components/product-chain-illustrations'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { Metadata } from 'next'
@@ -33,17 +34,10 @@ export default function SemiChisel38Page() {
           ]}
         />
 
-        {/* Product illustration */}
+        {/* Product illustration — inline SVG for reliable display */}
         <section className="mb-8 bg-white border border-forest-brand/20 rounded-none overflow-hidden">
           <div className="relative w-full aspect-[3/2] max-h-[280px] flex items-center justify-center p-4 bg-gray-50">
-            <img
-              src="/images/products/product-chain-semi-chisel.svg"
-              alt="Semi-chisel chainsaw chain — rounded-corner cutters, general purpose"
-              width={480}
-              height={320}
-              className="object-contain w-full h-full"
-              loading="eager"
-            />
+            <ProductChainSemiChisel className="w-full h-full max-h-[240px] object-contain" />
           </div>
         </section>
 
