@@ -48,7 +48,7 @@ export default function Home() {
                 priority
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-forest-brand/60"></div>
+              <div className="absolute inset-0 bg-forest-brand/40"></div>
             </div>
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-8 md:py-0">
               <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase">
@@ -77,7 +77,7 @@ export default function Home() {
                 className="object-cover object-[55%_50%]"
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-forest-dark/70"></div>
+              <div className="absolute inset-0 bg-forest-dark/50"></div>
             </div>
             <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center text-center py-8 md:py-0">
               <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase mb-4 md:mb-6 leading-tight tracking-tight text-white">
@@ -116,7 +116,7 @@ export default function Home() {
                 className="object-cover object-[50%_55%]"
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-forest-brand/65"></div>
+              <div className="absolute inset-0 bg-forest-brand/40"></div>
             </div>
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-8 md:py-0">
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-5 tracking-tight uppercase">
