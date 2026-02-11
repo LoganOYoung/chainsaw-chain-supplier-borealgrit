@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -80,31 +81,45 @@ export default function RegionalGuidePage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14" aria-label="Regional Application Guide">
-        <Breadcrumbs
-          items={[
-            { label: 'Home', href: '/' },
-            { label: 'For Buyers' },
-            { label: 'Regional Application Guide' },
-          ]}
-        />
-        <Link
-          href="/for-buyers/distributors"
-          className="inline-flex items-center gap-1.5 text-sm text-forest-brand hover:underline mb-4"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Distributors & Forestry
-        </Link>
+      <main aria-label="Regional Application Guide">
+        {/* Banner with overlaid text */}
+        <section className="relative w-full min-h-[200px] sm:min-h-[240px] md:min-h-[280px] flex flex-col justify-center py-12 md:py-16 overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/regional-guide-banner.jpg"
+              alt="North American forest canopy — regional chainsaw chain selection"
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-forest-brand/40" aria-hidden />
+          </div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3 tracking-tight">
+              Regional Application Guide: Precision for North American Forests
+            </h1>
+            <p className="text-white/95 text-sm sm:text-base max-w-3xl leading-relaxed">
+              North American forestry managers care most about whether the chain can handle <em>their</em> species and climate—not lab benchmarks. This guide maps your region to the right BorealGrit series: <strong className="text-white">W</strong>, <strong className="text-white">P</strong>, or <strong className="text-white">E</strong>.
+            </p>
+          </div>
+        </section>
 
-        {/* Header */}
-        <header className="mb-10">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-main mb-2">
-            Regional Application Guide: Precision for North American Forests
-          </h1>
-          <p className="text-sm sm:text-base text-text-body max-w-3xl leading-relaxed">
-            North American forestry managers care most about whether the chain can handle <em>their</em> species and climate—not lab benchmarks. This guide maps your region to the right BorealGrit series: <strong className="text-text-main">W</strong>, <strong className="text-text-main">P</strong>, or <strong className="text-text-main">E</strong>.
-          </p>
-        </header>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'For Buyers' },
+              { label: 'Regional Application Guide' },
+            ]}
+          />
+          <Link
+            href="/for-buyers/distributors"
+            className="inline-flex items-center gap-1.5 text-sm text-forest-brand hover:underline mb-6"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Distributors & Forestry
+          </Link>
 
         {/* Three zone cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -188,6 +203,7 @@ export default function RegionalGuidePage() {
           <ArrowLeft className="w-4 h-4" />
           Distributors & Forestry
         </Link>
+        </div>
       </main>
       <Footer />
 
