@@ -34,7 +34,7 @@ export default function AboutPage() {
         <section className="relative w-full min-h-[180px] sm:min-h-[220px] md:min-h-[260px] flex flex-col justify-center py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/images/about-banner.png"
+              src="/images/about-banner.jpg"
               alt="Freshly cut logs in forest—BorealGrit serves North American forestry and B2B supply"
               fill
               className="object-cover"

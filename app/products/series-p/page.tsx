@@ -29,7 +29,7 @@ export default function SeriesPPage() {
         <section className="relative w-full h-64 md:h-96 lg:h-[500px] overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/images/series-p-professional-logging.png"
+              src="/images/series-p-professional-logging.jpg"
               alt="Professional logger cutting wood with chainsaw — Series P full-chisel industrial chain for high-output logging"
               fill
               className="object-cover object-center"

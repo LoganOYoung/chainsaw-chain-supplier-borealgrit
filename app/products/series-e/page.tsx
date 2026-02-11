@@ -29,7 +29,7 @@ export default function SeriesEPage() {
         <section className="relative w-full h-64 md:h-96 lg:h-[500px] overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/images/series-e-chainsaw-cutting.png"
+              src="/images/series-e-chainsaw-cutting.jpg"
               alt="Chainsaw cutting log — Series E narrow-kerf chains for battery and cordless saws, reduced power draw and extended runtime"
               fill
               className="object-cover object-center"

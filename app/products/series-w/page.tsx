@@ -29,7 +29,7 @@ export default function SeriesWPage() {
         <section className="relative w-full h-64 md:h-96 lg:h-[500px] overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/images/series-w-winter-chainsaw-cutting.png"
+              src="/images/series-w-winter-chainsaw-cutting.jpg"
               alt="Chainsaw cutting log in snow — Series W cold-weather chain for winter logging and sub-zero conditions"
               fill
               className="object-cover object-center"

@@ -76,6 +76,7 @@ export default function Home() {
                 fill
                 className="object-cover object-[55%_50%]"
                 sizes="100vw"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-forest-dark/30"></div>
             </div>
@@ -115,6 +116,7 @@ export default function Home() {
                 fill
                 className="object-cover object-[50%_55%]"
                 sizes="100vw"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-forest-brand/30"></div>
             </div>

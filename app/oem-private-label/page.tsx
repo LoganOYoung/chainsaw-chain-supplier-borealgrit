@@ -35,7 +35,7 @@ export default function OEMPage() {
         <section className="relative w-full min-h-[200px] sm:min-h-[240px] md:min-h-[280px] flex flex-col justify-center py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/images/oem-banner.png"
+              src="/images/oem-banner.jpg"
               alt="OEM and private label chainsaw chain manufacturing — close-up of professional chainsaw chain"
               fill
               className="object-cover"

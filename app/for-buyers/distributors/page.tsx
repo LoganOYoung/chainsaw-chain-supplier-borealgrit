@@ -35,7 +35,7 @@ export default function DistributorsPage() {
         <section className="relative w-full min-h-[200px] sm:min-h-[240px] md:min-h-[280px] flex flex-col justify-center py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/images/distributors-banner.png"
+              src="/images/distributors-banner.jpg"
               alt="Professional logger with chainsaw and forestry truck—BorealGrit supplies chains for North American distributors and operations"
               fill
               className="object-cover"
