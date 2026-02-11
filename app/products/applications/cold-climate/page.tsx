@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -38,20 +37,6 @@ export default function ColdClimatePage() {
         <p className="text-text-body mb-6 max-w-3xl">
           CrNiMo (Chromium-Nickel-Molybdenum) alloy steel chainsaw chains with specialized nitriding heat treatment. Impact toughness maintained at -40°C for cutting frozen timber and operating in extreme cold conditions.
         </p>
-
-        {/* Hero Image */}
-        <section className="mb-10">
-          <div className="relative w-full h-64 md:h-96 lg:h-[500px] rounded-none overflow-hidden bg-gray-100">
-            <Image
-              src="/images/series-w-hero.jpg"
-              alt="Chainsaw chain cutting frozen wood in cold winter conditions"
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-            />
-          </div>
-        </section>
 
         {/* Application Overview */}
         <section className="mb-10">
