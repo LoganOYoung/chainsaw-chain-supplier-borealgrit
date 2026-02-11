@@ -368,6 +368,25 @@ body {
   }
 }
 
+/* ========== Texture overlay: grain + vignette (depth) ========== */
+.texture-overlay__grain {
+  opacity: 0.055;
+  mix-blend-mode: overlay;
+}
+@media (prefers-reduced-motion: reduce) {
+  .texture-overlay__grain {
+    opacity: 0;
+  }
+  .texture-overlay .texture-overlay__vignette {
+    opacity: 0.5;
+  }
+}
+
+/* Optional: slightly muted section bg for color hierarchy (white blocks feel more “forward”) */
+.bg-page-subtle {
+  background-color: #f6f8f6;
+}
+
 /* Dropdown menu animation */
 @keyframes fadeIn {
   from {

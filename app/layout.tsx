@@ -75,6 +75,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="text-text-body antialiased font-sans">
+        {/* Grain + vignette overlay for depth (respects prefers-reduced-motion in globals) */}
+        <div aria-hidden="true" className="texture-overlay fixed inset-0 pointer-events-none z-[39]">
+          <svg className="absolute inset-0 h-full w-full texture-overlay__grain" preserveAspectRatio="none">
+            <defs>
+              <filter id="grain-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" result="n" />
+                <feColorMatrix in="n" type="saturate" values="0" result="mono" />
+              </filter>
+            </defs>
+            <rect width="100%" height="100%" fill="white" filter="url(#grain-filter)" />
+          </svg>
+          <div className="texture-overlay__vignette absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_45%,rgba(0,0,0,0.1)_100%)]" />
+        </div>
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-R77WSZMC9M"
