@@ -37,14 +37,14 @@ export default function Home() {
             className="flex h-full w-[300%] transition-transform duration-500 ease-out"
             style={{ transform: `translateX(-${currentSlide * (100 / totalSlides)}%)` }}
           >
-          {/* Slide 1: Brand Positioning - Clean & Simple */}
+          {/* Slide 1: Brand Positioning - chainsaw chain close-up on log */}
           <div className="relative shrink-0 w-1/3 h-full">
             <div className="absolute inset-0">
               <Image
                 src="/images/hero-banner.png"
-                alt="68CrNiMo alloy chainsaw chain manufacturing for North American forestry"
+                alt="Chainsaw guide bar and chain on moss-covered log—professional forestry chainsaw chain for North American distributors and logging operations"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-[55%_45%]"
                 priority
                 sizes="100vw"
               />
