@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Image from 'next/image'
 import { ShieldCheck, Zap, DollarSign, ArrowRight } from 'lucide-react'
+import { BarStampingSvg, DriveLinkMarkingSvg, CountDriveLinksSvg } from '@/components/fitment-diagrams'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -416,14 +417,8 @@ export default function FitmentFinderPage() {
                 <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">1</div>
                 <h3 className="text-base sm:text-lg font-semibold text-text-main">Check the Bar</h3>
               </div>
-              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden">
-                <Image
-                  src="/images/fitment-guide-bar-stamping.jpg"
-                  alt="Guide bar tail end showing stamped specifications: Pitch, Gauge, and Drive Link count"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
+              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center p-2">
+                <BarStampingSvg />
               </div>
               <p className="text-sm text-text-body leading-relaxed">
                 Most guide bars have the <strong className="text-text-main">Pitch, Gauge, and Drive Link count</strong> stamped on the tail end. Look for markings like &quot;.325&quot; &quot;.050&quot; &quot;56DL&quot; or similar specifications.
@@ -436,14 +431,8 @@ export default function FitmentFinderPage() {
                 <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">2</div>
                 <h3 className="text-base sm:text-lg font-semibold text-text-main">Read the Drive Link</h3>
               </div>
-              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden">
-                <Image
-                  src="/images/fitment-drive-link-marking.jpg"
-                  alt="Close-up macro shot of drive link showing stamped model number (e.g., Oregon 91 or Stihl 6)"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
+              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center p-2">
+                <DriveLinkMarkingSvg />
               </div>
               <p className="text-sm text-text-body leading-relaxed">
                 Observe the stamped numbers on the drive links. Common markings include <strong className="text-text-main">Oregon&apos;s 91</strong> or <strong className="text-text-main">Stihl&apos;s 6</strong>. These numbers correspond to specific chain models.
@@ -456,14 +445,8 @@ export default function FitmentFinderPage() {
                 <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">3</div>
                 <h3 className="text-base sm:text-lg font-semibold text-text-main">Count the Links</h3>
               </div>
-              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden">
-                <Image
-                  src="/images/fitment-count-drive-links.jpg"
-                  alt="Chain laid flat showing how to count total drive links for chain length"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
+              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center p-2">
+                <CountDriveLinksSvg />
               </div>
               <p className="text-sm text-text-body leading-relaxed">
                 If specifications are unclear, lay the chain flat and <strong className="text-text-main">count the total number of drive links</strong>. This gives you the chain length (e.g., 56DL = 56 drive links).
