@@ -50,7 +50,7 @@ export default function SeriesWPage() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
             />
             {/* Semi-transparent overlay */}
-            <div className="absolute inset-0 bg-forest-dark/55 md:bg-forest-dark/50" />
+            <div className="absolute inset-0 bg-forest-dark/30" />
             {/* Value proposition text overlay */}
             <div className="absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-8">
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase tracking-tight mb-3 md:mb-4 max-w-3xl">

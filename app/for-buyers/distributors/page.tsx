@@ -49,7 +49,7 @@ export default function DistributorsPage() {
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
             />
-            <div className="absolute inset-0 bg-forest-brand/60" />
+            <div className="absolute inset-0 bg-forest-brand/30" />
             <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-6 sm:py-8 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
               <h1 className="font-heading text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3 tracking-tight uppercase">
                 Distributors & Forestry

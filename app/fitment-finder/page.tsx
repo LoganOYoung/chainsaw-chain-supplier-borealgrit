@@ -147,7 +147,7 @@ export default function FitmentFinderPage() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-forest-brand/60" aria-hidden />
+            <div className="absolute inset-0 bg-forest-brand/30" aria-hidden />
           </div>
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4 tracking-tight">

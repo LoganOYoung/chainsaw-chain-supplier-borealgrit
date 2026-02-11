@@ -43,7 +43,7 @@ export default function AboutPage() {
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
             />
-            <div className="absolute inset-0 bg-forest-brand/60" />
+            <div className="absolute inset-0 bg-forest-brand/30" />
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-6">
               <h1 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight uppercase">
                 About Us
