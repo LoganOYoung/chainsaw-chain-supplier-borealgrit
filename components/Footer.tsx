@@ -18,19 +18,19 @@ export default function Footer() {
           {/* Column 2: Products & Services */}
           <div>
             <h4 className="text-white text-sm font-bold uppercase tracking-wide mb-4">Products & Services</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-0">
               <li>
-                <Link href="/products" className="text-white/90 hover:text-white text-sm transition hover:underline">
+                <Link href="/products" className="block py-2.5 text-white/90 hover:text-white text-sm transition hover:underline min-h-[44px] flex items-center">
                   All Products
                 </Link>
               </li>
               <li>
-                <Link href="/fitment-finder" className="text-white/90 hover:text-white text-sm transition hover:underline">
+                <Link href="/fitment-finder" className="block py-2.5 text-white/90 hover:text-white text-sm transition hover:underline min-h-[44px] flex items-center">
                   Fitment Finder
                 </Link>
               </li>
               <li>
-                <Link href="/oem-private-label" className="text-white/90 hover:text-white text-sm transition hover:underline">
+                <Link href="/oem-private-label" className="block py-2.5 text-white/90 hover:text-white text-sm transition hover:underline min-h-[44px] flex items-center">
                   OEM & Private Label
                 </Link>
               </li>
@@ -40,24 +40,24 @@ export default function Footer() {
           {/* Column 3: Resources */}
           <div>
             <h4 className="text-white text-sm font-bold uppercase tracking-wide mb-4">Resources</h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-0">
               <li>
-                <Link href="/resources" className="text-white/90 hover:text-white text-sm transition hover:underline">
+                <Link href="/resources" className="block py-2.5 text-white/90 hover:text-white text-sm transition hover:underline min-h-[44px] flex items-center">
                   Catalogs & Downloads
                 </Link>
               </li>
               <li>
-                <Link href="/quality" className="text-white/90 hover:text-white text-sm transition hover:underline">
+                <Link href="/quality" className="block py-2.5 text-white/90 hover:text-white text-sm transition hover:underline min-h-[44px] flex items-center">
                   Quality & Certifications
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-white/90 hover:text-white text-sm transition hover:underline">
+                <Link href="/about" className="block py-2.5 text-white/90 hover:text-white text-sm transition hover:underline min-h-[44px] flex items-center">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-white/90 hover:text-white text-sm transition hover:underline">
+                <Link href="/contact" className="block py-2.5 text-white/90 hover:text-white text-sm transition hover:underline min-h-[44px] flex items-center">
                   Contact
                 </Link>
               </li>
@@ -102,7 +102,7 @@ export default function Footer() {
         <div className="mb-8 pb-8 border-b border-white/10">
           <Link 
             href="/request-quote" 
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-forest-brand font-bold text-sm uppercase tracking-wide rounded-none hover:bg-white/90 transition shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 min-h-[44px] bg-white text-forest-brand font-bold text-sm uppercase tracking-wide rounded-none hover:bg-white/90 transition shadow-lg hover:shadow-xl touch-manipulation"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

@@ -32,7 +32,7 @@ export default function Home() {
       <Navigation />
       <main>
         {/* Hero Banner Carousel - slide left, no fade */}
-        <section className="relative w-full h-[50vh] min-h-[400px] md:h-[60vh] md:min-h-[500px] max-h-[700px] overflow-hidden">
+        <section className="relative w-full h-[50vh] min-h-[300px] sm:min-h-[380px] md:h-[60vh] md:min-h-[500px] max-h-[700px] overflow-hidden">
           <div
             className="flex h-full w-[300%] transition-transform duration-500 ease-out"
             style={{ transform: `translateX(-${currentSlide * (100 / totalSlides)}%)` }}
@@ -59,7 +59,7 @@ export default function Home() {
               </p>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 px-8 py-4 md:px-12 md:py-5 bg-forest-brand text-white font-bold text-base md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl w-fit"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-12 md:py-5 min-h-[44px] bg-forest-brand text-white font-bold text-base md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl w-fit touch-manipulation"
               >
                 View Products
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -93,13 +93,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <Link 
                   href="/products" 
-                  className="w-full sm:w-auto px-6 py-3 md:px-10 md:py-4 bg-forest-brand text-white font-bold text-sm md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl"
+                  className="w-full sm:w-auto px-6 py-3 md:px-10 md:py-4 min-h-[44px] flex items-center justify-center bg-forest-brand text-white font-bold text-sm md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl touch-manipulation"
                 >
                   View Specs & RFQ
                 </Link>
                 <Link 
                   href="/fitment-finder" 
-                  className="w-full sm:w-auto px-6 py-3 md:px-10 md:py-4 bg-forest-brand text-white font-bold text-sm md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl"
+                  className="w-full sm:w-auto px-6 py-3 md:px-10 md:py-4 min-h-[44px] flex items-center justify-center bg-forest-brand text-white font-bold text-sm md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl touch-manipulation"
                 >
                   Find Your Chain
                 </Link>
@@ -137,7 +137,7 @@ export default function Home() {
               </div>
               <Link
                 href="/request-quote"
-                className="inline-flex items-center gap-2 px-8 py-4 md:px-12 md:py-5 bg-forest-brand text-white font-bold text-base md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl w-fit"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-12 md:py-5 min-h-[44px] bg-forest-brand text-white font-bold text-base md:text-lg uppercase tracking-wide rounded-none border-2 border-transparent hover:bg-white hover:text-forest-brand hover:border-forest-brand transition shadow-xl hover:shadow-2xl w-fit touch-manipulation"
               >
                 Request Quote
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
