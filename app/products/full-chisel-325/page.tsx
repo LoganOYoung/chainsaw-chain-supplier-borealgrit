@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import { FullChiselCutterSvg, Chain325Svg } from '@/components/product-diagrams'
-import { ProductChainFullChisel } from '@/components/product-chain-illustrations'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { Metadata } from 'next'
@@ -33,13 +32,6 @@ export default function FullChisel325Page() {
             { label: 'Full Chisel .325"' },
           ]}
         />
-
-        {/* Product illustration — inline SVG for reliable display */}
-        <section className="mb-8 bg-white border border-forest-brand/20 rounded-none overflow-hidden">
-          <div className="relative w-full aspect-[3/2] max-h-[280px] flex items-center justify-center p-4 bg-gray-50">
-            <ProductChainFullChisel className="w-full h-full max-h-[240px] object-contain" />
-          </div>
-        </section>
 
         <h1 className="text-2xl font-bold text-text-main mb-2">FC-325 · Full chisel .325&quot;</h1>
         <p className="text-text-body mb-6">

@@ -14,12 +14,6 @@ This downloads real photos (Picsum Photos, free to use) into `public/images` wit
 
 If you don't run the script, the repo has minimal 1×1 placeholder files so paths don't 404. To recreate them: `node scripts/create-placeholder-images.js`.
 
-## Product illustrations (SVG)
-
-- `products/product-chain-*.svg` – Professional catalog-style chain illustrations (full-chisel, semi-chisel, low-profile).
-- `products/product-cutter-*.svg` – Cutter detail close-ups for technical documentation.
-- These are vector graphics; no 3D/CAD required. Replace with real product photos when available.
-
 ## Your own photos
 
 - Replace any file in `public/images` with your own (same path and filename): hero shots, factory, packaging, product details.
