@@ -24,35 +24,24 @@ export default function SeriesEPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
-        <Breadcrumbs
-          items={[
-            { label: 'Home', href: '/' },
-            { label: 'Products', href: '/products' },
-            { label: 'Series E' },
-          ]}
-        />
-
-        <h1 className="text-2xl md:text-3xl font-bold text-text-main mb-4">Series E: Narrow Kerf Chains for Battery-Powered Saws</h1>
-        <p className="text-text-body mb-6 max-w-3xl">
-          .043&quot; and .050&quot; gauge narrow kerf chains optimized for cordless saws. Reduces power consumption by 15-25% compared to standard chains.
-        </p>
-
-        {/* Hero Banner with Value Proposition Overlay */}
-        <section className="mb-10">
-          <div className="relative w-full h-64 md:h-96 lg:h-[500px] rounded-none overflow-hidden bg-gray-100">
+      <main>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Products', href: '/products' }, { label: 'Series E' }]} />
+        </div>
+        {/* Full-bleed banner */}
+        <section className="relative w-full h-64 md:h-96 lg:h-[500px] overflow-hidden">
+          <div className="absolute inset-0">
             <Image
               src="/images/series-e-chainsaw-cutting.png"
               alt="Chainsaw cutting log — Series E narrow-kerf chains for battery and cordless saws, reduced power draw and extended runtime"
               fill
               className="object-cover object-center"
               priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+              sizes="100vw"
             />
-            {/* Semi-transparent overlay */}
-            <div className="absolute inset-0 bg-forest-dark/30" />
-            {/* Value proposition text overlay */}
-            <div className="absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-8">
+            <div className="absolute inset-0 bg-forest-dark/30" aria-hidden />
+          </div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-8 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase tracking-tight mb-3 md:mb-4 max-w-3xl">
                 Precision Performance for High-Efficiency Operations
               </h2>
@@ -62,9 +51,14 @@ export default function SeriesEPage() {
               <p className="text-white/90 text-xs sm:text-sm font-semibold uppercase tracking-wide">
                 E-Series · Built for Boreal
               </p>
-            </div>
           </div>
         </section>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+        <h1 className="text-2xl md:text-3xl font-bold text-text-main mb-4">Series E: Narrow Kerf Chains for Battery-Powered Saws</h1>
+        <p className="text-text-body mb-6 max-w-3xl">
+          .043&quot; and .050&quot; gauge narrow kerf chains optimized for cordless saws. Reduces power consumption by 15-25% compared to standard chains.
+        </p>
 
         {/* Technical Specifications */}
         <section className="mb-10">
@@ -531,6 +525,7 @@ export default function SeriesEPage() {
             Request Bulk Quote for Series E
           </Link>
         </section>
+        </div>
       </main>
       <Footer />
 

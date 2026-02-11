@@ -29,32 +29,34 @@ export default function AboutPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12" aria-label="About BorealGrit">
-        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
-
-        {/* Hero */}
-        <section className="mb-8 -mx-4 sm:mx-0">
-          <div className="relative w-full h-40 sm:h-48 md:h-56 rounded-none overflow-hidden bg-gray-100">
+      <main aria-label="About BorealGrit">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
+        </div>
+        {/* Full-bleed banner */}
+        <section className="relative w-full min-h-[180px] sm:min-h-[220px] md:min-h-[260px] flex flex-col justify-center py-12 md:py-16 overflow-hidden">
+          <div className="absolute inset-0">
             <Image
               src="/images/about-banner.png"
               alt="Freshly cut logs in forest—BorealGrit serves North American forestry and B2B supply"
               fill
               className="object-cover"
               priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+              sizes="100vw"
             />
-            <div className="absolute inset-0 bg-forest-brand/30" />
-            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-6">
-              <h1 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight uppercase">
-                About Us
-              </h1>
-              <p className="text-white/90 text-sm mt-1.5 max-w-xl">
-                Professional chainsaw chains for North America—direct supply, clear specs, reliable delivery.
-              </p>
-            </div>
+            <div className="absolute inset-0 bg-forest-brand/30" aria-hidden />
+          </div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+            <h1 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight uppercase">
+              About Us
+            </h1>
+            <p className="text-white/90 text-sm mt-1.5 max-w-xl">
+              Professional chainsaw chains for North America—direct supply, clear specs, reliable delivery.
+            </p>
           </div>
         </section>
 
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
         <p className="text-text-body text-sm leading-relaxed mb-8">
           BorealGrit supplies industrial-grade chainsaw chains to <Link href="/for-buyers/distributors" className="text-forest-brand hover:underline">distributors</Link>, logging operations, and <Link href="/oem-private-label" className="text-forest-brand hover:underline">OEM partners</Link> in North America. We focus on technical accuracy, documented quality, and reliable supply so your business can count on consistent specs and clear documentation.
         </p>
@@ -132,6 +134,7 @@ export default function AboutPage() {
             </Link>
           </div>
         </section>
+        </div>
       </main>
       <Footer />
 

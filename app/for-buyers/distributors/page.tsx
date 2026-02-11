@@ -30,36 +30,34 @@ export default function DistributorsPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]" aria-label="Distributors & Forestry">
-        <Breadcrumbs
-          items={[
-            { label: 'Home', href: '/' },
-            { label: 'For Buyers' },
-            { label: 'Distributors & Forestry' },
-          ]}
-        />
-        {/* Hero */}
-        <section className="mb-8 sm:mb-10">
-          <div className="relative w-full h-44 sm:h-48 md:h-64 lg:h-72 rounded-none overflow-hidden bg-gray-100">
+      <main aria-label="Distributors & Forestry">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Buyers' }, { label: 'Distributors & Forestry' }]} />
+        </div>
+        {/* Full-bleed banner */}
+        <section className="relative w-full min-h-[200px] sm:min-h-[240px] md:min-h-[280px] flex flex-col justify-center py-12 md:py-16 overflow-hidden">
+          <div className="absolute inset-0">
             <Image
               src="/images/distributors-banner.jpg"
               alt="Professional logger with chainsaw and forestry truck—BorealGrit supplies chains for North American distributors and operations"
               fill
               className="object-cover"
               priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+              sizes="100vw"
             />
-            <div className="absolute inset-0 bg-forest-brand/30" />
-            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-6 sm:py-8 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
-              <h1 className="font-heading text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3 tracking-tight uppercase">
-                Distributors & Forestry
-              </h1>
-              <p className="text-white/95 text-sm sm:text-lg md:text-xl max-w-2xl">
-                Factory-direct chainsaw chains for distributors, logging operations, and OEMs. Clear policies, reliable supply, and a partner focused on your uptime.
-              </p>
-            </div>
+            <div className="absolute inset-0 bg-forest-brand/30" aria-hidden />
+          </div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+            <h1 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3 tracking-tight uppercase">
+              Distributors & Forestry
+            </h1>
+            <p className="text-white/95 text-sm sm:text-base max-w-2xl">
+              Factory-direct chainsaw chains for distributors, logging operations, and OEMs. Clear policies, reliable supply, and a partner focused on your uptime.
+            </p>
           </div>
         </section>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
 
         {/* Who We Serve */}
         <section className="mb-8 sm:mb-10">
@@ -328,6 +326,7 @@ export default function DistributorsPage() {
             </Link>
           </div>
         </section>
+        </div>
       </main>
       <Footer />
 

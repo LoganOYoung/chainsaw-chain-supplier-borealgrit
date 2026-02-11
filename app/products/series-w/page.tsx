@@ -24,35 +24,24 @@ export default function SeriesWPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
-        <Breadcrumbs
-          items={[
-            { label: 'Home', href: '/' },
-            { label: 'Products', href: '/products' },
-            { label: 'Series W' },
-          ]}
-        />
-
-        <h1 className="text-2xl md:text-3xl font-bold text-text-main mb-4">Series W: Cold-Weather Chainsaw Chains</h1>
-        <p className="text-text-body mb-6 max-w-3xl">
-          CrNiMo (Chromium-Nickel-Molybdenum) alloy steel with specialized nitriding heat treatment. Impact toughness maintained at -40°C. Semi-chisel cutter design.
-        </p>
-
-        {/* Hero Banner with Value Proposition Overlay */}
-        <section className="mb-10">
-          <div className="relative w-full h-64 md:h-96 lg:h-[500px] rounded-none overflow-hidden bg-gray-100">
+      <main>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Products', href: '/products' }, { label: 'Series W' }]} />
+        </div>
+        {/* Full-bleed banner */}
+        <section className="relative w-full h-64 md:h-96 lg:h-[500px] overflow-hidden">
+          <div className="absolute inset-0">
             <Image
               src="/images/series-w-winter-chainsaw-cutting.png"
               alt="Chainsaw cutting log in snow — Series W cold-weather chain for winter logging and sub-zero conditions"
               fill
               className="object-cover object-center"
               priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+              sizes="100vw"
             />
-            {/* Semi-transparent overlay */}
-            <div className="absolute inset-0 bg-forest-dark/30" />
-            {/* Value proposition text overlay */}
-            <div className="absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-8">
+            <div className="absolute inset-0 bg-forest-dark/30" aria-hidden />
+          </div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-8 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase tracking-tight mb-3 md:mb-4 max-w-3xl">
                 Engineered for the Frozen North
               </h2>
@@ -62,9 +51,14 @@ export default function SeriesWPage() {
               <p className="text-white/90 text-xs sm:text-sm font-semibold uppercase tracking-wide">
                 W-Series · Built for Boreal
               </p>
-            </div>
           </div>
         </section>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+        <h1 className="text-2xl md:text-3xl font-bold text-text-main mb-4">Series W: Cold-Weather Chainsaw Chains</h1>
+        <p className="text-text-body mb-6 max-w-3xl">
+          CrNiMo (Chromium-Nickel-Molybdenum) alloy steel with specialized nitriding heat treatment. Impact toughness maintained at -40°C. Semi-chisel cutter design.
+        </p>
 
         {/* Technical Specifications */}
         <section className="mb-10">
@@ -493,6 +487,7 @@ export default function SeriesWPage() {
             Request Winter Season Pre-order Quote
           </Link>
         </section>
+        </div>
       </main>
       <Footer />
 
