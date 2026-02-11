@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Search, Filter, Download, ArrowRight, ChevronDown } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
@@ -211,24 +212,51 @@ export default function ProductsPage() {
           <div className="grid md:grid-cols-3 gap-4">
             <Link
               href="/products/series-e"
-              className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition"
+              className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition group"
             >
+              <div className="relative w-full aspect-[3/2] mb-3 bg-gray-50 rounded-none overflow-hidden">
+                <Image
+                  src="/images/products/product-chain-low-profile.svg"
+                  alt="Series E — Low-profile narrow kerf chain for battery saws"
+                  fill
+                  className="object-contain p-2 group-hover:scale-[1.02] transition-transform"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
               <h3 className="font-semibold text-text-main mb-1">Series E</h3>
               <p className="text-xs text-text-body mb-2">Electric Era - Narrow Kerf</p>
               <p className="text-xs text-industrial">.043&quot; gauge optimized for battery-powered saws</p>
             </Link>
             <Link
               href="/products/series-w"
-              className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition"
+              className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition group"
             >
+              <div className="relative w-full aspect-[3/2] mb-3 bg-gray-50 rounded-none overflow-hidden">
+                <Image
+                  src="/images/products/product-chain-semi-chisel.svg"
+                  alt="Series W — Semi-chisel cold-weather chain"
+                  fill
+                  className="object-contain p-2 group-hover:scale-[1.02] transition-transform"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
               <h3 className="font-semibold text-text-main mb-1">Series W</h3>
               <p className="text-xs text-text-body mb-2">Arctic Edge - Cold Weather</p>
               <p className="text-xs text-industrial">68CrNiMo alloy for sub-zero conditions</p>
             </Link>
             <Link
               href="/products/series-p"
-              className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition"
+              className="block p-4 bg-white border-2 border-forest-brand/30 rounded-none hover:border-forest-brand transition group"
             >
+              <div className="relative w-full aspect-[3/2] mb-3 bg-gray-50 rounded-none overflow-hidden">
+                <Image
+                  src="/images/products/product-chain-full-chisel.svg"
+                  alt="Series P — Full-chisel professional logging chain"
+                  fill
+                  className="object-contain p-2 group-hover:scale-[1.02] transition-transform"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
               <h3 className="font-semibold text-text-main mb-1">Series P</h3>
               <p className="text-xs text-text-body mb-2">Professional Logging</p>
               <p className="text-xs text-industrial">Full-chisel design for maximum output</p>

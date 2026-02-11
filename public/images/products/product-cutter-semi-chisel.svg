@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <title>Semi-Chisel cutter close-up  rounded corner, edge retention</title>
+  <rect width="400" height="300" fill="#ffffff"/>
+  <g transform="translate(100,60)">
+    <defs>
+      <linearGradient id="sc-chrome" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#f8fafc"/>
+        <stop offset="30%" style="stop-color:#e2e8f0"/>
+        <stop offset="70%" style="stop-color:#cbd5e1"/>
+        <stop offset="100%" style="stop-color:#94a3b8"/>
+      </linearGradient>
+      <linearGradient id="sc-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#94a3b8"/>
+        <stop offset="100%" style="stop-color:#1e293b"/>
+      </linearGradient>
+      <filter id="sc-shadow" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.2"/>
+      </filter>
+    </defs>
+    <!-- Cutter body - rounded corner -->
+    <path d="M15 195 L15 55 L75 55 Q120 62 122 95 L122 195 L102 195 L102 145 L35 145 L35 195 Z" fill="url(#sc-chrome)" stroke="#64748b" stroke-width="1.5" filter="url(#sc-shadow)"/>
+    <path d="M75 55 Q105 58 122 95" stroke="url(#sc-edge)" stroke-width="2.5" fill="none"/>
+    <text x="98" y="68" font-size="9" font-weight="600" fill="#047857">Rounded</text>
+    <text x="55" y="42" font-size="9" fill="#64748b">Top plate</text>
+    <text x="8" y="130" font-size="9" fill="#64748b">Side plate</text>
+    <text x="55" y="215" font-size="9" fill="#64748b">Gullet</text>
+    <text x="118" y="165" font-size="9" fill="#64748b">Depth gauge</text>
+  </g>
+  <text x="200" y="275" text-anchor="middle" font-size="10" font-family="system-ui,sans-serif" fill="#64748b">Rounded corner · Edge retention · Hardwoods, dirty wood</text>
+</svg>

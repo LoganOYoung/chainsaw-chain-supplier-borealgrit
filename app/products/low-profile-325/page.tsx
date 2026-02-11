@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import { LowProfileCutterSvg, ChainLowProfileSvg } from '@/components/product-diagrams'
 import Footer from '@/components/Footer'
@@ -32,6 +33,20 @@ export default function LowProfile325Page() {
             { label: 'Low Profile .325"' },
           ]}
         />
+
+        {/* Product illustration */}
+        <section className="mb-8 bg-white border border-forest-brand/20 rounded-none overflow-hidden">
+          <div className="relative w-full aspect-[3/2] max-h-[280px] flex items-center justify-center p-4 bg-gray-50">
+            <Image
+              src="/images/products/product-chain-low-profile.svg"
+              alt="Low-profile chainsaw chain — bumper links, ANSI low-kickback"
+              width={480}
+              height={320}
+              className="object-contain w-full h-full"
+              priority
+            />
+          </div>
+        </section>
 
         <h1 className="text-2xl font-bold text-text-main mb-2">LP-325 · Low profile .325&quot;</h1>
         <p className="text-text-body mb-6">
