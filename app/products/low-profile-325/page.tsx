@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import Navigation from '@/components/Navigation'
+import { LowProfileCutterSvg, ChainLowProfileSvg } from '@/components/product-diagrams'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { Metadata } from 'next'
@@ -42,62 +42,15 @@ export default function LowProfile325Page() {
           to match your saw and bar.
         </p>
 
-        {/* Hero Image */}
-        <section className="mb-10">
-          <div className="relative w-full h-64 md:h-96 lg:h-[500px] rounded-none overflow-hidden bg-gray-100">
-            <Image
-              src="/images/products/low-profile-325-hero.jpg"
-              alt="Low Profile .325 inch chainsaw chain in consumer/homeowner application - safe cutting with low-kickback design"
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-            />
-          </div>
-        </section>
-
-        {/* Product Detail Images - Low Profile Design */}
+        {/* Cutter & Chain Diagram */}
         <section className="mb-10">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Low Profile Design & Safety Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
-              <Image
-                src="/images/products/low-profile-cutter-detail.jpg"
-                alt="Low Profile cutter close-up showing reduced cutter depth and low-kickback safety geometry"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
-                <p className="text-sm font-semibold">Low-Kickback Design</p>
-                <p className="text-xs text-gray-200">Reduced cutter depth</p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+            <div className="bg-white border border-forest-brand/30 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
+              <LowProfileCutterSvg />
             </div>
-            <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
-              <Image
-                src="/images/products/low-profile-chain-detail.jpg"
-                alt="Low Profile chain showing drive link configuration and safety link placement"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
-                <p className="text-sm font-semibold">Safety Links</p>
-                <p className="text-xs text-gray-200">ANSI low-kickback compliant</p>
-              </div>
-            </div>
-            <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
-              <Image
-                src="/images/products/low-profile-application.jpg"
-                alt="Low Profile chain in homeowner application - light-duty cutting and pruning"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
-                <p className="text-sm font-semibold">Homeowner Use</p>
-                <p className="text-xs text-gray-200">Light-duty cutting</p>
-              </div>
+            <div className="bg-white border border-forest-brand/30 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
+              <ChainLowProfileSvg />
             </div>
           </div>
           <p className="text-sm text-text-body italic">
@@ -281,7 +234,7 @@ export default function LowProfile325Page() {
           <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition">
             Request Quote
           </Link>
-          <Link href="/resources#datasheets" className="inline-flex items-center px-5 py-2.5 border-2 border-industrial text-text-bodyfont-semibold text-sm hover:bg-gray-50 transition">
+          <Link href="/resources#datasheets" className="inline-flex items-center px-5 py-2.5 border-2 border-industrial text-text-body font-semibold text-sm hover:bg-gray-50 transition">
             Download Datasheet
           </Link>
         </section>

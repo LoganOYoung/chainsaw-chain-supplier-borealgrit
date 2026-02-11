@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import Navigation from '@/components/Navigation'
+import { SemiChiselCutterSvg, Chain38Svg } from '@/components/product-diagrams'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import { Metadata } from 'next'
@@ -42,66 +42,19 @@ export default function SemiChisel38Page() {
           to match your saw and bar.
         </p>
 
-        {/* Hero Image */}
-        <section className="mb-10">
-          <div className="relative w-full h-64 md:h-96 lg:h-[500px] rounded-none overflow-hidden bg-gray-100">
-            <Image
-              src="/images/products/semi-chisel-38-hero.jpg"
-              alt="Semi-Chisel 3/8 inch chainsaw chain in general-purpose application - cutting dirty or frozen wood with rounded-corner cutters"
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-            />
-          </div>
-        </section>
-
-        {/* Product Detail Images - Semi-Chisel Design */}
+        {/* Cutter & Chain Diagram */}
         <section className="mb-10">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Semi-Chisel Design & Durability</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
-              <Image
-                src="/images/products/semi-chisel-cutter-detail.jpg"
-                alt="Semi-Chisel rounded-corner cutter close-up showing durable rounded-none geometry for extended edge retention"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
-                <p className="text-sm font-semibold">Rounded-Corner Cutter</p>
-                <p className="text-xs text-gray-200">Superior edge retention</p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+            <div className="bg-white border border-forest-brand/30 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
+              <SemiChiselCutterSvg />
             </div>
-            <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
-              <Image
-                src="/images/products/semi-chisel-chain-detail.jpg"
-                alt="Semi-Chisel chain showing 3/8 inch pitch configuration and cutter spacing"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
-                <p className="text-sm font-semibold">Chain Configuration</p>
-                <p className="text-xs text-gray-200">3/8 inch pitch standard</p>
-              </div>
-            </div>
-            <div className="relative w-full h-48 md:h-64 rounded-none overflow-hidden bg-gray-50">
-              <Image
-                src="/images/products/semi-chisel-application.jpg"
-                alt="Semi-Chisel chain cutting dirty or frozen wood - optimal for Eastern hardwoods and challenging conditions"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-forest-brand/70 text-white p-3">
-                <p className="text-sm font-semibold">Dirty/Frozen Wood</p>
-                <p className="text-xs text-gray-200">Extended sharpening intervals</p>
-              </div>
+            <div className="bg-white border border-forest-brand/30 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
+              <Chain38Svg />
             </div>
           </div>
           <p className="text-sm text-text-body italic">
-            Semi-Chisel cutters feature rounded-none corners for superior edge retention. Less prone to dulling in dirty or frozen conditions. Optimal for Eastern North America hardwoods (oak, maple, hickory) and challenging cutting environments.
+            Semi-Chisel cutters feature rounded corners for superior edge retention. Less prone to dulling in dirty or frozen conditions. Optimal for Eastern North America hardwoods (oak, maple, hickory) and challenging cutting environments.
           </p>
         </section>
 
@@ -265,7 +218,7 @@ export default function SemiChisel38Page() {
           <Link href="/contact" className="inline-flex items-center px-5 py-2.5 bg-forest-brand text-white font-semibold text-sm hover:bg-white hover:text-forest-brand border-2 border-transparent hover:border-forest-brand transition">
             Request Quote
           </Link>
-          <Link href="/resources#datasheets" className="inline-flex items-center px-5 py-2.5 border-2 border-industrial text-text-bodyfont-semibold text-sm hover:bg-gray-50 transition">
+          <Link href="/resources#datasheets" className="inline-flex items-center px-5 py-2.5 border-2 border-industrial text-text-body font-semibold text-sm hover:bg-gray-50 transition">
             Download Datasheet
           </Link>
         </section>
