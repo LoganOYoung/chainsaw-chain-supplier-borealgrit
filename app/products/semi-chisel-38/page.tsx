@@ -46,10 +46,10 @@ export default function SemiChisel38Page() {
         <section className="mb-10">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Semi-Chisel Design & Durability</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-            <div className="bg-white border border-forest-brand/30 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
+            <div className="bg-gray-50 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
               <SemiChiselCutterSvg />
             </div>
-            <div className="bg-white border border-forest-brand/30 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
+            <div className="bg-gray-50 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
               <Chain38Svg />
             </div>
           </div>
@@ -59,10 +59,10 @@ export default function SemiChisel38Page() {
         </section>
 
         {/* Cutter Type Comparison Infographic */}
-        <section className="mb-10 bg-gray-50 rounded-none p-6 border border-forest-brand/30">
+        <section className="mb-10 bg-gray-50 rounded-none p-6">
           <h2 className="text-lg font-bold text-text-main mb-4">Full-Chisel vs Semi-Chisel Comparison</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-none p-4 border border-forest-brand/30">
+            <div className="bg-white rounded-none p-4 shadow-sm">
               <h3 className="font-semibold text-text-main mb-3 text-sm">Full-Chisel (Square-Corner)</h3>
               <div className="space-y-2 text-sm text-industrial">
                 <div className="flex items-start gap-2">
@@ -79,7 +79,7 @@ export default function SemiChisel38Page() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-none p-4 border border-forest-brand/30 border-forest-brand">
+            <div className="bg-white rounded-none p-4 ring-2 ring-forest-brand">
               <h3 className="font-semibold text-text-main mb-3 text-sm">Semi-Chisel (Rounded-Corner) ✓</h3>
               <div className="space-y-2 text-sm text-industrial">
                 <div className="flex items-start gap-2">
@@ -134,14 +134,14 @@ export default function SemiChisel38Page() {
         </section>
 
         {/* Compatible Brands */}
-        <section className="mb-10 bg-gray-50 rounded-none p-6 border border-forest-brand/30">
+        <section className="mb-10 bg-gray-50 rounded-none p-6">
           <h2 className="text-lg font-bold text-text-main mb-3">Compatible Brands</h2>
           <p className="text-sm text-text-body mb-4">
             Semi-Chisel 3/8&quot; chains are designed as compatible replacements for general-purpose chainsaws from leading North American brands.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
             {['Husqvarna', 'Stihl', 'Echo', 'Poulan', 'Oregon', 'Craftsman'].map((brand) => (
-              <div key={brand} className="bg-white border border-forest-brand/30 rounded-none p-2 text-center">
+                <div key={brand} className="bg-white rounded-none p-2 text-center shadow-sm">
                 <div className="font-semibold text-text-main text-xs">{brand}</div>
               </div>
             ))}

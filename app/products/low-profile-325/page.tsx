@@ -46,10 +46,10 @@ export default function LowProfile325Page() {
         <section className="mb-10">
           <h2 className="text-lg font-bold text-text-main mb-4 border-b border-forest-brand/30 pb-2">Low Profile Design & Safety Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-            <div className="bg-white border border-forest-brand/30 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
+            <div className="bg-gray-50 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
               <LowProfileCutterSvg />
             </div>
-            <div className="bg-white border border-forest-brand/30 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
+            <div className="bg-gray-50 rounded-none p-4 flex items-center justify-center min-h-[18rem]">
               <ChainLowProfileSvg />
             </div>
           </div>
@@ -59,10 +59,10 @@ export default function LowProfile325Page() {
         </section>
 
         {/* Low Profile vs Full Chain Comparison Infographic */}
-        <section className="mb-10 bg-gray-50 rounded-none p-6 border border-forest-brand/30">
+        <section className="mb-10 bg-gray-50 rounded-none p-6">
           <h2 className="text-lg font-bold text-text-main mb-4">Low Profile vs Full Chain Comparison</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-none p-4 border border-forest-brand border-2">
+            <div className="bg-white rounded-none p-4 ring-2 ring-forest-brand">
               <h3 className="font-semibold text-text-main mb-3 text-sm">Low Profile Chain ✓</h3>
               <div className="space-y-2 text-sm text-industrial">
                 <div className="flex items-start gap-2">
@@ -87,7 +87,7 @@ export default function LowProfile325Page() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-none p-4 border border-forest-brand/30">
+            <div className="bg-white rounded-none p-4 shadow-sm">
               <h3 className="font-semibold text-text-main mb-3 text-sm">Full Chain</h3>
               <div className="space-y-2 text-sm text-industrial">
                 <div className="flex items-start gap-2">
@@ -150,14 +150,14 @@ export default function LowProfile325Page() {
         </section>
 
         {/* Compatible Brands */}
-        <section className="mb-10 bg-gray-50 rounded-none p-6 border border-forest-brand/30">
+        <section className="mb-10 bg-gray-50 rounded-none p-6">
           <h2 className="text-lg font-bold text-text-main mb-3">Compatible Brands</h2>
           <p className="text-sm text-text-body mb-4">
             Low Profile .325&quot; chains are designed as compatible replacements for consumer and homeowner chainsaws from leading North American brands.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
             {['Husqvarna', 'Stihl', 'Echo', 'Poulan', 'Oregon', 'Craftsman'].map((brand) => (
-              <div key={brand} className="bg-white border border-forest-brand/30 rounded-none p-2 text-center">
+                <div key={brand} className="bg-white rounded-none p-2 text-center shadow-sm">
                 <div className="font-semibold text-text-main text-xs">{brand}</div>
               </div>
             ))}

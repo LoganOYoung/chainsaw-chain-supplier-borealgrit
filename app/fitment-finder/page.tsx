@@ -365,7 +365,7 @@ export default function FitmentFinderPage() {
         </section>
 
         {/* Why Switch to Our Premium Alternatives - after tools */}
-        <section className="mb-8 bg-gray-50 rounded-none p-4 sm:p-6 border border-forest-brand/30">
+        <section className="mb-8 bg-gray-50 rounded-none p-4 sm:p-6">
           <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4 sm:mb-6">Why Switch to Our Premium Alternatives?</h2>
           <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
             <div className="flex items-start gap-4">
@@ -404,7 +404,7 @@ export default function FitmentFinderPage() {
         </section>
 
         {/* How to Identify Your Specifications - reference at end */}
-        <section className="mb-8 sm:mb-10 bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
+        <section className="mb-8 sm:mb-10 bg-gray-50 rounded-none p-4 sm:p-6">
           <h2 className="text-lg sm:text-xl font-bold text-text-main mb-4">How to Identify Your Specifications</h2>
           <p className="text-sm text-text-body mb-4 sm:mb-6">
             Follow these three steps to identify the correct chain specifications for your chainsaw. Most guide bars have the specifications stamped on the tail end.
@@ -412,12 +412,12 @@ export default function FitmentFinderPage() {
           
           <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-6">
             {/* Step 1 */}
-            <div className="bg-gray-50 rounded-none p-4 sm:p-5 border border-forest-brand/30">
+            <div className="bg-white rounded-none p-4 sm:p-5 shadow-sm">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">1</div>
                 <h3 className="text-base sm:text-lg font-semibold text-text-main">Check the Bar</h3>
               </div>
-              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center p-2">
+              <div className="relative w-full h-40 sm:h-48 mb-4 bg-gray-50 rounded-none overflow-hidden flex items-center justify-center p-2">
                 <BarStampingSvg />
               </div>
               <p className="text-sm text-text-body leading-relaxed">
@@ -426,12 +426,12 @@ export default function FitmentFinderPage() {
             </div>
 
             {/* Step 2 */}
-            <div className="bg-gray-50 rounded-none p-4 sm:p-5 border border-forest-brand/30">
+            <div className="bg-white rounded-none p-4 sm:p-5 shadow-sm">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">2</div>
                 <h3 className="text-base sm:text-lg font-semibold text-text-main">Read the Drive Link</h3>
               </div>
-              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center p-2">
+              <div className="relative w-full h-40 sm:h-48 mb-4 bg-gray-50 rounded-none overflow-hidden flex items-center justify-center p-2">
                 <DriveLinkMarkingSvg />
               </div>
               <p className="text-sm text-text-body leading-relaxed">
@@ -440,12 +440,12 @@ export default function FitmentFinderPage() {
             </div>
 
             {/* Step 3 */}
-            <div className="bg-gray-50 rounded-none p-4 sm:p-5 border border-forest-brand/30">
+            <div className="bg-white rounded-none p-4 sm:p-5 shadow-sm">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-8 h-8 bg-forest-brand text-white rounded-none flex items-center justify-center font-bold text-sm shrink-0">3</div>
                 <h3 className="text-base sm:text-lg font-semibold text-text-main">Count the Links</h3>
               </div>
-              <div className="relative w-full h-40 sm:h-48 mb-4 bg-white border-2 border-gray-300 rounded-none overflow-hidden flex items-center justify-center p-2">
+              <div className="relative w-full h-40 sm:h-48 mb-4 bg-gray-50 rounded-none overflow-hidden flex items-center justify-center p-2">
                 <CountDriveLinksSvg />
               </div>
               <p className="text-sm text-text-body leading-relaxed">
@@ -457,7 +457,7 @@ export default function FitmentFinderPage() {
         </section>
 
         {/* Technical specs teaser */}
-        <section className="mb-8 sm:mb-10 bg-white border border-forest-brand/30 rounded-none p-4 sm:p-6">
+        <section className="mb-8 sm:mb-10 bg-white rounded-none p-4 sm:p-6 shadow-sm">
           <h2 className="text-lg sm:text-xl font-bold text-text-main mb-2">Industry Technical Specifications & Standards</h2>
           <p className="text-sm text-text-body mb-4 leading-relaxed">
             Need to understand <strong className="text-text-main">pitch</strong>, <strong className="text-text-main">gauge</strong>, <strong className="text-text-main">drive link type</strong> (Standard vs. Anti-Kickback), or <strong className="text-text-main">cutter geometry</strong>? Our Technical Reference has diagrams, tables, and application notes for professional buyers.
