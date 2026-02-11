@@ -31,9 +31,6 @@ export default function DistributorsPage() {
     <>
       <Navigation />
       <main aria-label="Distributors & Forestry">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
-          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Buyers' }, { label: 'Distributors & Forestry' }]} />
-        </div>
         {/* Full-bleed banner */}
         <section className="relative w-full min-h-[200px] sm:min-h-[240px] md:min-h-[280px] flex flex-col justify-center py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
@@ -58,6 +55,7 @@ export default function DistributorsPage() {
         </section>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'For Buyers' }, { label: 'Distributors & Forestry' }]} />
 
         {/* Who We Serve */}
         <section className="mb-8 sm:mb-10">

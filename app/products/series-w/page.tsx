@@ -25,9 +25,6 @@ export default function SeriesWPage() {
     <>
       <Navigation />
       <main>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
-          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Products', href: '/products' }, { label: 'Series W' }]} />
-        </div>
         {/* Full-bleed banner */}
         <section className="relative w-full h-64 md:h-96 lg:h-[500px] overflow-hidden">
           <div className="absolute inset-0">
@@ -55,6 +52,7 @@ export default function SeriesWPage() {
         </section>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Products', href: '/products' }, { label: 'Series W' }]} />
         <h1 className="text-2xl md:text-3xl font-bold text-text-main mb-4">Series W: Cold-Weather Chainsaw Chains</h1>
         <p className="text-text-body mb-6 max-w-3xl">
           CrNiMo (Chromium-Nickel-Molybdenum) alloy steel with specialized nitriding heat treatment. Impact toughness maintained at -40°C. Semi-chisel cutter design.

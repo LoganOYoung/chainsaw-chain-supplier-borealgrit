@@ -30,9 +30,6 @@ export default function AboutPage() {
     <>
       <Navigation />
       <main aria-label="About BorealGrit">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
-          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
-        </div>
         {/* Full-bleed banner */}
         <section className="relative w-full min-h-[180px] sm:min-h-[220px] md:min-h-[260px] flex flex-col justify-center py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
@@ -57,6 +54,7 @@ export default function AboutPage() {
         </section>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
         <p className="text-text-body text-sm leading-relaxed mb-8">
           BorealGrit supplies industrial-grade chainsaw chains to <Link href="/for-buyers/distributors" className="text-forest-brand hover:underline">distributors</Link>, logging operations, and <Link href="/oem-private-label" className="text-forest-brand hover:underline">OEM partners</Link> in North America. We focus on technical accuracy, documented quality, and reliable supply so your business can count on consistent specs and clear documentation.
         </p>
