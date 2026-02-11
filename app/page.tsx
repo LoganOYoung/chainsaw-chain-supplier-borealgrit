@@ -284,8 +284,8 @@ export default function Home() {
             <Link href="/products/series-w" className="flex flex-col md:flex-row-reverse md:items-center gap-6 md:gap-10 py-10 md:py-14 border-b border-forest-brand/20 group">
               <div className="relative w-full md:w-1/2 aspect-[4/3] min-h-[220px] rounded-none overflow-hidden bg-gray-100 shrink-0">
                 <Image
-                  src="/images/series-w-chain-guide-bar-log.png"
-                  alt="Chainsaw guide bar and chain on log — Series W alloy and nitriding for sub-zero and tough conditions"
+                  src="/images/series-w-winter-chainsaw-cutting.png"
+                  alt="Chainsaw cutting log in snow — Series W cold-weather chain for winter logging and sub-zero conditions"
                   fill
                   className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
                   sizes="(max-width: 768px) 100vw, 50vw"

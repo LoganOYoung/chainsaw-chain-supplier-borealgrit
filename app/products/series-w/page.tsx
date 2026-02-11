@@ -42,15 +42,15 @@ export default function SeriesWPage() {
         <section className="mb-10">
           <div className="relative w-full h-64 md:h-96 lg:h-[500px] rounded-none overflow-hidden bg-gray-100">
             <Image
-              src="/images/series-w-hero.jpg"
-              alt="68CrNiMo cold-resilient chainsaw chain cutting frozen hardwood in sub-zero conditions"
+              src="/images/series-w-winter-chainsaw-cutting.png"
+              alt="Chainsaw cutting log in snow — Series W cold-weather chain for winter logging and sub-zero conditions"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
             />
             {/* Semi-transparent overlay */}
-            <div className="absolute inset-0 bg-forest-dark/70 md:bg-forest-dark/60" />
+            <div className="absolute inset-0 bg-forest-dark/55 md:bg-forest-dark/50" />
             {/* Value proposition text overlay */}
             <div className="absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-8">
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase tracking-tight mb-3 md:mb-4 max-w-3xl">

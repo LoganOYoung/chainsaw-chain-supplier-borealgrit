@@ -42,15 +42,15 @@ export default function SeriesEPage() {
         <section className="mb-10">
           <div className="relative w-full h-64 md:h-96 lg:h-[500px] rounded-none overflow-hidden bg-gray-100">
             <Image
-              src="/images/series-e-hero.jpg"
-              alt="Series E narrow kerf chainsaw chain in use with battery-powered cordless saw cutting wood"
+              src="/images/series-e-chainsaw-cutting.png"
+              alt="Chainsaw cutting log — Series E narrow-kerf chains for battery and cordless saws, reduced power draw and extended runtime"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
             />
             {/* Semi-transparent overlay */}
-            <div className="absolute inset-0 bg-forest-dark/70 md:bg-forest-dark/60" />
+            <div className="absolute inset-0 bg-forest-dark/55 md:bg-forest-dark/50" />
             {/* Value proposition text overlay */}
             <div className="absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-8">
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase tracking-tight mb-3 md:mb-4 max-w-3xl">
