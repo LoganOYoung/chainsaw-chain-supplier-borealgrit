@@ -253,81 +253,78 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Product Series Highlights */}
-        <section className="py-0">
-          <div className="space-y-0">
-            {/* Series E Banner */}
-            <Link href="/products/series-e" className="block group">
-              <div className="relative w-full h-[250px] sm:h-[300px] md:h-[400px]">
+        {/* Product Series Highlights — left image / right text, then right image / left text */}
+        <section className="bg-white border-t border-forest-brand/20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Series E: left image, right text */}
+            <Link href="/products/series-e" className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 py-10 md:py-14 border-b border-forest-brand/20 group">
+              <div className="relative w-full md:w-1/2 aspect-[4/3] min-h-[220px] rounded-none overflow-hidden bg-gray-100 shrink-0">
                 <Image
-                  src="/images/series-e-hero.jpg"
-                  alt="Series E: Efficiency Redefined for the Electric Era"
+                  src="/images/series-e-chainsaw-cutting.png"
+                  alt="Chainsaw cutting log — Series E narrow-kerf chains for battery and cordless saws, reduced power draw and extended runtime"
                   fill
-                  className="object-cover"
-                  sizes="100vw"
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-forest-brand/70 group-hover:bg-forest-brand/60 transition"></div>
-                <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-6 md:py-0">
-                  <h3 className="font-heading text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-3 tracking-tight uppercase">
-                    SERIES E: EFFICIENCY REDEFINED FOR THE ELECTRIC ERA
-                  </h3>
-                  <p className="text-sm sm:text-base md:text-lg text-white/95 mb-2 md:mb-3 max-w-2xl leading-relaxed">
-                    .043&quot; Narrow Kerf chains optimized for battery-powered saws. Reduced drag and heat for maximum efficiency.
-                  </p>
-                  <div className="flex items-center text-white text-sm sm:text-base font-semibold">
-                    View Series E <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-                  </div>
-                </div>
+              </div>
+              <div className="md:w-1/2 flex flex-col justify-center">
+                <h3 className="font-heading text-lg sm:text-xl md:text-2xl font-bold text-text-main mb-2 tracking-tight uppercase">
+                  SERIES E: EFFICIENCY FOR THE ELECTRIC ERA
+                </h3>
+                <p className="text-sm sm:text-base text-text-body mb-4 max-w-xl leading-relaxed">
+                  .043&quot; Narrow Kerf chains optimized for battery-powered saws. Reduced drag and heat for maximum efficiency and longer runtime.
+                </p>
+                <span className="inline-flex items-center text-forest-brand font-semibold text-sm sm:text-base group-hover:underline">
+                  View Series E <ArrowRight className="w-4 h-4 ml-2" />
+                </span>
               </div>
             </Link>
 
-            {/* Series W Banner */}
-            <Link href="/products/series-w" className="block group">
-              <div className="relative w-full h-[250px] sm:h-[300px] md:h-[400px]">
+            {/* Series W: right image, left text */}
+            <Link href="/products/series-w" className="flex flex-col md:flex-row-reverse md:items-center gap-6 md:gap-10 py-10 md:py-14 border-b border-forest-brand/20 group">
+              <div className="relative w-full md:w-1/2 aspect-[4/3] min-h-[220px] rounded-none overflow-hidden bg-gray-100 shrink-0">
                 <Image
-                  src="/images/series-w-hero.jpg"
-                  alt="Series W: Engineered for the Arctic Edge"
+                  src="/images/series-w-chain-guide-bar-log.png"
+                  alt="Chainsaw guide bar and chain on log — Series W alloy and nitriding for sub-zero and tough conditions"
                   fill
-                  className="object-cover"
-                  sizes="100vw"
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-forest-brand/70 group-hover:bg-forest-brand/60 transition"></div>
-                <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-6 md:py-0">
-                  <h3 className="font-heading text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-3 tracking-tight uppercase">
-                    SERIES W: ENGINEERED FOR THE ARCTIC EDGE
-                  </h3>
-                  <p className="text-sm sm:text-base md:text-lg text-white/95 mb-2 md:mb-3 max-w-2xl leading-relaxed">
-                    CrNiMo Alloy Steel with specialized nitriding for sub-zero conditions. Mastery over frozen timber at -40°C.
-                  </p>
-                  <div className="flex items-center text-white text-sm sm:text-base font-semibold">
-                    View Series W <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-                  </div>
-                </div>
+              </div>
+              <div className="md:w-1/2 flex flex-col justify-center md:pl-0 md:pr-4">
+                <h3 className="font-heading text-lg sm:text-xl md:text-2xl font-bold text-text-main mb-2 tracking-tight uppercase">
+                  SERIES W: ENGINEERED FOR THE ARCTIC EDGE
+                </h3>
+                <p className="text-sm sm:text-base text-text-body mb-4 max-w-xl leading-relaxed">
+                  CrNiMo alloy steel with specialized nitriding for sub-zero conditions. Reliable performance on frozen timber to -40°C.
+                </p>
+                <span className="inline-flex items-center text-forest-brand font-semibold text-sm sm:text-base group-hover:underline">
+                  View Series W <ArrowRight className="w-4 h-4 ml-2" />
+                </span>
               </div>
             </Link>
 
-            {/* Series P Banner */}
-            <Link href="/products/series-p" className="block group">
-              <div className="relative w-full h-[250px] sm:h-[300px] md:h-[400px]">
+            {/* Series P: left image, right text */}
+            <Link href="/products/series-p" className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 py-10 md:py-14 border-b border-forest-brand/20 group">
+              <div className="relative w-full md:w-1/2 aspect-[4/3] min-h-[220px] rounded-none overflow-hidden bg-gray-100 shrink-0">
                 <Image
-                  src="/images/series-p-hero.jpg"
-                  alt="Series P: Maximum Output for Professional Foresters"
+                  src="/images/series-p-professional-logging.png"
+                  alt="Professional logger cutting wood with chainsaw — Series P full-chisel industrial chain for high-output logging"
                   fill
-                  className="object-cover"
-                  sizes="100vw"
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-forest-brand/70 group-hover:bg-forest-brand/60 transition"></div>
-                <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-6 md:py-0">
-                  <h3 className="font-heading text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-3 tracking-tight uppercase">
-                    SERIES P: MAXIMUM OUTPUT FOR PROFESSIONAL FORESTERS
-                  </h3>
-                  <p className="text-sm sm:text-base md:text-lg text-white/95 mb-2 md:mb-3 max-w-2xl leading-relaxed">
-                    Full-Chisel design with industrial chrome coating. The choice of professional loggers for highest chip clearance speed.
-                  </p>
-                  <div className="flex items-center text-white text-sm sm:text-base font-semibold">
-                    View Series P <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-                  </div>
-                </div>
+              </div>
+              <div className="md:w-1/2 flex flex-col justify-center">
+                <h3 className="font-heading text-lg sm:text-xl md:text-2xl font-bold text-text-main mb-2 tracking-tight uppercase">
+                  SERIES P: MAXIMUM OUTPUT FOR PROFESSIONAL FORESTERS
+                </h3>
+                <p className="text-sm sm:text-base text-text-body mb-4 max-w-xl leading-relaxed">
+                  Full-chisel design with industrial chrome. The choice of professional loggers for highest chip clearance and stay-sharp performance.
+                </p>
+                <span className="inline-flex items-center text-forest-brand font-semibold text-sm sm:text-base group-hover:underline">
+                  View Series P <ArrowRight className="w-4 h-4 ml-2" />
+                </span>
               </div>
             </Link>
           </div>
