@@ -31,14 +31,14 @@ export default function DistributorsPage() {
     <>
       <Navigation />
       <main aria-label="Distributors & Forestry">
-        {/* Full-bleed banner */}
-        <section className="relative w-full min-h-[200px] sm:min-h-[240px] md:min-h-[280px] flex flex-col justify-center py-12 md:py-16 overflow-hidden">
+        {/* Full-bleed banner: fixed aspect ratio so image does not distort */}
+        <section className="relative w-full aspect-[21/9] sm:aspect-[3/1] min-h-[180px] max-h-[320px] flex flex-col justify-center overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/images/distributors-banner.jpg"
               alt="Professional logger with chainsaw and forestry truck—BorealGrit supplies chains for North American distributors and operations"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               priority
               sizes="100vw"
             />
