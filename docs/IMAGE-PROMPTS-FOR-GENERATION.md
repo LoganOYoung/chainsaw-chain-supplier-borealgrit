@@ -95,7 +95,7 @@
 
 | 保存路径 | 页面位置 | 建议尺寸 | Prompt |
 |----------|----------|----------|--------|
-| `public/images/products/full-chisel-325-hero.jpg` | Full Chisel .325 页 Hero | 1920×800 | **Banner brief:** 16:9 horizontal. Pro logging scene: mid-size chainsaw with full-chisel chain cutting a **clean softwood log** (pine or fir). Square-corner cutters and bar/chain visible. Daylight, Western North American forest, wood chips (chunky, not dust). Photorealistic, B2B/industrial tone, greens and browns. |
+| `public/images/products/full-chisel-325-hero.jpg` | Full Chisel .325 页 Hero | 1920×800 | Full chisel .325 inch chainsaw chain in professional logging: cutting clean wood, square-corner cutters. Forest or yard, daylight. Photorealistic. |
 | `public/images/products/full-chisel-cutter-detail.jpg` | 刀齿特写 | 800×600 | Macro: full-chisel square-corner cutter, razor-sharp square corners. Maximum cutting speed design. Product shot. |
 | `public/images/products/full-chisel-chain-detail.jpg` | 链体结构 | 800×600 | Full-chisel chain assembly: cutter spacing, drive links. Laid flat or on bar. Product photography. |
 | `public/images/products/full-chisel-application.jpg` | 应用场景 | 800×600 | Full-chisel chain cutting clean softwood. Professional logging application. Outdoor, photorealistic. |
@@ -106,7 +106,7 @@
 
 | 保存路径 | 页面位置 | 建议尺寸 | Prompt |
 |----------|----------|----------|--------|
-| `public/images/products/low-profile-325-hero.jpg` | Low Profile .325 页 Hero；应用页「Retail Consumer」 | 1920×800 | **Banner brief:** 16:9 horizontal. **Home/yard scene:** smaller consumer saw with low-kickback chain **pruning branches or cutting a small log**. Garden, yard, or woodland edge. Natural light, controlled/safe feel. Chain/bar visible but not macro. Approachable, “reliable homeowner” tone, greens and wood tones. |
+| `public/images/products/low-profile-325-hero.jpg` | Low Profile .325 页 Hero；应用页「Retail Consumer」 | 1920×800 | Low-profile chainsaw chain in consumer use: homeowner, safe cutting, low-kickback. Yard or light duty. Photorealistic. |
 | `public/images/products/low-profile-cutter-detail.jpg` | 刀齿特写 | 800×600 | Macro: low-profile cutter, reduced depth, low-kickback safety geometry. Product detail shot. |
 | `public/images/products/low-profile-chain-detail.jpg` | 链体与安全链节 | 800×600 | Low-profile chain: drive link configuration, safety link placement. Product shot. |
 | `public/images/products/low-profile-application.jpg` | 应用场景 | 800×600 | Low-profile chain in homeowner application: light-duty cutting, pruning. Garden or yard, photorealistic. |
@@ -117,7 +117,7 @@
 
 | 保存路径 | 页面位置 | 建议尺寸 | Prompt |
 |----------|----------|----------|--------|
-| `public/images/products/semi-chisel-38-hero.jpg` | Semi-Chisel 3/8 页 Hero | 1920×800 | **Banner brief:** 16:9 horizontal. General-purpose logging: chainsaw with semi-chisel chain cutting **hardwood or dirty/frozen wood** (oak/maple log or muddy/frozen log). Rounded cutters, 3/8 chain on bar visible. Forest or worksite, photorealistic, industrial, browns/greens/grays. |
+| `public/images/products/semi-chisel-38-hero.jpg` | Semi-Chisel 3/8 页 Hero | 1920×800 | Semi-chisel 3/8 inch chain in general use: dirty or frozen wood, rounded-corner cutters. Outdoor, photorealistic. |
 | `public/images/products/semi-chisel-cutter-detail.jpg` | 刀齿特写 | 800×600 | Macro: semi-chisel rounded-corner cutter, durable, extended edge retention. Product shot. |
 | `public/images/products/semi-chisel-chain-detail.jpg` | 链体 3/8 节距 | 800×600 | Semi-chisel chain, 3/8 inch pitch, cutter spacing. Product photography. |
 | `public/images/products/semi-chisel-application.jpg` | 应用场景 | 800×600 | Semi-chisel chain cutting dirty or frozen wood. Eastern hardwoods, challenging conditions. Photorealistic. |
@@ -191,15 +191,15 @@ products/series-w-detail-edge.jpg | Cutter edge in dirty or frozen conditions du
 products/series-p-detail-cutter.jpg | Macro full-chisel square-corner cutter razor-sharp logging chain, 800x600
 products/series-p-detail-chrome.jpg | Industrial chrome coating on chain link reflective hardened surface macro, 800x600
 products/series-p-detail-edge.jpg | Full-chisel cutter edge extended sharpening interval wear resistance macro, 800x600
-products/full-chisel-325-hero.jpg | Pro chainsaw full-chisel .325 chain cutting clean softwood log pine fir square cutters forest daylight wood chips 16:9 photorealistic, 1920x800
+products/full-chisel-325-hero.jpg | Full chisel 325 chain professional logging cutting clean wood forest daylight, 1920x800
 products/full-chisel-cutter-detail.jpg | Macro full-chisel square-corner cutter razor-sharp maximum cutting speed, 800x600
 products/full-chisel-chain-detail.jpg | Full-chisel chain assembly cutter spacing drive links product photography, 800x600
 products/full-chisel-application.jpg | Full-chisel chain cutting clean softwood professional logging outdoor, 800x600
-products/low-profile-325-hero.jpg | Consumer chainsaw low-profile .325 chain pruning branches or small log yard garden safe low-kickback 16:9 photorealistic, 1920x800
+products/low-profile-325-hero.jpg | Low-profile chainsaw chain consumer homeowner safe cutting low-kickback yard, 1920x800
 products/low-profile-cutter-detail.jpg | Macro low-profile cutter reduced depth low-kickback safety geometry, 800x600
 products/low-profile-chain-detail.jpg | Low-profile chain drive link configuration safety link placement product shot, 800x600
 products/low-profile-application.jpg | Low-profile chain homeowner application light-duty cutting pruning garden, 800x600
-products/semi-chisel-38-hero.jpg | Chainsaw semi-chisel 3/8 chain cutting hardwood or dirty frozen wood oak maple rounded cutters forest 16:9 photorealistic, 1920x800
+products/semi-chisel-38-hero.jpg | Semi-chisel 38 chain general purpose dirty or frozen wood rounded cutters, 1920x800
 products/semi-chisel-cutter-detail.jpg | Macro semi-chisel rounded-corner cutter durable edge retention product shot, 800x600
 products/semi-chisel-chain-detail.jpg | Semi-chisel chain 38 inch pitch cutter spacing product photography, 800x600
 products/semi-chisel-application.jpg | Semi-chisel chain cutting dirty or frozen wood Eastern hardwoods, 800x600
